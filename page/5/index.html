@@ -164,33 +164,30 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Extjs4 布局详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-birt使用JNDI配置数据源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/21/Extjs4 布局详解/">Extjs4 布局详解</a>
+      <a class="article-title" href="/2017/02/10/birt使用JNDI配置数据源/">birt使用JNDI配置数据源</a>
     </h1>
   
 
         
-        <a href="/2016/11/21/Extjs4 布局详解/" class="archive-article-date">
-  	<time datetime="2016-11-21T14:53:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-21</time>
+        <a href="/2017/02/10/birt使用JNDI配置数据源/" class="archive-article-date">
+  	<time datetime="2017-02-10T01:20:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53266452" target="_blank" rel="noopener">文章来源:Extjs4 布局详解</a></p>
-<p><strong>很抱歉，之前编辑的时候只是截图直接粘贴上的，编辑时能看到界面截图，后来无意发现图片没有了，如你阅读有不便之处还望原谅。</strong></p>
-<hr>
-<p><strong>1 Fit 布局</strong></p>
-<p>在 Fit布局中，子元素将自动填满整个父容器。注意：在 fit布局下，对其子元素设置 宽度是无效的。如果在 fit布局中放置了多个组件，则只会显示第一个子元素。典型的案例 就是当客户要求一个 window或 panel中放置一个 GRID组件，grid组件的大小会随着父容 器的大小改变而改变。 示例代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	Ext.create(<span class="string">'Ext.panel.Panel'</span>, &#123; </span><br><span class="line">		renderTo: Ext.getBody(), </span><br><span class="line">	    title: <span class="string">'First Fit Panel'</span>, </span><br><span class="line">	    layout: <span class="string">'fit'</span>, </span><br><span class="line">	    html:<span class="string">"fit撑满父元素"</span>,</span><br><span class="line">	    height:<span class="number">300</span></span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>在使用birt做报表时，开发的时候用的一个数据源，测试的时候用到一个数据源，正式环境一个数据源，那每次都需要配置，然而birt提供了JNDI的方式即可解决配置数据源问题，<br>一旦项目运行后，首先回去找JNDI数据源，没有才连接配置的数据源，<br>JNDI配置三部曲：</p>
+<p>1.在创建报表创建数据源时，配置JNDI URL<br><img src="/2017/02/10/birt使用JNDI配置数据源/20170902001.png" alt="image"><br></p>
         
-          <a class="article-more-a" href="/2016/11/21/Extjs4 布局详解/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/10/birt使用JNDI配置数据源/#more">more >></a>
         
       
 
@@ -204,7 +201,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
         		</li>
       		
 		</ul>
@@ -214,7 +211,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/21/Extjs4 布局详解/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/10/birt使用JNDI配置数据源/">展开全文 >></a>
         </p>
       
 
@@ -244,571 +241,34 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Extjs4 ——布局和容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-修改eclispse中的tomcat内存大小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/20/Extjs4 ——布局和容器/">Extjs4 ——布局和容器</a>
+      <a class="article-title" href="/2017/02/09/修改eclispse中的tomcat内存大小/">修改eclispse中的tomcat内存大小</a>
     </h1>
   
 
         
-        <a href="/2016/11/20/Extjs4 ——布局和容器/" class="archive-article-date">
-  	<time datetime="2016-11-20T15:14:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-20</time>
+        <a href="/2017/02/09/修改eclispse中的tomcat内存大小/" class="archive-article-date">
+  	<time datetime="2017-02-09T10:08:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53247752" target="_blank" rel="noopener">文章来源:Extjs4 ——布局和容器</a></p>
-<p>extjs4.0布局及容器系统(Layouts and Containers)是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如何运用布局的基础。</p>
-<p>extjs4.0布局和容器（Layouts and Containers）是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如何运用布局的基础。</p>
-<p><strong>一、容器</strong></p>
-<p>一个Ext JS应用程序的图形用户界面(UI)是由许多组件（查看组件指南(<a href="http://dev.sencha.com/deploy/ext-4.0.7-gpl/docs/index.html#/guide/components" target="_blank" rel="noopener">Components Guide</a>)获取更多关于组件的信息）构成的。容器是一种可以容纳一些其他组件的特殊类型组件。<br></p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/54950743" target="_blank" rel="noopener">文章来源:修改eclispse中的tomcat内存大小</a></p>
+<p>修改1：</p>
+<p>在Eclipse中下面Servers双击Tomcat Server… 然后点击General InformAtion 下的Open launch configuration；</p>
+<p>会弹出Edit Configuration，然后在选中Atguments选项卡；在VM atguments文本框中最后面添加</p>
+<p>-Xms256m -Xmx1024m -XX:MaxPermSize=256m 。</p>
+<p>修改2：<br></p>
         
-          <a class="article-more-a" href="/2016/11/20/Extjs4 ——布局和容器/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/20/Extjs4 ——布局和容器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ExtJS 4---主题theme" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/20/ExtJS 4---主题theme/">ExtJS 4---主题theme</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/20/ExtJS 4---主题theme/" class="archive-article-date">
-  	<time datetime="2016-11-20T14:55:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53247453" target="_blank" rel="noopener">文章来源:ExtJS 4—主题theme</a></p>
-<h1 id="1-UI组件基础"><a href="#1-UI组件基础" class="headerlink" title="1 UI组件基础"></a>1 UI组件基础</h1><p>学习ExtJs就是学习组件的使用。ExtJs4对框架进行了重构，其中最重要的就是形成了一个结构及层次分明的组件体系，由这些组件形成了Ext的控件。</p>
-<p>ExtJs4的组件体系中有将近100种组件，而这些组件又可以大致分为四大类，即容器类组件、工具栏及菜单栏组件、表单及元素组件、其他组件。</p>
-<h1 id="2-主题"><a href="#2-主题" class="headerlink" title="2 主题"></a>2 主题</h1>
-        
-          <a class="article-more-a" href="/2016/11/20/ExtJS 4---主题theme/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/20/ExtJS 4---主题theme/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Ext4 类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/20/Ext4 类/">Ext4 类</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/20/Ext4 类/" class="archive-article-date">
-  	<time datetime="2016-11-20T13:59:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53244976" target="_blank" rel="noopener">文章来源:Ext4 类</a></p>
-<hr>
-<p><strong>1).声明<em>**</em></strong></p>
-<p><strong>1.1) 旧的方式</strong></p>
-<p>如果你曾经使用过旧版本的extjs,那么你肯定熟悉使用Ext.extend来创建一个类:</p>
-<p>var MyWindow=Ext.extend(Object,{…});</p>
-<p>这个方法很容易从现有的类中继承创建新的类.相比直接继承,我们没有好用的API用于类创建的其他方面,诸如:配置、静态方法、混入（Mixins）。呆会我们再来详细的重新审视这些方面。现在，让我们来看看另一个例子：</p>
-<p>My.cool.Window = Ext.extend(Ext.Window, { … });<br></p>
-        
-          <a class="article-more-a" href="/2016/11/20/Ext4 类/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/20/Ext4 类/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ext4.X学习笔记(二十一)[Observable 自定义事件类]" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/ext4.X学习笔记(二十一)[Observable 自定义事件类]/">ext4.X（白鹤翔第一季）学习笔记(二十一)[Observable 自定义事件类]</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/19/ext4.X学习笔记(二十一)[Observable 自定义事件类]/" class="archive-article-date">
-  	<time datetime="2016-11-19T14:21:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53235773" target="_blank" rel="noopener">文章来源:ext4.X（白鹤翔第一季）学习笔记(二十一)[Observable 自定义事件类]</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//Ext.util.Observable 自定义事件类</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//1：最简单的自定义事件：</span></span><br><span class="line">	<span class="keyword">var</span> win = Ext.create(<span class="string">'Ext.Window'</span>,&#123;</span><br><span class="line">		title:<span class="string">'简单的自定义事件'</span> , </span><br><span class="line">		width:<span class="number">300</span> , </span><br><span class="line">		height:<span class="number">200</span> , </span><br><span class="line">		renderTo:Ext.getBody() , </span><br><span class="line">		listeners:&#123;</span><br><span class="line">			show:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				<span class="comment">//3:触发自定义事件的时机</span></span><br><span class="line">				win.fireEvent(<span class="string">'myEvent'</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">//1: 添加事件类型</span></span><br><span class="line">	win.addEvents(<span class="string">'myEvent'</span>);</span><br><span class="line">	<span class="comment">//2: 添加事件的监听</span></span><br><span class="line">	win.on(<span class="string">'myEvent'</span> , <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'my....event...'</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">	win.show();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//2: 为自己定义的类去添加事件的支持</span></span><br><span class="line">	Ext.define(<span class="string">'Employee'</span>, &#123;</span><br><span class="line">	    mixins: &#123;</span><br><span class="line">	        observable: <span class="string">'Ext.util.Observable'</span></span><br><span class="line">	    &#125;,</span><br><span class="line">	    <span class="keyword">constructor</span>: function (config) &#123;</span><br><span class="line">	        <span class="keyword">this</span>.mixins.observable.constructor.call(<span class="keyword">this</span>, config);</span><br><span class="line">	        <span class="keyword">this</span>.addEvents(</span><br><span class="line">	            <span class="string">'fired'</span>,</span><br><span class="line">	            <span class="string">'quit'</span></span><br><span class="line">	        );</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">var</span> newEmployee = <span class="keyword">new</span> Employee(&#123;</span><br><span class="line">	    listeners: &#123;</span><br><span class="line">	        quit: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	            alert(<span class="string">" has quit!"</span>);</span><br><span class="line">	        &#125;</span><br><span class="line">	    &#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	newEmployee.fireEvent(<span class="string">'quit'</span>);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 单次运行监听器的使用，single配置项在组件中的用途</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> win = Ext.create(<span class="string">'Ext.Window'</span>,&#123;</span><br><span class="line">		title:<span class="string">'单次执行监听器的使用'</span> , </span><br><span class="line">		width:<span class="number">300</span> , </span><br><span class="line">		height:<span class="number">200</span> , </span><br><span class="line">		renderTo:Ext.getBody() , </span><br><span class="line">		listeners:&#123;</span><br><span class="line">			render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				alert(<span class="string">'把组件渲染到body上，整个过程只有一次'</span>);</span><br><span class="line">			&#125; , </span><br><span class="line">			single:<span class="literal">true</span>	,	<span class="comment">//当前这个事件监听执行一次之后就自动销毁了</span></span><br><span class="line">			delay:<span class="number">3000</span> 		<span class="comment">//延迟执行事件监听</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	win.show();</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//对于事件的挂起和恢复实例</span></span><br><span class="line">	<span class="keyword">var</span> btn1 = Ext.create(<span class="string">'Ext.button.Button'</span>,&#123;</span><br><span class="line">		text:<span class="string">'挂起'</span> ,</span><br><span class="line">		renderTo:Ext.getBody(),</span><br><span class="line">		handler:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			 btn3.suspendEvents();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">var</span> btn2 = Ext.create(<span class="string">'Ext.button.Button'</span>,&#123;</span><br><span class="line">		text:<span class="string">'恢复'</span> ,</span><br><span class="line">		renderTo:Ext.getBody(),</span><br><span class="line">		handler:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			btn3.resumeEvents();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">var</span> btn3 = Ext.create(<span class="string">'Ext.button.Button'</span>,&#123;</span><br><span class="line">		text:<span class="string">'按钮'</span> ,</span><br><span class="line">		renderTo:Ext.getBody(),</span><br><span class="line">		listeners:&#123;</span><br><span class="line">			<span class="string">'mouseover'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				alert(<span class="string">"执行啦..."</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//事件的转发机制	</span></span><br><span class="line">	<span class="keyword">var</span> win = Ext.create(<span class="string">'Ext.Window'</span>,&#123;</span><br><span class="line">		title:<span class="string">'事件的转发'</span> , </span><br><span class="line">		renderTo:Ext.getBody() , </span><br><span class="line">		width:<span class="number">300</span> , </span><br><span class="line">		height:<span class="number">200</span> ,</span><br><span class="line">		listeners:&#123;</span><br><span class="line">			myEvent:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">				alert(<span class="string">'我是自己定义的事件...'</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> btn = Ext.create(<span class="string">'Ext.Button'</span>,&#123;</span><br><span class="line">		text:<span class="string">'按钮'</span> ,</span><br><span class="line">		renderTo:Ext.getBody() , </span><br><span class="line">		handler:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">			btn.fireEvent(<span class="string">'myEvent'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	win.show();</span><br><span class="line">	<span class="comment">//事件的转发机制： 1 转发给的对象    2 转发的事件类型数组</span></span><br><span class="line">	win.relayEvents(btn,[<span class="string">'myEvent'</span>]);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/19/ext4.X学习笔记(二十一)[Observable 自定义事件类]/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ext4学习笔记(二十)[为Ext的UI组件绑定事件]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/ext4学习笔记(二十)[为Ext的UI组件绑定事件]（白鹤翔第一季）/">ext4学习笔记(二十)[为Ext的UI组件绑定事件]（白鹤翔第一季）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/19/ext4学习笔记(二十)[为Ext的UI组件绑定事件]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-19T14:17:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53235630" target="_blank" rel="noopener">文章来源:ext4学习笔记(二十)[为Ext的UI组件绑定事件]（白鹤翔第一季）</a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//为Ext的UI组件绑定事件</span></span><br><span class="line"> 	<span class="comment">//1:直接在组件内部添加listeners配置项 即可</span></span><br><span class="line"> 	<span class="keyword">var</span> win = Ext.create(<span class="string">'Ext.Window'</span>,&#123;</span><br><span class="line"> 		title:<span class="string">'UI组件的事件示例一'</span> , </span><br><span class="line"> 		width:<span class="number">400</span> , </span><br><span class="line"> 		height:<span class="number">300</span> , </span><br><span class="line"> 		renderTo:Ext.getBody() , </span><br><span class="line"> 		listeners:&#123;		<span class="comment">//在这个配置项对象中加入事件即可</span></span><br><span class="line"> 			show : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'我展示出来了...'</span>);</span><br><span class="line"> 			&#125; , </span><br><span class="line"> 			close:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'我被关闭了....'</span>);</span><br><span class="line"> 			&#125; , </span><br><span class="line"> 			render:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'组件渲染的时候执行的事件..'</span>);</span><br><span class="line"> 			&#125;, </span><br><span class="line"> 			click:&#123;</span><br><span class="line"> 	            element: <span class="string">'body'</span>, <span class="comment">//bind to the underlying body property on the panel</span></span><br><span class="line"> 	            fn: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; alert(<span class="string">'click body'</span>); &#125;</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line"> 	&#125;);</span><br><span class="line"> 	win.show();</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//2：使用组件的引用为组件绑定一些事件</span></span><br><span class="line"> 	<span class="keyword">var</span> win = Ext.create(<span class="string">'Ext.Window'</span>,&#123;</span><br><span class="line"> 		title:<span class="string">'UI组件的事件示例一'</span> , </span><br><span class="line"> 		width:<span class="number">400</span> , </span><br><span class="line"> 		height:<span class="number">300</span> , </span><br><span class="line"> 		renderTo:Ext.getBody() 		<span class="comment">//把组件渲染到指定的位置(body)</span></span><br><span class="line"> 	&#125;);</span><br><span class="line"> </span><br><span class="line"> 	win.on(<span class="string">'show'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 		alert(<span class="string">'我展示出来了..'</span>);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> 	</span><br><span class="line"> 	win.on(&#123;</span><br><span class="line"> 		<span class="string">'show'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'show...'</span>);		</span><br><span class="line"> 		&#125; , </span><br><span class="line"> 		<span class="string">'close'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'close...'</span>);</span><br><span class="line"> 		&#125; , </span><br><span class="line"> 		<span class="string">'render'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'render....'</span>);</span><br><span class="line"> 		&#125;</span><br><span class="line"> 	&#125;);</span><br><span class="line"> 	win.show();</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/19/ext4学习笔记(二十)[为Ext的UI组件绑定事件]（白鹤翔第一季）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）/">ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/19/ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-19T14:14:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53235480" target="_blank" rel="noopener">文章来源:ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）</a></p>
-<p>Ext.EventManager:把浏览器自带的事件做个封装 ，目的是屏蔽浏览器之间的差异问题<br>on添加事件监听 un移除事件监听</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Ext.EventManager:把浏览器自带的事件做个封装 ，目的是屏蔽浏览器之间的差异问题</span></span><br><span class="line">	<span class="comment">// on添加事件监听   un移除事件监听</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> inp = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);	<span class="comment">//Ext.DomHelper.createDom</span></span><br><span class="line">	inp.type = <span class="string">'button'</span>;</span><br><span class="line">	inp.id = <span class="string">'inp1'</span>;</span><br><span class="line">	inp.value = <span class="string">'点击'</span>;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(inp);</span><br><span class="line">	<span class="comment">//----------------------------------------</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> einp = Ext.get(<span class="string">'inp1'</span>);</span><br><span class="line"> 	Ext.EventManager.on(einp,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 		alert(<span class="string">'我执行了..'</span>);</span><br><span class="line"> 	&#125;);</span><br><span class="line"> 	Ext.EventManager.on(einp,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 		alert(<span class="string">'我又执行了..'</span>);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> </span><br><span class="line"> 	Ext.EventManager.on(einp,&#123;</span><br><span class="line"> 		<span class="string">'click'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'单机!'</span>)&#125; , </span><br><span class="line"> 		<span class="string">'mouseout'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'移除!'</span>)&#125;</span><br><span class="line"> 	&#125;);</span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//不推荐 </span></span><br><span class="line"> 	Ext.EventManager.on(einp,&#123;</span><br><span class="line"> 		<span class="string">'click'</span>:&#123;</span><br><span class="line"> 			fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'执行1'</span>);</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125; , </span><br><span class="line"> 	    <span class="string">'mouseout'</span>:&#123;</span><br><span class="line"> 			fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'执行2'</span>);</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line"> 	&#125;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/19/ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ext4 js 模拟EventManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/ext4 js 模拟EventManager/">ext4 js 模拟EventManager（白鹤翔第一季）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/19/ext4 js 模拟EventManager/" class="archive-article-date">
-  	<time datetime="2016-11-19T13:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53234970" target="_blank" rel="noopener">文章来源:ext4 js 模拟EventManager（白鹤翔第一季）</a></p>
-<p>EventManager封装浏览器自带的事件 ，并且解决了浏览器的差异问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyExt = &#123;&#125;;</span><br><span class="line"><span class="comment">// 封装浏览器自带的事件 屏蔽浏览器之间的差异</span></span><br><span class="line">MyExt.EventManager = &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//添加监听element, eventName, fn, useCapture</span></span><br><span class="line">	addListener:<span class="function"><span class="keyword">function</span>(<span class="params">el , ename , fn , useCapture</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(el.addEventListener)&#123;</span><br><span class="line">			el.addEventListener(ename,fn,useCapture);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(el.attachEvent)&#123;</span><br><span class="line">			el.attachEvent(<span class="string">'on'</span> + ename , fn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">//移除监听</span></span><br><span class="line">	removeListener:<span class="function"><span class="keyword">function</span>(<span class="params">el , ename , fn , useCapture</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(el.removeEventListener)&#123;</span><br><span class="line">			el.removeEventListener(ename,fn,useCapture);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(el.detachEvent)&#123;</span><br><span class="line">			el.detachEvent(<span class="string">'on'</span> + ename , fn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//w3c === event    / ie  window.event</span></span><br><span class="line">	<span class="comment">//getEvent:function()&#123;&#125;</span></span><br><span class="line">	<span class="comment">//鼠标事件 </span></span><br><span class="line">	<span class="comment">//键盘事件</span></span><br><span class="line">	<span class="comment">//滚轮事件...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyExt.EventManager.on = MyExt.EventManager.addListener;</span><br><span class="line">MyExt.EventManager.un = MyExt.EventManager.removeListener;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line">	MyExt.EventManager.on(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'我执行了..'</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">	MyExt.EventManager.on(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'我又执行了..'</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);	</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/19/ext4 js 模拟EventManager/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hibernate 的 CascadeType 属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/18/hibernate 的 CascadeType 属性/">hibernate 的 CascadeType 属性</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/18/hibernate 的 CascadeType 属性/" class="archive-article-date">
-  	<time datetime="2016-11-17T16:12:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53208818" target="_blank" rel="noopener">文章来源:hibernate 的 CascadeType 属性</a></p>
-<p>今天同时遇到一个问题，级联保存的时候遇到Error : javax.persistence.EntityExistsException异常，查阅资料后发现是因为配置文件中一对多配置的CascadeType.PERSIST修改为CascadeType.MERGE 或者在方法上面添加事物的注解（暂时不知道这里添加事物注解能解决的原因）</p>
-<p>CascadeType.PERSIST只有A类新增时，会级联B对象新增。若B对象在数据库存（跟新）在则抛异常（让B变为持久态）CascadeType.MERGE指A类新增或者变化，会级联B对象（新增或者变化）CascadeType.REMOVE只有A类删除时，会级联删除B类；CascadeType.ALL包含所有；<br></p>
-        
-          <a class="article-more-a" href="/2016/11/18/hibernate 的 CascadeType 属性/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/09/修改eclispse中的tomcat内存大小/#more">more >></a>
         
       
 
@@ -824,6 +284,10 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tomcat</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -832,7 +296,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/18/hibernate 的 CascadeType 属性/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/02/09/修改eclispse中的tomcat内存大小/">展开全文 >></a>
         </p>
       
 
@@ -862,30 +326,513 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 js自定义事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-远程桌面连接凭证不工作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/ext4 js自定义事件/">ext4 js自定义事件</a>
+      <a class="article-title" href="/2017/02/09/远程桌面连接凭证不工作/">远程桌面连接凭证不工作</a>
     </h1>
   
 
         
-        <a href="/2016/11/17/ext4 js自定义事件/" class="archive-article-date">
-  	<time datetime="2016-11-17T15:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
+        <a href="/2017/02/09/远程桌面连接凭证不工作/" class="archive-article-date">
+  	<time datetime="2017-02-09T07:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53208240" target="_blank" rel="noopener">文章来源:ext4 js自定义事件（白鹤翔第一季）</a></p>
-<p><br>// 要利用观察者模式 去实现自定义的事件<br><br>//1：由于浏览器他自己能定义内置的事件(click/blur…)<br><br>// 我们也应该有一个类似于浏览器这样的类，这个类 自己去内部定义一些事件(自定义事件)<br><br>var Observable = function(){<br><br>//承装自己所定义的事件类型的<br><br>this.events = [‘start’,’stop’];</p>
+        <p><a href="http://blog.csdn.net//u011229848//article/details/54948132" target="_blank" rel="noopener">文章来源:远程桌面连接凭证不工作</a></p>
+<p>﻿﻿ <a href="http://www.cnblogs.com/wuqianling/p/5682436.html" target="_blank" rel="noopener">win7远程桌面连接总是显示凭证不工作解决方法总结</a></p>
+<p>使用远程桌面连接可以在网络的另一端控制某台计算机，对计算机进行实时操作，但有时会出现连接失败的情况，比如总是显示您的凭证不工作，下面是我对此问题解决办法的总结。</p>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>1、在开始菜单内的运行框里输入”gpedit.msc”后点击确定，打开本地组策略编辑器。</p>
+<p><img src="http://images2015.cnblogs.com/blog/812265/201607/812265-20160718195421888-1403460260.jpg" alt=""><br></p>
         
-          <a class="article-more-a" href="/2016/11/17/ext4 js自定义事件/#more">more >></a>
+          <a class="article-more-a" href="/2017/02/09/远程桌面连接凭证不工作/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/远程桌面连接凭证不工作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-BIRT集成WEB项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/09/BIRT集成WEB项目/">BIRT集成WEB项目</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/09/BIRT集成WEB项目/" class="archive-article-date">
+  	<time datetime="2017-02-09T06:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>从项目要用到BIRT工具开始在坛子里泡了好久，从0开始慢慢琢磨现在终于可以把BIRT集成到项目中来运行了，当中的过程还真有点艰难，但这也是每个学习BIRT工具的人都遇到的，现在把中间的些许过程贴出来，希望对初次学习BIRT的人有些帮助。<br>一、BIRT与工程的集成。<br>1、从eclipse官网下载birt的运行包（地址：<a href="http://www.eclipse.org/birt/" target="_blank" rel="noopener">http://www.eclipse.org/birt/</a>），解压缩，先拷贝WebViewerExample\WEB-INF下如下文件到工程的WEB-INF目录下：<br><br>jrun.web.xml<br><br>server-config.wsdd<br><br>viewer.properties<br><br>2、将WebViewerExample\WEB-INF\tlds下的birt.tld文件拷贝到工程的\WEB-INF\tlds下。<br></p>
+        
+          <a class="article-more-a" href="/2017/02/09/BIRT集成WEB项目/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/BIRT集成WEB项目/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-BIRT参数设置详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/09/BIRT参数设置详解/">BIRT参数设置详解</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/09/BIRT参数设置详解/" class="archive-article-date">
+  	<time datetime="2017-02-09T06:13:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="BIRT参数设置详解"><a href="#BIRT参数设置详解" class="headerlink" title="BIRT参数设置详解"></a><a href="http://www.cnblogs.com/langlangago/articles/5077226.html" target="_blank" rel="noopener">BIRT参数设置详解</a></h2><p>2015-12-25 23:02 by langlangago, 673 阅读, 0 评论, <a href="http://www.cnblogs.com/langlangago/articles/5077226.html#" target="_blank" rel="noopener">收藏</a>, <a href="https://i.cnblogs.com/EditArticles.aspx?postid=5077226" target="_blank" rel="noopener">编辑</a></p>
+<p><a href="http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html" target="_blank" rel="noopener">BIRT参数设置详解</a></p>
+<p><a href="http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html" target="_blank" rel="noopener">http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html</a></p>
+<p>在使用birt报表的时候感觉页面的 BIRT Report Viewer头标题没有用，想去掉在网上一查原来有详细的参数设置，看来birt的功能还是很强大啊。现在转帖如下：<br>BIRT作为一款功能强大的开源报表工具，其版本的升级更新速度也非常快，从1.0到2.0，一直到最新的2.2.1版本，无论从功能上还是性能上都得到了极大的提高和扩充。BIRT也提供了一个标准的J2EE实现组件，可以发布到支持J2EE应用的web server服务器上，可以对生成的报表进行预览等操作。在大家使用BIRT Viewer的时候，可能会对它日益纷繁的参数设置如云里雾里，在网上论坛里也有很多人碰到这样哪样的问题，同时官方的文档也不细致不全。所以我就对这些参数进行了一个简单系统的总结，希望能对大家的BIRT开发有所帮助。这些参数以2.2.1版本为准，请大家特别注意。<br></p>
+        
+          <a class="article-more-a" href="/2017/02/09/BIRT参数设置详解/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/BIRT参数设置详解/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Linux_x64安装Oracle11g（完整版）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/">Linux_x64安装Oracle11g（完整版）</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/" class="archive-article-date">
+  	<time datetime="2016-11-22T15:12:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848//article/details/53293191" target="_blank" rel="noopener">文章来源:Linux_x64安装Oracle11g（完整版）</a></p>
+<p><strong>一、修改操作系统核心参数</strong></p>
+<p>在Root用户下执行以下步骤：</p>
+<p><strong>1）修改用户的SHELL的限制，修改/etc/security/limits.conf文件</strong></p>
+<p>输入命令：vi /etc/security/limits.conf，按i键进入编辑模式，将下列内容加入该文件。</p>
+<p>oracle soft nproc 2047</p>
+<p>oracle hard nproc 16384</p>
+<p>oracle soft nofile 1024</p>
+<p>oracle hard nofile 65536<br></p>
+        
+          <a class="article-more-a" href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-oracle11g 安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/oracle11g 安装/">oracle11g 安装</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/22/oracle11g 安装/" class="archive-article-date">
+  	<time datetime="2016-11-22T15:08:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53293147" target="_blank" rel="noopener">文章来源:oracle11g 安装</a></p>
+<p>一、Oracle <a href="http://www.2cto.com/soft" target="_blank" rel="noopener">下载</a></p>
+<p>注意Oracle分成两个文件，下载完后，将两个文件解压到同一目录下即可。 路径名称中，最好不要出现中文，也不要出现空格等不规则字符。<br>官方下地址：</p>
+<p><a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html以下两网址来源此官方下载页网。" target="_blank" rel="noopener">http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html以下两网址来源此官方下载页网。</a><br>win 32位操作系统 下载地址：<br></p>
+        
+          <a class="article-more-a" href="/2016/11/22/oracle11g 安装/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">oracl</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/22/oracle11g 安装/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-oracle11.g安装未找到文件问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/oracle11.g安装未找到文件问题/">oracle11.g安装未找到文件问题</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/22/oracle11.g安装未找到文件问题/" class="archive-article-date">
+  	<time datetime="2016-11-22T15:01:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53293085" target="_blank" rel="noopener">文章来源:oracle11.g安装未找到文件问题</a></p>
+<p>之前安装一直没出现问题，今晚突然爆找不到文件，想了一会发现两个解压包我解压了为什么只用了其中一个呢？然后将另外一个下面的文件copy到一个文件后点继续仍然不行，切确地说是将database2复制到database1，然后终止后重新安装，完美！</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/22/oracle11.g安装未找到文件问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ext4 vBox的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/Ext4 vBox的使用/">Ext4 vBox的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/22/Ext4 vBox的使用/" class="archive-article-date">
+  	<time datetime="2016-11-22T14:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://blog.csdn.net/u011229848/article/details/53293043" target="_blank" rel="noopener">文章来源:Ext4 vBox的使用</a></p>
+<p>要使用VBox布局方式，首先的熟悉下一下几个主要属性：</p>
+<p>一、align：字符类型，指示组件在容器内的对齐方式。有如下几种属性。</p>
+<p>1、left（默认）：排列于容器左侧。</p>
+<p>2、center ：控件在容器水平居中。</p>
+<p>3、stretch：控件横向拉伸至容器大小</p>
+<p>4、stretchmax:控件横向拉伸，宽度为最宽控件的宽。</p>
+<p>二、flex:数字类型，指示组件在容器中水平呈现方式，通俗的讲，就是指示组件在容器中的相对宽度。<br></p>
+        
+          <a class="article-more-a" href="/2016/11/22/Ext4 vBox的使用/#more">more >></a>
         
       
 
@@ -909,7 +856,89 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/17/ext4 js自定义事件/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/22/Ext4 vBox的使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ext4 HBox的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/Ext4 HBox的使用/">Ext4 HBox的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/22/Ext4 HBox的使用/" class="archive-article-date">
+  	<time datetime="2016-11-22T14:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要使用HBox布局方式，首先的熟悉下一下几个主要属性：</p>
+<p>一、align：字符类型，指示组件在容器内的对齐方式。有如下几种属性。</p>
+<p>1、top（默认）：排列于容器顶端。</p>
+<p>2、middle：垂直居中排列于容器中。</p>
+<p>3、stretch：垂直排列且拉伸义填补容器高度</p>
+<p>4、stretchmax:垂直拉伸，并且组件以最高高度的组件为准。</p>
+<p>二、flex:数字类型，指示组件在容器中水平呈现方式，通俗的讲，就是指示组件在容器中的相对宽度。<br></p>
+        
+          <a class="article-more-a" href="/2016/11/22/Ext4 HBox的使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/22/Ext4 HBox的使用/">展开全文 >></a>
         </p>
       
 
@@ -941,7 +970,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 
@@ -953,7 +982,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 cusn-cmh
+    		&copy; 2017 cusn-cmh
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1032,6 +1061,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">birt</a>
               </li>
              
@@ -1040,19 +1073,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1084,6 +1113,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WEB架构师成长之路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">jstl</a>
               </li>
              
@@ -1096,7 +1133,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color3">struts1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">假分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">case when</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他，在线工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记住我</a>
               </li>
              
               <li class="article-tag-list-item">

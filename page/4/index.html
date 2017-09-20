@@ -164,6 +164,649 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-加密Web项目中配置文件中的密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/加密Web项目中配置文件中的密码/">加密Web项目中配置文件中的密码</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/16/加密Web项目中配置文件中的密码/" class="archive-article-date">
+  	<time datetime="2017-10-16T06:48:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78249673" target="_blank" rel="noopener">文章来源:加密Web项目中配置文件中的密码</a></p>
+<p>原文出处： <a href="http://blog.csdn.net/ziwen00/article/details/10729683" target="_blank" rel="noopener">http://blog.csdn.net/ziwen00/article/details/10729683</a></p>
+<p>我们使用的项目经常是这个样子的：</p>
+<p><bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" p:driverclassname="oracle.jdbc.driver.OracleDriver" p:url="jdbc:oracle:thin:@127.0.0.1:1523:orcl" p:username="czw" p:password="czw"><br>这里会有一个致命的问题，如果有一个具备中间件服务器机器访问权限的人，看到了这个例如applicationContext.xml的文件，并且打开该文件，智商再低下的人也会知道数据库的用户名和密码是什么。这对于对安全有一定要求的行业是必须杜绝的，这个也是在一般技术面试中会问到的一个问题。那就让我们继续往下，解答这个问题吧！</bean></p>
+<p>首先，我们需要将配置文件抽取到property中来：</p>
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" p:location="classpath:jdbc.properties" p:fileencoding="utf-8">  
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close" p:driverclassname="${driverClassName}" p:url="${url}" p:username="${userName}" p:password="${password}"> 
+
+<p>将上面的第一个代码修改为第二个代码，第一个类是负责抓取jdbc.properties中的属性并且填充到dataSource当中来，这样，我们就可以将所有的注意力都集中在jdbc.properties上了。<br>下面的问题是，如何将jdbc.properties变成一个看不明白的字符呢？我们只需要扩展PropertyPlaceholderConfigurer父类PropertyResourceConfigurer的解密方法convertProperty就可以了:<br></p></bean></bean>
+        
+          <a class="article-more-a" href="/2017/10/16/加密Web项目中配置文件中的密码/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/16/加密Web项目中配置文件中的密码/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-FetchType与FetchMode的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/16/FetchType与FetchMode的区别/">FetchType与FetchMode的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/16/FetchType与FetchMode的区别/" class="archive-article-date">
+  	<time datetime="2017-10-16T06:27:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78249338" target="_blank" rel="noopener">文章来源:FetchType与FetchMode的区别</a></p>
+<p>原文出处：<a href="http://fantasy-lixk.iteye.com/blog/1602797" target="_blank" rel="noopener">http://fantasy-lixk.iteye.com/blog/1602797</a></p>
+<p>使用例：</p>
+<p>@OneToMany(mappedBy=”item”,cascade=CascadeType.ALL,fetch=FetchType.EAGER)</p>
+<p>@Fetch(value=FetchMode.SUBSELECT)</p>
+<p>两者比较：<br></p>
+        
+          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-使用truelicense实现用于JAVA工程license机制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/11/使用truelicense实现用于JAVA工程license机制/">使用truelicense实现用于JAVA工程license机制</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/11/使用truelicense实现用于JAVA工程license机制/" class="archive-article-date">
+  	<time datetime="2017-10-11T02:59:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78201292" target="_blank" rel="noopener">文章来源:使用truelicense实现用于JAVA工程license机制</a></p>
+<p><strong>Keytool是一个Java数据证书的管理工具。</strong></p>
+<p>keystore</p>
+<p>Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中</p>
+<p>在keystore里，包含两种数据： 密钥实体（Key entity）——密钥（secret key）又或者是私钥和配对公钥（采用非对称加密）</p>
+<p>可信任的证书实体（trusted certificate entries）——只包含公钥</p>
+<p>Alias（别名）</p>
+<p>每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写</p>
+<p>keystore的存储位置</p>
+<p>在没有制定生成位置的情况下，keystore会存在与用户的系统默认目录，<br></p>
+        
+          <a class="article-more-a" href="/2017/10/11/使用truelicense实现用于JAVA工程license机制/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/11/使用truelicense实现用于JAVA工程license机制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Maven中如何配置WAR依赖WAR包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/">Maven中如何配置WAR依赖WAR包</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/11/Maven中如何配置WAR依赖WAR包/" class="archive-article-date">
+  	<time datetime="2017-10-11T01:15:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848/article/details/78199846" target="_blank" rel="noopener">文章来源:Maven中如何配置WAR依赖WAR包</a></p>
+<p><strong>项目背景：</strong></p>
+<p>1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
+<p>2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
+<p>3.每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
+<p>4.最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class<br></p>
+        
+          <a class="article-more-a" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-浅谈oracle中row_number() over()分析函数用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/">浅谈oracle中row_number() over()分析函数用法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/" class="archive-article-date">
+  	<time datetime="2017-09-25T09:08:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78087198" target="_blank" rel="noopener">文章来源:浅谈oracle中row_number() over()分析函数用法</a></p>
+<p><br>row_number()over(partition by col1 order by col2)表示根据col1分组，在分组内部根据col2排序，而此函数计算的值就表示每组内部排序后的顺序编号（组内连续的唯一的）。<br><br>与rownum的区别在于：使用rownum进行排序的时候是先对结果集加入伪劣rownum然后再进行排序，而此函数在包含排序从句后是先排序再计算行号码。<br><br>row_number()和rownum差不多，功能更强一点（可以在各个分组内从1开始排序）。</p>
+        
+          <a class="article-more-a" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Oracle和plsql developer编码设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/20/Oracle和plsql developer编码设置/">Oracle和plsql developer编码设置</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/20/Oracle和plsql developer编码设置/" class="archive-article-date">
+  	<time datetime="2017-09-19T16:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78039477" target="_blank" rel="noopener">文章来源:Oracle和plsql developer编码设置</a></p>
+<p>在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。</p>
+<p>一、查看和修改oracle数据库字符集</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual; <span class="comment">--查询结果：</span></span><br></pre></td></tr></table></figure>
+<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中）<br></p>
+        
+          <a class="article-more-a" href="/2017/09/20/Oracle和plsql developer编码设置/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/20/Oracle和plsql developer编码设置/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-oracle创建用户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/04/oracle创建用户/">oracle创建用户</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/04/oracle创建用户/" class="archive-article-date">
+  	<time datetime="2017-09-04T07:34:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/82384461" target="_blank" rel="noopener">文章来源:oracle创建用户</a></p>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/82384461" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/82384461</a></p>
+<p>创建表空间<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">tablespace</span> ZJ2BDC <span class="keyword">datafile</span> <span class="string">'d:\app\Administrator\product\11.2.0\dbhome_1\oracore\ORCL\ZJ2BDC.DBF'</span> <span class="keyword">size</span> <span class="number">4096</span>m <span class="keyword">autoextend</span> <span class="keyword">on</span> <span class="keyword">next</span> <span class="number">5</span>m <span class="keyword">extent</span> <span class="keyword">management</span> <span class="keyword">local</span>;</span><br></pre></td></tr></table></figure></p>
+<p>创建用户<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> REDDATA <span class="keyword">identified</span> <span class="keyword">by</span> xqx1234 <span class="keyword">default</span> <span class="keyword">tablespace</span> ZJ2BDC;</span><br></pre></td></tr></table></figure></p>
+<p>授予权限<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> REDDATA;</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/04/oracle创建用户/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-kill ORACLE中正在运行的存储过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/11/kill ORACLE中正在运行的存储过程/">kill ORACLE中正在运行的存储过程</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/11/kill ORACLE中正在运行的存储过程/" class="archive-article-date">
+  	<time datetime="2017-05-11T10:52:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848//article/details/71668877" target="_blank" rel="noopener">文章来源:kill ORACLE中正在运行的存储过程</a></p>
+<p>kill ORACLE中正在运行的存储过程<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v$<span class="keyword">access</span> o <span class="keyword">where</span> o.OBJECT <span class="keyword">like</span> <span class="string">'P_BDC2ZJ_FC%'</span> <span class="comment">--查找正在运行的对象,获取sid</span></span><br><span class="line"><span class="keyword">select</span> a.serial/# <span class="keyword">from</span> v$<span class="keyword">session</span> a <span class="keyword">WHERE</span> A.SID=<span class="keyword">sid</span> <span class="comment">--通过sid 获取serial/#</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'sid,serial/#'</span> <span class="comment">--eg: alter system kill session '123,3211'</span></span><br></pre></td></tr></table></figure></p>
+<p>查找死锁<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sql_text,s.sid,s.SERIAL/# <span class="keyword">from</span> v$<span class="keyword">sql</span> <span class="keyword">sql</span> <span class="keyword">inner</span> <span class="keyword">join</span> v$<span class="keyword">session</span> s <span class="keyword">on</span> sql.hash_value=s.sql_hash_value</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">sid</span> <span class="keyword">in</span> (<span class="keyword">select</span> session_id <span class="keyword">from</span> v$locked_object)</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/11/kill ORACLE中正在运行的存储过程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Clob类型与String类型的相互转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -315,649 +958,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-远程桌面连接凭证不工作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/远程桌面连接凭证不工作/">远程桌面连接凭证不工作</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/远程桌面连接凭证不工作/" class="archive-article-date">
-  	<time datetime="2017-02-09T07:52:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net//u011229848//article/details/54948132" target="_blank" rel="noopener">文章来源:远程桌面连接凭证不工作</a></p>
-<p>﻿﻿ <a href="http://www.cnblogs.com/wuqianling/p/5682436.html" target="_blank" rel="noopener">win7远程桌面连接总是显示凭证不工作解决方法总结</a></p>
-<p>使用远程桌面连接可以在网络的另一端控制某台计算机，对计算机进行实时操作，但有时会出现连接失败的情况，比如总是显示您的凭证不工作，下面是我对此问题解决办法的总结。</p>
-<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>1、在开始菜单内的运行框里输入”gpedit.msc”后点击确定，打开本地组策略编辑器。</p>
-<p><img src="http://images2015.cnblogs.com/blog/812265/201607/812265-20160718195421888-1403460260.jpg" alt=""><br></p>
-        
-          <a class="article-more-a" href="/2017/02/09/远程桌面连接凭证不工作/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">办公</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/远程桌面连接凭证不工作/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-BIRT集成WEB项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/BIRT集成WEB项目/">BIRT集成WEB项目</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/BIRT集成WEB项目/" class="archive-article-date">
-  	<time datetime="2017-02-09T06:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从项目要用到BIRT工具开始在坛子里泡了好久，从0开始慢慢琢磨现在终于可以把BIRT集成到项目中来运行了，当中的过程还真有点艰难，但这也是每个学习BIRT工具的人都遇到的，现在把中间的些许过程贴出来，希望对初次学习BIRT的人有些帮助。<br>一、BIRT与工程的集成。<br>1、从eclipse官网下载birt的运行包（地址：<a href="http://www.eclipse.org/birt/" target="_blank" rel="noopener">http://www.eclipse.org/birt/</a>），解压缩，先拷贝WebViewerExample\WEB-INF下如下文件到工程的WEB-INF目录下：<br><br>jrun.web.xml<br><br>server-config.wsdd<br><br>viewer.properties<br><br>2、将WebViewerExample\WEB-INF\tlds下的birt.tld文件拷贝到工程的\WEB-INF\tlds下。<br></p>
-        
-          <a class="article-more-a" href="/2017/02/09/BIRT集成WEB项目/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/BIRT集成WEB项目/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-BIRT参数设置详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/BIRT参数设置详解/">BIRT参数设置详解</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/BIRT参数设置详解/" class="archive-article-date">
-  	<time datetime="2017-02-09T06:13:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="BIRT参数设置详解"><a href="#BIRT参数设置详解" class="headerlink" title="BIRT参数设置详解"></a><a href="http://www.cnblogs.com/langlangago/articles/5077226.html" target="_blank" rel="noopener">BIRT参数设置详解</a></h2><p>2015-12-25 23:02 by langlangago, 673 阅读, 0 评论, <a href="http://www.cnblogs.com/langlangago/articles/5077226.html#" target="_blank" rel="noopener">收藏</a>, <a href="https://i.cnblogs.com/EditArticles.aspx?postid=5077226" target="_blank" rel="noopener">编辑</a></p>
-<p><a href="http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html" target="_blank" rel="noopener">BIRT参数设置详解</a></p>
-<p><a href="http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html" target="_blank" rel="noopener">http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html</a></p>
-<p>在使用birt报表的时候感觉页面的 BIRT Report Viewer头标题没有用，想去掉在网上一查原来有详细的参数设置，看来birt的功能还是很强大啊。现在转帖如下：<br>BIRT作为一款功能强大的开源报表工具，其版本的升级更新速度也非常快，从1.0到2.0，一直到最新的2.2.1版本，无论从功能上还是性能上都得到了极大的提高和扩充。BIRT也提供了一个标准的J2EE实现组件，可以发布到支持J2EE应用的web server服务器上，可以对生成的报表进行预览等操作。在大家使用BIRT Viewer的时候，可能会对它日益纷繁的参数设置如云里雾里，在网上论坛里也有很多人碰到这样哪样的问题，同时官方的文档也不细致不全。所以我就对这些参数进行了一个简单系统的总结，希望能对大家的BIRT开发有所帮助。这些参数以2.2.1版本为准，请大家特别注意。<br></p>
-        
-          <a class="article-more-a" href="/2017/02/09/BIRT参数设置详解/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/BIRT参数设置详解/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Linux_x64安装Oracle11g（完整版）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/">Linux_x64安装Oracle11g（完整版）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/" class="archive-article-date">
-  	<time datetime="2016-11-22T15:12:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net//u011229848//article/details/53293191" target="_blank" rel="noopener">文章来源:Linux_x64安装Oracle11g（完整版）</a></p>
-<p><strong>一、修改操作系统核心参数</strong></p>
-<p>在Root用户下执行以下步骤：</p>
-<p><strong>1）修改用户的SHELL的限制，修改/etc/security/limits.conf文件</strong></p>
-<p>输入命令：vi /etc/security/limits.conf，按i键进入编辑模式，将下列内容加入该文件。</p>
-<p>oracle soft nproc 2047</p>
-<p>oracle hard nproc 16384</p>
-<p>oracle soft nofile 1024</p>
-<p>oracle hard nofile 65536<br></p>
-        
-          <a class="article-more-a" href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/Linux_x64安装Oracle11g（完整版）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-oracle11.g安装未找到文件问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/oracle11.g安装未找到文件问题/">oracle11.g安装未找到文件问题</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/22/oracle11.g安装未找到文件问题/" class="archive-article-date">
-  	<time datetime="2016-11-22T15:01:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53293085" target="_blank" rel="noopener">文章来源:oracle11.g安装未找到文件问题</a></p>
-<p>之前安装一直没出现问题，今晚突然爆找不到文件，想了一会发现两个解压包我解压了为什么只用了其中一个呢？然后将另外一个下面的文件copy到一个文件后点继续仍然不行，切确地说是将database2复制到database1，然后终止后重新安装，完美！</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/oracle11.g安装未找到文件问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Ext4 vBox的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/Ext4 vBox的使用/">Ext4 vBox的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/22/Ext4 vBox的使用/" class="archive-article-date">
-  	<time datetime="2016-11-22T14:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="https://blog.csdn.net/u011229848/article/details/53293043" target="_blank" rel="noopener">文章来源:Ext4 vBox的使用</a></p>
-<p>要使用VBox布局方式，首先的熟悉下一下几个主要属性：</p>
-<p>一、align：字符类型，指示组件在容器内的对齐方式。有如下几种属性。</p>
-<p>1、left（默认）：排列于容器左侧。</p>
-<p>2、center ：控件在容器水平居中。</p>
-<p>3、stretch：控件横向拉伸至容器大小</p>
-<p>4、stretchmax:控件横向拉伸，宽度为最宽控件的宽。</p>
-<p>二、flex:数字类型，指示组件在容器中水平呈现方式，通俗的讲，就是指示组件在容器中的相对宽度。<br></p>
-        
-          <a class="article-more-a" href="/2016/11/22/Ext4 vBox的使用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/Ext4 vBox的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Ext4 HBox的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/22/Ext4 HBox的使用/">Ext4 HBox的使用</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/22/Ext4 HBox的使用/" class="archive-article-date">
-  	<time datetime="2016-11-22T14:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>要使用HBox布局方式，首先的熟悉下一下几个主要属性：</p>
-<p>一、align：字符类型，指示组件在容器内的对齐方式。有如下几种属性。</p>
-<p>1、top（默认）：排列于容器顶端。</p>
-<p>2、middle：垂直居中排列于容器中。</p>
-<p>3、stretch：垂直排列且拉伸义填补容器高度</p>
-<p>4、stretchmax:垂直拉伸，并且组件以最高高度的组件为准。</p>
-<p>二、flex:数字类型，指示组件在容器中水平呈现方式，通俗的讲，就是指示组件在容器中的相对宽度。<br></p>
-        
-          <a class="article-more-a" href="/2016/11/22/Ext4 HBox的使用/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/22/Ext4 HBox的使用/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Ext4 Windows 的创建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/21/Ext4 Windows 的创建/">Ext4 Windows 的创建</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/21/Ext4 Windows 的创建/" class="archive-article-date">
-  	<time datetime="2016-11-21T15:26:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53268721" target="_blank" rel="noopener">文章来源:Ext4 Windows 的创建</a></p>
-<p>Extjs4,创建 Ext组件有了新的方式，就是 Ext.create(….)，而且可以使用动态加载 JS的 方式来加快组件的渲染，我们再也不必一次加载已经达到 1MB的 ext-all.js了，本文介绍如 何在 EXTJS4中创建一个 window.<br></p>
-        
-          <a class="article-more-a" href="/2016/11/21/Ext4 Windows 的创建/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/21/Ext4 Windows 的创建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 
@@ -969,7 +972,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 cusn-cmh
+    		&copy; 2017 cusn-cmh
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1048,6 +1051,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">birt</a>
               </li>
              
@@ -1056,19 +1063,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1100,6 +1103,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WEB架构师成长之路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">jstl</a>
               </li>
              
@@ -1112,7 +1123,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color3">struts1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">假分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">case when</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他，在线工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记住我</a>
               </li>
              
               <li class="article-tag-list-item">

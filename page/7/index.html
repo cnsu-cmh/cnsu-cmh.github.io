@@ -164,31 +164,29 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ext4 js 模拟EventManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/">ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/19/ext4 js 模拟EventManager/">ext4 js 模拟EventManager（白鹤翔第一季）</a>
     </h1>
   
 
         
-        <a href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-10T06:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
+        <a href="/2016/11/19/ext4 js 模拟EventManager/" class="archive-article-date">
+  	<time datetime="2016-11-19T13:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53115087" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）</a></p>
-<p><br><strong>样式操作系方法：</strong><br><br>addCls：增加CSS样式到元素，重复的样式会自动过滤<br><br>applyStyles：设置元素的style属性<br><br>setStyle：为元素设置样式<br><br>getStyle：返回元素的当前样式和计算样式<br><br>getStyleSize：返回元素的样式尺寸<br><br>setOpacity：设置不透明度<br><br>clearOpacity：；清理不透明度设置<br><br>getColor：返回CSS颜色属性的值，返回值为6位数组的16进制颜色值<br></p>
-        
-          <a class="article-more-a" href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/#more">more >></a>
-        
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53234970" target="_blank" rel="noopener">文章来源:ext4 js 模拟EventManager（白鹤翔第一季）</a></p>
+<p>EventManager封装浏览器自带的事件 ，并且解决了浏览器的差异问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyExt = &#123;&#125;;</span><br><span class="line"><span class="comment">// 封装浏览器自带的事件 屏蔽浏览器之间的差异</span></span><br><span class="line">MyExt.EventManager = &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//添加监听element, eventName, fn, useCapture</span></span><br><span class="line">	addListener:<span class="function"><span class="keyword">function</span>(<span class="params">el , ename , fn , useCapture</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(el.addEventListener)&#123;</span><br><span class="line">			el.addEventListener(ename,fn,useCapture);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(el.attachEvent)&#123;</span><br><span class="line">			el.attachEvent(<span class="string">'on'</span> + ename , fn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">//移除监听</span></span><br><span class="line">	removeListener:<span class="function"><span class="keyword">function</span>(<span class="params">el , ename , fn , useCapture</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(el.removeEventListener)&#123;</span><br><span class="line">			el.removeEventListener(ename,fn,useCapture);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(el.detachEvent)&#123;</span><br><span class="line">			el.detachEvent(<span class="string">'on'</span> + ename , fn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//w3c === event    / ie  window.event</span></span><br><span class="line">	<span class="comment">//getEvent:function()&#123;&#125;</span></span><br><span class="line">	<span class="comment">//鼠标事件 </span></span><br><span class="line">	<span class="comment">//键盘事件</span></span><br><span class="line">	<span class="comment">//滚轮事件...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyExt.EventManager.on = MyExt.EventManager.addListener;</span><br><span class="line">MyExt.EventManager.un = MyExt.EventManager.removeListener;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line">	MyExt.EventManager.on(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'我执行了..'</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">	MyExt.EventManager.on(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'我又执行了..'</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);	</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -211,7 +209,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/19/ext4 js 模拟EventManager/">展开全文 >></a>
         </p>
       
 
@@ -241,30 +239,47 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-struts1 Action原理与配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/">ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/18/struts1 Action原理与配置/">struts1 Action原理与配置</a>
     </h1>
   
 
         
-        <a href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-10T05:51:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
+        <a href="/2016/11/18/struts1 Action原理与配置/" class="archive-article-date">
+  	<time datetime="2016-11-18T02:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53114958" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）</a></p>
-<p>DOM操作系方法：<br>appendTo：将当前元素追加到指定元素中<br>appendChild：在当前元素中追加元素<br>createChild：在元素中插入由DomHelper对象创建的元素ext<br>inertAfter：将元素插入到指定元素之后<br>inertBefore：将元素插入到指定元素之前<br>inertSibling：在当前元素前或后插入（或创建）元素（同层）。<br>insertHtml：在当前元素内插入HTML代码<br>remove：移除当前元素<br>replace：使用当前元素替换指定元素<br>replaceWith：使用创建的元素替换当前的元素<br>wrap：创建一个元素，并将当前元素包裹起来。<br></p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53212986" target="_blank" rel="noopener">文章来源:struts1 Action原理与配置</a></p>
+<p>今天临时调到另外一个项目帮忙，三天时间修改一个功能，e(⊙o⊙)…，刚down下项目一看是struts1+Hibernate3，平时一直采用spring+springMvc+springData+Hibernate，之前只接触过struts2还好久没用了，只好先来看一下struts1的action配置了，又因为时间有限有限只好摘抄他人文章了，哈哈</p>
+<p>首先介绍下struts1工作原理：</p>
+<p>1.初始化：struts框架的总控制器ActionServlet是一个Servlet，它在web.xml中配置成自动启动的</p>
+<p>Servlet，在启动时总控制器会读取配置文件(struts-config.xml)的配置信息，为struts</p>
+<p>中不同的模块初始化相应的对象。(面向对象思想)</p>
+<p>2.发送请求：用户提交表单或通过URL向WEB服务器提交请求，请求的数据用HTTP协议传给web服务器。</p>
+<p>3.form填充：struts的总控制器ActionServlet在用户提交请求时将数据放到对应的form对象中的成员</p>
+<p>变量中。</p>
+<p>4.派发请求：控制器根据配置信息对象ActionConfig将请求派发到具体的Action，对应的formBean一并</p>
+<p>传给这个Action中的excute()方法。</p>
+<p>5.处理业务：Action一般只包含一个excute()方法，它负责执行相应的业务逻辑(调用其它的业务模块)</p>
+<p>完毕后返回一个ActionForward对象。服务器通过ActionForward对象进行转发工作。</p>
+<p>6.返回响应：Action将业务处理的不同结果返回一个目标响应对象给总控制器。</p>
+<p>7.查找响应：总控制器根据Action处理业务返回的目标响应对象，找到对应的资源对象，一般情况下</p>
+<p>为jsp页面。</p>
+<p>8.响应用户：目标响应对象将结果传递给资源对象，将结果展现给用户。</p>
+<p>下面具体介绍一下struts1配置并配合简单的例子简单易懂：</p>
+<p>Action, ActionForm, ActionForward ，这三个对象构成了Struts 的核心。<br>Struts 最核心的控制器是ActionServlet ，该Servlet 拦截用户请求，井将用户请求转入到Struts 体系内。<br></p>
         
-          <a class="article-more-a" href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/18/struts1 Action原理与配置/#more">more >></a>
         
       
 
@@ -278,7 +293,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">struts1</a>
         		</li>
       		
 		</ul>
@@ -288,7 +307,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/18/struts1 Action原理与配置/">展开全文 >></a>
         </p>
       
 
@@ -318,35 +337,31 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Java 之 Annotation(注解)介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hibernate 的 CascadeType 属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/Java 之 Annotation(注解)介绍/">Java 之 Annotation(注解)介绍</a>
+      <a class="article-title" href="/2016/11/18/hibernate 的 CascadeType 属性/">hibernate 的 CascadeType 属性</a>
     </h1>
   
 
         
-        <a href="/2016/11/10/Java 之 Annotation(注解)介绍/" class="archive-article-date">
-  	<time datetime="2016-11-09T16:56:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
+        <a href="/2016/11/18/hibernate 的 CascadeType 属性/" class="archive-article-date">
+  	<time datetime="2016-11-17T16:12:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net//u011229848//article/details/53114684" target="_blank" rel="noopener">文章来源:Java 之 Annotation(注解)介绍</a></p>
-<h2 id="什么是-Annotation？-（注解-or-注释）"><a href="#什么是-Annotation？-（注解-or-注释）" class="headerlink" title="什么是 Annotation？ （注解 or 注释）"></a>什么是 Annotation？ （注解 or 注释）</h2><p>Annotation, 准确的翻译应该是 – 注解。 和注释的作用完全不一样。</p>
-<p>Annotation 是JDK5.0及以后版本引入的一个特性。 与类、接口、枚举是在同一个层次，可以成为<a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">Java</a> 的一个类型。</p>
-<p>语法是以@ 开头</p>
-<p>简单来说，</p>
-<p>注释是程序员对源代码的类，方法，属性等做的一些记忆或提示性描述(比如这个方法是做什么用的)，是给人来看的。</p>
-<p>注解则是Java 编译器可以理解的部分，是给编译器看的。<br></p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53208818" target="_blank" rel="noopener">文章来源:hibernate 的 CascadeType 属性</a></p>
+<p>今天同时遇到一个问题，级联保存的时候遇到Error : javax.persistence.EntityExistsException异常，查阅资料后发现是因为配置文件中一对多配置的CascadeType.PERSIST修改为CascadeType.MERGE 或者在方法上面添加事物的注解（暂时不知道这里添加事物注解能解决的原因）</p>
+<p>CascadeType.PERSIST只有A类新增时，会级联B对象新增。若B对象在数据库存（跟新）在则抛异常（让B变为持久态）CascadeType.MERGE指A类新增或者变化，会级联B对象（新增或者变化）CascadeType.REMOVE只有A类删除时，会级联删除B类；CascadeType.ALL包含所有；<br></p>
         
-          <a class="article-more-a" href="/2016/11/10/Java 之 Annotation(注解)介绍/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/18/hibernate 的 CascadeType 属性/#more">more >></a>
         
       
 
@@ -370,7 +385,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/Java 之 Annotation(注解)介绍/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/18/hibernate 的 CascadeType 属性/">展开全文 >></a>
         </p>
       
 
@@ -400,30 +415,110 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-什么是架构师" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/">ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/17/什么是架构师/">什么是架构师</a>
     </h1>
   
 
         
-        <a href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-08T14:57:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-08</time>
+        <a href="/2016/11/17/什么是架构师/" class="archive-article-date">
+  	<time datetime="2016-11-17T15:47:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53089615" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）</a></p>
-<p><br>查询系方法：<br><br>contains：判断元素是否包含另一个元素<br><br>child：从元素的直接子元素中选择与选择符匹配的元素<br><br>down：选择与选择符匹配的元素的子元素<br><br>first：选择元素第一个子元素<br><br>findParent：查找与简单选择符匹配的元素的父元素<br><br>findParentNode、up：查找与简单选择符匹配的元素的父元素</p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53208515" target="_blank" rel="noopener">文章来源:什么是架构师</a></p>
+<p>软件行业<a href="http://lib.csdn.net/base/architecture" title="大型网站架构知识库" target="_blank" rel="noopener">架构</a>师两个定义</p>
+<p>• 系统 架构师是一个既需要掌控整体又需要洞悉局部瓶颈并依据具体的业务场景给出解决方案的人。具体来说是一个确认和评估系统需求，给出开发规范，搭建系统实现的核心构架，并澄清技术细节、扫清主要难点的技术人员。主要着眼于系统的“技术实现”。因此他 / 她应该是特定的开发平台、语言、工具的大师，对常见应用场景能马上给出最恰当的解决方案，同时要对所属的开发团队有足够的了解，能够评估自己的团队实现特定的功能需求需要的代价。系统架构师负责设计系统整体架构，从需求到设计的每个细节都要考虑到，把握整个项目，使设计的项目尽量效率高，开发容易，维护方便，升级简单等。</p>
+<p>• 架构师是软件行业中一种新兴职业，工作职责是在一个软件项目开发过程中，将客户的需求转换为规范的开发计划及文本，并制定这个项目的总体架构，指导整个开发团队完成这个计划。架构师的主要任务不是从事具体的软件程序的编写，而是从事更高层次的开发构架工作。他必须对开发技术非常了解，并且需要有良好的组织管理能力 。</p>
+<h3 id="软件行业互联网与常规企业的区别"><a href="#软件行业互联网与常规企业的区别" class="headerlink" title="软件行业互联网与常规企业的区别"></a><a href=""></a>软件行业互联网与常规企业的区别</h3>
         
-          <a class="article-more-a" href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/17/什么是架构师/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WEB架构师成长之路</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/17/什么是架构师/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ext4 js自定义事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/17/ext4 js自定义事件/">ext4 js自定义事件</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/17/ext4 js自定义事件/" class="archive-article-date">
+  	<time datetime="2016-11-17T15:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53208240" target="_blank" rel="noopener">文章来源:ext4 js自定义事件（白鹤翔第一季）</a></p>
+<p><br>// 要利用观察者模式 去实现自定义的事件<br><br>//1：由于浏览器他自己能定义内置的事件(click/blur…)<br><br>// 我们也应该有一个类似于浏览器这样的类，这个类 自己去内部定义一些事件(自定义事件)<br><br>var Observable = function(){<br><br>//承装自己所定义的事件类型的<br><br>this.events = [‘start’,’stop’];</p>
+        
+          <a class="article-more-a" href="/2016/11/17/ext4 js自定义事件/#more">more >></a>
         
       
 
@@ -447,7 +542,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/17/ext4 js自定义事件/">展开全文 >></a>
         </p>
       
 
@@ -477,32 +572,30 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ext4 js添加事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/">ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/17/ext4 js添加事件/">ext4 js添加事件（白鹤翔第一季）</a>
     </h1>
   
 
         
-        <a href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-07T14:56:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-07</time>
+        <a href="/2016/11/17/ext4 js添加事件/" class="archive-article-date">
+  	<time datetime="2016-11-17T14:39:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53073861" target="_blank" rel="noopener">文章来源:ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）</a></p>
-<p><br>首先，什么是DOM（Document Object Model）</p>
-<p><br>W3C对DOM的定义：文档对象模型是一个平台，一个中立于语言的应用程序编程接口（API）,允许程序访问并更改文档的内容、结构和样式。</p>
-<p><br></p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53207918" target="_blank" rel="noopener">文章来源:ext4 js添加事件（白鹤翔第一季）</a></p>
+<p><br>原始的事件模型，也就是0级DOM事件模型。非常通俗的说，就是给HTML元素里加一个事件，这种方法有一个硬伤，就是不能同时对元素注册多个处理函数。<br><br>W3C的专家也知道这样不好，那么2级DOM事件模型也就产生了，也就是所谓的标准事件模型。API如下定义：<br><br>element.addEventListener(type,listener,useCapture);<br><br>element.removeEventListener(type,listener,useCapture);<br><br>W3C的专家把事件分成了3个阶段，也就是所谓的事件流：（1）捕获 （2）目标 （3）冒泡。<br></p>
         
-          <a class="article-more-a" href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/17/ext4 js添加事件/#more">more >></a>
         
       
 
@@ -526,7 +619,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/17/ext4 js添加事件/">展开全文 >></a>
         </p>
       
 
@@ -556,112 +649,41 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 学习笔记（八）[动态加载Js]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-WEB架构师成长之路" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/07/ext4 学习笔记（八）[动态加载Js]（白鹤翔第一季）/">ext4 学习笔记（八）[动态加载Js]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/16/WEB架构师成长之路/">WEB架构师成长之路</a>
     </h1>
   
 
         
-        <a href="/2016/11/07/ext4 学习笔记（八）[动态加载Js]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-07T14:38:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-07</time>
+        <a href="/2016/11/16/WEB架构师成长之路/" class="archive-article-date">
+  	<time datetime="2016-11-16T15:42:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53073246" target="_blank" rel="noopener">文章来源:ext4 学习笔记（八）[动态加载Js]（白鹤翔第一季）</a></p>
-<p>首先回顾一下Ext创建类，我们先创建一个window.Window组件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   Ext.create(<span class="string">'Ext.window.Window'</span>,&#123;</span><br><span class="line">	title:<span class="string">'我是一个窗口'</span>,</span><br><span class="line">	height:<span class="number">300</span> , </span><br><span class="line">	width:<span class="number">400</span> ,</span><br><span class="line">	constrain:<span class="literal">true</span> , </span><br><span class="line">	modal:<span class="literal">true</span> , </span><br><span class="line">	html:<span class="string">'我是窗体的内容!!!!'</span> , </span><br><span class="line">	renderTo:Ext.getBody()</span><br><span class="line">&#125;).show();</span><br></pre></td></tr></table></figure></p>
-<p>接下来我们自定义一个类：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   Ext.define(<span class="string">'MyWindow'</span> , &#123;</span><br><span class="line">	extend:<span class="string">'Ext.window.Window'</span> , <span class="comment">//继承Ext的window类</span></span><br><span class="line">	title:<span class="string">'我是一个窗口'</span>,</span><br><span class="line">	height:<span class="number">300</span> , </span><br><span class="line">	width:<span class="number">400</span> ,</span><br><span class="line">	constrain:<span class="literal">true</span> , </span><br><span class="line">	modal:<span class="literal">true</span> , </span><br><span class="line">	html:<span class="string">'我是窗体的内容!!!!'</span> , </span><br><span class="line">	renderTo:Ext.getBody()		</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>我们这个时候创建调用自定义类：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">   <span class="keyword">var</span> w1 = Ext.create(<span class="string">'MyWindow'</span>);</span><br><span class="line"><span class="keyword">var</span> w2 = Ext.create(<span class="string">'MyWindow'</span>,&#123;</span><br><span class="line">	title:<span class="string">'我是w2'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> w3 = Ext.create(<span class="string">'MyWindow'</span>,&#123;</span><br><span class="line">	itle:<span class="string">'我是w3'</span></span><br><span class="line">&#125;);</span><br><span class="line">w1.show();</span><br><span class="line">w2.show();</span><br><span class="line">w3.show();</span><br></pre></td></tr></table></figure></p>
-<p>大家可以看到我们调用自己定义的这个MyWindow很方便，但是如果这个MyWindow想用在整个项目，是不是我们需要把这个js单独提出，正常方式下引入这个js就可以，但是这样如果js很多，而且项目都加载也很庞大，所以我们来看一下Ext给我们提供的一种只有调用这个组件时才加载这个js的方式：<br>第一步：在js/extjs/添加文件夹 (ux)，在这个ux文件夹下 建立自己的组件所对应的js文件<br>第二步：在js/extjs/ux下编写自己的扩展的组件<br> 注意：这里路径是从项目根目录开始算，而且创建的类名一定要严格遵循包名层次路径编写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//define的类名，一点要严格按照包层次路径去编写</span></span><br><span class="line">Ext.define(<span class="string">'js.extjs.ux.MyWindow'</span>,&#123;</span><br><span class="line">		extend:<span class="string">'Ext.window.Window'</span> , <span class="comment">//继承Ext的window类</span></span><br><span class="line">		title:<span class="string">'我是动态加载进来的组件'</span>,</span><br><span class="line">		height:<span class="number">300</span> , </span><br><span class="line">		width:<span class="number">400</span> ,</span><br><span class="line">		constrain:<span class="literal">true</span> , </span><br><span class="line">		modal:<span class="literal">true</span> , </span><br><span class="line">		html:<span class="string">'我是窗体的内容!!!!'</span> , </span><br><span class="line">		renderTo:Ext.getBody()	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>第三步：启用ext动态加载的机制 并设置要加载的路径 paths可配置多个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">   Ext.Loader.setConfig(&#123;</span><br><span class="line">	enabled:<span class="literal">true</span> ,</span><br><span class="line">	paths:&#123;</span><br><span class="line">		myux:<span class="string">'js/extjs/ux'</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>第四步：创建类的实例并使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ext.create(<span class="string">'js.extjs.ux.MyWindow'</span>).show();</span><br></pre></td></tr></table></figure></p>
-<p>在这里我们如果卟使用这个类，js/extjs/ux下的MyWindow.js文件不会被加载哦 这就是Ext提供的动态加载js方式，<br>需要注意的地方就是一定要按照包层次路径编写。</p>
-<p>好了，这个比较简单，以后还会涉及，现在就暂时先到这里吧。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/07/ext4 学习笔记（八）[动态加载Js]（白鹤翔第一季）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53193217" target="_blank" rel="noopener">文章来源:WEB架构师成长之路</a></p>
+<p>特别说明，从下面一行全是转载,…</p>
+<p>原文地址：<a href="http://www.cnblogs.com/seesea125/archive/2012/03/30/2425281.html" target="_blank" rel="noopener">http://www.cnblogs.com/seesea125/archive/2012/03/30/2425281.html</a></p>
+<p>对原文一些内容做一些修改，感谢作者，尊重原著。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h2><p>1、走正确的路</p>
+<p>如果想成为一个<a href="http://lib.csdn.net/base/architecture" title="大型网站架构知识库" target="_blank" rel="noopener">架构</a>师，就必须走正确的路，否则离目标越来越远，正在辛苦工作的程序员们，你们有没有下面几种感觉？</p>
+<p>一、我的工作就是按时完成领导交给我的任务，至于代码写的怎样，知道有改进空间，但没时间去改进，关键是领导也不给时间啊。</p>
+<p>二、我发现我的水平总是跟不上技术的进步，有太多想学的东西要学，<a href="http://lib.csdn.net/base/jquery" title="jQuery知识库" target="_blank" rel="noopener">jQuery</a>用的人最近比较多啊，听说最近MVC比较火，还有LINQ，听说微软又有Silverlight了……</p>
+<p>三、 我发现虽然我工作几年了，除了不停的coding，Ctrl+c和Ctrl+V更熟练了，但编码水平并没有提高，还是一个普通程序员，但有人已经做到架构师了。</p>
+<p>四、工作好几年了，想跳槽换个工作，结果面试的考官都问了一些什么<a href="http://lib.csdn.net/base/datastructure" title="算法与数据结构知识库" target="_blank" rel="noopener">数据结构</a>，什么垃圾回收，什么设计模式之类的东西，虽然看过，但是平时用不着，看了也忘记了，回答不上来，结果考官说我基础太差。。。</p>
+<p>有没有，如果没有，接下来就不用看了，你一定是大拿了，或者已经明白其中之道了，呵呵。</p>
+<p>如果有，恭喜你，你进入学习误区了，如果想在技术上前进的话，就不能一直的coding，为了完成需求而工作，必须在coding的同时，让我们的思维，水平也在不停的提高。</p>
+<p><strong>写代码要经历下面几个阶段：</strong><br></p>
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/">ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-05T15:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53048487" target="_blank" rel="noopener">文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）</a></p>
-<p>Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：<br></p>
-        
-          <a class="article-more-a" href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/16/WEB架构师成长之路/#more">more >></a>
         
       
 
@@ -675,7 +697,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">WEB架构师成长之路</a>
         		</li>
       		
 		</ul>
@@ -685,7 +707,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/16/WEB架构师成长之路/">展开全文 >></a>
         </p>
       
 
@@ -715,30 +737,34 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java中instanceof，isInstance ，isAssignableForm的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/03/ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）/">ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/16/java中instanceof，isInstance ，isAssignableForm的使用/">java中instanceof，isInstance ，isAssignableForm的使用</a>
     </h1>
   
 
         
-        <a href="/2016/11/03/ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-03T14:51:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-03</time>
+        <a href="/2016/11/16/java中instanceof，isInstance ，isAssignableForm的使用/" class="archive-article-date">
+  	<time datetime="2016-11-16T15:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53027050" target="_blank" rel="noopener">文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）</a></p>
-<p>Ext.js方法详解：<br>Ext.apply&amp;Ext.applyIf<br>Ext.extend<br>typeOf<br>isEmpty、isIterable、isFunction、isArray…<br>Iterate<br>Ext.apply &amp; Ext.applyIf<br></p>
+        <p><a href="http://blog.csdn.net//u011229848//article/details/53192954" target="_blank" rel="noopener">文章来源:java中instanceof，isInstance ，isAssignableForm的使用</a></p>
+<h2 id="java中instanceof，isInstance，isAssignableForm的使用"><a href="#java中instanceof，isInstance，isAssignableForm的使用" class="headerlink" title="java中instanceof，isInstance，isAssignableForm的使用"></a>java中instanceof，isInstance，isAssignableForm的使用</h2><ol>
+<li><strong>instanceof</strong></li>
+</ol>
+<hr>
+<p><strong>介绍：</strong> java的关键词之一，反射过程中常常调用。<br><strong>语法：</strong> A instanceof B ，翻译为 A是B的实例<br><strong>用法： a</strong> （a：实例化后的对象） <strong>instanceof B</strong> （B：ClassName，类名）<br><strong>举例：</strong><br><em>String s =””;</em><br><em>s instanceof Object;</em><br></p>
         
-          <a class="article-more-a" href="/2016/11/03/ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/16/java中instanceof，isInstance ，isAssignableForm的使用/#more">more >></a>
         
       
 
@@ -752,7 +778,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -762,7 +788,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/03/ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/16/java中instanceof，isInstance ，isAssignableForm的使用/">展开全文 >></a>
         </p>
       
 
@@ -792,97 +818,30 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/03/ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）/">ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/">ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）</a>
     </h1>
   
 
         
-        <a href="/2016/11/03/ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-02T16:05:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-03</time>
+        <a href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/" class="archive-article-date">
+  	<time datetime="2016-11-16T15:07:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53014129" target="_blank" rel="noopener">文章来源:ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）</a></p>
-<p><br>说明：<br><br>（1）本文章是针对于ExtJs 4.X ，文章中出现的5版本只是我引入的文件是ExtJs.5.0,并不是文章是基于5版本，文章是4版本的<br><br>定义类的方法：define<br><br>对于Ext4.X版本来说，采用了新定义类的define方法，而不是延续旧版本的extend方法，那么对于定义一个新的类。我们来了解下define的使用。<br><br>Ext.define(classname,properties,callback)<br></p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53192905" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）</a></p>
+<p><br>Ext.dom.Query 嗯，这个类一共提供了8个方法供开发人员去使用。<br><br>要说最常用的方法，无非就是Ext.query这个方法，之前我们已经简单接触过了这个方法，下面是此方法的详细使用规则：<br><br>1.基本选择器（简单选择器） id选择器 css的类选择器 标签选择器<br><br>2属性选择器<br><br>3.伪类选择器（也可以说是相当于JQ过滤选择器）<br></p>
         
-          <a class="article-more-a" href="/2016/11/03/ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/03/ext4 学习笔记（五）[Ext.define 新建类]（白鹤翔第一季）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/02/ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）/">ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/02/ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-01T16:34:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53002900" target="_blank" rel="noopener">文章来源:ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）</a></p>
-<p>windowGroup对象 操作window组</p>
-<p>重点分析：该实例主要目的针对于特殊需求进行具体的实现，利用windowGroup去操作多个窗体同步执行某些任务，这有点类似于javascript里的组合模式，原理就是上级负责执行一个动作但并不真正去执行，而是分别传递给所有的下级组件去具体执行。<br></p>
-        
-          <a class="article-more-a" href="/2016/11/02/ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）/#more">more >></a>
+          <a class="article-more-a" href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/#more">more >></a>
         
       
 
@@ -906,7 +865,84 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/02/ext4 学习笔记（四） [Ext.windowGroup]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/">ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/" class="archive-article-date">
+  	<time datetime="2016-11-16T14:43:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53192709" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）</a></p>
+<p><br>Ext为了更加的方便我们去操作DOM元素，特提供了DomHelper这个辅助的工具类。下面我们就一起学习下DomHelper<br><br>首先从API来看，这个类暴露出的public方法并不是特别多。仅仅13个方法而已。如果想生成dom节点，在这里不建议使用原生的方法去生成dom节点，原因是代码量比较大的时候性能比较低、其二是自己组装HTML字符串比较麻烦。在Ext里，DomHelper对象类似一个元素生成器，用于解决此类问题。一般的javascript框架底层都会有生成html代码的类似功能函数。<br>DomHelper常用方法：<br><br>createHtml或markup方法<br>createDom方法<br>append方法<br>insertHTML方法<br>overwrite方法<br>createTemplate方法<br>applyStyles方法<br></p>
+        
+          <a class="article-more-a" href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/">展开全文 >></a>
         </p>
       
 
@@ -938,7 +974,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 
@@ -950,7 +986,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 cusn-cmh
+    		&copy; 2017 cusn-cmh
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1029,6 +1065,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">birt</a>
               </li>
              
@@ -1037,19 +1077,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,6 +1117,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WEB架构师成长之路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">jstl</a>
               </li>
              
@@ -1093,7 +1137,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color3">struts1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">假分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">case when</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他，在线工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记住我</a>
               </li>
              
               <li class="article-tag-list-item">

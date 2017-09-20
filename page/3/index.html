@@ -164,6 +164,471 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sql查询表默认约束 删除和添加约束" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/15/sql查询表默认约束 删除和添加约束/">sql查询表默认约束 删除和添加约束</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/15/sql查询表默认约束 删除和添加约束/" class="archive-article-date">
+  	<time datetime="2018-05-15T11:33:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/80328066" target="_blank" rel="noopener">文章来源:sql查询表默认约束 删除和添加约束</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. <span class="keyword">declare</span>@namevarchar(<span class="number">100</span>)</span><br><span class="line"><span class="number">1.</span> <span class="comment">--DF为约束名称前缀</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">select</span>@<span class="keyword">name</span>=b.namefromsyscolumns a,sysobjects bwherea.id=object_id(<span class="string">'表名'</span>)andb.id=a.cdefaultanda.name=<span class="string">'字段名'</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">select</span>@<span class="keyword">name</span></span><br><span class="line"><span class="number">1.</span> <span class="comment">--删除约束</span></span><br><span class="line"><span class="number">1.</span> altertableOaNewdropconstraintDF__OaNews__NewsTitl__72C60C4A<span class="comment">--删约束</span></span><br><span class="line"><span class="number">1.</span> altertableOaNewaltercolumnNewsTitle <span class="keyword">nvarchar</span>(<span class="number">250</span>)<span class="comment">--改类型,如果原先是300 varchar 就要改成 300nvarchar 不改会转换失败</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">USE</span> [数据库名称] <span class="comment">--添加约束,可以找到约束 右键脚本create到新建查询窗口</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">GO</span></span><br><span class="line"><span class="number">1.</span> ALTERTABLE[dbo].表名ADDCONSTRAINTDF__OaNews__NewsTitl__72C60C4ADEFAULT(<span class="string">''</span>)<span class="keyword">FOR</span>[字段名]</span><br><span class="line"><span class="number">1.</span> <span class="keyword">GO</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">USE</span> [数据库名称]</span><br><span class="line"><span class="number">1.</span> <span class="keyword">GO</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/15/sql查询表默认约束 删除和添加约束/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-oracle kill session 升级版" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/27/oracle kill session 升级版/">oracle kill session 升级版</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/27/oracle kill session 升级版/" class="archive-article-date">
+  	<time datetime="2018-04-27T08:57:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848/article/details/80110433" target="_blank" rel="noopener">文章来源:oracle kill session 升级版</a></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.object_id, a.session_id, b.object_name, c.* <span class="keyword">FROM</span> v$locked_object a, dba_objects b, v$<span class="keyword">session</span> c</span><br><span class="line"><span class="keyword">WHERE</span> a.object_id = b.object_id <span class="keyword">AND</span> a.SESSION_ID = c.sid(+);</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'11,314'</span>;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/27/oracle kill session 升级版/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-解决Cannot change version of project facet Dynamic web module to 3.0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/解决Cannot change version of project facet Dynamic web module to 3.0/">解决Cannot change version of project facet Dynamic web module to 3.0</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/08/解决Cannot change version of project facet Dynamic web module to 3.0/" class="archive-article-date">
+  	<time datetime="2017-11-08T07:20:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78479168" target="_blank" rel="noopener">文章来源:解决Cannot change version of project facet Dynamic web module to 3.0</a></p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>用Eclipse创建Maven结构的web项目的时候选择了Artifact Id为maven-artchetype-webapp，由于这个catalog比较老，用的servlet还是2.3的，而一般现在都是用3.0，在Project Facets里面修改Dynamic web module为3.0的时候就会出现Cannot change version of project facet Dynamic web module to 3.0，如图：</p>
+<p>其实在右边可以看到改到3.0需要的条件以及有冲突的facets，4</p>
+<h1 id="解决这个问题的步骤如下："><a href="#解决这个问题的步骤如下：" class="headerlink" title="解决这个问题的步骤如下："></a>解决这个问题的步骤如下：</h1><h2 id="1-把Servlet改成3-0，打开项目的web-xml"><a href="#1-把Servlet改成3-0，打开项目的web-xml" class="headerlink" title="1.把Servlet改成3.0，打开项目的web.xml"></a>1.把Servlet改成3.0，打开项目的web.xml</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xmlns:web</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span> <span class="attr">version</span>=<span class="string">"3.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-修改项目的设置，在Navigator下打开项目-settings目录下的org-eclipse-jdt-core-prefs"><a href="#2-修改项目的设置，在Navigator下打开项目-settings目录下的org-eclipse-jdt-core-prefs" class="headerlink" title="2.修改项目的设置，在Navigator下打开项目.settings目录下的org.eclipse.jdt.core.prefs"></a>2.修改项目的设置，在Navigator下打开项目.settings目录下的org.eclipse.jdt.core.prefs</h2>
+        
+          <a class="article-more-a" href="/2017/11/08/解决Cannot change version of project facet Dynamic web module to 3.0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">eclipse</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/08/解决Cannot change version of project facet Dynamic web module to 3.0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-spring在非controlle项目中获取当前request" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/spring在非controlle项目中获取当前request/">spring在非controlle项目中获取当前request</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/08/spring在非controlle项目中获取当前request/" class="archive-article-date">
+  	<time datetime="2017-11-08T02:43:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78475956" target="_blank" rel="noopener">文章来源:spring在非controlle项目中获取当前request</a></p>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/78475956" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/78475956</a></p>
+<h2 id="spring在非controlle项目中获取当前request"><a href="#spring在非controlle项目中获取当前request" class="headerlink" title="spring在非controlle项目中获取当前request"></a>spring在非controlle项目中获取当前request</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> HttpServletRequest <span class="title">getCurrentRequest</span><span class="params">()</span> <span class="keyword">throws</span> IllegalStateException </span>&#123;</span><br><span class="line">    ServletRequestAttributes requestAttrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">    <span class="keyword">if</span> (requestAttrs == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"当前线程中不存在 Request 上下文"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> requestAttrs.getRequest();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/08/spring在非controlle项目中获取当前request/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/03/java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）/">java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/03/java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）/" class="archive-article-date">
+  	<time datetime="2017-11-03T06:07:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848//article/details/78434914" target="_blank" rel="noopener">文章来源:java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）</a></p>
+<p>java开发中经常遇到对图片的处理，JDK中也提供了对应的工具类，不过处理起来很麻烦，Thumbnailator是一个优秀的图片处理的开源Java类库,处理效果远比Java API的好，从API提供现有的图像文件和图像对象的类中简化了处理过程，两三行代码就能够从现有图片生成处理后的图片，且允许微调图片的生成方式，同时保持了需要写入的最低限度的代码量。还支持对一个目录的所有图片进行批量处理操作，下边就和大家分享一下java中用Thumbnailator做图片各种处理的方法.</p>
+<p>jar自己网上下载一下，maven的话添加依赖即可<br></p>
+        
+          <a class="article-more-a" href="/2017/11/03/java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/03/java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Word字体的字号与磅值(pt)对应" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/23/Word字体的字号与磅值(pt)对应/">Word字体的字号与磅值(pt)对应</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/23/Word字体的字号与磅值(pt)对应/" class="archive-article-date">
+  	<time datetime="2017-10-23T03:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78317333" target="_blank" rel="noopener">文章来源:Word字体的字号与磅值(pt)对应</a></p>
+<h3 id="原文来源于http-xdeduzb-blog-163-com-blog-static-819936372010731167784"><a href="#原文来源于http-xdeduzb-blog-163-com-blog-static-819936372010731167784" class="headerlink" title="原文来源于http://xdeduzb.blog.163.com/blog/static/819936372010731167784/"></a>原文来源于<a href="http://xdeduzb.blog.163.com/blog/static/819936372010731167784/" target="_blank" rel="noopener">http://xdeduzb.blog.163.com/blog/static/819936372010731167784/</a></h3><h3 id="字号码-磅值-pt"><a href="#字号码-磅值-pt" class="headerlink" title="字号码 磅值(pt)"></a>字号码 磅值(pt)</h3><p><br>八号 5<br><br>七号 5.5<br><br>小六 6.5<br><br>六号 7.5<br><br>小五 9<br><br>五号 10.5<br><br>小四 12<br><br>四号 14<br><br>小三 15<br><br>三号 16<br><br>小二 18<br><br>二号 22<br><br>小一 24<br><br>一号 26<br><br>小初 36<br><br>初号 42</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/23/Word字体的字号与磅值(pt)对应/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-oracle数据库密码有效期设置为无限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -479,482 +944,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-FetchType与FetchMode的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/FetchType与FetchMode的区别/">FetchType与FetchMode的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/16/FetchType与FetchMode的区别/" class="archive-article-date">
-  	<time datetime="2017-10-16T06:27:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/78249338" target="_blank" rel="noopener">文章来源:FetchType与FetchMode的区别</a></p>
-<p>原文出处：<a href="http://fantasy-lixk.iteye.com/blog/1602797" target="_blank" rel="noopener">http://fantasy-lixk.iteye.com/blog/1602797</a></p>
-<p>使用例：</p>
-<p>@OneToMany(mappedBy=”item”,cascade=CascadeType.ALL,fetch=FetchType.EAGER)</p>
-<p>@Fetch(value=FetchMode.SUBSELECT)</p>
-<p>两者比较：<br></p>
-        
-          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Maven中如何配置WAR依赖WAR包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/">Maven中如何配置WAR依赖WAR包</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/11/Maven中如何配置WAR依赖WAR包/" class="archive-article-date">
-  	<time datetime="2017-10-11T01:15:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net//u011229848/article/details/78199846" target="_blank" rel="noopener">文章来源:Maven中如何配置WAR依赖WAR包</a></p>
-<p><strong>项目背景：</strong></p>
-<p>1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
-<p>2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
-<p>3.每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
-<p>4.最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class<br></p>
-        
-          <a class="article-more-a" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浅谈oracle中row_number() over()分析函数用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/">浅谈oracle中row_number() over()分析函数用法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/" class="archive-article-date">
-  	<time datetime="2017-09-25T09:08:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/78087198" target="_blank" rel="noopener">文章来源:浅谈oracle中row_number() over()分析函数用法</a></p>
-<p><br>row_number()over(partition by col1 order by col2)表示根据col1分组，在分组内部根据col2排序，而此函数计算的值就表示每组内部排序后的顺序编号（组内连续的唯一的）。<br><br>与rownum的区别在于：使用rownum进行排序的时候是先对结果集加入伪劣rownum然后再进行排序，而此函数在包含排序从句后是先排序再计算行号码。<br><br>row_number()和rownum差不多，功能更强一点（可以在各个分组内从1开始排序）。</p>
-        
-          <a class="article-more-a" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Oracle和plsql developer编码设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/20/Oracle和plsql developer编码设置/">Oracle和plsql developer编码设置</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/20/Oracle和plsql developer编码设置/" class="archive-article-date">
-  	<time datetime="2017-09-19T16:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/78039477" target="_blank" rel="noopener">文章来源:Oracle和plsql developer编码设置</a></p>
-<p>在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。</p>
-<p>一、查看和修改oracle数据库字符集</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual; <span class="comment">--查询结果：</span></span><br></pre></td></tr></table></figure>
-<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中）<br></p>
-        
-          <a class="article-more-a" href="/2017/09/20/Oracle和plsql developer编码设置/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/20/Oracle和plsql developer编码设置/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-oracle创建用户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/04/oracle创建用户/">oracle创建用户</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/04/oracle创建用户/" class="archive-article-date">
-  	<time datetime="2017-09-04T07:34:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/82384461" target="_blank" rel="noopener">文章来源:oracle创建用户</a></p>
-<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/82384461" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/82384461</a></p>
-<p>创建表空间<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">tablespace</span> ZJ2BDC <span class="keyword">datafile</span> <span class="string">'d:\app\Administrator\product\11.2.0\dbhome_1\oracore\ORCL\ZJ2BDC.DBF'</span> <span class="keyword">size</span> <span class="number">4096</span>m <span class="keyword">autoextend</span> <span class="keyword">on</span> <span class="keyword">next</span> <span class="number">5</span>m <span class="keyword">extent</span> <span class="keyword">management</span> <span class="keyword">local</span>;</span><br></pre></td></tr></table></figure></p>
-<p>创建用户<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> REDDATA <span class="keyword">identified</span> <span class="keyword">by</span> xqx1234 <span class="keyword">default</span> <span class="keyword">tablespace</span> ZJ2BDC;</span><br></pre></td></tr></table></figure></p>
-<p>授予权限<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> REDDATA;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/04/oracle创建用户/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-kill ORACLE中正在运行的存储过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/11/kill ORACLE中正在运行的存储过程/">kill ORACLE中正在运行的存储过程</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/11/kill ORACLE中正在运行的存储过程/" class="archive-article-date">
-  	<time datetime="2017-05-11T10:52:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net//u011229848//article/details/71668877" target="_blank" rel="noopener">文章来源:kill ORACLE中正在运行的存储过程</a></p>
-<p>kill ORACLE中正在运行的存储过程<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v$<span class="keyword">access</span> o <span class="keyword">where</span> o.OBJECT <span class="keyword">like</span> <span class="string">'P_BDC2ZJ_FC%'</span> <span class="comment">--查找正在运行的对象,获取sid</span></span><br><span class="line"><span class="keyword">select</span> a.serial/# <span class="keyword">from</span> v$<span class="keyword">session</span> a <span class="keyword">WHERE</span> A.SID=<span class="keyword">sid</span> <span class="comment">--通过sid 获取serial/#</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'sid,serial/#'</span> <span class="comment">--eg: alter system kill session '123,3211'</span></span><br></pre></td></tr></table></figure></p>
-<p>查找死锁<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sql_text,s.sid,s.SERIAL/# <span class="keyword">from</span> v$<span class="keyword">sql</span> <span class="keyword">sql</span> <span class="keyword">inner</span> <span class="keyword">join</span> v$<span class="keyword">session</span> s <span class="keyword">on</span> sql.hash_value=s.sql_hash_value</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">sid</span> <span class="keyword">in</span> (<span class="keyword">select</span> session_id <span class="keyword">from</span> v$locked_object)</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/11/kill ORACLE中正在运行的存储过程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -966,7 +958,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 cusn-cmh
+    		&copy; 2017 cusn-cmh
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -1045,6 +1037,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">birt</a>
               </li>
              
@@ -1053,19 +1049,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1097,6 +1089,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">WEB架构师成长之路</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">jstl</a>
               </li>
              
@@ -1109,7 +1109,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+                <a href="javascript:void(0)" class="js-tag color3">struts1</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tomcat</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">假分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">eclipse</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">case when</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">其他，在线工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">记住我</a>
               </li>
              
               <li class="article-tag-list-item">
