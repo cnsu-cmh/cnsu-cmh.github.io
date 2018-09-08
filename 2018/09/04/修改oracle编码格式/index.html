@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://cusn-cmh.github.io">
   <title>修改oracle编码格式 | cusn-cmh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章来源:修改oracle编码格式 文章参照：https://www.jb51.net/article/53078.htm 1.查看oracle当前编码格式：SELECT /* FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL; NLS_CHARACTE">
+  <meta name="description" content="文章来源:修改oracle编码格式 文章参照：https://www.jb51.net/article/53078.htm 1.查看oracle当前编码格式：SELECT * FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL; NLS_CHARACTER">
 <meta name="keywords" content="oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="修改oracle编码格式">
 <meta property="og:url" content="https://cusn-cmh.github.io/2018/09/04/修改oracle编码格式/index.html">
 <meta property="og:site_name" content="cusn-cmh">
-<meta property="og:description" content="文章来源:修改oracle编码格式 文章参照：https://www.jb51.net/article/53078.htm 1.查看oracle当前编码格式：SELECT /* FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL; NLS_CHARACTE">
+<meta property="og:description" content="文章来源:修改oracle编码格式 文章参照：https://www.jb51.net/article/53078.htm 1.查看oracle当前编码格式：SELECT * FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL; NLS_CHARACTER">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2015-12-09T13:36:46.755Z">
+<meta property="og:updated_time" content="2018-09-08T15:24:06.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="修改oracle编码格式">
-<meta name="twitter:description" content="文章来源:修改oracle编码格式 文章参照：https://www.jb51.net/article/53078.htm 1.查看oracle当前编码格式：SELECT /* FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL; NLS_CHARACTE">
+<meta name="twitter:description" content="文章来源:修改oracle编码格式 文章参照：https://www.jb51.net/article/53078.htm 1.查看oracle当前编码格式：SELECT * FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL; NLS_CHARACTER">
   
     <link rel="alternative" href="/atom.xml" title="cusn-cmh" type="application/atom+xml">
   
@@ -185,10 +185,9 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net/qq_1017097573/article/details/82384022" target="_blank" rel="noopener">文章来源:修改oracle编码格式</a></p>
 <p>文章参照：<a href="https://www.jb51.net/article/53078.htm" target="_blank" rel="noopener">https://www.jb51.net/article/53078.htm</a></p>
-<p>1.查看oracle当前编码格式：<br>SELECT /* FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL;</p>
+<p>1.查看oracle当前编码格式：<br>SELECT * FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL;</p>
 <p>NLS_CHARACTERSET AL32UTF8</p>
-<p>SIMPLIFIED CHINESE_CHINA.AL32UTF8</p>
-<p>2.以sysdba身份登录</p>
+<p>SIMPLIFIED CHINESE_CHINA.AL32UTF8<br><a id="more"></a><br>2.以sysdba身份登录</p>
 <p>3.关闭数据库 shutdown immediate;</p>
 <p>4.以mount打来数据库，startup mount</p>
 <p>5.设置session<br>SQL&gt;ALTER SYSTEM ENABLE RESTRICTED SESSION; SQL&gt; ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0; SQL&gt; ALTER SYSTEM SET AQ_TM_PROCESSES=0;</p>
@@ -502,11 +501,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,15 +513,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,10 +534,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">

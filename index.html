@@ -262,23 +262,12 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net/qq_1017097573/article/details/82384022" target="_blank" rel="noopener">文章来源:修改oracle编码格式</a></p>
 <p>文章参照：<a href="https://www.jb51.net/article/53078.htm" target="_blank" rel="noopener">https://www.jb51.net/article/53078.htm</a></p>
-<p>1.查看oracle当前编码格式：<br>SELECT /* FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL;</p>
+<p>1.查看oracle当前编码格式：<br>SELECT * FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL;</p>
 <p>NLS_CHARACTERSET AL32UTF8</p>
-<p>SIMPLIFIED CHINESE_CHINA.AL32UTF8</p>
-<p>2.以sysdba身份登录</p>
-<p>3.关闭数据库 shutdown immediate;</p>
-<p>4.以mount打来数据库，startup mount</p>
-<p>5.设置session<br>SQL&gt;ALTER SYSTEM ENABLE RESTRICTED SESSION; SQL&gt; ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0; SQL&gt; ALTER SYSTEM SET AQ_TM_PROCESSES=0;</p>
-<p>6.启动数据库</p>
-<p>alter database open;</p>
-<p>7.修改字符集</p>
-<p>ALTER DATABASE CHARACTER SET ZHS16GBK;</p>
-<p>提示我们的字符集：新字符集必须为旧字符集的超集:</p>
-<p>ALTER DATABASE character set INTERNAL_USE ZHS16GBK;</p>
-<p>8.关闭，重新启动</p>
-<p>shutdown immediate;</p>
-<p>startup</p>
-
+<p>SIMPLIFIED CHINESE_CHINA.AL32UTF8<br></p>
+        
+          <a class="article-more-a" href="/2018/09/04/修改oracle编码格式/#more">more >></a>
+        
       
 
       
@@ -353,13 +342,9 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848/article/details/81902398" target="_blank" rel="noopener">文章来源:MybatisPlus QueryWrapper and or 连用</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;User&gt; userWrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;();</span><br><span class="line">String type = (String) map.get(<span class="string">"type"</span>);</span><br><span class="line"><span class="keyword">if</span>(StringUtils.isNotBlank(type)) &#123;</span><br><span class="line">    userWrapper.eq(<span class="string">"is_admin"</span>, <span class="string">"admin"</span>.equals(type) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line">String keys = (String) map.get(<span class="string">"key"</span>);</span><br><span class="line"><span class="keyword">if</span>(StringUtils.isNotBlank(keys)) &#123;</span><br><span class="line">    userWrapper.and(wrapper -&gt; wrapper.like(<span class="string">"login_name"</span>, keys).or().like(<span class="string">"tel"</span>, keys).or().like(<span class="string">"email"</span>, keys));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>控制台sql打印为：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">        <span class="keyword">id</span>,</span><br><span class="line">        login_name <span class="keyword">AS</span> loginName,</span><br><span class="line">        nick_name <span class="keyword">AS</span> nickName,</span><br><span class="line">        <span class="keyword">password</span>,</span><br><span class="line">        <span class="keyword">salt</span>,</span><br><span class="line">        tel,</span><br><span class="line">        email,</span><br><span class="line">        <span class="keyword">locked</span>,</span><br><span class="line">        is_admin <span class="keyword">AS</span> adminUser,</span><br><span class="line">        icon,</span><br><span class="line">        create_by <span class="keyword">AS</span> createId,</span><br><span class="line">        create_date <span class="keyword">AS</span> createDate,</span><br><span class="line">        update_by <span class="keyword">AS</span> updateId,</span><br><span class="line">        update_date <span class="keyword">AS</span> updateDate,</span><br><span class="line">        del_flag <span class="keyword">AS</span> delFlag,</span><br><span class="line">        remarks </span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        sys_user </span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">        is_admin = <span class="number">0</span> </span><br><span class="line">        <span class="keyword">AND</span> (</span><br><span class="line">            login_name <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">            <span class="keyword">OR</span> tel <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">            <span class="keyword">OR</span> email <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
-<p>切记不能丢了and</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userWrapper.like(<span class="string">"login_name"</span>, keys).or().like(<span class="string">"tel"</span>, keys).or().like(<span class="string">"email"</span>, keys)</span><br><span class="line">userWrapper.eq(<span class="string">"is_admin"</span>, <span class="string">"admin"</span>.equals(type) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
-<p>这个条件是不带括号的</p>
-<p>WHERE<br>is_admin = 0<br>AND login_name LIKE ‘%j%’<br>OR tel LIKE ‘%j%’<br>OR email LIKE ‘%j%’</p>
-<h3 id="or-Function-lt-This-This-gt-func-and-Function-lt-This-This-gt-func-会为func返回的条件添加括号-or-sql…-and-…"><a href="#or-Function-lt-This-This-gt-func-and-Function-lt-This-This-gt-func-会为func返回的条件添加括号-or-sql…-and-…" class="headerlink" title="or(Function&lt;This, This&gt; func), and(Function&lt;This, This&gt; func) 会为func返回的条件添加括号 or(sql…) and(…)"></a><strong><font color="red">or(Function&lt;This, This&gt; func), and(Function&lt;This, This&gt; func) 会为func返回的条件添加括号 or(sql…) and(…)</font></strong></h3>
+        
+          <a class="article-more-a" href="/2018/08/21/MybatisPlus QueryWrapper and or 连用/#more">more >></a>
+        
       
 
       
@@ -1154,11 +1139,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1166,15 +1151,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1183,10 +1172,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">

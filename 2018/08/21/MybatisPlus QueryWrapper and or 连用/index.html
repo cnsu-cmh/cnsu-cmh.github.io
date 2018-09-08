@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:MybatisPlus QueryWrapper and or 连用 123456789QueryWrapper&amp;lt;User&amp;gt; userWrapper = new QueryWrapper&amp;lt;&amp;gt;();String type = (String) map.get(&quot;type&quot;);if(StringUtils.isNotBlank(type)) &amp;#123;    use">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-17T12:32:45.833Z">
+<meta property="og:updated_time" content="2018-09-08T15:24:54.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MybatisPlus QueryWrapper and or 连用">
 <meta name="twitter:description" content="文章来源:MybatisPlus QueryWrapper and or 连用 123456789QueryWrapper&amp;lt;User&amp;gt; userWrapper = new QueryWrapper&amp;lt;&amp;gt;();String type = (String) map.get(&quot;type&quot;);if(StringUtils.isNotBlank(type)) &amp;#123;    use">
@@ -185,6 +185,7 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848/article/details/81902398" target="_blank" rel="noopener">文章来源:MybatisPlus QueryWrapper and or 连用</a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;User&gt; userWrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;();</span><br><span class="line">String type = (String) map.get(<span class="string">"type"</span>);</span><br><span class="line"><span class="keyword">if</span>(StringUtils.isNotBlank(type)) &#123;</span><br><span class="line">    userWrapper.eq(<span class="string">"is_admin"</span>, <span class="string">"admin"</span>.equals(type) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line">String keys = (String) map.get(<span class="string">"key"</span>);</span><br><span class="line"><span class="keyword">if</span>(StringUtils.isNotBlank(keys)) &#123;</span><br><span class="line">    userWrapper.and(wrapper -&gt; wrapper.like(<span class="string">"login_name"</span>, keys).or().like(<span class="string">"tel"</span>, keys).or().like(<span class="string">"email"</span>, keys));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>控制台sql打印为：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">        <span class="keyword">id</span>,</span><br><span class="line">        login_name <span class="keyword">AS</span> loginName,</span><br><span class="line">        nick_name <span class="keyword">AS</span> nickName,</span><br><span class="line">        <span class="keyword">password</span>,</span><br><span class="line">        <span class="keyword">salt</span>,</span><br><span class="line">        tel,</span><br><span class="line">        email,</span><br><span class="line">        <span class="keyword">locked</span>,</span><br><span class="line">        is_admin <span class="keyword">AS</span> adminUser,</span><br><span class="line">        icon,</span><br><span class="line">        create_by <span class="keyword">AS</span> createId,</span><br><span class="line">        create_date <span class="keyword">AS</span> createDate,</span><br><span class="line">        update_by <span class="keyword">AS</span> updateId,</span><br><span class="line">        update_date <span class="keyword">AS</span> updateDate,</span><br><span class="line">        del_flag <span class="keyword">AS</span> delFlag,</span><br><span class="line">        remarks </span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        sys_user </span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">        is_admin = <span class="number">0</span> </span><br><span class="line">        <span class="keyword">AND</span> (</span><br><span class="line">            login_name <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">            <span class="keyword">OR</span> tel <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">            <span class="keyword">OR</span> email <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
 <p>切记不能丢了and</p>
@@ -500,11 +501,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,15 +513,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,10 +534,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">maven</a>
               </li>
              
               <li class="article-tag-list-item">
