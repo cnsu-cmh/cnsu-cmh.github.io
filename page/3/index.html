@@ -164,28 +164,30 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-ext4 js 模拟EventManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-oracle 解锁表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/ext4 js 模拟EventManager/">ext4 js 模拟EventManager（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/10/17/oracle 解锁表/">oracle 解锁表</a>
     </h1>
   
 
         
-        <a href="/2016/11/19/ext4 js 模拟EventManager/" class="archive-article-date">
-  	<time datetime="2016-11-19T13:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
+        <a href="/2017/10/17/oracle 解锁表/" class="archive-article-date">
+  	<time datetime="2017-10-17T03:46:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53234970" target="_blank" rel="noopener">文章来源:ext4 js 模拟EventManager（白鹤翔第一季）</a></p>
-<p>EventManager封装浏览器自带的事件 ，并且解决了浏览器的差异问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyExt = &#123;&#125;;</span><br><span class="line"><span class="comment">// 封装浏览器自带的事件 屏蔽浏览器之间的差异</span></span><br><span class="line">MyExt.EventManager = &#123;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//添加监听element, eventName, fn, useCapture</span></span><br><span class="line">	addListener:<span class="function"><span class="keyword">function</span>(<span class="params">el , ename , fn , useCapture</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(el.addEventListener)&#123;</span><br><span class="line">			el.addEventListener(ename,fn,useCapture);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(el.attachEvent)&#123;</span><br><span class="line">			el.attachEvent(<span class="string">'on'</span> + ename , fn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="comment">//移除监听</span></span><br><span class="line">	removeListener:<span class="function"><span class="keyword">function</span>(<span class="params">el , ename , fn , useCapture</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(el.removeEventListener)&#123;</span><br><span class="line">			el.removeEventListener(ename,fn,useCapture);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(el.detachEvent)&#123;</span><br><span class="line">			el.detachEvent(<span class="string">'on'</span> + ename , fn);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//w3c === event    / ie  window.event</span></span><br><span class="line">	<span class="comment">//getEvent:function()&#123;&#125;</span></span><br><span class="line">	<span class="comment">//鼠标事件 </span></span><br><span class="line">	<span class="comment">//键盘事件</span></span><br><span class="line">	<span class="comment">//滚轮事件...</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyExt.EventManager.on = MyExt.EventManager.addListener;</span><br><span class="line">MyExt.EventManager.un = MyExt.EventManager.removeListener;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line">	MyExt.EventManager.on(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'我执行了..'</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">	MyExt.EventManager.on(btn,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(<span class="string">'我又执行了..'</span>);</span><br><span class="line">	&#125;, <span class="literal">false</span>);	</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+        <p><a href="http://blog.csdn.net//u011229848/article/details/78258828" target="_blank" rel="noopener">文章来源:oracle 解锁表</a></p>
+<h2 id="数据库执行增删改出现-oralce-record-is-locked-by-another-user"><a href="#数据库执行增删改出现-oralce-record-is-locked-by-another-user" class="headerlink" title="数据库执行增删改出现 oralce record is locked by another user"></a>数据库执行增删改出现 oralce record is locked by another user</h2><p>oralce 有个锁机制，一旦一张表的数据被更新，删除，修改 而没有commit (提交)，那么PL/SQL就会执行锁命令，把这张表给锁定，使得智能查询，一切增删改都无法操作，那么这个时候我们就要解锁了。</p>
+<p>查看当前锁：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> t2.username,t2.sid,t2.serial/#,t2.logon_time <span class="keyword">from</span> v$locked_object t1,v$<span class="keyword">session</span> t2 <span class="keyword">where</span> t1.session_id=t2.sid ;</span><br></pre></td></tr></table></figure></p>
+<p>解锁（杀进程）:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'sid,serial/#'</span>;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -199,7 +201,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		
 		</ul>
@@ -209,7 +211,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/19/ext4 js 模拟EventManager/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/17/oracle 解锁表/">展开全文 >></a>
         </p>
       
 
@@ -239,28 +241,34 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 js自定义事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-finally里误用return" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/ext4 js自定义事件/">ext4 js自定义事件</a>
+      <a class="article-title" href="/2017/10/16/finally里误用return/">finally里误用return</a>
     </h1>
   
 
         
-        <a href="/2016/11/17/ext4 js自定义事件/" class="archive-article-date">
-  	<time datetime="2016-11-17T15:13:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
+        <a href="/2017/10/16/finally里误用return/" class="archive-article-date">
+  	<time datetime="2017-10-16T09:31:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53208240" target="_blank" rel="noopener">文章来源:ext4 js自定义事件（白鹤翔第一季）</a></p>
-<p><br>// 要利用观察者模式 去实现自定义的事件<br><br>//1：由于浏览器他自己能定义内置的事件(click/blur…)<br><br>// 我们也应该有一个类似于浏览器这样的类，这个类 自己去内部定义一些事件(自定义事件)<br><br>var Observable = function(){<br><br>//承装自己所定义的事件类型的<br><br>this.events = [‘start’,’stop’];<br><br>//我们应该设计一种数据类型，这种数据类型就可以去维护自定义事件类型 和 和相关绑定函数的关系,结构如下所示：<br><br>//‘start’:[fn1 ,fn2….] ,<br><br>//‘stop’:[fn1,fn2]<br><br>this.listeners = {<br><br>};<br><br>};<br><br>//2:添加新的自定义事件类型：<br><br>Observable.prototype.addEvents = function(eventname){<br><br>this.events.push(eventname);<br><br>};<br><br>//3:为自己的事件类型绑定响应的函数(添加事件监听)<br><br>Observable.prototype.addListener = function(eventname,fn){<br><br>//做一个容错的处理<br><br>if(this.events.indexOf(eventname) == -1){<br><br>this.addEvents(eventname);<br><br>}<br><br>//到这一步 ，必然存在这个事件类型了<br><br>var arr = this.listeners[eventname];<br><br>//如果当前这个函数数组不存在，那么我们要为这个事件类型绑定新添加的函数<br><br>if(!arr){<br><br>arr = [fn];<br><br>} else { //如果存在 当前这个事件类型所对应的函数的数组不为空<br><br>if(arr.indexOf(fn) == -1){<br><br>arr.push(fn);<br><br>}<br><br>}<br><br>//重新维护一下事件类型 和所绑定的函数数组的关联关系<br><br>this.listeners[eventname] = arr ;<br><br>};<br><br>//4:移除事件监听<br><br>Observable.prototype.removeListener = function(eventname,fn){<br><br>//如果你要移除的事件类型，在我的对象里没有被定义<br><br>if(this.events.indexOf(eventname) == -1){<br><br>return ;<br><br>}<br><br>//到这一步 就是你要移除的事件类型 是我当前对象里面存在的<br><br>var arr = this.listeners[eventname];<br><br>if(!arr){<br><br>return ;<br><br>}<br><br>//到这一步 证明arr里面是有绑定函数的<br><br>//判断 如果当前fn函数 在我的函数数组里存着 就移除<br><br>if(arr.indexOf(fn) != -1){<br><br>arr.splice(arr.indexOf(fn),1);<br><br>}<br><br>};<br><br>//5:如何让事件触发: 就是调用 这个事件类型所对应的所有的函数执行即可<br><br>Observable.prototype.fireEvent = function(eventname){<br><br>//如果当前没有传递事件类型名称或者当前传递的事件类型不存在我的对象里，直接返回<br><br>if(!eventname || (this.events.indexOf(eventname) == -1)){<br><br>return ;<br><br>}<br><br>//到这一步 一定存在这个事件<br><br>var arr = this.listeners[eventname];<br><br>if(!arr){<br><br>return ;<br><br>}<br><br>for(var i = 0 , len = arr.length ; i &lt; len ; i ++){<br><br>var fn = arr[i];<br><br>fn.call(fn,this);<br><br>}<br><br>};<br><br>//javascript的习惯给原型对象的方法 起一个简单的名字 方便开发者去使用<br><br>Observable.prototype.on = Observable.prototype.addListener;<br><br>Observable.prototype.un = Observable.prototype.removeListener;<br><br>Observable.prototype.fr = Observable.prototype.fireEvent;<br><br>//Observable 浏览器：<br><br>var ob = new Observable(); //被观察者<br><br>// 子类 继承Observable//观察者<br><br>var fn1 = function(){<br><br>alert(‘fn1….’);<br><br>};<br><br>ob.on(‘start’,fn1);<br><br>var fn2 = function(){<br><br>alert(‘fn2….’);<br><br>};<br><br>ob.on(‘start’,fn2);<br><br>//移除监听<br><br>ob.un(‘start’,fn1);<br><br>ob.fr(‘start’);<br><br>//ob.fr(‘stop’);<br><br>ob.on(‘run’,function(){<br><br>alert(‘run….’);<br><br>});<br><br>ob.fr(‘run’);<br><br>//Ext.util.Observable 类 是为了为开发者提供一个自定义事件的接口<br><br>//Ext.util.Observable<br><br>//观察者模式：(报社、订阅者) 被观察者、观察者<br><br>//Ext.util.Observable 被观察者<br><br>//所有继承(混入)Ext.util.Observable类的对象(子类) 观察者</p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78252080" target="_blank" rel="noopener">文章来源:finally里误用return</a></p>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/78252080" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/78252080</a></p>
+<p>今天看到一句话，finally 语句块在 try 语句块中的 return 语句之前执行，过了两年突然对这句话感到有些困惑，以为是执行完try之后有finally就会最终再执行finally，没成想“finally 语句块在 try 语句块中的 return 语句之前执行”才是真理。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFinallyReturn</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(testFinally());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"finally"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">testFinally</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"try"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"finally"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行结果如下：</p>
+<p>try<br>finally<br>0</p>
+<p>由上可知，finally 语句块在 try 语句块中的 return 语句之前执行，一定要注意：</p>
+<p>只有资源需要释放的时候，才去使用finally，不要一股脑的扔到finally里面去处理，其他就扔给Java的垃圾回收机制处理吧，否则一不小心返回一个错误的结果就麻烦了。</p>
 
       
 
@@ -274,7 +282,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -284,7 +292,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/17/ext4 js自定义事件/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/16/finally里误用return/">展开全文 >></a>
         </p>
       
 
@@ -314,53 +322,35 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4 js添加事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-MethodReplacer替换方法实例" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/17/ext4 js添加事件/">ext4 js添加事件（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/10/16/MethodReplacer替换方法实例/">MethodReplacer替换方法实例</a>
     </h1>
   
 
         
-        <a href="/2016/11/17/ext4 js添加事件/" class="archive-article-date">
-  	<time datetime="2016-11-17T14:39:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-17</time>
+        <a href="/2017/10/16/MethodReplacer替换方法实例/" class="archive-article-date">
+  	<time datetime="2017-10-16T07:45:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53207918" target="_blank" rel="noopener">文章来源:ext4 js添加事件（白鹤翔第一季）</a></p>
-<p><br>原始的事件模型，也就是0级DOM事件模型。非常通俗的说，就是给HTML元素里加一个事件，这种方法有一个硬伤，就是不能同时对元素注册多个处理函数。<br><br>W3C的专家也知道这样不好，那么2级DOM事件模型也就产生了，也就是所谓的标准事件模型。API如下定义：<br><br>element.addEventListener(type,listener,useCapture);<br><br>element.removeEventListener(type,listener,useCapture);<br><br>W3C的专家把事件分成了3个阶段，也就是所谓的事件流：（1）捕获 （2）目标 （3）冒泡。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1: 在早些时候,是不存在事件这个概念的,开发者用javascript2个函数去模拟事件的机制(window.setTimeout/window.setInterval)</span></span><br><span class="line"><span class="comment">// 2: 由于很多原因 比如效率太低, 人们开始发明了 最原始的 0级dom事件模型 为元素添加一个事件  在事件上绑定一个处理函数  </span></span><br><span class="line"><span class="comment">//    注意：这种模型有一个致命的硬伤：就是不能为元素的事件 添加多个处理函数</span></span><br></pre></td></tr></table></figure></p>
-<p> window.onload = function(){<br>     var inp = document.createElement(‘input’);<br>     inp.id = ‘inp1’;<br>     inp.value = ‘点击’ ;<br>     inp.type = ‘button’ ;<br>     inp.onclick = function(){  //这里方法将被下面onclick事件覆盖<br>         alert(‘执行了..’);<br>     };<br>    inp.onclick = function(){<br>         //alert(this == window);<br>         alert(this == inp);<br>         alert(‘我也执行了..’);<br>     };<br>     document.body.appendChild(inp);<br> };</p>
-<p> function test1(){alert(this == window);};<br> function test2(){alert(22);};</p>
-<p>// 3: 在0级dom事件模型有了以后，才成立了 w3c，觉得0级事件模型 不好 退出了 2级事件模型  (标准dom事件模型)<br>//element.addEventListener(type,listener,useCapture);<br>//element.removeEventListener(type,listener,useCapture);<br> window.onload = function(){<br>     var inp = document.createElement(‘input’);<br>     inp.id = ‘inp1’;<br>     inp.value = ‘点击’ ;<br>     inp.type = ‘button’ ;<br>     // type :事件类型    listener :这个事件的绑定函数    useCapure(boolean):(事件传播：true=捕获 / false=冒泡)<br>     inp.addEventListener(‘click’ ,test1 , false );<br>     inp.removeEventListener(‘click’ ,test1 , false );<br>     inp.addEventListener(‘click’ ,test2 , false );<br>     document.body.appendChild(inp);<br>     //IE浏览器 678事件用：attachEvent();  detachEvent();  IE9/IE10已经支持w3c的标准了<br>     var inp = document.createElement(‘input’);<br>     inp.id = ‘inp1’;<br>     inp.value = ‘点击’ ;<br>     inp.type = ‘button’ ;<br>     inp.attachEvent(‘onclick’ ,test1);<br>     inp.detachEvent(‘onclick’ ,test1);<br>     inp.attachEvent(‘onclick’ ,test2);<br>     document.body.appendChild(inp);<br> };</p>
-<p>//  对于事件的传播机制： w3c：1 捕获    2 目标(命中)  3 冒泡<br>//  w3c 提供了一个关键字 event 事件对象  / ie: 6.7.8  window.event<br> window.onload = function(){</p>
-<pre><code>var inp = document.createElement(&apos;input&apos;);
-inp.id = &apos;inp1&apos;;
-inp.value = &apos;点击&apos;;
-inp.type = &apos;button&apos;;
-inp.addEventListener(&apos;click&apos;,function(event){
-    alert(&apos;input执行...&apos;);
-    event.stopPropagation();    //阻止冒泡事件的发生
-},false);
-
-var div = document.createElement(&apos;div&apos;);
-div.addEventListener(&apos;click&apos;,function(){
-    alert(&apos;div执行...&apos;);
-},false);
-
-document.body.addEventListener(&apos;click&apos;,function(){
-    alert(&apos;body执行...&apos;);
-},false);
-
-div.appendChild(inp);
-document.body.appendChild(div);
-</code></pre><p> };<br> <code>`</code></p>
+        <p><a href="http://blog.csdn.net//u011229848/article/details/78250480" target="_blank" rel="noopener">文章来源:MethodReplacer替换方法实例</a></p>
+<p>原文：<a href="http://www.cnblogs.com/shizhongtao/p/3468713.html" target="_blank" rel="noopener">http://www.cnblogs.com/shizhongtao/p/3468713.html</a></p>
+<p>MethodReplacer比较简单，改文章简单明了，直接贴的别人博客，望原著谅解。</p>
+<p>org.springframework.beans.factory.support.MethodReplacer这个接口作用是替换方法时候用的。就是执行时候用新建的逻辑替换已有的方法逻辑。具体使用实例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcService</span></span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getTime</span><span class="params">()</span></span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd"</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(<span class="keyword">new</span> Date());</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>替代的类及方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.support.MethodReplacer; </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcServiceReplaceImpl</span> <span class="keyword">implements</span> <span class="title">MethodReplacer</span></span>&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> Object <span class="title">reimplement</span><span class="params">(Object arg0, Method arg1, Object[] arg2)</span></span></span><br><span class="line"><span class="function">             <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd HH:mm:ss.SS"</span>);</span><br><span class="line">         Calendar c=Calendar.getInstance();</span><br><span class="line">         c.add(Calendar.YEAR, <span class="number">2</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(c.getTime());</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>配置文件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"mvcService"</span> <span class="attr">class</span>=<span class="string">"com.bing.service.MvcService"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">replaced-method</span> <span class="attr">name</span>=<span class="string">"getTime"</span> <span class="attr">replacer</span>=<span class="string">"replacementComputeValue"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!-- &lt;arg-type&gt;String&lt;/arg-type&gt; --&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">replaced-method</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"replacementComputeValue"</span> <span class="attr">class</span>=<span class="string">"com.bing.service.MvcServiceReplaceImpl"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里的意思是用MvcServiceReplaceImpl中的方法替代类com.bing.service.MvcService中的getTime方法。当你运行时候返回的结果就不是上面的“yy-MM-dd”的时间格式而是”yy-MM-dd HH:mm:ss.SS”的时间格式</p>
 
       
 
@@ -374,7 +364,11 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
         		</li>
       		
 		</ul>
@@ -384,7 +378,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/17/ext4 js添加事件/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/16/MethodReplacer替换方法实例/">展开全文 >></a>
         </p>
       
 
@@ -414,29 +408,42 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-FetchType与FetchMode的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/">ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/10/16/FetchType与FetchMode的区别/">FetchType与FetchMode的区别</a>
     </h1>
   
 
         
-        <a href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-16T15:07:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
+        <a href="/2017/10/16/FetchType与FetchMode的区别/" class="archive-article-date">
+  	<time datetime="2017-10-16T06:27:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53192905" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）</a></p>
-<p><br>Ext.dom.Query 嗯，这个类一共提供了8个方法供开发人员去使用。<br><br>要说最常用的方法，无非就是Ext.query这个方法，之前我们已经简单接触过了这个方法，下面是此方法的详细使用规则：<br><br>1.基本选择器（简单选择器） id选择器 css的类选择器 标签选择器<br><br>2属性选择器<br><br>3.伪类选择器（也可以说是相当于JQ过滤选择器）<br><br><br><br>Ext.query基本使用形式：<br><br>Ext.query(‘span’) 返回整个文档的span标签<br><br>Ext.query(‘span’ , ‘root’) 根据跟节点进行查询<br><br>Ext.query(‘/#id’)根据id进行查询，但返回数组<br><br>Ext.query(‘.class’)根据样式进行查询，返回数组<br><br>Ext.query(‘div span’)根据标签进行包含选择器过滤<br><br>Ext.query(‘/<em>‘)匹配所有元素<br><br>Ext.query(‘input[value/</em>=val]’) 进行一个属性的选择匹配<br><br>Ext.query(‘E&gt;F’)进行一个层次查找父节点为E的F节点<br><br>Ext.dom.Query其他方法：<br><br>compile：将选择符或xpath编译成一个可重复使用的函数<br><br>filter：使用简单选择符过滤元素数组<br><br>is：判断元素是否匹配简单选择符<br><br>jsSelect：根据选择符选择元素<br><br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">    Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Ext.DomQuery</span></span><br><span class="line">	Ext.create(<span class="string">'Ext.Panel'</span>,&#123;</span><br><span class="line">		title:<span class="string">'Ext.DomQuery示例'</span>,</span><br><span class="line">		width:<span class="number">500</span> , </span><br><span class="line">		height:<span class="number">400</span> , </span><br><span class="line">		renderTo:Ext.getBody(),</span><br><span class="line">		html:<span class="string">'&lt;ul&gt;&lt;li&gt;item1&lt;/li&gt;&lt;li&gt;item2&lt;/li&gt;&lt;/ul&gt;&lt;div id=d1&gt;&lt;span id=sp&gt;我是sp内容&lt;/span&gt;&lt;span class=mycolor&gt;我是第二个span&lt;/span&gt;&lt;/div&gt;'</span></span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Ext.DomQuery.select ==  Ext.query  //返回内容:HTMLElement[]</span></span><br><span class="line">	<span class="comment">///Ext.DomQuery.jsSelect：根据选择符选择元素	（这个方法和Ext.DomQuery.select差不多）</span></span><br><span class="line">	<span class="comment">//我把他分为三大类：</span></span><br><span class="line">	<span class="comment">//基本选择器 id选择器 css的类选择器 标签选择器（简单选择器）</span></span><br><span class="line">	<span class="comment">//属性选择器、伪类选择器（也可以说是相当于JQ过滤选择器）（复杂选择器）</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Ext.query('span')   	返回整个文档的span标签</span></span><br><span class="line"> 	<span class="comment">//1 Ext.query('span' , 'root') 	根据跟节点进行查询</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'span'</span> , <span class="string">'d1'</span>);</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);</span><br><span class="line"> 	<span class="comment">//2 Ext.query('#id')		根据id进行查询，但返回数组	</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'#d1'</span>);</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//3 Ext.query('.class')	根据样式进行查询，返回数组</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'.mycolor'</span>);</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> 	<span class="comment">//Ext.query('*')	匹配所有元素</span></span><br><span class="line"> 	<span class="built_in">console</span>.info(Ext.query(<span class="string">'*'</span>));</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//复杂选择器：</span></span><br><span class="line"> 	<span class="comment">//1 :Ext.query('div span')	根据标签进行包含选择器过滤</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'div[id=d1] span'</span>);</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);</span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//1.1:Ext.query('E&gt;F')		进行一个层次查找父节点为E的F节点</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'div&gt;span'</span>);		<span class="comment">//Xpath:div/span 查找xml文件比较实用</span></span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//2 :属性选择器Ext.query('E[attr=val]') 	进行一个属性的选择匹配</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'div[id*=d]'</span>);</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.id);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//3: 伪类选择器</span></span><br><span class="line"> 	<span class="comment">//E:first-child</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = Ext.query(<span class="string">'li:first-child'</span>);	</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);		</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//Ext.DomQuery其他方法：</span></span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//1：compile：将选择符或xpath编译成一个可重复使用的函数</span></span><br><span class="line"> 	<span class="keyword">var</span> fn = Ext.DomQuery.compile(<span class="string">'span'</span>);</span><br><span class="line"> 	<span class="built_in">console</span>.info(fn);</span><br><span class="line"> 	<span class="keyword">var</span> arr = fn(Ext.getDom(<span class="string">'d1'</span>));</span><br><span class="line"> 	Ext.Array.each(arr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> 	<span class="comment">//2: filter：使用简单选择符过滤元素数组</span></span><br><span class="line"> 	<span class="comment">//参数说明 HTMLElement[] el, String selector, Boolean nonMatches</span></span><br><span class="line"> 	<span class="keyword">var</span> arr = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>);</span><br><span class="line"> 	<span class="keyword">var</span> filterarr = Ext.DomQuery.filter(arr,<span class="string">'div[id=d1]'</span>,<span class="literal">false</span>);</span><br><span class="line"> 	Ext.Array.each(filterarr,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line"> 		<span class="built_in">console</span>.info(el.id);</span><br><span class="line"> 	&#125;);		</span><br><span class="line">	<span class="comment">//is：判断元素是否匹配简单选择符</span></span><br><span class="line">	<span class="built_in">console</span>.info(Ext.DomQuery.is(Ext.getDom(<span class="string">'d1'</span>),<span class="string">'div[id]'</span>));</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78249338" target="_blank" rel="noopener">文章来源:FetchType与FetchMode的区别</a></p>
+<p>原文出处：<a href="http://fantasy-lixk.iteye.com/blog/1602797" target="_blank" rel="noopener">http://fantasy-lixk.iteye.com/blog/1602797</a></p>
+<p>使用例：</p>
+<p>@OneToMany(mappedBy=”item”,cascade=CascadeType.ALL,fetch=FetchType.EAGER)</p>
+<p>@Fetch(value=FetchMode.SUBSELECT)</p>
+<p>两者比较：</p>
+<p>两者都是设定关联对象的加载策略。前者是JPA标准的通用加载策略注解属性，</p>
+<p>后者是Hibernate自有加载策略注解属性。</p>
+<p>FetchType可选值意义与区别如下：</p>
+<p>FetchType.LAZY: 懒加载，在访问关联对象的时候加载(即从数据库读入内存)</p>
+<p>FetchType.EAGER:立刻加载，在查询主对象的时候同时加载关联对象。</p>
+<p>FetchMode可选值意义与区别如下：</p>
+<p>@Fetch(FetchMode.JOIN)： 始终立刻加载，使用外连(outer join)查询的同时加载关联对象，忽略FetchType.LAZY设定。</p>
+<p>@Fetch(FetchMode.SELECT) ：默认懒加载(除非设定关联属性lazy=false)，当访问每一个关联对象时加载该对象，会累计产生N+1条sql语句</p>
+<p>@Fetch(FetchMode.SUBSELECT) 默认懒加载(除非设定关联属性lazy=false),在访问第一个关联对象时加载所有的关联对象。会累计产生两条sql语句。且FetchType设定有效。</p>
+
       
 
       
@@ -449,7 +456,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -459,7 +466,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/16/ext4 学习笔记（十五）[Query 常用方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/">展开全文 >></a>
         </p>
       
 
@@ -489,29 +496,51 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Maven中如何配置WAR依赖WAR包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/">ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/">Maven中如何配置WAR依赖WAR包</a>
     </h1>
   
 
         
-        <a href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-16T14:43:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-16</time>
+        <a href="/2017/10/11/Maven中如何配置WAR依赖WAR包/" class="archive-article-date">
+  	<time datetime="2017-10-11T01:15:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53192709" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）</a></p>
-<p><br>Ext为了更加的方便我们去操作DOM元素，特提供了DomHelper这个辅助的工具类。下面我们就一起学习下DomHelper<br><br>首先从API来看，这个类暴露出的public方法并不是特别多。仅仅13个方法而已。如果想生成dom节点，在这里不建议使用原生的方法去生成dom节点，原因是代码量比较大的时候性能比较低、其二是自己组装HTML字符串比较麻烦。在Ext里，DomHelper对象类似一个元素生成器，用于解决此类问题。一般的javascript框架底层都会有生成html代码的类似功能函数。<br><br><br><br>DomHelper常用方法：<br><br>createHtml或markup方法<br><br>createDom方法<br><br>append方法<br><br>insertHTML方法<br><br>overwrite方法<br><br>createTemplate方法<br><br>applyStyles方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//准备工作</span></span><br><span class="line">	Ext.create(<span class="string">'Ext.panel.Panel'</span>,&#123;</span><br><span class="line">		title:<span class="string">'DomHelper-元素生成器的使用'</span>,</span><br><span class="line">		width:<span class="string">'90%'</span> , </span><br><span class="line">		height:<span class="number">400</span> ,</span><br><span class="line">		renderTo:Ext.getBody(),</span><br><span class="line">		html:<span class="string">'&lt;div id=d1&gt;我是d1&lt;/div&gt;'</span></span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//DomHelper</span></span><br><span class="line">	<span class="comment">//1: createHtml或markup方法</span></span><br><span class="line">	<span class="comment">//配置项说明：</span></span><br><span class="line">	<span class="comment">//tag 元素的名称  </span></span><br><span class="line">	<span class="comment">//children/cn表示子元素 </span></span><br><span class="line">	<span class="comment">//cls表示样式  </span></span><br><span class="line">  	<span class="comment">//html:文本内容</span></span><br><span class="line">  	<span class="keyword">var</span> html = Ext.DomHelper.createHtml(&#123;</span><br><span class="line">  		tag:<span class="string">'ol'</span> ,</span><br><span class="line">  		cn:[</span><br><span class="line">  			&#123;<span class="attr">tag</span>:<span class="string">'li'</span>,<span class="attr">html</span>:<span class="string">'item1'</span>&#125;,</span><br><span class="line">  			&#123;<span class="attr">tag</span>:<span class="string">'li'</span>,<span class="attr">html</span>:<span class="string">'item2'</span>&#125;</span><br><span class="line">  		]</span><br><span class="line">  	&#125;);</span><br><span class="line">  	<span class="built_in">console</span>.info(html);</span><br><span class="line">  </span><br><span class="line">  	<span class="keyword">var</span> html = Ext.DomHelper.createHtml(&#123;</span><br><span class="line">  		tag:<span class="string">'div'</span> , </span><br><span class="line">  		children:[</span><br><span class="line">  			&#123;<span class="attr">tag</span>:<span class="string">'a'</span> ,<span class="attr">html</span>:<span class="string">'bjsxt网站'</span> , <span class="attr">href</span>:<span class="string">'www.bjsxt.cn'</span>&#125;,</span><br><span class="line">  			&#123;<span class="attr">tag</span>:<span class="string">'input'</span> , <span class="attr">value</span>:<span class="string">'点击'</span> , <span class="attr">type</span>:<span class="string">'button'</span> &#125;</span><br><span class="line">  		]</span><br><span class="line">  	&#125;);</span><br><span class="line">  	<span class="built_in">console</span>.info(html);</span><br><span class="line">  </span><br><span class="line">  	<span class="comment">//2: createDom方法 (这个方法是生成原生的dom节点，不推荐使用)</span></span><br><span class="line">  	<span class="keyword">var</span> dom = Ext.DomHelper.createDom(&#123;</span><br><span class="line">  		tag:<span class="string">'div'</span> ,</span><br><span class="line">  		html:<span class="string">'我是div'</span></span><br><span class="line">  	&#125;);</span><br><span class="line">  	<span class="built_in">console</span>.info(dom);</span><br><span class="line">  </span><br><span class="line">  	<span class="comment">//3: append方法</span></span><br><span class="line">  	Ext.DomHelper.append(<span class="string">'d1'</span>,&#123;</span><br><span class="line">  		tag:<span class="string">'ul'</span> , </span><br><span class="line">  		cn:[&#123;<span class="attr">tag</span>:<span class="string">'li'</span>,<span class="attr">html</span>:<span class="string">'1111'</span>&#125;,&#123;<span class="attr">tag</span>:<span class="string">'li'</span>,<span class="attr">html</span>:<span class="string">'2222'</span>&#125;]</span><br><span class="line">  	&#125;);</span><br><span class="line">  	Ext.DomHelper.append(<span class="string">'d1'</span>,<span class="string">'&lt;span&gt;我是span内容&lt;/span&gt;'</span>);</span><br><span class="line">  </span><br><span class="line">  	<span class="comment">//4:insertHtml方法 //这个方法就是为了操作原生的node节点的</span></span><br><span class="line">  	<span class="comment">//参数说明：String where, HTMLElement/TextNode el, String html</span></span><br><span class="line">  	Ext.DomHelper.insertHtml(<span class="string">'beforeBegin'</span>,Ext.getDom(<span class="string">'d1'</span>),<span class="string">'&lt;h1&gt;我是标题!!&lt;/h1&gt;'</span>)</span><br><span class="line">  </span><br><span class="line">  	<span class="comment">//5:overwrite方法</span></span><br><span class="line">  	Ext.DomHelper.overwrite(<span class="string">'d1'</span>,&#123;<span class="attr">tag</span>:<span class="string">'span'</span>,<span class="attr">html</span>:<span class="string">'我是覆盖的span'</span>&#125;);</span><br><span class="line">  	Ext.DomHelper.overwrite(<span class="string">'d1'</span>,<span class="string">'aaaaa'</span>);</span><br><span class="line">  </span><br><span class="line">  	<span class="comment">//6:createTemplate方法</span></span><br><span class="line">  	<span class="keyword">var</span> tp = Ext.DomHelper.createTemplate(<span class="string">'&lt;h1&gt;&#123;text&#125;&lt;/h1&gt;&lt;h2&gt;&#123;text2&#125;&lt;/h2&gt;'</span>); <span class="comment">//return Ext.Template</span></span><br><span class="line">  	tp.overwrite(<span class="string">'d1'</span>,&#123;<span class="attr">text</span>:<span class="string">'我是被替换的内容!!'</span>,<span class="attr">text2</span>:<span class="string">'我也是替换的内容!!'</span>&#125;);</span><br><span class="line">  </span><br><span class="line">  	<span class="comment">//7:applyStyles方法	</span></span><br><span class="line">  	Ext.DomHelper.applyStyles(<span class="string">'d1'</span>,&#123;</span><br><span class="line">  		width:<span class="string">'100px'</span>,</span><br><span class="line">  		height:<span class="string">'100px'</span>,</span><br><span class="line">  		backgroundColor:<span class="string">'green'</span></span><br><span class="line">  	&#125;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        <p><a href="http://blog.csdn.net//u011229848/article/details/78199846" target="_blank" rel="noopener">文章来源:Maven中如何配置WAR依赖WAR包</a></p>
+<p><strong>项目背景：</strong></p>
+<ol>
+<li><p>war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
+</li>
+<li><p>开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
+</li>
+<li><p>每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
+</li>
+<li><p>最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class</p>
+</li>
+</ol>
+<p><strong>解决思路：</strong></p>
+<p>使用maven-warpath-plugin插件来解决WAR所依赖的WAR</p>
+<p><strong>解决方案：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>war<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>warpath<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-war-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1-beta-1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--默认会变成在target/war/work导致被打包进war文件,指定后为target/work--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">workDirectory</span>&gt;</span>$&#123;project.build.directory&#125;/work<span class="tag">&lt;/<span class="name">workDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">webappDirectory</span>&gt;</span>WebContent<span class="tag">&lt;/<span class="name">webappDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">useCache</span>&gt;</span>false<span class="tag">&lt;/<span class="name">useCache</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">addMavenDescriptor</span>&gt;</span>true<span class="tag">&lt;/<span class="name">addMavenDescriptor</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlays</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ebiz-common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- empty groupId/artifactId is detected as the current build --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--代表当前WAR项目，默认情况下当前WAR项目是先被拷贝的，如果要控制其顺序，则使用空的overlay --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- any other overlay will be applied after the current build since they have not been configured in the overlays</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">element --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlays</span>&gt;</span> <span class="tag">&lt;<span class="name">dependentWarExcludes</span>&gt;</span>/*/web.xml,**WEB-INF/lib//***,/sql-map-config.xml,/jdbc.properties,/META-INF//*<span class="tag">&lt;/<span class="name">dependentWarExcludes</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.appfuse.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>**maven-warpath-plugin**<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0-M1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">extensions</span>&gt;</span>true<span class="tag">&lt;/<span class="name">extensions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">goal</span>&gt;</span>add-classes<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span><span class="comment">&lt;!-- below WEB-INF/classes --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">warpathExcludes</span>&gt;</span>/*/*/logback-test.xml<span class="tag">&lt;/<span class="name">warpathExcludes</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>首先是使用了maven-warpath-plugin插件,处理所有<type>warpath</type>的artifact,这个插件可以将从依赖的WAR中传递的依赖都打包到当前的WAR中,没有这个插件时,当前WAR从所依赖的WAR artifact那所传递来的依赖在打包成WAR时都会被忽略.既然现在能将传递的依赖打包了,就不用copy依赖的war中的WEB-INF/lib//*,所以被加入到<dependentwarexcludes>中</dependentwarexcludes></p>
+</li>
+<li><p><workdirectory>的设置看我写的注释</workdirectory></p>
+</li>
+<li><p>webappDirectory的指定需要额外注意.首先,我使用了MAVEN默认的资源路径,也就是 src/main/webapp,而这里却告诉maven-war-plugin另一个路径”WebContent”,产生的结果就是,执行mvn package时,war-plugin和warpath-plugin会将当前war和所有依赖的war的web资源都拷贝到WebContent目录下.这样,WebContent目录包含的内容就是最终打包成WAR的内容了.</p>
+</li>
+</ol>
+<p>参考:<a href="http://blog.csdn.net/kobejayandy/article/details/8143930" target="_blank" rel="noopener">http://blog.csdn.net/kobejayandy/article/details/8143930</a></p>
+
       
 
       
@@ -524,7 +553,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">maven</a>
         		</li>
       		
 		</ul>
@@ -534,7 +563,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/16/ext4 学习笔记（十四）[DomHelper常用方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/">展开全文 >></a>
         </p>
       
 
@@ -564,28 +593,28 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（十三）[常用事件方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-浅谈oracle中row_number() over()分析函数用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/15/ext4 学习笔记（十三）[常用事件方法]（白鹤翔第一季）/">ext4 学习笔记（十三）[常用事件方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/">浅谈oracle中row_number() over()分析函数用法</a>
     </h1>
   
 
         
-        <a href="/2016/11/15/ext4 学习笔记（十三）[常用事件方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-15T15:26:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-15</time>
+        <a href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/" class="archive-article-date">
+  	<time datetime="2017-09-25T09:08:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53179924" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十三）[常用事件方法]（白鹤翔第一季）</a></p>
-<p><br>常用事件方法：<br><br>addKepMap：为元素创建一个KeyMap对象<br><br>addKeyListener：为KeyMap绑定事件<br><br>常用事件<br><br>on：绑定事件<br><br>un：移除事件<br><br>click：单机事件<br><br>blur：失去焦点事件<br><br>focus：获得焦点事件<br><br><br><br>其他方法：<br><br>center：使元素居中<br><br>clean：清理空白的文本节点<br><br>createShim：为元素创建一个iframe垫片保证选择或其他对象跨域时可见<br><br>getLoader：返回ElementLoader对象<br><br>highlight 高亮显示特效<br><br>show 、hide显示隐藏元素<br><br>ghost 元素移动特效<br><br>fadeIn、fadeOout淡入淡出<br><br>slideIn、slideOut向上向下滑动<br><br><br><br>getValue：如果元素有value属性，返回其值<br><br>normalize：将CSS属性中的连接符号去掉，例如将“font-size”转为fontSize这样。<br><br>load：直接调用ElementLoader的load方法为元素加载内容<br><br>mask：遮罩当前元素，屏蔽用户操作。<br><br>unmask：移除遮罩<br><br>repaint：强迫浏览器重新绘画元素<br><br>serializeForm：序列化为URL编码的字符串<br><br>update：更新元素的innerHTML属性<br><br>unselectable：禁用文本选择<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一：为元素添加事件</span></span><br><span class="line"><span class="comment">//1 : addKepMap：为元素创建一个KeyMap对象</span></span><br><span class="line"><span class="keyword">var</span> inp = Ext.get(<span class="string">'inp'</span>);</span><br><span class="line">inp.addKeyMap(&#123;		<span class="comment">//Ext.util.KeyMap ====&gt;Class</span></span><br><span class="line">	key:Ext.EventObject.A ,			<span class="comment">//Ext.EventObject </span></span><br><span class="line">	ctrl:<span class="literal">true</span> ,</span><br><span class="line">	fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.info(<span class="string">'按ctrl+A ，执行!!'</span>);</span><br><span class="line">	&#125; , </span><br><span class="line">	scope:<span class="keyword">this</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//2 : addKeyListener：为KeyMap绑定事件</span></span><br><span class="line"><span class="comment">//参数说明： String/Number/Number[]/Object key, Function fn, [Object scope]</span></span><br><span class="line"><span class="keyword">var</span> inp = Ext.get(<span class="string">'inp'</span>);</span><br><span class="line">inp.addKeyListener(&#123;</span><br><span class="line">	key:Ext.EventObject.X ,	</span><br><span class="line">	ctrl:<span class="literal">false</span> </span><br><span class="line">&#125;,</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.info(<span class="string">'x执行了..'</span>);</span><br><span class="line">&#125;,</span><br><span class="line"><span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//二：元素绑定常用事件</span></span><br><span class="line"><span class="keyword">var</span> inp = Ext.get(<span class="string">'inp'</span>);</span><br><span class="line">inp.on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.info(<span class="string">'执行了...'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">inp.un(<span class="string">'click'</span>);</span><br><span class="line">inp.focus();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//三:其他重要且常用的方法：</span></span><br><span class="line"><span class="keyword">var</span> inp = Ext.get(<span class="string">'inp'</span>);</span><br><span class="line"><span class="keyword">var</span> sp = Ext.get(<span class="string">'sp'</span>);</span><br><span class="line"><span class="comment">//1: center：使元素居中</span></span><br><span class="line">inp.center(<span class="string">'d1'</span>);</span><br><span class="line"><span class="comment">//2: clean：清理空白的文本节点</span></span><br><span class="line"><span class="comment">//3: createShim：为元素创建一个iframe垫片保证选择或其他对象跨域时可见</span></span><br><span class="line"><span class="comment">//4: getLoader：返回ElementLoader对象//11: load：直接调用ElementLoader的load方法为元素加载内容</span></span><br><span class="line"><span class="keyword">var</span> loader = inp.getLoader(); <span class="comment">//ElementLoader</span></span><br><span class="line">loader.load(&#123;</span><br><span class="line">	url:<span class="string">'base/004_base06_dom2_loader.jsp'</span> , </span><br><span class="line">	renderer:<span class="function"><span class="keyword">function</span>(<span class="params">loader ,response</span>)</span>&#123;</span><br><span class="line">		<span class="comment">//把对象转换成字符串表示形式：Ext.encode </span></span><br><span class="line">		<span class="comment">//把一个字符串转换成javascript对象： Ext.decode</span></span><br><span class="line">		<span class="keyword">var</span> obj = Ext.decode(response.responseText);</span><br><span class="line">		Ext.getDom(<span class="string">'inp'</span>).value = obj.name ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//5: highlight 高亮显示特效</span></span><br><span class="line">sp.highlight();</span><br><span class="line"></span><br><span class="line"><span class="comment">//6: show 、hide显示隐藏元素  	//fadeIn、fadeOout淡入淡出</span></span><br><span class="line">	<span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">	d2.setStyle(<span class="string">'width'</span>,<span class="string">'100px'</span>);</span><br><span class="line">	d2.setStyle(<span class="string">'height'</span>,<span class="string">'100px'</span>);</span><br><span class="line">	d2.setStyle(<span class="string">'backgroundColor'</span>,<span class="string">'red'</span>);</span><br><span class="line">	d2.show(&#123;<span class="attr">duration</span>: <span class="number">2000</span>&#125;);</span><br><span class="line">	d2.hide(&#123;<span class="attr">duration</span>: <span class="number">2000</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//7: ghost  元素移动特效</span></span><br><span class="line">	d2.ghost(<span class="string">'b'</span>, &#123; <span class="attr">duration</span>: <span class="number">2000</span> &#125;); <span class="comment">// r/b/l/t</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//8: slideIn、slideOut向上向下滑动</span></span><br><span class="line">d2.slideIn(<span class="string">'b'</span>,&#123;<span class="attr">duration</span>: <span class="number">2000</span>&#125;);</span><br><span class="line">d2.slideOut(<span class="string">'r'</span>,&#123;<span class="attr">duration</span>: <span class="number">2000</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//9: getValue：如果元素有value属性，返回其值</span></span><br><span class="line"><span class="built_in">console</span>.info(inp.getValue());</span><br><span class="line"></span><br><span class="line"><span class="comment">//10: normalize：将CSS属性中的连接符号去掉，例如将“font-size”转为fontSize这样。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//11 :mask：遮罩当前元素，屏蔽用户操作。 unmask：移除遮罩</span></span><br><span class="line">Ext.getBody().mask(<span class="string">'请稍等..'</span>);</span><br><span class="line"><span class="comment">//	window.setTimeout(function()&#123;</span></span><br><span class="line"><span class="comment">//		Ext.getBody().unmask();</span></span><br><span class="line"><span class="comment">//	&#125;,2000);</span></span><br><span class="line">Ext.defer(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	Ext.getBody().unmask();</span><br><span class="line">&#125;,<span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//12: repaint：强迫浏览器重新绘画元素</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//13: serializeForm：序列化为URL编码的字符串</span></span><br><span class="line"><span class="built_in">console</span>.info(Ext.dom.Element.serializeForm(<span class="string">'f1'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//14: update：更新元素的innerHTML属性</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//15: unselectable：禁用文本选择	</span></span><br><span class="line">inp.unselectable();</span><br></pre></td></tr></table></figure></p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78087198" target="_blank" rel="noopener">文章来源:浅谈oracle中row_number() over()分析函数用法</a></p>
+<p><br>row_number()over(partition by col1 order by col2)表示根据col1分组，在分组内部根据col2排序，而此函数计算的值就表示每组内部排序后的顺序编号（组内连续的唯一的）。<br><br>与rownum的区别在于：使用rownum进行排序的时候是先对结果集加入伪劣rownum然后再进行排序，而此函数在包含排序从句后是先排序再计算行号码。<br><br>row_number()和rownum差不多，功能更强一点（可以在各个分组内从1开始排序）。<br><br>rank()是跳跃排序，有两个第二名时接下来就是第四名（同样是在各个分组内）<br><br>dense_rank()也是连续排序，有两个第二名时仍然跟着第三名。相比之下row_number是没有重复值的。<br><br>oracle 分析函数 row_number(),返回一个整数值(&gt;=1);<br><br>语法格式:<br><br>1.row_number() over (order by col_1[,col_2 …])<br><br>作用:按照col_1[,col_2 …]排序,返回排序后的结果集，<br><br>此用法有点像rownum,为每一行返回一个不相同的值：<br><br>select rownum,ename,job,<br><br>row_number() over (order by rownum) row_number<br><br>from emp;<br><br>ROWNUM ENAME JOB ROW_NUMBER<br><br>———- ———- ——— ———-<br><br>1 SMITH CLERK 1<br><br>2 ALLEN SALESMAN 2<br><br>3 WARD SALESMAN 3<br><br>4 JONES MANAGER 4<br><br>5 MARTIN SALESMAN 5<br><br>6 BLAKE MANAGER 6<br><br>7 CLARK MANAGER 7<br><br>8 SCOTT ANALYST 8<br><br>9 KING PRESIDENT 9<br><br>10 TURNER SALESMAN 10<br><br>11 ADAMS CLERK 11<br><br>12 JAMES CLERK 12<br><br>13 FORD ANALYST 13<br><br>14 MILLER CLERK 14<br><br>如果没有partition by子句, 结果集将是按照order by 指定的列进行排序；<br><br>with row_number_test as(<br><br>select 22 a,’twenty two’ b from dual union all<br><br>select 1,’one’ from dual union all<br><br>select 13,’thirteen’ from dual union all<br><br>select 5,’five’ from dual union all<br><br>select 4,’four’ from dual)<br><br>select a,b,<br><br>row_number() over (order by b)<br><br>from row_number_test<br><br>order by a;<br><br>正如我们所期待的,row_number()返回按照b列排序的结果,<br><br>然后再按照a进行排序,才得到下面的结果:<br><br>A B ROW_NUMBER()OVER(ORDERBYB)<br><br>– ———- ————————–<br><br>1 one 3<br><br>4 four 2<br><br>5 five 1<br><br>13 thirteen 4<br><br>22 twenty two 5<br><br>2.row_number() over (partition by col_n[,col_m …] order by col_1[,col_2 …])<br><br>作用:先按照col_n[,col_m …进行分组,<br><br>再在每个分组中按照col_1[,col_2 …]进行排序(升序),<br><br>最后返回排好序后的结果集:<br><br>with row_number_test as(<br><br>select 22 a,’twenty two’ b,’/<em>‘ c from dual union all<br><br>select 1,’one’,’+’ from dual union all<br><br>select 13,’thirteen’,’/</em>‘ from dual union all<br><br>select 5,’five’,’+’ from dual union all<br><br>select 4,’four’,’+’ from dual)<br><br>select a,b,<br><br>row_number() over (partition by c order by b) row_number<br><br>from row_number_test<br><br>order by a;<br><br>这个例子中，我们先按照c列分组，分为2组(‘/*’组,’+’组)，<br><br>再按照每个小组的b列进行排序(按字符串首字母的ascii码排),<br><br>最后按照a列排序,得到下面的结果集:<br><br>A B ROW_NUMBER<br><br>– ———- ———-<br><br>1 one 3<br><br>4 four 2<br><br>5 five 1<br><br>13 thirteen 1<br><br><br><br>22 twenty two<br><br><br><br>本篇文章来源于 Linux公社网站(<a href="http://www.linuxidc.com" target="_blank" rel="noopener">www.linuxidc.com</a>) 原文链接：<a href="http://www.linuxidc.com/Linux/2011-04/34251.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2011-04/34251.htm</a></p>
 
       
 
@@ -599,7 +628,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		
 		</ul>
@@ -609,7 +638,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/15/ext4 学习笔记（十三）[常用事件方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/">展开全文 >></a>
         </p>
       
 
@@ -639,29 +668,43 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Oracle和plsql developer编码设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/">ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/09/20/Oracle和plsql developer编码设置/">Oracle和plsql developer编码设置</a>
     </h1>
   
 
         
-        <a href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-10T06:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
+        <a href="/2017/09/20/Oracle和plsql developer编码设置/" class="archive-article-date">
+  	<time datetime="2017-09-19T16:42:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53115087" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）</a></p>
-<p><br><strong>样式操作系方法：</strong><br><br>addCls：增加CSS样式到元素，重复的样式会自动过滤<br><br>applyStyles：设置元素的style属性<br><br>setStyle：为元素设置样式<br><br>getStyle：返回元素的当前样式和计算样式<br><br>getStyleSize：返回元素的样式尺寸<br><br>setOpacity：设置不透明度<br><br>clearOpacity：；清理不透明度设置<br><br>getColor：返回CSS颜色属性的值，返回值为6位数组的16进制颜色值<br><br><br><br>boxWrap：使用box.Markup定义的HTML代码包装元素<br><br><br><br>addClsOnClick添加样式当点击该元素的时候<br><br>addClsOnOver添加样式当鼠标移动到元素上的时候<br><br>getMargin：返回值具有top、left、right、bottom属性的对象，属性值为响应的元素margin值。<br><br>removeCls：删除元素的样式<br><br>replaceCls：替换元素的样式<br><br>set：设置元素属性<br><br>radioCls：为当前元素添加样式，并删除其兄弟节点的元素<br><br>unituzeBox：将表示margin大小的对象转换为字符串<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;span style=<span class="string">"font-family:KaiTi_GB2312;"</span>&gt;<span class="comment">//操作样式系的方法：</span></span><br><span class="line"><span class="comment">//1：addCls：增加CSS样式到元素，重复的样式会自动过滤</span></span><br><span class="line">sp.addCls(<span class="string">'red'</span>);</span><br><span class="line"><span class="comment">//2:applyStyles：设置元素的style属性</span></span><br><span class="line">sp.applyStyles(<span class="string">'backgroundColor:blue'</span>);</span><br><span class="line">sp.applyStyles(&#123;<span class="attr">backgroundColor</span>:<span class="string">'yellow'</span>&#125;);</span><br><span class="line"><span class="comment">//3:setStyle：为元素设置样式</span></span><br><span class="line">sp.setStyle(<span class="string">'backgroundColor'</span>,<span class="string">'green'</span>);</span><br><span class="line">sp.setStyle(<span class="string">'fontSize'</span>,<span class="string">'40px'</span>);</span><br><span class="line"><span class="comment">//4:getStyle：返回元素的当前样式和计算样式</span></span><br><span class="line">alert(sp.getStyle(<span class="string">'fontSize'</span>));</span><br><span class="line">alert(Ext.encode(sp.getStyle([<span class="string">'fontSize'</span>,<span class="string">'backgroundColor'</span>])));</span><br><span class="line"><span class="comment">//5:getStyleSize：返回元素的样式尺寸</span></span><br><span class="line">alert(Ext.encode(sp.getStyleSize()));</span><br><span class="line"><span class="comment">//6:setOpacity：设置不透明度</span></span><br><span class="line"><span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">d2.setStyle(<span class="string">'backgroundColor'</span>,<span class="string">'red'</span>);</span><br><span class="line">d2.setStyle(<span class="string">'width'</span>,<span class="string">'200px'</span>);</span><br><span class="line">d2.setStyle(<span class="string">'height'</span>,<span class="string">'200px'</span>);</span><br><span class="line">d2.setOpacity(<span class="number">.3</span>);	<span class="comment">// 0~1</span></span><br><span class="line"><span class="comment">//7:addClsOnClick添加样式当点击该元素的时候</span></span><br><span class="line"><span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">d2.addClsOnClick(<span class="string">'red'</span>);</span><br><span class="line"><span class="comment">//8:addClsOnOver添加样式当鼠标移动到元素上的时候</span></span><br><span class="line"><span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">d2.addClsOnOver(<span class="string">'red'</span>);	</span><br><span class="line"><span class="comment">//9:getMargin：返回值具有top、left、right、bottom属性的对象，属性值为响应的元素margin值。</span></span><br><span class="line"><span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">alert(d2.getMargin(<span class="string">'b'</span>)); <span class="comment">//r l t b</span></span><br><span class="line">alert(Ext.encode(d2.getMargin()));</span><br><span class="line"><span class="comment">//10:removeCls：删除元素的样式	</span></span><br><span class="line"><span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">d2.addCls(<span class="string">'red'</span>);			<span class="comment">//String/String[] className</span></span><br><span class="line">d2.removeCls(<span class="string">'red'</span>);		<span class="comment">//String/String[] className</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//11:尺寸、定位</span></span><br><span class="line"><span class="keyword">var</span> d2 = Ext.get(<span class="string">'d2'</span>);</span><br><span class="line">alert(Ext.encode(d2.getSize()));</span><br><span class="line">alert(d2.getX());</span><br><span class="line">alert(Ext.encode(d2.getXY()));</span><br><span class="line">sp.moveTo(<span class="number">100</span>,<span class="number">100</span>);<span class="xml"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p><br><strong>对齐操作系方法：</strong><br><br>alignTo：将当前元素对齐到另外一个元素。定位位置的选择是基于所对齐的元素的位置（9个定位点tl、t、tr、l、c、r、bl、b、br）。<br><br>anchorTo：当窗口调整大小时，将当前元素锚到指定元素并重新调整<br><br>removeAnchor：移除当前元素的任何锚定位<br><br><br><br><strong>尺寸大小操作系方法：</strong><br><br>setHeight：设置元素宽度<br><br>setWidth：设置元素高度<br><br>setSize：设置元素大小<br><br>cilp：存储元素当前的overflow设置并裁剪溢出。<br><br>unlip：在clip被调用前将裁剪值（溢出）还原为原始值<br><br>getDocumentWidth：返回文档宽度<br><br>getDocumentHeight：返回文档高度<br><br>getFrameWidth：返回合计了padding和border的宽度<br><br>getHeight：返回offsetHeight值<br><br>getWidth：返回offsetWidth值<br><br>getPadding：返回padding的宽度<br><br>getSize：返回元素的大小<br><br><br><br>getTextWidth：返回文本宽度<br><br>getViewportHeight：返回窗口的可视高度<br><br>getViewportWidth：返回窗口的可视宽度<br><br>getViewSize：返回元素可以用来放置内容的区域大小<br><br>getBorderWidth：返回边界宽度<br><br>getComputedWidth：返回计算出来的CSS宽度<br><br>getComputedHeight：返回计算出来的CSS高度<br><br>isBorderBox：主要用于检测盒子模型，与IE6、7有关<br><br><br><br><strong>定位系方法：</strong><br><br>clearPositioning：当文档加载完成后，清理定位回到默认值<br><br>fromPoint：返回在建瓯的自拍呢的顶层元素<br><br>getBottom：返回右下角的Y坐标<br><br>getBox：返回一个包含元素位置的对象，对象包括元素左上角的坐标值、右下角的坐标值、宽度和高度。<br><br>getCenterXY：返回元素的当前坐标<br><br>getLeft：返回一个包含元素位置的对象<br><br>getPositioning：返回一个包含CSS位置属性的对象<br><br>getRegin：返回元素所在区域<br><br>getRight：返回元素的右边X坐标<br><br>getTop：返回元素顶部Y坐标<br><br>getViewRegion：返回元素的内容区域<br><br>getX：返回元素当前的X坐标<br><br>getY：返回元素当前的Y坐标<br><br><br><br>getXY：返回元素当前的XY坐标<br><br>move：移动元素<br><br>moveTo：将元素移动到指定的XY坐标上<br><br>position：初始化元素的位置<br><br>setBottom：设置元素的bottom样式<br><br>setBounds：设置元素的位置和大小<br><br>setBox：设置元素的位置大小<br><br>setLeft：设置元素坐标的X坐标<br><br>setRight：设置元素right的样式值<br><br>setLeftTop：设置元素左上角坐标<br><br>setLocation：设置元素位置<br><br>setTop：设置元素的顶部Y坐标<br><br>setX、setY、setXY：设置元素的X、Y、XY坐标位置<br><br>translatePoints：转换元素的页面坐标为CSS的left和top值<br><br><br><br><strong>滚动系方法：</strong><br><br>getScroll：返回元素当前滚动条的位置<br><br>isScrollable：如果元素允许滚动，则返回true<br><br>scroll：滚动到指定位置<br><br>scrollIntoView：将元素滚动到指定容器的可视区域<br><br>scrollTo：将元素滚动到指定的位置</p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78039477" target="_blank" rel="noopener">文章来源:Oracle和plsql developer编码设置</a></p>
+<p>在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。</p>
+<p>一、查看和修改oracle数据库字符集</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual; <span class="comment">--查询结果：</span></span><br></pre></td></tr></table></figure>
+<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中） </p>
+<p>sql&gt; conn / as sysdba; </p>
+<p>sql&gt; shutdown immediate;<br> <br>database closed.<br> <br>database dismounted.<br> <br>oracle instance shut down. </p>
+<p>sql&gt; startup mount;<br><br>oracle instance started.<br><br>total system global area 135337420 bytes fixed size 452044 bytes variable size 109051904 bytes database buffers 25165824 bytes redo buffers 667648 bytes database mounted. </p>
+<p>sql&gt; alter system enable restricted session;<br><br>system altered. </p>
+<p>sql&gt; alter system set job_queue_processes=0;<br><br>system altered. </p>
+<p> sql&gt; alter system set aq_tm_processes=0;<br><br>system altered. </p>
+<p>sql&gt; alter database open;<br> <br>database altered. </p>
+<p> sql&gt; alter database character set internal_use JA16SJIS; </p>
+<p> sql&gt; shutdown immediate;</p>
+<p> sql&gt; startup;</p>
+<h1 id="二、修改pl-sql-developer-的编码"><a href="#二、修改pl-sql-developer-的编码" class="headerlink" title="二、修改pl/sql developer 的编码"></a>二、修改pl/sql developer 的编码</h1><p>在windows中创 建一个名为“NLS_LANG”的系统环境变量，设置其值为“SIMPLIFIED CHINESE_CHINA.ZHS16GBK”，然后重新启动 pl/sql developer，这样检索出来的中文内容就不会是乱码了。如果想转换为UTF8字符集，可以赋予“NLS_LANG”为 “AMERICAN_AMERICA.UTF8”，然后重新启动 pl/sql developer。其它字符集设置同上</p>
+<p>文章转载于博客园 <a href="http://www.cnblogs.com/geekdc/p/5817306.html" target="_blank" rel="noopener">http://www.cnblogs.com/geekdc/p/5817306.html</a></p>
 
       
 
@@ -675,7 +718,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		
 		</ul>
@@ -685,7 +728,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/ext4 学习笔记（十二）[样式操作系方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/20/Oracle和plsql developer编码设置/">展开全文 >></a>
         </p>
       
 
@@ -715,30 +758,32 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-oracle创建用户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/">ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/09/04/oracle创建用户/">oracle创建用户</a>
     </h1>
   
 
         
-        <a href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-10T05:51:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-10</time>
+        <a href="/2017/09/04/oracle创建用户/" class="archive-article-date">
+  	<time datetime="2017-09-04T07:34:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53114958" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）</a></p>
-<p>DOM操作系方法：<br>appendTo：将当前元素追加到指定元素中<br>appendChild：在当前元素中追加元素<br>createChild：在元素中插入由DomHelper对象创建的元素ext<br>inertAfter：将元素插入到指定元素之后<br>inertBefore：将元素插入到指定元素之前<br>inertSibling：在当前元素前或后插入（或创建）元素（同层）。<br>insertHtml：在当前元素内插入HTML代码<br>remove：移除当前元素<br>replace：使用当前元素替换指定元素<br>replaceWith：使用创建的元素替换当前的元素</p>
-<p>wrap：创建一个元素，并将当前元素包裹起来。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作dom系的方法：</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//1:appendTo：将当前元素追加到指定元素中（这2个元素都必须存在document里）</span></span><br><span class="line">	sp.appendTo(Ext.get(<span class="string">'d2'</span>));</span><br><span class="line">	sp.appendTo(<span class="string">'d2'</span>);</span><br><span class="line">	<span class="comment">//2:appendChild：在当前元素中追加元素</span></span><br><span class="line">	sp.appendChild(<span class="string">'d2'</span>);</span><br><span class="line">	<span class="comment">//3:createChild：在元素中插入由DomHelper对象创建的元素</span></span><br><span class="line">	sp.createChild(&#123;</span><br><span class="line">		tag:<span class="string">'ol'</span> ,		<span class="comment">//orderlist  unorderlist</span></span><br><span class="line">		children:[</span><br><span class="line">			&#123;<span class="attr">tag</span>:<span class="string">'li'</span> ,<span class="attr">html</span>:<span class="string">'item1'</span>&#125;,</span><br><span class="line">			&#123;<span class="attr">tag</span>:<span class="string">'li'</span> ,<span class="attr">html</span>:<span class="string">'item2'</span>&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//4:inertAfter：将元素插入到指定元素之后</span></span><br><span class="line">	<span class="comment">//5:inertBefore：将元素插入到指定元素之前 </span></span><br><span class="line">	<span class="comment">//6:inertSibling：在当前元素前或后插入（或创建）元素（同层）。</span></span><br><span class="line">	<span class="comment">//7:insertHtml：在当前元素内插入HTML代码</span></span><br><span class="line">	<span class="comment">//8:replace：使用当前元素替换指定元素</span></span><br><span class="line">	<span class="comment">//9:replaceWith：使用创建的元素替换当前的元素	</span></span><br><span class="line">	<span class="comment">//10:remove：移除当前元素</span></span><br><span class="line">	</span><br><span class="line">	sp.remove();</span><br><span class="line">	<span class="comment">//11:wrap：创建一个元素，并将当前元素包裹起来。</span></span><br><span class="line">	sp.wrap(<span class="string">'&lt;h1&gt;&lt;/h1&gt;'</span>);</span><br></pre></td></tr></table></figure>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/82384461" target="_blank" rel="noopener">文章来源:oracle创建用户</a></p>
+<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/82384461" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/82384461</a></p>
+<p>创建表空间<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">tablespace</span> ZJ2BDC <span class="keyword">datafile</span> <span class="string">'d:\app\Administrator\product\11.2.0\dbhome_1\oracore\ORCL\ZJ2BDC.DBF'</span> <span class="keyword">size</span> <span class="number">4096</span>m <span class="keyword">autoextend</span> <span class="keyword">on</span> <span class="keyword">next</span> <span class="number">5</span>m <span class="keyword">extent</span> <span class="keyword">management</span> <span class="keyword">local</span>;</span><br></pre></td></tr></table></figure></p>
+<p>创建用户<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> REDDATA <span class="keyword">identified</span> <span class="keyword">by</span> xqx1234 <span class="keyword">default</span> <span class="keyword">tablespace</span> ZJ2BDC;</span><br></pre></td></tr></table></figure></p>
+<p>授予权限<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> dba <span class="keyword">to</span> REDDATA;</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -751,7 +796,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		
 		</ul>
@@ -761,7 +806,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/10/ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/04/oracle创建用户/">展开全文 >></a>
         </p>
       
 
@@ -791,32 +836,32 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-birt使用JNDI配置数据源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/">ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/09/02/birt使用JNDI配置数据源/">birt使用JNDI配置数据源</a>
     </h1>
   
 
         
-        <a href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-08T14:57:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-08</time>
+        <a href="/2017/09/02/birt使用JNDI配置数据源/" class="archive-article-date">
+  	<time datetime="2017-09-02T09:34:42.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53089615" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）</a></p>
-<p><br>查询系方法：<br><br>contains：判断元素是否包含另一个元素<br><br>child：从元素的直接子元素中选择与选择符匹配的元素<br><br>down：选择与选择符匹配的元素的子元素<br><br>first：选择元素第一个子元素<br><br>findParent：查找与简单选择符匹配的元素的父元素<br><br>findParentNode、up：查找与简单选择符匹配的元素的父元素<br><br>is：判断元素是否匹配选择符<br><br>last：选择元素的最后一个子元素<br><br>next：选择元素同层的下一个元素<br><br>prew：选择元素同层的上一个元素<br><br>parent：返回元素的父元素<br><br>Ext.query：根据选择符获取元素<br><br><br><br>Ext.select：根据选择符获取元素集合</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Ext.create(<span class="string">'Ext.panel.Panel'</span>,&#123;</span><br><span class="line">	title:<span class="string">'我的面板'</span> , </span><br><span class="line">	width:<span class="string">'100%'</span> , </span><br><span class="line">	height:<span class="number">400</span> ,</span><br><span class="line">	renderTo:Ext.getBody(),</span><br><span class="line">	html:<span class="string">'&lt;div id=d1&gt;&lt;span id=sp&gt;我是sp的内容&lt;/span&gt;&lt;div id=d2&gt;我是d2的内容&lt;/div&gt;&lt;/div&gt;&lt;input id=inp value=123 /&gt;&lt;form id=f1&gt;&lt;input name=uname value=bhx /&gt;&lt;input name=pwd value=123 /&gt;&lt;/form&gt;'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//查询系最常用的方法:</span></span><br><span class="line"><span class="comment">//Ext.dom.Element   get  fly   getDom</span></span><br><span class="line"><span class="keyword">var</span> d1 = Ext.get(<span class="string">'d1'</span>);</span><br><span class="line"><span class="keyword">var</span> sp = Ext.get(<span class="string">'sp'</span>);</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1: contains：判断元素是否包含另一个元素</span></span><br><span class="line"><span class="built_in">console</span>.info(d1.contains(sp));</span><br><span class="line"><span class="built_in">console</span>.info(d1.contains(<span class="string">'sp'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//2: child：从元素的直接子元素中选择与选择符匹配的元素 (返回的只是一个元素，并不能返回数组) ,2个参数 第二个参数是可选的 如果为true表示取得的是原生的HTMLElement元素</span></span><br><span class="line"><span class="keyword">var</span> ch1 = d1.child(<span class="string">'span'</span>);	<span class="comment">//Ext.dom.Element</span></span><br><span class="line"><span class="built_in">console</span>.info(ch.dom.innerHTML);</span><br><span class="line"><span class="keyword">var</span> ch2 = d1.child(<span class="string">'span'</span>,<span class="literal">true</span>);	<span class="comment">//HTMLElement</span></span><br><span class="line"><span class="built_in">console</span>.info(ch.innerHTML);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3: down：选择与选择符匹配的元素的子元素//findParentNode、up：查找与简单选择符匹配的元素的父元素</span></span><br><span class="line"><span class="keyword">var</span> ch1 = d1.down(<span class="string">'#d2'</span>);</span><br><span class="line"><span class="built_in">console</span>.info(ch1.dom.innerHTML);</span><br><span class="line"></span><br><span class="line"><span class="comment">//4: first：选择元素第一个子元素 //last：选择元素的最后一个子元素</span></span><br><span class="line"><span class="keyword">var</span> f1 = d1.first(<span class="string">'div'</span>);</span><br><span class="line"><span class="built_in">console</span>.info(f1.dom.innerHTML);</span><br><span class="line"></span><br><span class="line"><span class="comment">//5: findParent：查找与简单选择符匹配的元素的父元素 //parent：返回元素的父元素</span></span><br><span class="line"><span class="keyword">var</span> parent =  sp.findParent(<span class="string">'div'</span>);</span><br><span class="line"><span class="built_in">console</span>.info(parent.innerHTML);</span><br><span class="line"></span><br><span class="line"><span class="comment">//6: is：判断元素是否匹配选择符</span></span><br><span class="line"><span class="built_in">console</span>.info(d1.is(<span class="string">'div'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//7: next：选择元素同层的下一个元素 //prew：选择元素同层的上一个元素</span></span><br><span class="line"><span class="keyword">var</span> next = sp.next();</span><br><span class="line"><span class="built_in">console</span>.info(next.dom.nodeName);</span><br><span class="line"></span><br><span class="line"><span class="comment">//8: Ext.query：根据选择符获取元素  (Ext.dom.Element.query)</span></span><br><span class="line"><span class="keyword">var</span> arr = Ext.query(<span class="string">'span'</span>,<span class="string">'d1'</span>);	<span class="comment">//HTMLElement[]</span></span><br><span class="line">Ext.Array.each(arr , <span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.info(item.innerHTML);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//9: Ext.select/Ext.dom.Element.select：根据选择符获取元素集合</span></span><br><span class="line"><span class="comment">// 返回的都是元素集合: Ext.dom.CompositeElementLite(HTMLElemennt)/Ext.dom.CompositeElement(Ext.dom.Element)</span></span><br><span class="line"><span class="comment">// 参数说明： 3个参数 ， </span></span><br><span class="line"><span class="comment">//	1：selector 选择器  (不要使用id选择器)</span></span><br><span class="line"><span class="comment">//  2：返回的集合对象（boolean false:Ext.dom.CompositeElementLite true:Ext.dom.CompositeElement）</span></span><br><span class="line"><span class="comment">//  3: 指定的根节点开始查找</span></span><br><span class="line"><span class="keyword">var</span> list1 = Ext.select(<span class="string">'span'</span>,<span class="literal">false</span>,<span class="string">'d1'</span>);<span class="comment">//Ext.dom.CompositeElementLite</span></span><br><span class="line">Ext.Array.each(list1.elements,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.info(el.innerHTML);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">var</span> list2 = Ext.select(<span class="string">'span'</span>,<span class="literal">true</span>,<span class="string">'d1'</span>);<span class="comment">//Ext.dom.CompositeElement</span></span><br><span class="line">Ext.Array.each(list2.elements,<span class="function"><span class="keyword">function</span>(<span class="params">el</span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.info(el.dom.innerHTML);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>这一小节笔记比较粗糙，全是代码，但是代码已经很详细；</p>
-<p>如果你足够细心，那么你会看到 3 down方法时我里面加了一个/#号，在这里我要说明一下啊，这些查询系最好使用xtype,api文档中明确描述到不应该包含组件id,所以我在down方法里面用了/#id，这里也向大家说一下，平时最好不要这样用，因为这样虽然能能够得到我们想要的，但是及其不易扩展，还是按API所说用组件xtype。</p>
+        <p>在使用birt做报表时，开发的时候用的一个数据源，测试的时候用到一个数据源，正式环境一个数据源，那每次都需要配置，然而birt提供了JNDI的方式即可解决配置数据源问题，<br>一旦项目运行后，首先回去找JNDI数据源，没有才连接配置的数据源，<br>JNDI配置三部曲：</p>
+<p>1.在创建报表创建数据源时，配置JNDI URL<br><img src="/2017/09/02/birt使用JNDI配置数据源/20170902001.png" alt="image"></p>
+<p>2.Tomcat下\conf\context.xml中配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">Context</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">Resource</span></span></span><br><span class="line"><span class="tag">      <span class="attr">auth</span>=<span class="string">"Container"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">name</span>=<span class="string">"jdbc/xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">"javax.sql.DataSource"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxIdle</span>=<span class="string">"5"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxWait</span>=<span class="string">"-1"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">driverClassName</span>=<span class="string">"oracle.jdbc.driver.OracleDriver"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">username</span>=<span class="string">"xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">password</span>=<span class="string">"xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">url</span>=<span class="string">"jdbc:oracle:thin:@xxx.xxx.xxx.xxx:xxx:ORCL"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxActive</span>=<span class="string">"10"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>3.在项目/WEB-INF/web.xml增加代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resource-ref</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Database Source<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-ref-name</span>&gt;</span>jdbc/XXX<span class="tag">&lt;/<span class="name">res-ref-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-type</span>&gt;</span>javax.sql.DataSource<span class="tag">&lt;/<span class="name">res-type</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-auth</span>&gt;</span>Container<span class="tag">&lt;/<span class="name">res-auth</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource-ref</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>配置就这么多</p>
 
       
 
@@ -830,7 +875,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
         		</li>
       		
 		</ul>
@@ -840,7 +885,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/08/ext4 学习笔记（十）[查询系方法]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/09/02/birt使用JNDI配置数据源/">展开全文 >></a>
         </p>
       
 
@@ -870,83 +915,29 @@ document.body.appendChild(div);
 
 
   
-    <article id="post-ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-kill ORACLE中正在运行的存储过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/">ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）</a>
+      <a class="article-title" href="/2017/05/11/kill ORACLE中正在运行的存储过程/">kill ORACLE中正在运行的存储过程</a>
     </h1>
   
 
         
-        <a href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-07T14:56:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-07</time>
+        <a href="/2017/05/11/kill ORACLE中正在运行的存储过程/" class="archive-article-date">
+  	<time datetime="2017-05-11T10:52:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53073861" target="_blank" rel="noopener">文章来源:ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）</a></p>
-<p><br>首先，什么是DOM（Document Object Model）</p>
-<p><br>W3C对DOM的定义：文档对象模型是一个平台，一个中立于语言的应用程序编程接口（API）,允许程序访问并更改文档的内容、结构和样式。</p>
-<p><br>其实DOM是一种通用的模型、不止在我们的HTML中存在，也可以在其他文件中存在，相信你最熟悉的就是XML了吧，其实还有很多…</p>
-<p><br>DOM的发展也非常的漫长，版本延续，产生了0级DOM、1级DOM、2级DOM和最新的3级DOM，那么相对成熟的就是从2级DOM以后了。每一次版本更新都有非常实用的变化。</p>
-<p><br>节点Node，对于nodeType、nodeName、nodeValue、getAttribute等等一些对加点的定义你一定不会陌生。</p>
-<p><br></p>
-<p><br>对于DOM模型的操作，相信一个个熟悉又可爱的名字你一定知道：</p>
-<p><br>DOM的访问</p>
-<p><br>document.getElementById、document.getElementsByTagName、document.getElementsByName、innerHTML、innerText等等一些方式去访问DOM元素</p>
-<p><br>DOM的CRUD</p>
-<p><br>createElement、parentNode、childNodes、appendChild、removeChild、replaceChild、inertBefore、firstChild、previousSibling等等一系列操作DOM的方式</p>
-<p><br>对于DOM的样式</p>
-<p><br>我也相信你非常的了解，只需要给节点添加一个style属性，我们就可以操作该节点的样式，或者触发事件改变样式，又或者根据需求操作DOM变换不同的动画效果等等，这都离不开style属性。</p>
-<p><br></p>
-<p><br>好了，对于旧时代的DOM我们暂且放在一边、那么Ext的出现，让以上这些对于DOM的概念变得简单、实用。</p>
-<p><br>Ext之DOM</p>
-<p><br>Ext中使用了三个核心的工具类对我们掌握的DOM进行了完美的封装，OK，请记住他们的名字:</p>
-<p><br>Ext.Element（几乎对DOM的一切进行了彻底封装）</p>
-<p><br>Ext.DomHelper（嗯，他是一个强大的操控UI界面的工具类）</p>
-<p><br>Ext.DomQuery（用来进行DOM节点查询）</p>
-<p><br></p>
-<p><br>Ext.Element常用方法：</p>
-<p><br>如果你深深迷恋着Ext，那么你一定知道Ext.Element这个类，4.x版本由于进行了底层的重构，从而让我看到了更加简洁清晰的代码，那就是这个js文件：AbstractElement.js，他里面有俩个顶顶大名的函数，让开发者再次感叹Ext底层的强大。他们就是Ext.get和Ext.fly。嗯！请记住他们的名字！！一个方法使用了缓存机制来提升获取DOM节点的效率，而另一个方法则使用了javascript经典的‘享元模式’来提升效率，从而节约内存，更加低碳化。</p>
-<p><br>Ext.get （Ext.Element.get）</p>
-<p><br>Ext.fly（Ext.Element.fly）</p>
-<p><br>Ext.getDom</p>
-<p><br></p>
-<p><br>Ext.dom.Element</p>
-<p><br>Ext.get 使用了缓存机制来提升获取DOM节点的效率 Ext.Element</p>
-<p><br>首先get方法的描述:</p>
-<p><br>//<em>/</em></p>
-<p><br>/* 1 首先去Ext.cache缓存里去查找 ，如果缓存里有，直接返回即可</p>
-<p><br>/* 2 如果缓存里没有 ，那再去页面上去查找 ， 如果页面里没有，返回null</p>
-<p><br>/* 3 如果页面里有，把当前内容加入到缓存里： { id : {data/events/dom} }</p>
-<p><br>/* 4 Ext.addCacheEntry加到缓存里的方法</p>
-<p><br>/*/<br>   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d1 = Ext.get(<span class="string">'d1'</span>);<span class="comment">//Ext.Element </span></span><br><span class="line"><span class="built_in">console</span>.info(d1.dom.innerHTML);<span class="comment">//获取到id为d1的html值</span></span><br></pre></td></tr></table></figure></p>
-<p><br>Ext.fly</p>
-<p><br></p>
-<p><br>//<em>/</em></p>
-<p><br>/* fly:使用了javascript经典的‘享元模式’来提升效率，从而节约内存，更加低碳化</p>
-<p><br>/* 返回的对象：Fly对象 ，当然你可以理解成为返回的就是Ext封装好的Ext.Element对象</p>
-<p><br>/*注意点：fly由于内部使用了享元模式 所以 只适合一次操作 ，从而节省内存</p>
-<p><br>/*/<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> d2 = Ext.fly(<span class="string">'d2'</span>); </span><br><span class="line">d2.dom.innerHTML = <span class="string">'AAA'</span>; </span><br><span class="line"><span class="keyword">var</span> d3 = Ext.fly(<span class="string">'d3'</span>); </span><br><span class="line">d3.dom.innerHTML = <span class="string">'BBB'</span>; </span><br><span class="line"><span class="keyword">var</span> d2 = Ext.fly(<span class="string">'d2'</span>); </span><br><span class="line"><span class="keyword">var</span> d3 = Ext.fly(<span class="string">'d3'</span>); </span><br><span class="line">d2.dom.innerHTML = <span class="string">'AAA'</span>; <span class="comment">//此时这行代码无效，fly里面没有d2,因为享元模式只适合一次操作， </span></span><br><span class="line">                            <span class="comment">//第二次进去之后key值是一样的，将d3赋值覆盖了之前的fly, </span></span><br><span class="line">d3.dom.innerHTML = <span class="string">'BBB'</span>;</span><br></pre></td></tr></table></figure></p>
-<p><br>Ext.getDom</p>
-<p><br>//<em>/</em></p>
-<p><br>/* 直接从页面上获取元素的DOM元素</p>
-<p><br>/*/</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dom = Ext.getDom(<span class="string">'d3'</span>); <span class="comment">//HTMLElement dom.innerHTML="CCCC";</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
-<p><br>直接获取操作其dom</p>
-<p><br><strong>获取元素的总结：</strong></p>
-<p><br>Ext.get比较消耗内存，尽量避免使用。</p>
-<p><br>Ext.fly虽然比较省内存，但是只能被使用一次。</p>
-<p><br>Ext.getDom非常适合直接获取页面元素，并返回的就是DOM元素，如果你想操作DOM元素的属性，那这个方法是最好不过的咯</p>
-<p><br></p>
-<p><br>对于dom的获取就简单的介绍这些吧，希望看文档的你给予批评指教，谢谢！</p>
+        <p><a href="http://blog.csdn.net//u011229848//article/details/71668877" target="_blank" rel="noopener">文章来源:kill ORACLE中正在运行的存储过程</a></p>
+<p>kill ORACLE中正在运行的存储过程<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> v$<span class="keyword">access</span> o <span class="keyword">where</span> o.OBJECT <span class="keyword">like</span> <span class="string">'P_BDC2ZJ_FC%'</span> <span class="comment">--查找正在运行的对象,获取sid</span></span><br><span class="line"><span class="keyword">select</span> a.serial/# <span class="keyword">from</span> v$<span class="keyword">session</span> a <span class="keyword">WHERE</span> A.SID=<span class="keyword">sid</span> <span class="comment">--通过sid 获取serial/#</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'sid,serial/#'</span> <span class="comment">--eg: alter system kill session '123,3211'</span></span><br></pre></td></tr></table></figure></p>
+<p>查找死锁<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> sql_text,s.sid,s.SERIAL/# <span class="keyword">from</span> v$<span class="keyword">sql</span> <span class="keyword">sql</span> <span class="keyword">inner</span> <span class="keyword">join</span> v$<span class="keyword">session</span> s <span class="keyword">on</span> sql.hash_value=s.sql_hash_value</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">sid</span> <span class="keyword">in</span> (<span class="keyword">select</span> session_id <span class="keyword">from</span> v$locked_object)</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -960,7 +951,7 @@ document.body.appendChild(div);
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		
 		</ul>
@@ -970,7 +961,7 @@ document.body.appendChild(div);
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/07/ext4 学习笔记（九）[dom操作一 获取元素]（白鹤翔第一季）/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/05/11/kill ORACLE中正在运行的存储过程/">展开全文 >></a>
         </p>
       
 
@@ -1002,7 +993,7 @@ document.body.appendChild(div);
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1097,11 +1088,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1109,15 +1100,59 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql约束</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">最近心有点累</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">查看oracle操作日志</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis-plus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">layui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jstl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">oracl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
               </li>
             
             <div class="clearfix"></div>

@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">查看oracle操作日志</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
         		</li>
       		
 		</ul>
@@ -211,6 +211,432 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/09/04/查看oracle操作日志/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-修改oracle编码格式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/04/修改oracle编码格式/">修改oracle编码格式</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/04/修改oracle编码格式/" class="archive-article-date">
+  	<time datetime="2018-09-04T07:31:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/qq_1017097573/article/details/82384022" target="_blank" rel="noopener">文章来源:修改oracle编码格式</a></p>
+<p>文章参照：<a href="https://www.jb51.net/article/53078.htm" target="_blank" rel="noopener">https://www.jb51.net/article/53078.htm</a></p>
+<p>1.查看oracle当前编码格式：<br>SELECT /* FROM V$NLS_PARAMETERS WHERE PARAMETER = ‘NLS_CHARACTERSET’ ; SELECT USERENV(‘language’) FROM DUAL;</p>
+<p>NLS_CHARACTERSET AL32UTF8</p>
+<p>SIMPLIFIED CHINESE_CHINA.AL32UTF8</p>
+<p>2.以sysdba身份登录</p>
+<p>3.关闭数据库 shutdown immediate;</p>
+<p>4.以mount打来数据库，startup mount</p>
+<p>5.设置session<br>SQL&gt;ALTER SYSTEM ENABLE RESTRICTED SESSION; SQL&gt; ALTER SYSTEM SET JOB_QUEUE_PROCESSES=0; SQL&gt; ALTER SYSTEM SET AQ_TM_PROCESSES=0;</p>
+<p>6.启动数据库</p>
+<p>alter database open;</p>
+<p>7.修改字符集</p>
+<p>ALTER DATABASE CHARACTER SET ZHS16GBK;</p>
+<p>提示我们的字符集：新字符集必须为旧字符集的超集:</p>
+<p>ALTER DATABASE character set INTERNAL_USE ZHS16GBK;</p>
+<p>8.关闭，重新启动</p>
+<p>shutdown immediate;</p>
+<p>startup</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/04/修改oracle编码格式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MybatisPlus QueryWrapper and or 连用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/21/MybatisPlus QueryWrapper and or 连用/">MybatisPlus QueryWrapper and or 连用</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/21/MybatisPlus QueryWrapper and or 连用/" class="archive-article-date">
+  	<time datetime="2018-08-21T02:08:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848/article/details/81902398" target="_blank" rel="noopener">文章来源:MybatisPlus QueryWrapper and or 连用</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;User&gt; userWrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;();</span><br><span class="line">String type = (String) map.get(<span class="string">"type"</span>);</span><br><span class="line"><span class="keyword">if</span>(StringUtils.isNotBlank(type)) &#123;</span><br><span class="line">    userWrapper.eq(<span class="string">"is_admin"</span>, <span class="string">"admin"</span>.equals(type) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br><span class="line">&#125;</span><br><span class="line">String keys = (String) map.get(<span class="string">"key"</span>);</span><br><span class="line"><span class="keyword">if</span>(StringUtils.isNotBlank(keys)) &#123;</span><br><span class="line">    userWrapper.and(wrapper -&gt; wrapper.like(<span class="string">"login_name"</span>, keys).or().like(<span class="string">"tel"</span>, keys).or().like(<span class="string">"email"</span>, keys));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>控制台sql打印为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">        <span class="keyword">id</span>,</span><br><span class="line">        login_name <span class="keyword">AS</span> loginName,</span><br><span class="line">        nick_name <span class="keyword">AS</span> nickName,</span><br><span class="line">        <span class="keyword">password</span>,</span><br><span class="line">        <span class="keyword">salt</span>,</span><br><span class="line">        tel,</span><br><span class="line">        email,</span><br><span class="line">        <span class="keyword">locked</span>,</span><br><span class="line">        is_admin <span class="keyword">AS</span> adminUser,</span><br><span class="line">        icon,</span><br><span class="line">        create_by <span class="keyword">AS</span> createId,</span><br><span class="line">        create_date <span class="keyword">AS</span> createDate,</span><br><span class="line">        update_by <span class="keyword">AS</span> updateId,</span><br><span class="line">        update_date <span class="keyword">AS</span> updateDate,</span><br><span class="line">        del_flag <span class="keyword">AS</span> delFlag,</span><br><span class="line">        remarks </span><br><span class="line">    <span class="keyword">FROM</span></span><br><span class="line">        sys_user </span><br><span class="line">    <span class="keyword">WHERE</span></span><br><span class="line">        is_admin = <span class="number">0</span> </span><br><span class="line">        <span class="keyword">AND</span> (</span><br><span class="line">            login_name <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">            <span class="keyword">OR</span> tel <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">            <span class="keyword">OR</span> email <span class="keyword">LIKE</span> <span class="string">'%j%'</span> </span><br><span class="line">        )</span><br></pre></td></tr></table></figure>
+<p>切记不能丢了and</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userWrapper.like(<span class="string">"login_name"</span>, keys).or().like(<span class="string">"tel"</span>, keys).or().like(<span class="string">"email"</span>, keys)</span><br><span class="line">userWrapper.eq(<span class="string">"is_admin"</span>, <span class="string">"admin"</span>.equals(type) ? <span class="keyword">true</span> : <span class="keyword">false</span>);</span><br></pre></td></tr></table></figure>
+<p>这个条件是不带括号的</p>
+<p>WHERE<br>is_admin = 0<br>AND login_name LIKE ‘%j%’<br>OR tel LIKE ‘%j%’<br>OR email LIKE ‘%j%’</p>
+<h3 id="or-Function-lt-This-This-gt-func-and-Function-lt-This-This-gt-func-会为func返回的条件添加括号-or-sql…-and-…"><a href="#or-Function-lt-This-This-gt-func-and-Function-lt-This-This-gt-func-会为func返回的条件添加括号-or-sql…-and-…" class="headerlink" title="or(Function&lt;This, This&gt; func), and(Function&lt;This, This&gt; func) 会为func返回的条件添加括号 or(sql…) and(…)"></a><strong><font color="red">or(Function&lt;This, This&gt; func), and(Function&lt;This, This&gt; func) 会为func返回的条件添加括号 or(sql…) and(…)</font></strong></h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis-plus</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/21/MybatisPlus QueryWrapper and or 连用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-实现layui的树形表格treeTable" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/18/实现layui的树形表格treeTable/">实现layui的树形表格treeTable</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/18/实现layui的树形表格treeTable/" class="archive-article-date">
+  	<time datetime="2018-08-18T12:28:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/81812479" target="_blank" rel="noopener">文章来源:实现layui的树形表格treeTable</a></p>
+<p>实现layui的树形表格treeTable，layui中有 可以使用 ‘tree’，’table’ , 进而使用layui.treeGird实现<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">layui.treeGird(&#123;</span><br><span class="line">       elem: <span class="string">'#demo'</span>, <span class="comment">//传入元素选择器</span></span><br><span class="line">       nodes: data,<span class="comment">//返回json数据，组装为tree结构</span></span><br><span class="line">       layout: layout <span class="comment">//table显示列定义</span></span><br><span class="line">   &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>今天推荐一个对对layui数据表格进行扩展<a href="https://github.com/whvcse/treetable-lay" target="_blank" rel="noopener">https://github.com/whvcse/treetable-lay</a>，作者资料写的已经非常完整，实例也很完整，具体就不细说了，重点是不需要专门组装数据，只需查询出list即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">layui</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/18/实现layui的树形表格treeTable/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis-plus getObj方法返回null" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/18/mybatis-plus getObj方法返回null/">mybatis-plus getObj方法返回null</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/18/mybatis-plus getObj方法返回null/" class="archive-article-date">
+  	<time datetime="2018-08-18T12:13:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848/article/details/81812235" target="_blank" rel="noopener">文章来源:mybatis-plus getObj方法返回null</a></p>
+<p>在mybatis-plus低版本中自定义查询，selectObj(Condition.create().setSqlSelect(“columns…”))，低版本中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selectObj(Condition.create().setSqlSelect(<span class="string">"max(sort)"</span>).isNull(<span class="string">"parent_id"</span>))；</span><br></pre></td></tr></table></figure></p>
+<p>返回Object为查询结果max(sort)。可自己做类型转换。</p>
+<p>升级到高版本后放弃Condition拼接SQL,代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort)"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure></p>
+<p>此处返回的Object为空，认真一点会发现，返回对象应该是泛型对应的Menu对象，个人暂认为（猜测）是属性名对应不到实体，所以返回时处理了异常返回null（在下在这里偷懒了，没看源码全个人猜想，猜想错了望批评指正），我加上别名的时候发现跟我预想的一样。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort) as sort"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure>
+<p>此时返回一个Menu对象，sort为我需要的结果。希望看到文章的你也能细心一点，注意返回对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort) as sort"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis-plus</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/18/mybatis-plus getObj方法返回null/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-layui隐藏列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/17/layui隐藏列/">layui隐藏列</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/17/layui隐藏列/" class="archive-article-date">
+  	<time datetime="2018-08-17T10:09:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net//u011229848//article/details/81781542" target="_blank" rel="noopener">文章来源:layui隐藏列</a></p>
+<p>layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, <font color="red">style:’display:none;’</font>},导致thead中th中ID仍然在，</p>
+<p><img src="/2018/08/17/layui隐藏列/20180817180344707.png" alt="image">我们要做的是表格头中ID也需要隐藏。</p>
+<p>、</p>
+<p>官网简单demo如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">layui.use(<span class="string">'table'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> table = layui.table;</span><br><span class="line">  </span><br><span class="line">  table.render(&#123;</span><br><span class="line">    elem: <span class="string">'#test'</span></span><br><span class="line">    ,<span class="attr">url</span>:<span class="string">'/demo/table/user/'</span></span><br><span class="line">    ,<span class="attr">cellMinWidth</span>: <span class="number">80</span> <span class="comment">//全局定义常规单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">    ,<span class="attr">cols</span>: [[</span><br><span class="line">      &#123;<span class="attr">field</span>:<span class="string">'id'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'ID'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'username'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'用户名'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sex'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'性别'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'city'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'城市'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sign'</span>, <span class="attr">title</span>: <span class="string">'签名'</span>, <span class="attr">width</span>: <span class="string">'30%'</span>, <span class="attr">minWidth</span>: <span class="number">100</span>&#125; <span class="comment">//minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'experience'</span>, <span class="attr">title</span>: <span class="string">'积分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'score'</span>, <span class="attr">title</span>: <span class="string">'评分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'classify'</span>, <span class="attr">title</span>: <span class="string">'职业'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'wealth'</span>, <span class="attr">width</span>:<span class="number">137</span>, <span class="attr">title</span>: <span class="string">'财富'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]]</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>添加一行配置即可：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">done: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    $(<span class="string">"[data-field='id']"</span>).css(<span class="string">'display'</span>,<span class="string">'none'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">layui.use(<span class="string">'table'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> table = layui.table;</span><br><span class="line">  </span><br><span class="line">  table.render(&#123;</span><br><span class="line">    elem: <span class="string">'#test'</span></span><br><span class="line">    ,<span class="attr">url</span>:<span class="string">'/demo/table/user/'</span></span><br><span class="line">    ,<span class="attr">cellMinWidth</span>: <span class="number">80</span> <span class="comment">//全局定义常规单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">    ,<span class="attr">cols</span>: [[</span><br><span class="line">      &#123;<span class="attr">field</span>:<span class="string">'id'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'ID'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'username'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'用户名'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sex'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'性别'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'city'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'城市'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sign'</span>, <span class="attr">title</span>: <span class="string">'签名'</span>, <span class="attr">width</span>: <span class="string">'30%'</span>, <span class="attr">minWidth</span>: <span class="number">100</span>&#125; <span class="comment">//minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'experience'</span>, <span class="attr">title</span>: <span class="string">'积分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'score'</span>, <span class="attr">title</span>: <span class="string">'评分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'classify'</span>, <span class="attr">title</span>: <span class="string">'职业'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'wealth'</span>, <span class="attr">width</span>:<span class="number">137</span>, <span class="attr">title</span>: <span class="string">'财富'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]]</span><br><span class="line">    ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"[data-field='id']"</span>).css(<span class="string">'display'</span>,<span class="string">'none'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><img src="/2018/08/17/layui隐藏列/20180817180803609.png" alt="image"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">layui</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/17/layui隐藏列/">展开全文 >></a>
         </p>
       
 
@@ -327,28 +753,39 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-sql查询表默认约束 删除和添加约束" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-npm_error" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/15/sql查询表默认约束 删除和添加约束/">sql查询表默认约束 删除和添加约束</a>
+      <a class="article-title" href="/2018/08/07/npm_error/">npm ERR! Unexpected end of JSON input while parsing near &#39;</a>
     </h1>
   
 
         
-        <a href="/2018/05/15/sql查询表默认约束 删除和添加约束/" class="archive-article-date">
-  	<time datetime="2018-05-15T11:33:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-15</time>
+        <a href="/2018/08/07/npm_error/" class="archive-article-date">
+  	<time datetime="2018-08-07T14:54:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/80328066" target="_blank" rel="noopener">文章来源:sql查询表默认约束 删除和添加约束</a></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. <span class="keyword">declare</span>@namevarchar(<span class="number">100</span>)</span><br><span class="line"><span class="number">1.</span> <span class="comment">--DF为约束名称前缀</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">select</span>@<span class="keyword">name</span>=b.namefromsyscolumns a,sysobjects bwherea.id=object_id(<span class="string">'表名'</span>)andb.id=a.cdefaultanda.name=<span class="string">'字段名'</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">select</span>@<span class="keyword">name</span></span><br><span class="line"><span class="number">1.</span> <span class="comment">--删除约束</span></span><br><span class="line"><span class="number">1.</span> altertableOaNewdropconstraintDF__OaNews__NewsTitl__72C60C4A<span class="comment">--删约束</span></span><br><span class="line"><span class="number">1.</span> altertableOaNewaltercolumnNewsTitle <span class="keyword">nvarchar</span>(<span class="number">250</span>)<span class="comment">--改类型,如果原先是300 varchar 就要改成 300nvarchar 不改会转换失败</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">USE</span> [数据库名称] <span class="comment">--添加约束,可以找到约束 右键脚本create到新建查询窗口</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">GO</span></span><br><span class="line"><span class="number">1.</span> ALTERTABLE[dbo].表名ADDCONSTRAINTDF__OaNews__NewsTitl__72C60C4ADEFAULT(<span class="string">''</span>)<span class="keyword">FOR</span>[字段名]</span><br><span class="line"><span class="number">1.</span> <span class="keyword">GO</span></span><br><span class="line"><span class="number">1.</span> <span class="keyword">USE</span> [数据库名称]</span><br><span class="line"><span class="number">1.</span> <span class="keyword">GO</span></span><br></pre></td></tr></table></figure>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/81490060" target="_blank" rel="noopener">文章来源:npm ERR! Unexpected end of JSON input while parsing near ‘</a></p>
+<p><strong>执行npm cache clean –force 即可解决npm install出现”Unexpected end of JSON input while parsing near”错误。</strong></p>
+<p>之前用node没问题，突然NPM出现错误，今晚安装webpack 我停止之后再次安装出现</p>
+<p>npm ERR! Unexpected end of JSON input while parsing near ‘…,”dist”:{“shasum”:”63’</p>
+<p><img src="/2018/08/07/npm_error/20180807224636311.png" alt="image"></p>
+<p>执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force</span><br></pre></td></tr></table></figure></p>
+<p>即可解决npm install出现”Unexpected end of JSON input while parsing near”错误。</p>
+<p>文章参考来源：<a href="https://blog.csdn.net/wyhux/article/details/78041513" target="_blank" rel="noopener">https://blog.csdn.net/wyhux/article/details/78041513</a></p>
+<p>以上是个人操作。网上具体操作如下：</p>
+<p>1、如果你的项目里存在 package-lock.json 文件，删除它。并且删除 node_modules。然后再 npm install。</p>
+<p>2、第一步不行的话。运行 npm cache clean –force 或者 npm cache verify 。然后再 npm install。</p>
+<p>3、如果上面的都不行，就升级 npm 。 npm i -g npm</p>
+
       
 
       
@@ -361,7 +798,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sql约束</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">node</a>
         		</li>
       		
 		</ul>
@@ -371,7 +808,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/15/sql查询表默认约束 删除和添加约束/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/07/npm_error/">展开全文 >></a>
         </p>
       
 
@@ -401,35 +838,34 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-finally里误用return" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-IDEA激活" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/finally里误用return/">finally里误用return</a>
+      <a class="article-title" href="/2018/08/07/IDEA激活/">IDEA激活</a>
     </h1>
   
 
         
-        <a href="/2017/10/16/finally里误用return/" class="archive-article-date">
-  	<time datetime="2017-10-16T09:31:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+        <a href="/2018/08/07/IDEA激活/" class="archive-article-date">
+  	<time datetime="2018-08-07T03:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/78252080" target="_blank" rel="noopener">文章来源:finally里误用return</a></p>
-<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/78252080" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/78252080</a></p>
-<p>今天看到一句话，finally 语句块在 try 语句块中的 return 语句之前执行，过了两年突然对这句话感到有些困惑，以为是执行完try之后有finally就会最终再执行finally，没成想“finally 语句块在 try 语句块中的 return 语句之前执行”才是真理。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFinallyReturn</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(testFinally());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"finally"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">testFinally</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"try"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"finally"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>执行结果如下：</p>
-<p>try<br>finally<br>0</p>
-<p>由上可知，finally 语句块在 try 语句块中的 return 语句之前执行，一定要注意：</p>
-<p>只有资源需要释放的时候，才去使用finally，不要一股脑的扔到finally里面去处理，其他就扔给Java的垃圾回收机制处理吧，否则一不小心返回一个错误的结果就麻烦了。</p>
-
+        <p><a href="http://blog.csdn.net/u011229848/article/details/81478241" target="_blank" rel="noopener">文章来源:IDEA激活</a></p>
+<h1 id="在激活Jetbrains旗下任意产品的时候选择激活服务器"><a href="#在激活Jetbrains旗下任意产品的时候选择激活服务器" class="headerlink" title="在激活Jetbrains旗下任意产品的时候选择激活服务器"></a>在激活<a href="https://www.jetbrains.com/products.html?fromMenu" target="_blank" rel="noopener">Jetbrains</a>旗下任意产品的时候选择激活服务器</h1><p>填入以下地址便可成功激活</p>
+<h2 id="http-idea-liyang-io"><a href="#http-idea-liyang-io" class="headerlink" title="http://idea.liyang.io"></a><a href="http://idea.liyang.io" target="_blank" rel="noopener">http://idea.liyang.io</a></h2><h2 id="Support-New-Version"><a href="#Support-New-Version" class="headerlink" title="Support New Version:"></a>Support New Version:</h2><p><a href="http://idea.uri.ci" target="_blank" rel="noopener">http://idea.uri.ci</a></p>
+<p>实践证明一切网站服务激活都不靠谱，请使用lan yu ;</p>
+<h1 id="host文件添加如下"><a href="#host文件添加如下" class="headerlink" title="host文件添加如下"></a><a href=""></a>host文件添加如下</h1><h1 id="0-0-0-0-account-jetbrains-com"><a href="#0-0-0-0-account-jetbrains-com" class="headerlink" title="0.0.0.0 account.jetbrains.com"></a><a href=""></a>0.0.0.0 account.jetbrains.com</h1><p><img src="/2018/08/07/IDEA激活/20180818162531811.png" alt=""></p>
+<p><img src="/2018/08/07/IDEA激活/20180818162606182.png" alt=""></p>
+<p><a href=""></a>intellij idea 激活注册码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EB101IWSWD-eyJsaWNlbnNlSWQiOiJFQjEwMUlXU1dEIiwibGljZW5zZWVOYW1lIjoibGFuIHl1IiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUFMiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJDTCIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IlBDIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUlNVIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In1dLCJoYXNoIjoiNjk0NDAzMi8wIiwiZ3JhY2VQZXJpb2REYXlzIjowLCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-Gbb7jeR8JWOVxdUFaXfJzVU/O7c7xHQyaidCnhYLp7v32zdeXiHUU7vlrrm5y9ZX0lmQk3plCCsW+phrC9gGAPd6WDKhkal10qVNg0larCR2tQ3u8jfv1t2JAvWrMOJfFG9kKsJuw1P4TozZ/E7Qvj1cupf/rldhoOmaXMyABxNN1af1RV3bVhe4FFZe0p7xlIJF/ctZkFK62HYmh8V3AyhUNTzrvK2k+t/tlDJz2LnW7nYttBLHld8LabPlEEjpTHswhzlthzhVqALIgvF0uNbIJ5Uwpb7NqR4U/2ob0Z+FIcRpFUIAHEAw+RLGwkCge5DyZKfx+RoRJ/In4q/UpA==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/8vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+0gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+2yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++2+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==</span><br></pre></td></tr></table></figure>
       
 
       
@@ -442,7 +878,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
         		</li>
       		
 		</ul>
@@ -452,7 +888,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/16/finally里误用return/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/07/IDEA激活/">展开全文 >></a>
         </p>
       
 
@@ -482,41 +918,71 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-FetchType与FetchMode的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-oracle11g 安装" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/16/FetchType与FetchMode的区别/">FetchType与FetchMode的区别</a>
+      <a class="article-title" href="/2018/08/02/oracle11g 安装/">oracle11g 安装</a>
     </h1>
   
 
         
-        <a href="/2017/10/16/FetchType与FetchMode的区别/" class="archive-article-date">
-  	<time datetime="2017-10-16T06:27:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-16</time>
+        <a href="/2018/08/02/oracle11g 安装/" class="archive-article-date">
+  	<time datetime="2018-08-02T13:03:59.343Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://blog.csdn.net/u011229848/article/details/78249338" target="_blank" rel="noopener">文章来源:FetchType与FetchMode的区别</a></p>
-<p>原文出处：<a href="http://fantasy-lixk.iteye.com/blog/1602797" target="_blank" rel="noopener">http://fantasy-lixk.iteye.com/blog/1602797</a></p>
-<p>使用例：</p>
-<p>@OneToMany(mappedBy=”item”,cascade=CascadeType.ALL,fetch=FetchType.EAGER)</p>
-<p>@Fetch(value=FetchMode.SUBSELECT)</p>
-<p>两者比较：</p>
-<p>两者都是设定关联对象的加载策略。前者是JPA标准的通用加载策略注解属性，</p>
-<p>后者是Hibernate自有加载策略注解属性。</p>
-<p>FetchType可选值意义与区别如下：</p>
-<p>FetchType.LAZY: 懒加载，在访问关联对象的时候加载(即从数据库读入内存)</p>
-<p>FetchType.EAGER:立刻加载，在查询主对象的时候同时加载关联对象。</p>
-<p>FetchMode可选值意义与区别如下：</p>
-<p>@Fetch(FetchMode.JOIN)： 始终立刻加载，使用外连(outer join)查询的同时加载关联对象，忽略FetchType.LAZY设定。</p>
-<p>@Fetch(FetchMode.SELECT) ：默认懒加载(除非设定关联属性lazy=false)，当访问每一个关联对象时加载该对象，会累计产生N+1条sql语句</p>
-<p>@Fetch(FetchMode.SUBSELECT) 默认懒加载(除非设定关联属性lazy=false),在访问第一个关联对象时加载所有的关联对象。会累计产生两条sql语句。且FetchType设定有效。</p>
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53293147" target="_blank" rel="noopener">文章来源:oracle11g 安装</a></p>
+<p>一、Oracle <a href="http://www.2cto.com/soft" target="_blank" rel="noopener">下载</a></p>
+<p>注意Oracle分成两个文件，下载完后，将两个文件解压到同一目录下即可。 路径名称中，最好不要出现中文，也不要出现空格等不规则字符。<br>官方下地址：</p>
+<p><a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html以下两网址来源此官方下载页网。" target="_blank" rel="noopener">http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html以下两网址来源此官方下载页网。</a><br>win 32位操作系统 下载地址：</p>
+<p><a href="http://download.oracle.com/otn/nt/oracle11g/112010/win32_11gR2_database_1of2.zip" target="_blank" rel="noopener">http://download.oracle.com/otn/nt/oracle11g/112010/win32_11gR2_database_1of2.zip</a><br><a href="http://download.oracle.com/otn/nt/oracle11g/112010/win32_11gR2_database_2of2.zip" target="_blank" rel="noopener">http://download.oracle.com/otn/nt/oracle11g/112010/win32_11gR2_database_2of2.zip</a></p>
+<p>win 64位操作系统 下载地址：<br><a href="http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_1of2.zip" target="_blank" rel="noopener">http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_1of2.zip</a></p>
+<p><a href="http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_2of2.zip" target="_blank" rel="noopener">http://download.oracle.com/otn/nt/oracle11g/112010/win64_11gR2_database_2of2.zip</a><br>二、Oracle安装</p>
+<ol>
+<li>解压缩文件，将两个压缩包一起选择， 鼠标右击 -&gt; 解压文件 如图<br><img src="http://up.2cto.com/2012/0825/20120825101208135.jpg" alt=""></li>
+</ol>
+<p>2.两者解压到相同的路径中，如图：<br><img src="http://up.2cto.com/2012/0825/20120825101210488.jpg" alt=""></p>
+<ol start="3">
+<li><p>到相应的解压路径上面，找到可执行安装文件【 setup.exe 】双击安装。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101210193.jpg" alt=""></p>
+</li>
+<li><p>安装第一步：配置安全更新，这步可将自己的电子邮件地址填写进去（也可以不填写，只是收到一些没什么用的邮件而已）。取消下面的“我希望通过My Oracle Support接受安全更新(W)”。 如图：<br><img src="http://up.2cto.com/2012/0825/20120825101210212.jpg" alt=""></p>
+</li>
+<li><p>安全选项，直接选择默认创建和配置一个数据库(安装完数据库管理软件后，系统会自动创建一个数据库实例)。 如图：<br><img src="http://up.2cto.com/2012/0825/20120825101211744.jpg" alt=""></p>
+</li>
+<li><p>系统类，直接选择默认的桌面类就可以了。(若安装到的电脑是，个人笔记本或个人使用的电脑使用此选项) 如图：<br><img src="http://up.2cto.com/2012/0825/20120825101211273.jpg" alt=""></p>
+</li>
+<li><p>典型安装。 重要步骤。建议只需要将Oracle基目录更新下，目录路径不要含有中文或其它的特殊字符。全局数据库名可以默认，且口令密码，必须要牢记。密码输入时，有提示警告，不符合Oracel建议时不用管。 (因Oracel建议的密码规则比较麻烦， 必须是大写字母加小写字母加数字，而且必须是8位以上。麻烦，可以输入平常自己习惯的短小密码即可) 如图：<br><img src="http://up.2cto.com/2012/0825/20120825101211874.jpg" alt=""></p>
+</li>
+<li><p>若输入的口令短小简单，安装时会提示如下。直接确认Y继续安装就是了。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101212564.jpg" alt=""></p>
+</li>
+<li><p>先决条件检查。 安装程序会检查软硬件系统是否满足，安装此Oracle版本的最低要求。 直接下一步就OK 了。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101212309.jpg" alt=""></p>
+</li>
+<li><p>概要 安装前的一些相关选择配置信息。 可以保存成文件 或 不保存文件直接点完成即可。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101212595.jpg" alt=""></p>
+</li>
+<li><p>安装产品 自动进行，不用管。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101213216.jpg" alt=""></p>
+</li>
+<li><p>数据库管理软件文件及dbms文件安装完后，会自动创建安装一个实例数据库默认前面的orcl名称的数据库。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101213539.jpg" alt=""></p>
+</li>
+<li><p>实例数据库创建完成了，系统 默认是把所有账户都锁定不可用了(除sys和system账户可用外)，建议点右边的口令管理，将常用的scott账户解锁并输入密码。 如图：<br><img src="http://up.2cto.com/2012/0825/20120825101214600.jpg" alt=""></p>
+</li>
+<li><p>解锁scott账户， 去掉前面的绿色小勾，输入密码。同样可以输入平常用的短小的密码，不必非得按oracle建议的8位以上大小写加数字，麻烦。呵呵。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101214205.jpg" alt=""></p>
+</li>
+<li><p>同样，密码不符合规则会提示。不用管它，继续Y即可。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101215135.jpg" alt=""></p>
+</li>
+<li><p>安装成功，完成即可。 简单吧，呵呵。如图：<br><img src="http://up.2cto.com/2012/0825/20120825101215338.jpg" alt=""></p>
+</li>
+</ol>
+<p>三、安装后，进入小测试下。<br>可以通过开始，应用程序中的 “Oracle 11g” -&gt; “应用 <a href="http://www.2cto.com/kf" target="_blank" rel="noopener">程序开发</a>“ -&gt; “Sql Developer 或Sql Plus” 连接。</p>
+<p>注意第一次，使用SQL Developer时，会提示指定 java.exe的路径，这里千万别指定自己的java_home了（我就是开始不知道，指定一个JDK6，结束说不兼容。）可以使用Oracel安装路径下面的jdk路径 具体是：如图：。<br><img src="http://up.2cto.com/2012/0825/20120825101215718.jpg" alt=""></p>
+<p>当然若不小心，选择错了。选择了java_home中的高级版本，打开SQL Developer报错后不兼容，也有办法解决。可以在<br>【F:\app\chen\product\11.2.0\dbhome_1\sqldeveloper\sqldeveloper\bin】路径下找到【sqldeveloper.conf】文件后打开</p>
+<p>找到Set JavaHome 所匹配的值，删除后面的配置内容。保证时会提示，只读文件不可覆盖保存。此时可以另存为到桌面上，然后再回到bin目录中删除掉此文件，再把桌面上的文件复制过去，再打开时，重新选择java.exe。此时选择对就好了。</p>
 
       
 
@@ -530,7 +996,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">oracl</a>
         		</li>
       		
 		</ul>
@@ -540,390 +1006,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-birt使用JNDI配置数据源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/02/birt使用JNDI配置数据源/">birt使用JNDI配置数据源</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/02/birt使用JNDI配置数据源/" class="archive-article-date">
-  	<time datetime="2017-09-02T09:34:42.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在使用birt做报表时，开发的时候用的一个数据源，测试的时候用到一个数据源，正式环境一个数据源，那每次都需要配置，然而birt提供了JNDI的方式即可解决配置数据源问题，<br>一旦项目运行后，首先回去找JNDI数据源，没有才连接配置的数据源，<br>JNDI配置三部曲：</p>
-<p>1.在创建报表创建数据源时，配置JNDI URL<br><img src="/2017/09/02/birt使用JNDI配置数据源/20170902001.png" alt="image"></p>
-<p>2.Tomcat下\conf\context.xml中配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">Context</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">Resource</span></span></span><br><span class="line"><span class="tag">      <span class="attr">auth</span>=<span class="string">"Container"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">name</span>=<span class="string">"jdbc/xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">"javax.sql.DataSource"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxIdle</span>=<span class="string">"5"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxWait</span>=<span class="string">"-1"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">driverClassName</span>=<span class="string">"oracle.jdbc.driver.OracleDriver"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">username</span>=<span class="string">"xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">password</span>=<span class="string">"xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">url</span>=<span class="string">"jdbc:oracle:thin:@xxx.xxx.xxx.xxx:xxx:ORCL"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxActive</span>=<span class="string">"10"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>3.在项目/WEB-INF/web.xml增加代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resource-ref</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Database Source<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-ref-name</span>&gt;</span>jdbc/XXX<span class="tag">&lt;/<span class="name">res-ref-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-type</span>&gt;</span>javax.sql.DataSource<span class="tag">&lt;/<span class="name">res-type</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-auth</span>&gt;</span>Container<span class="tag">&lt;/<span class="name">res-auth</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource-ref</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>配置就这么多</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/02/birt使用JNDI配置数据源/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Clob类型与String类型的相互转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/02/Clob类型与String类型的相互转换/">Clob类型与String类型的相互转换</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/02/Clob类型与String类型的相互转换/" class="archive-article-date">
-  	<time datetime="2017-05-02T07:43:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/71082056" target="_blank" rel="noopener">文章来源:Clob类型与String类型的相互转换</a></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Clob类型转换成String类型  </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">ClobToString</span><span class="params">(<span class="keyword">final</span> Clob clob)</span> </span>&#123;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">if</span> (clob == <span class="keyword">null</span>) &#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    Reader is = <span class="keyword">null</span>;  </span><br><span class="line">    <span class="keyword">try</span> &#123;  </span><br><span class="line">        is = clob.getCharacterStream();  </span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">        e.printStackTrace();  </span><br><span class="line">    &#125;  </span><br><span class="line">    BufferedReader br = <span class="keyword">new</span> BufferedReader(is);  </span><br><span class="line">  </span><br><span class="line">    String str = <span class="keyword">null</span>;  </span><br><span class="line">    <span class="keyword">try</span> &#123;  </span><br><span class="line">        str = br.readLine();    <span class="comment">// 读取第一行  </span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">        e.printStackTrace();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    StringBuffer sb = <span class="keyword">new</span> StringBuffer();  </span><br><span class="line">    <span class="keyword">while</span> (str != <span class="keyword">null</span>) &#123;    <span class="comment">// 如果没有到达流的末尾，则继续读取下一行  </span></span><br><span class="line">        sb.append(str);  </span><br><span class="line">        <span class="keyword">try</span> &#123;  </span><br><span class="line">            str = br.readLine();  </span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;  </span><br><span class="line">            e.printStackTrace();  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="keyword">return</span> sb.toString();  </span><br><span class="line">      </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line"><span class="comment">// String类型转换成Clob类型  </span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Clob <span class="title">StringToClob</span><span class="params">(<span class="keyword">final</span> String string)</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="keyword">if</span>(string == <span class="keyword">null</span> || string.trim().length() == <span class="number">0</span>)&#123;  </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> org.hibernate.lob.ClobImpl(string);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/02/Clob类型与String类型的相互转换/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-birt+maven+web运行环境搭建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/10/birt+maven+web运行环境搭建/">birt+maven+web运行环境搭建</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/10/birt+maven+web运行环境搭建/" class="archive-article-date">
-  	<time datetime="2017-02-10T01:30:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>具体的项目配置，在这里不做过多的阐述，之前很多的文章都做了介绍，我这里直接给出结果：<br><br>第一步：下载报表环境birt-runtime-4_3_1，去官网下载，这里不做过多的阐述。<br><br>第二步：环境配置<br><br>1、解压缩，先拷贝WebViewerExample\WEB-INF下如下文件到工程的WEB-INF目录下：<br><br>jrun.web.xml<br><br>server-config.wsdd<br><br>viewer.properties<br><br>2、 将WebViewerExample\WEB-INF\tlds下的birt.tld文件拷贝到工程的\WEB-INF\tlds下<br><br>3、在工程的WEB-INF下建立report-engine的文件夹，在report-engine下新建如下四个文件夹<br><br>documents<br><br>images<br><br>logs<br><br>scriptlib<br><br>4、将WebViewerExample\ webcontent文件夹拷贝到要集成的WEB应用的根目录下（如果工程的web目录也叫WebContent的话会很奇怪，可以将webcontent改名，改名方法另开贴说明）。<br><br>5、在web应用的根目录下建立reportFiles文件夹，用来存放报表文件。<br><br>6、将web.xml中的如下内容拷贝到工程的web.xml中：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Eclipse BIRT Report Viewer<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Default locale setting. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_LOCALE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>en-US<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">Default timezone setting.</span></span><br><span class="line"><span class="comment">Examples: "Europe/Paris", "GMT+1".</span></span><br><span class="line"><span class="comment">Defaults to the container's timezone.</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_TIMEZONE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">Report resources directory for preview. Defaults to $&#123;birt home&#125;</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_WORKING_FOLDER<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Temporary document files directory. Defaults to $&#123;birt home&#125;/documents --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_DOCUMENT_FOLDER<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Flag whether the report resources can only be accessed under the</span></span><br><span class="line"><span class="comment">working folder. Defaults to true --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>WORKING_FOLDER_ACCESS_ONLY<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Settings for how to deal with the url report path. e.g. "http://host/repo/test.rptdesign".</span></span><br><span class="line"><span class="comment">Following values are supported: &lt;all&gt; - All paths.</span></span><br><span class="line"><span class="comment">&lt;domain&gt; - Only the paths with host matches current domain. Note the comparison is literal, "127.0.0.1" and "localhost" are considered as different hosts.</span></span><br><span class="line"><span class="comment">&lt;none&gt; - URL paths are not supported.</span></span><br><span class="line"><span class="comment">Defaults to "domain".</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>URL_REPORT_PATH_POLICY<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>domain<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">Temporary image/chart directory. Defaults to $&#123;birt home&#125;/report/images</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_IMAGE_DIR<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Engine log directory. Defaults to $&#123;birt home&#125;/logs --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_LOG_DIR<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Report engine log level --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_LOG_LEVEL<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>WARNING<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">Directory where to store all the birt report script libraries (JARs).</span></span><br><span class="line"><span class="comment">Defaults to $&#123;birt home&#125;/scriptlib</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_SCRIPTLIB_DIR<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Resource location directory. Defaults to $&#123;birt home&#125; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_RESOURCE_PATH<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Preview report rows limit. An empty value means no limit. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_MAX_ROWS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">Max cube fetch levels limit for report preview (Only used when</span></span><br><span class="line"><span class="comment">previewing a report design file using the preview pattern)</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_MAX_CUBE_ROWLEVELS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_MAX_CUBE_COLUMNLEVELS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Memory size in MB for creating a cube. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_CUBE_MEMORY_SIZE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Defines the BIRT viewer configuration file --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_CONFIG_FILE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>WEB-INF/viewer.properties<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">Flag whether to allow server-side printing. Possible values are "ON"</span></span><br><span class="line"><span class="comment">and "OFF". Defaults to "ON".</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_PRINT_SERVERSIDE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>ON<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Flag whether to force browser-optimized HTML output. Defaults to true --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>HTML_ENABLE_AGENTSTYLE_ENGINE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Filename generator class/factory to use for the exported reports. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_FILENAME_GENERATOR_CLASS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">param-value</span>&gt;</span>org.eclipse.birt.report.utility.filename.DefaultFilenameGenerator<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Viewer Filter used to set the request character encoding to UTF-8. --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ViewerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.eclipse.birt.report.filter.ViewerFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ViewerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ViewerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">!-- Viewer Servlet Context Listener --&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.eclipse.birt.report.listener.ViewerServletContextListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Viewer HttpSession Listener --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.eclipse.birt.report.listener.ViewerHttpSessionListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Viewer Servlet, Supports SOAP --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.eclipse.birt.report.servlet.ViewerServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- Engine Servlet --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.eclipse.birt.report.servlet.BirtEngineServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/frameset<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/run<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/preview<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/download<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/parameter<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/document<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/output<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/extract<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp-config</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib-uri</span>&gt;</span>/birt.tld<span class="tag">&lt;/<span class="name">taglib-uri</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib-location</span>&gt;</span>/WEB-INF/tlds/birt.tld<span class="tag">&lt;/<span class="name">taglib-location</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">taglib</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp-config</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>其中web.xml文件需做如下修改：<br><br>a、修改BIRT_VIEWER_WORKING_FOLDER项的值为reportFiles;<br><br>b、修改BIRT_VIEWER_DOCUMENT_FOLDER项的值为WEB-INF/report-engine/documents;<br><br>c、修改BIRT_VIEWER_IMAGE_DIR项的值为WEB-INF/report-engine/images;<br><br>d、修改BIRT_VIEWER_LOG_DIR项的值为WEB-INF/report-engine/logs;<br>这里有个注意事项就是，这个日志文件如果配置了地址的话，到时候每次生成报表的时候，都会生成一批日志文件，会占用服务器资源。一个办法是定期的删除这个下面的文件，还有一个办法就是不配置日志文件地址，我就是采用第二种方法的。<br><br>e、修改BIRT_VIEWER_SCRIPTLIB_DIR项的值为WEB-INF/report-engine/scriptlib;<br><br>f、如果需调整日志级别可修改BIRT_VIEWER_LOG_LEVEL的值为ALL;<br>可选的值有：ALL|SEVERE|WARNING|INFO|CONFIG|FINE|FINER|FINEST|OFF。级别由高到低。<br><br>7、下面就是最重要的步骤了，Maven中jar包的引入，到底4.3.1需要引入多少包，以及哪些包，我目前做了配置，如下：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-discovery<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>axis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-cli<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-cli<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>javax.xml<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jaxrpc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>com.ibm.icu<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>50.1.1.v201304230130<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.core.runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9.0.v20130326-1255<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.core.runtime<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.6.200.v20130402-1505<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.equinox.registry<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.5.301.v20130717-1549<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.datatools.connectivity<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.9.v201307261105<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.datatools.connectivity.oda<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.4.1.v201308160907<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.datatools.connectivity.oda.consumer<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.6.v201305170644<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.eclipse.osgi<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9.1.v20130814-1242<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.hfmx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>Tidy<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-discovery<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-discovery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>viewservlets<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime.3_7_1<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.w3c.css.sac<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime.3_7_1<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.apache.batik.css<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime.3_7_1<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.apache.batik.util<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime.3_7_1<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>org.apache.xerces<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.birt.runtime.3_7_1<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>com.lowagie.text<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>所有的这些包，在下载的环境中都有，如果maven管理中没有的依赖的话，需要手动注册，注册方式如下：<br>mvn install:install-file -Dfile=e:/Tidy.jar -DgroupId=com.hfmx -DartifactId=Tidy -Dversion=1.0 -Dpackaging=jar -DgeneratePom=true</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/10/birt+maven+web运行环境搭建/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-BIRT集成WEB项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/BIRT集成WEB项目/">BIRT集成WEB项目</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/BIRT集成WEB项目/" class="archive-article-date">
-  	<time datetime="2017-02-09T06:15:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>从项目要用到BIRT工具开始在坛子里泡了好久，从0开始慢慢琢磨现在终于可以把BIRT集成到项目中来运行了，当中的过程还真有点艰难，但这也是每个学习BIRT工具的人都遇到的，现在把中间的些许过程贴出来，希望对初次学习BIRT的人有些帮助。<br>一、BIRT与工程的集成。<br>1、从eclipse官网下载birt的运行包（地址：<a href="http://www.eclipse.org/birt/" target="_blank" rel="noopener">http://www.eclipse.org/birt/</a>），解压缩，先拷贝WebViewerExample\WEB-INF下如下文件到工程的WEB-INF目录下：<br><br>jrun.web.xml<br><br>server-config.wsdd<br><br>viewer.properties<br><br>2、将WebViewerExample\WEB-INF\tlds下的birt.tld文件拷贝到工程的\WEB-INF\tlds下。<br><br>3、在工程的WEB-INF下建立report-engine的文件夹，在report-engine下新建如下四个文件夹<br><br>documents<br>images<br>logs<br>scriptlib<br><br>4、将WebViewerExample\ webcontent文件夹拷贝到要集成的WEB应用的根目录下（如果工程的web目录也叫WebContent的话会很奇怪，可以将webcontent改名，改名方法另开贴说明）。<br><br>5、在web应用的根目录下建立reportFiles文件夹，用来存放报表文件。<br><br>6、将web.xml(web-template)中的如下内容拷贝到工程的web.xml中：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Eclipse BIRT Report Viewer<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Default locale setting.</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_LOCALE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>en-US<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Default timezone setting.</span></span><br><span class="line"><span class="comment">1. Examples: "Europe/Paris", "GMT+1".</span></span><br><span class="line"><span class="comment">1. Defaults to the container's timezone.</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_TIMEZONE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Report resources directory for preview. Defaults to $&#123;birt home&#125;</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_WORKING_FOLDER<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Temporary document files directory. Defaults to $&#123;birt home&#125;/documents</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_DOCUMENT_FOLDER<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Flag whether the report resources can only be accessed under the</span></span><br><span class="line"><span class="comment">1. working folder. Defaults to true</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>WORKING_FOLDER_ACCESS_ONLY<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Settings for how to deal with the url report path. e.g. "http://host/repo/test.rptdesign".</span></span><br><span class="line"><span class="comment">1.</span></span><br><span class="line"><span class="comment">1. Following values are supported:</span></span><br><span class="line"><span class="comment">1.</span></span><br><span class="line"><span class="comment">1. &lt;all&gt;- All paths.</span></span><br><span class="line"><span class="comment">1. &lt;domain&gt;- Only the paths with host matches current domain. Note the comparison is literal, "127.0.0.1" and "localhost" are considered as different hosts.</span></span><br><span class="line"><span class="comment">1. &lt;none&gt;- URL paths are not supported.</span></span><br><span class="line"><span class="comment">1.</span></span><br><span class="line"><span class="comment">1. Defaults to "domain".</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>URL_REPORT_PATH_POLICY<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>domain<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Temporary image/chart directory. Defaults to $&#123;birt home&#125;/report/images</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_IMAGE_DIR<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Engine log directory. Defaults to $&#123;birt home&#125;/logs --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_LOG_DIR<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Report engine log level --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_LOG_LEVEL<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>WARNING<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Directory where to store all the birt report script libraries (JARs).</span></span><br><span class="line"><span class="comment">1. Defaults to $&#123;birt home&#125;/scriptlib</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_SCRIPTLIB_DIR<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Resource location directory. Defaults to $&#123;birt home&#125; --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_RESOURCE_PATH<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Preview report rows limit. An empty value means no limit. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_MAX_ROWS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Max cube fetch levels limit for report preview (Only used when</span></span><br><span class="line"><span class="comment">1. previewing a report design file using the preview pattern)</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_MAX_CUBE_ROWLEVELS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_MAX_CUBE_COLUMNLEVELS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Memory size in MB for creating a cube. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_CUBE_MEMORY_SIZE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span><span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Defines the BIRT viewer configuration file --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_CONFIG_FILE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>WEB-INF/viewer.properties<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Flag whether to allow server-side printing. Possible values are "ON"</span></span><br><span class="line"><span class="comment">1. and "OFF". Defaults to "ON".</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_VIEWER_PRINT_SERVERSIDE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>ON<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Flag whether to force browser-optimized HTML output. Defaults to true</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>HTML_ENABLE_AGENTSTYLE_ENGINE<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Filename generator class/factory to use for the exported reports.</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>BIRT_FILENAME_GENERATOR_CLASS<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>org.eclipse.birt.report.utility.filename.DefaultFilenameGenerator<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">1. Viewer Filter used to set the request character encoding to UTF-8.</span></span><br><span class="line"><span class="comment">1. --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ViewerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.eclipse.birt.report.filter.ViewerFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ViewerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ViewerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Viewer Servlet Context Listener --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.eclipse.birt.report.listener.ViewerServletContextListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Viewer HttpSession Listener --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">listener</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">listener-class</span>&gt;</span>org.eclipse.birt.report.listener.ViewerHttpSessionListener<span class="tag">&lt;/<span class="name">listener-class</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">listener</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Viewer Servlet, Supports SOAP --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.eclipse.birt.report.servlet.ViewerServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="comment">&lt;!-- Engine Servlet --&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.eclipse.birt.report.servlet.BirtEngineServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/frameset<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>ViewerServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/run<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/preview<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/download<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/parameter<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/document<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/output<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EngineServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/extract<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">1.</span><br><span class="line">1.</span><br><span class="line">1. <span class="tag">&lt;<span class="name">jsp-config</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">taglib</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">taglib-uri</span>&gt;</span>/birt.tld<span class="tag">&lt;/<span class="name">taglib-uri</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;<span class="name">taglib-location</span>&gt;</span>/WEB-INF/tlds/birt.tld<span class="tag">&lt;/<span class="name">taglib-location</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">taglib</span>&gt;</span></span><br><span class="line">1. <span class="tag">&lt;/<span class="name">jsp-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>其中web.xml文件需做如下修改：<br><br>a、修改BIRT_VIEWER_WORKING_FOLDER项的值为reportFiles;<br><br>b、修改BIRT_VIEWER_DOCUMENT_FOLDER项的值为WEB-INF/report-engine/documents;<br><br>c、修改BIRT_VIEWER_IMAGE_DIR项的值为WEB-INF/report-engine/images;<br><br>d、修改BIRT_VIEWER_LOG_DIR项的值为WEB-INF/report-engine/logs;<br><br>e、修改BIRT_VIEWER_SCRIPTLIB_DIR项的值为WEB-INF/report-engine/scriptlib;<br><br>f、如果需调整日志级别可修改BIRT_VIEWER_LOG_LEVEL的值为ALL;<br><br>可选的值有：ALL|SEVERE|WARNING|INFO|CONFIG|FINE|FINER|FINEST|OFF。级别由高到低。<br><br>7、拷贝jar包，这一步放最后是因为我对示例工程中的jar包进行了清理。<br><br>我用的是最新版的BIRT 4.2.2，从官网下的部署包，论坛里的大部分人的集成方法是将“WebViewerExample\WEB-INF\lib”中的jar包全部拷到工程的lib目录下，说实话，这里的包实在是太多了，4.2.2 runtime下的jar包有86个47.8兆，这么多的jar包全部拷贝到工程下的话造成工程里面有很多冗余的jar包，也造成了工程的庞大，相信中也是很多人在项目中遇到的问题，工程中有很多冗余的jar包，但是有不敢删除。<br>我用最土的办法将birt集成到项目中的办法就是，先将配置文件配置好，不拷贝jar包到工程，然后每次启动，根据启动日志的错误提示信息找到缺失的类所在的jar包，然后将对应的jar包拷贝到工程中，再次启动，以此类推，知道工程启动和报表展示没有错误为止，得到的运行birt所必须的jar清单如下：<br><br>axis.jar<br>com.ibm.icu_4.4.2.v20110823.jar<br>com.lowagie.text_2.1.7.v201004222200.jar<br>commons-cli-1.0.jar<br>commons-discovery-0.2.jar<br>jaxrpc.jar<br>js.jar<br>org.apache.batik.css_1.6.0.v201011041432.jar<br>org.apache.batik.util_1.6.0.v201011041432.jar<br>org.apache.xerces_2.9.0.v201101211617.jar<br>org.eclipse.birt.runtime_4.2.2.v20130216-1152.jar<br>org.eclipse.core.runtime_3.8.0.v20120912-155025.jar<br>org.eclipse.datatools.connectivity.oda.consumer_3.2.5.v201109151100.jar<br>org.eclipse.datatools.connectivity.oda_3.3.4.v201212070447.jar<br>org.eclipse.datatools.connectivity_1.2.7.v201302060508.jar<br>org.eclipse.equinox.common_3.6.100.v20120522-1841.jar<br>org.eclipse.equinox.registry_3.5.200.v20120522-1841.jar<br>org.eclipse.osgi_3.8.2.v20130124-134944.jar<br>org.w3c.css.sac_1.3.0.v200805290154.jar<br>Tidy.jar<br>viewservlets.jar<br>derby.jar<br><br>从86个精简到22个，工程下不用到那么多无用的jar包了，其中derby.jar这个包单独拿出来是因为这个包可要可不要，因为这个是示例工程中的数据源，但我们的项目中一般都不需要用到示例工程中的报表数据源，所以我没有拷贝这个jar包。<br>至此通过如上步骤已经将birt报表集成到我们的项目中来了。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/BIRT集成WEB项目/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-BIRT参数设置详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/09/BIRT参数设置详解/">BIRT参数设置详解</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/09/BIRT参数设置详解/" class="archive-article-date">
-  	<time datetime="2017-02-09T06:13:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="BIRT参数设置详解"><a href="#BIRT参数设置详解" class="headerlink" title="BIRT参数设置详解"></a><a href="http://www.cnblogs.com/langlangago/articles/5077226.html" target="_blank" rel="noopener">BIRT参数设置详解</a></h2><p>2015-12-25 23:02 by langlangago, 673 阅读, 0 评论, <a href="http://www.cnblogs.com/langlangago/articles/5077226.html#" target="_blank" rel="noopener">收藏</a>, <a href="https://i.cnblogs.com/EditArticles.aspx?postid=5077226" target="_blank" rel="noopener">编辑</a></p>
-<p><a href="http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html" target="_blank" rel="noopener">BIRT参数设置详解</a></p>
-<p><a href="http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html" target="_blank" rel="noopener">http://www.blogjava.net/huangzhanhu/archive/2010/02/03/311777.html</a></p>
-<p>在使用birt报表的时候感觉页面的 BIRT Report Viewer头标题没有用，想去掉在网上一查原来有详细的参数设置，看来birt的功能还是很强大啊。现在转帖如下：<br>BIRT作为一款功能强大的开源报表工具，其版本的升级更新速度也非常快，从1.0到2.0，一直到最新的2.2.1版本，无论从功能上还是性能上都得到了极大的提高和扩充。BIRT也提供了一个标准的J2EE实现组件，可以发布到支持J2EE应用的web server服务器上，可以对生成的报表进行预览等操作。在大家使用BIRT Viewer的时候，可能会对它日益纷繁的参数设置如云里雾里，在网上论坛里也有很多人碰到这样哪样的问题，同时官方的文档也不细致不全。所以我就对这些参数进行了一个简单系统的总结，希望能对大家的BIRT开发有所帮助。这些参数以2.2.1版本为准，请大家特别注意。<br><br>1. Servlet模式说明<br>查看BIRT Viewer自带的web.xml文件，可以看到有以下几个pattern：<br><br>frameset —- 采用Ajax框架，可以显示工具条，导航条和TOC面板，实现复杂的操作，如分页处理，导出数据，导出报表，打印等等。该模式下会自动生成report document文件(预览report design文件)到特定的目录(用户可以用参数指定，也可以定义在web.xml里)。采用Ajax，速度较慢。<br><br>run —- 也采用Ajax框架，但不实现frameset的复杂功能，不会生成临时的report document文件(预览report design文件)，也不支持分页，这个主要是应用在BIRT Designer里的preview tab里，可以支持cancel操作，其它不怎么常用。采用Ajax，速度较慢。<br><br>preview — 没有用到Ajax框架，直接调用底层Engine API对报表进行render，把生成的报表内容直接输出到浏览器。这种模式和run模式调用的是相同的Engine API，唯一区别在于run采用Ajax获取报表内容，而preview直接输出到浏览器。如果要支持分页，用户需要在URL上定义<strong>page和 </strong>pagerange参数，这两个参数也会在后面详细说明。需要特别说明的是，在这几种预览模式中，preview的速度是最快的。<br><br>document — 该模式主要是为了从report design文件生成report document文件。用户可以在URL上提定document文件生成存放的路径(存放在server端)，如果未指定，会直接生成 rptdocument发送到客户端浏览器，用户可以下载到客户端。<br><br>output — 该模式类似于frameset，会自动生成report document文件(预览report design文件)，区别在于output不采用Ajax，而是将生成的报表内容直接输出到浏览器。<br><br>parameter — 该模式主要用于生成一个参数对话框，一般用户不常用，用户可以直接通过提供的JSP Tag–parameterPage去实现参数对话框，不需要直接调用。<br><br>download — 用于导出报表数据为CSV格式，当你使用frameset工具条里的导出数据功能时，会用到这个模式。<br><br>2. web.xml里的参数设置<br><br>web.xml文件里有许多参数，用户应该根据自已的需求出发对这些参数有一个深入的了解。下面我会对这些参数一一做以说明。<br><br>[BIRT_VIEWER_LOCALE]<br><br>设置默认的Locale信息，暂时没有太大意义。因为Locale的信息，首先以URL上定义的<strong>locale为准，如果没有定义，会找到当前浏览器的Locale信息，最后才会用到这里定义的信息。<br><br>[BIRT_VIEWER_WORKING_FOLDER]<br><br>设置BIRT Viewer的工作目录。用户可以把report design或是report document文件存放在这个目录下，这样就可以在URL上采用相对路径去预览这些报表文件了。默认是当前根目录。<br><br>当前支持三种形式：<br><br>相对路径 — 这个相对当前的WEB应用的context root.<br><br>绝对路径<br><br>JAVA系统变量 — 可以在启动服务器时，定义JVM的系统变量，如java –Dmyworkingfolder=D:/reports。这样就可以在web.xml中用${myworkingfolder}进行引用了。<br><br>[BIRT_VIEWER_DOCUMENT_FOLDER]<br><br>设置生成的document文件的存放路径。默认是documents目录。路径设置同上。<br><br>[WORKING_FOLDER_ACCESS_ONLY]<br><br>简单的报表访问限制控制实现，如果设为true,哪就只能预览存放在工作目录下的报表文件。默认值是false。<br><br>[BIRT_VIEWER_IMAGE_DIR]<br><br>设置生成的临时图片的存放路径。默认是report/images目录。路径设置同工作目录设置。<br><br>[BIRT_VIEWER_LOG_DIR]<br><br>设置生成的日志文件存放路径。默认是logs目录。路径设置同工作目录设置。<br><br>[BIRT_VIEWER_LOG_LEVEL]<br><br>设置日志的level，可选的值有：ALL|SEVERE|WARNING|INFO|CONFIG|FINE|FINER|FINEST|OFF。级别由高到低。<br><br>[BIRT_VIEWER_SCRIPTLIB_DIR]<br><br>设置用户script lib文件的存放目录( 在报表中用到的Java Event Handler Class )。默认值是scriptlib。路径设置同工作目录设置。<br><br>[BIRT_RESOURCE_PATH]<br><br>设置用户资源存放路径，这些资源包括library文件，image文件等。默认是当前根目录。路径设置同工作目录设置。<br><br>[BIRT_VIEWER_MAX_ROWS]<br><br>设置获取dataset的最大记录数。主要应用于设计报表的时候，预览报表如果记录数太多，会花费很多的时间，也可能会引起out of memory问题。默认是不限制。<br><br>[BIRT_VIEWER_MAX_CUBE_LEVELS]<br><br>设置CUBE查询的最大级数。和前面的参数作用类似。默认是不限制。<br><br>[BIRT_VIEWER_CUBE_MEMORY_SIZE]<br><br>设置在生成CUBE时，可以写在memory中的最大值，单位是MB。可以提高效率，写在内存会比直接写在硬盘快很多。但同时也要注意内存占用的问题。<br><br>[BIRT_OVERWRITE_DOCUMENT]<br><br>该参数主要用于frameset/output模式，它们会生成临时的document文件上。如果设为true，则每次刷新页面时，都会重新去生成document文件，如果为false，则不会重新生成，只会用原来的document文件去生成报表内容。<br><br>[BIRT_VIEWER_CONFIG_FILE]<br><br>定义properties文件的路径，不可以修改。<br><br>[BIRT_VIEWER_PRINT_SERVERSIDE]<br><br>在frameset工具条上，提供有后台服务器打印的功能，该参数可以设置是打开还是关闭后台打印的功能。默认是打开。可选值为: ON 和 OFF。<br><br>[HTML_ENABLE_AGENTSTYLE_ENGINE]<br><br>这个参数是会传递给Engine的，主要用于一些CSS的兼容性方面的问题。默认值是true。<br><br>3. viewer.properties参数设置<br><br>viewer.properties文件主要是定义一些扩展的参数。<br><br>/# configurable variable for JSP base href. Please uncomment the below line.<br><br>/#base_url=<a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a><br><br>该设置主要应用于代理服务器的情况下，在使用代理服务器后，从request里获取的URI并非真正的URI，需要在这里定义。<br><br>/# [EXTENSION SETTING]<br><br>viewer.extension.html=html<br><br>viewer.extension.pdf=pdf<br><br>viewer.extension.postscript=ps<br><br>viewer.extension.doc=doc<br><br>viewer.extension.xls=xls<br><br>viewer.extension.ppt=ppt<br><br>定义输出的报表文件的后缀名，和format相关联。<br><br>/# [OUTPUT FORMAT LABEL NAME]<br><br>viewer.label.html=HTML<br><br>viewer.label.pdf=PDF<br><br>viewer.label.postscript=PostScript<br><br>viewer.label.doc=Word<br><br>viewer.label.xls=Excel<br><br>viewer.label.ppt=PowerPoint<br><br>定义导出报表对话框里的报表格式列表，和format相关联，这样名字会更有意义。<br><br>/# [CSV SEPARATOR]<br><br>viewer.sep.0=,<br><br>viewer.sep.1=;<br><br>viewer.sep.2=:<br><br>viewer.sep.3=|<br><br>viewer.sep.4=\t<br><br>支持多种CSV分隔符，用户也可以增加新的分隔符(只支持char，而不是string)。但同时需要修改JSP文件和Messages.properties文件。<br><br>/# [LOGGERS]<br><br>/# “logger.”+class=level<br><br>/# if no level is specified or the text “DEFAULT”,<br><br>/# then the default level from the web.xml will be used<br><br>logger.org.eclipse.datatools.connectivity.oda=DEFAULT<br><br>logger.org.eclipse.datatools.enablement.oda=DEFAULT<br><br>当前的日志都是通过Engine输出的，如果需要其它组件的日志输出，可以在这里定义。注意格式必须为logger.org……。而且该组件必须实现了java的logger。<br><br>可以单独为该组件设置日志级别，如果设为DEFAULT，就会使用web.xml里的设置。<br><br>4. URL参数<br><br>下面是一些主要用到的URL参数。<br><br>“</strong>report”<br><br>定义要预览的rptdesign文件路径，支持相对路径和绝对路径，相对路径是相对于web.xml中定义的工作目录。<br><br>“<strong>document”<br><br>定义要预览的rptdocument文件路径，同样支持相对和绝对路径。相对路径是相对于web.xml中定义的工作目录。在同时定义了</strong>report 和<strong>document参数时，以</strong>document为优先，如未找到相应的document文件，才会从design文件生成document文件 (frameset/output)或是直接去render这个design文件(preview/run)。<br><br>“<strong>title”<br><br>定义报表显示的标题。<br><br>“</strong>showtitle”<br><br>是否显示frameset模式下上方的标题部分。true | false<br><br>“<strong>toolbar”<br><br>是否显示frameset模式下的工具条。true | false<br><br>“</strong>navigationbar”<br><br>是否显示frameset模式下的导航条。true | false<br><br>“<strong>parameterpage”<br><br>是否强制弹出或不弹出报表参数对话框。true | false<br><br>“</strong>format”<br><br>输出报表的格式，默认为html。现在支持：pdf | doc | xls | postscript | ppt<br><br>“<strong>locale”<br><br>设置Locale信息，如 </strong>locale=zh_CN， 注意必须是国家加语言。<br><br>“<strong>svg”<br><br>设置chart输出是否以SVG格式输出。true | false<br><br>frameset和run模式下，会采用javascript判断客户端浏览器是否支持svg，但并非对所有浏览器有效。<br><br>“</strong>bookmark”<br><br>设置页面要定位的书签名字。<br><br>“<strong>istoc”<br><br>指定定位的书签是不是一个TOC名字。如为true,就会根据</strong>bookmark参数值去获取一个真正的书签名，从而实现正常的跳转。这个主要用于定位到一个TOC上。<br><br>“<strong>rtl”<br><br>指定HTML页面输出是否需要right to left。支持不同国家的阅读习惯，如阿拉伯国家是从右到左的。<br><br>“</strong>page”<br><br>指定要输出的报表页数，这个依赖于报表的分页设计(page break)。<br><br>“<strong>pagerange”<br><br>指定要输出的报表页数范围。如1,3,5-9。<br><br>“</strong>resourceFolder”<br><br>定义资源目录路径。同web.xml中的BIRT_RESOURCE_PATH设置。<br><br>“<strong>asattachment”<br><br>是否以附件方式下载报表，如生成PDF或是其它格式里。默认是inline。<br><br>“</strong>masterpage”<br><br>是否要显示master page。true | false<br><br>“<strong>designer”<br><br>该参数主要是应用在BIRT Designer环境下，如会读取cache的报表参数等等，一般不用。true | false<br><br>“</strong>overwrite”<br><br>该参数同web.xml定义的参数，不过web.xml里是全局设置，在URL上通过参数可以定义本次操作的设置。<br><br>“<strong>imageID”<br><br>内部参数，用于image的引用，一般不用。<br><br>“</strong>maxrows”<br><br>设置Dataset查询的最大记录数，要注意这个设置是全局的，会影响后面所有的请求。主要用于BIRT Designer下，提高报表设计效率。同web.xml中的BIRT_VIEWER_MAX_ROWS设置。<br><br>“<strong>maxlevels”<br><br>设置查询获取Cube的最大级数。同上面的</strong>maxrows，也主要用于BIRT Designer设计环境。<br><br>同web.xml中的BIRT_VIEWER_MAX_CUBE_LEVELS设置。<br><br>“<strong>cubememsize”<br><br>同web.xml中的BIRT_VIEWER_CUBE_MEMORY_SIZE参数设置。<br><br>“</strong>instanceid”<br><br>如果查看BIRT输出的HTML代码，你就可以看到一些HTML Element会有一个iid的属性(如table)，这个就是instanceid。这个是Engine动态生成的，不可提前预知。所以你需要从 HTML代码中得到这个值。该参数主要是为了获取reportlet(报表片断，如只输出报表中的一个Table或是一个Chart)。需要配合 <strong>isreportlet参数。<br><br>“</strong>isreportlet”<br><br>指定当前输出是不是一个reportlet。true | false<br><br>特别说明：为了输出一个reportlet，BIRT现在提供两种方式。<br><br>1． 为要输出的对象(表格或是Chart)定义一个bookmark，然后可以用下面的URL输出reportlet.<br><br><a href="http://localhost:8080/birt/frameset?__report=test.rptdesign&amp;__bookmark=bk&amp;__isreportlet=true" target="_blank" rel="noopener">http://localhost:8080/birt/frameset?__report=test.rptdesign&amp;__bookmark=bk&amp;__isreportlet=true</a><br><br>2． 采用instanceid，但这个值事先是无法预知的，需要预览一次后从HTML代码中得到。然后用下面的URL输出reportlet.<br><br><a href="http://localhost:8080/birt/output?__report=test.rptdesign&amp;__instanceid=iid&amp;__isreportlet=true" target="_blank" rel="noopener">http://localhost:8080/birt/output?__report=test.rptdesign&amp;__instanceid=iid&amp;__isreportlet=true</a><br><br>还有就是要注意，reportlet只支持document文档。如果是预览design文档去输出reportlet，就必须要使用frameset/output(自动生成document文档)。<br><br>“<strong>clean”<br><br>BIRT里临时生成的一些文件都是和session相关的，比如临时document文件，还有image文件。这些文件也可以通过session进行管理，这个参数就是指定是否需要在session timeout的时候清除这些临时文件。默认值是true。<br><br>true | false<br><br>“</strong>dpi”<br><br>可以设置输出Chart的dpi数值。<br><br>“<strong>fittopage”<br><br>暂时这个参数只对PDF和postscript格式报表有效，指定是否调整至适合页面。<br><br>“</strong>pagebreakonly”<br><br>暂时这个参数只对PDF和postscript格式报表有效，指定是否只采用BIRT报表内定的分页设置。这个参数一般需要和<strong>fittopage联合使用。<br><br>“</strong>agentstyle”<br><br>同web.xml中的HTML_ENABLE_AGENTSTYLE_ENGINE参数设置。<br><br>========================== 后台Server端打印相关参数 ==========================<br><br>“<strong>action”<br><br>定义执行的指令名称。当前只支持print指令，用于后台服务器打印。<br><br>“</strong>printer”<br><br>后台打印机名称。<br><br>“<strong>printer_copies”<br><br>对应打印机的打印份数参数。<br><br>“</strong>printer_collate”<br><br>对应打印机的双面打印参数。<br><br>“<strong>printer_duplex”<br><br>对应打印机的duplex参数。<br><br>“</strong>printer_mode”<br><br>对应打印机的模式参数。是单色还是彩色。<br><br>“<strong>printer_pagesize”<br><br>对应打印机的纸型参数。比如A4。<br><br>===============================================================================<br><br>========================== JSP Tag相关参数 ===================================<br><br>“</strong>id”<br><br>viewer的ID号，这个参数一般不常用，主要用于JSP Tag中，如在一个页面插入两个BIRT Viewer，而且预览同一个报表文件，这时候因为在一个session下面，所以需要用不同的ID去生成单独的document文件。不至于都生成同一个document文件上，从而引发冲突。<br><br>“<strong>pattern”<br><br>在JSP Tag中用于指定要提交的Servlet Pattern名字，如frameset/output/run/preview等。主要用于采用parameter模式生成parameter dialog对话框时。<br><br>“</strong>target”<br><br>可以指定提交到的窗口名称。如_blank,_self等。<br><br>“<strong>nocache”<br><br>指定是否会用到cache的报表参数值，这些cache的值一般保存在rptconfig文件里。在设计报表并预览的时候，可以保存输入的报表参数值。这个在runtime的时候不常用。<br><br>===============================================================================<br><br>========================== 报表参数相关 ===================================<br><br>“</strong>isnull”<br><br>指定当前的报表参数为null值，后面是报表的参数名。<br><br>“<strong>islocale”<br><br>指定当前的报表参数值是和Locale/Format相关的，必须用特定的Locale/Format转化参数值(从String转化为Object)。格式为</strong>islocale=paramName。<br><br>“<strong>isdisplay</strong>”<br><br>指定报表参数的displayText值,格式为<strong>isdisplay</strong>paramName=displayText。可以在报表中引用displayText值，如params[“p1”].displayText。<br><br>在URL上传displayText时如下(报表参数名为p1)：<br><br>&amp;<strong>isdisplay</strong>p1=hello<br><br>“<strong>islocale</strong>”<br><br>指定该报表参数值是Locale/Format相关的，同时给定了参数值。格式为<strong>islocale</strong>paramName=paramValue。<br><br>===============================================================================<br><br>========================== Export Data参数 ===================================<br><br>“<strong>exportEncoding”<br><br>该参数应用于导出数据为CSV中，可以指定导出的文件编码，如GBK或是GB2312等。<br><br>“</strong>sep”<br><br>该参数应用于导出数据为CSV中，可以指定数据分隔符，如逗号，冒号等。<br><br>“__exportdatatype”<br><br>该参数应用于导出数据为CSV中，可以指定是否输出数据类型。true | false<br><br>“ResultSetName”<br><br>要导出数据的记录集名字。<br><br>“SelectedColumnNumber”<br><br>要导出的栏位数。<br><br>“SelectedColumn”<br><br>要导出的数据栏位名称。<br><br>具体可以查看BirtSimpleExportDataDialog.js文件。<br><br>===============================================================================<br><br>5. 其它参数设置<br><br>在BIRT Viewer里还有一个比较特殊的参数应用，就是用户可以自定义自已的servlet，然后传递对象到Application Context中，在报表中就可以从全局的Application Context去获取到这个对象。<br><br>这里相关的有两个内定的参数，AppContextKey和AppContextValue。下面是一个简单的示例。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">service</span><span class="params">( HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">HttpServletResponse response )</span> <span class="keyword">throws</span> ServletException,IOException, BirtException </span>&#123;</span><br><span class="line">    String myKeyName = <span class="string">"mykey"</span>;</span><br><span class="line">    List values = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    values.add( <span class="string">"hello"</span> );</span><br><span class="line">    values.add( <span class="keyword">new</span> Date() );</span><br><span class="line">    request.setAttribute( <span class="string">"AppContextKey"</span>, myKeyName );</span><br><span class="line">    request.setAttribute( <span class="string">"AppContextValue"</span>, values );</span><br><span class="line">    RequestDispatcher rd = request.getRequestDispatcher( <span class="string">"/frameset"</span> );</span><br><span class="line">    rd.include( request, response );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/09/BIRT参数设置详解/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/08/02/oracle11g 安装/">展开全文 >></a>
         </p>
       
 
@@ -955,7 +1038,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1050,11 +1133,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,15 +1145,59 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql约束</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">最近心有点累</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">查看oracle操作日志</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis-plus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">layui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jstl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">oracl</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">日常</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">办公</a>
               </li>
             
             <div class="clearfix"></div>
