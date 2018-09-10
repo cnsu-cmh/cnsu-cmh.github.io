@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:StringUtils StringUtils 方法的操作对象是 java.lang.String 类型的对象，是 JDK 提供的 String 类型操作方法的补充，并且是 null 安全的(即如果输入参数 String 为 null 则不会抛出  NullPointerException ，而是做了相应处理，例如，如果输入为 null 则返回也是 null 等，具体可以查看源代码)。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2015-12-09T13:36:14.182Z">
+<meta property="og:updated_time" content="2018-09-10T14:58:15.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="StringUtils">
 <meta name="twitter:description" content="文章来源:StringUtils StringUtils 方法的操作对象是 java.lang.String 类型的对象，是 JDK 提供的 String 类型操作方法的补充，并且是 null 安全的(即如果输入参数 String 为 null 则不会抛出  NullPointerException ，而是做了相应处理，例如，如果输入为 null 则返回也是 null 等，具体可以查看源代码)。">
@@ -187,69 +187,50 @@ var _hmt = _hmt || [];
 <p>StringUtils 方法的操作对象是 java.lang.String 类型的对象，是 JDK 提供的 String 类型操作方法的补充，并且是 null 安全的(即如果输入参数 String 为 null 则不会抛出  NullPointerException ，而是做了相应处理，例如，如果输入为 null 则返回也是 null 等，具体可以查看源代码)。</p>
 <p>除了构造器，StringUtils 中一共有130多个方法，并且都是 static 的，所以我们可以这样调用 StringUtils.xxx()</p>
 <p>下面分别对一些常用方法做简要介绍：</p>
-<ol>
-<li><p>public static boolean isEmpty(String str)<br><br>判断某字符串是否为空，为空的标准是 str==null 或 str.length()==0<br><br>下面是 StringUtils 判断是否为空的示例：</p>
-<p> <br>StringUtils.isEmpty(null) = true<br> <br>StringUtils.isEmpty(“”) = true<br> <br>StringUtils.isEmpty(“ “) = false //注意在 StringUtils 中空格作非空处理<br> <br>StringUtils.isEmpty(“   “) = false<br> <br>StringUtils.isEmpty(“bob”) = false<br> <br>StringUtils.isEmpty(“ bob “) = false</p>
-</li>
-</ol>
-<ol start="2">
-<li><p>public static boolean isNotEmpty(String str)<br><br>判断某字符串是否非空，等于 !isEmpty(String str)<br><br>下面是示例：</p>
-<p>   <br>StringUtils.isNotEmpty(null) = false<br>   <br>StringUtils.isNotEmpty(“”) = false<br>   <br>StringUtils.isNotEmpty(“ “) = true<br>   <br>StringUtils.isNotEmpty(“         “) = true<br>   <br>StringUtils.isNotEmpty(“bob”) = true<br>   <br>StringUtils.isNotEmpty(“ bob “) = true</p>
-</li>
-<li><p>public static boolean isBlank(String str)<br><br>判断某字符串是否为空或长度为0或由空白符(whitespace) 构成<br><br>下面是示例：<br>  <br>StringUtils.isBlank(null) = true<br>  <br>StringUtils.isBlank(“”) = true<br>  <br>StringUtils.isBlank(“ “) = true<br>  <br>StringUtils.isBlank(“        “) = true<br>  <br>StringUtils.isBlank(“\t \n \f \r”) = true   //对于制表符、换行符、换页符和回车符</p>
-<p>  <br>StringUtils.isBlank()   //均识为空白符<br>  <br>StringUtils.isBlank(“\b”) = false   //“\b”为单词边界符<br>  <br>StringUtils.isBlank(“bob”) = false<br>  <br>StringUtils.isBlank(“ bob “) = false</p>
-</li>
-<li><p>public static boolean isNotBlank(String str)<br><br>判断某字符串是否不为空且长度不为0且不由空白符(whitespace) 构成，等于 !isBlank(String str)<br><br>下面是示例：</p>
-<p>   <br>StringUtils.isNotBlank(null) = false<br>   <br>StringUtils.isNotBlank(“”) = false<br>   <br>StringUtils.isNotBlank(“ “) = false<br>   <br>StringUtils.isNotBlank(“         “) = false<br>   <br>StringUtils.isNotBlank(“\t \n \f \r”) = false<br>   <br>StringUtils.isNotBlank(“\b”) = true<br>   <br>StringUtils.isNotBlank(“bob”) = true<br>   <br>StringUtils.isNotBlank(“ bob “) = true</p>
-</li>
-<li><p>public static String trim(String str)<br><br>去掉字符串两端的控制符(control characters, char &lt;= 32) , 如果输入为 null 则返回null<br><br>下面是示例：<br>   <br>StringUtils.trim(null) = null<br>   <br>StringUtils.trim(“”) = “”<br>   <br>StringUtils.trim(“ “) = “”<br>   <br>StringUtils.trim(“  \b \t \n \f \r    “) = “”<br>   <br>StringUtils.trim(“     \n\tss   \b”) = “ss”<br>   <br>StringUtils.trim(“ d   d dd     “) = “d   d dd”<br>   <br>StringUtils.trim(“dd     “) = “dd”<br>   <br>StringUtils.trim(“     dd       “) = “dd”</p>
-</li>
-<li><p>public static String trimToNull(String str)<br><br>去掉字符串两端的控制符(control characters, char &lt;= 32) ,如果变为 null 或””，则返回 null<br><br>下面是示例：<br>   <br>StringUtils.trimToNull(null) = null<br>   <br>StringUtils.trimToNull(“”) = null<br>   <br>StringUtils.trimToNull(“ “) = null<br>   <br>StringUtils.trimToNull(“     \b \t \n \f \r    “) = null<br>   <br>StringUtils.trimToNull(“     \n\tss   \b”) = “ss”<br>   <br>StringUtils.trimToNull(“ d   d dd     “) = “d   d dd”<br>   <br>StringUtils.trimToNull(“dd     “) = “dd”<br>   <br>StringUtils.trimToNull(“     dd       “) = “dd”</p>
-</li>
-<li><p>public static String trimToEmpty(String str)<br><br>去掉字符串两端的控制符(control characters, char &lt;= 32) ,如果变为 null 或 “” ，则返回 “”<br><br>下面是示例：<br>   <br>StringUtils.trimToEmpty(null) = “”<br>   <br>StringUtils.trimToEmpty(“”) = “”<br>   <br>StringUtils.trimToEmpty(“ “) = “”<br>   <br>StringUtils.trimToEmpty(“     \b \t \n \f \r    “) = “”<br>   <br>StringUtils.trimToEmpty(“     \n\tss   \b”) = “ss”<br>   <br>StringUtils.trimToEmpty(“ d   d dd     “) = “d   d dd”<br>   <br>StringUtils.trimToEmpty(“dd     “) = “dd”<br>   <br>StringUtils.trimToEmpty(“     dd       “) = “dd”</p>
-</li>
-<li><p>public static String strip(String str)<br><br>去掉字符串两端的空白符(whitespace) ，如果输入为 null 则返回 null<br><br>下面是示例(注意和 trim() 的区别)：<br>   <br>StringUtils.strip(null) = null<br>   <br>StringUtils.strip(“”) = “”<br>   <br>StringUtils.strip(“ “) = “”<br>   <br>StringUtils.strip(“     \b \t \n \f \r    “) = “\b”<br>   <br>StringUtils.strip(“     \n\tss   \b”) = “ss   \b”<br>   <br>StringUtils.strip(“ d   d dd     “) = “d   d dd”<br>   <br>StringUtils.strip(“dd     “) = “dd”<br>   <br>StringUtils.strip(“     dd       “) = “dd”</p>
-</li>
-<li><p>public static String stripToNull(String str)<br><br>去掉字符串两端的空白符(whitespace) ，如果变为 null 或””，则返回 null<br><br>下面是示例(注意和 trimToNull() 的区别)：<br>   <br>StringUtils.stripToNull(null) = null<br>   <br>StringUtils.stripToNull(“”) = null<br>   <br>StringUtils.stripToNull(“ “) = null<br>   <br>StringUtils.stripToNull(“     \b \t \n \f \r    “) = “\b”<br>   <br>StringUtils.stripToNull(“     \n\tss   \b”) = “ss   \b”<br>   <br>StringUtils.stripToNull(“ d   d dd     “) = “d   d dd”<br>   <br>StringUtils.stripToNull(“dd     “) = “dd”<br>   <br>StringUtils.stripToNull(“     dd       “) = “dd”</p>
-</li>
-<li><p>public static String stripToEmpty(String str)<br><br>去掉字符串两端的空白符(whitespace) ，如果变为 null 或”” ，则返回””<br><br>下面是示例(注意和 trimToEmpty() 的区别)：<br> <br>StringUtils.stripToNull(null) = “”<br> <br>StringUtils.stripToNull(“”) = “”<br> <br>StringUtils.stripToNull(“ “) = “”<br> <br>StringUtils.stripToNull(“     \b \t \n \f \r    “) = “\b”<br> <br>StringUtils.stripToNull(“     \n\tss   \b”) = “ss   \b”<br> <br>StringUtils.stripToNull(“ d   d dd     “) = “d   d dd”<br> <br>StringUtils.stripToNull(“dd     “) = “dd”<br> <br>StringUtils.stripToNull(“     dd       “) = “dd”</p>
-</li>
-</ol>
-<p>以下方法只介绍其功能，不再举例：</p>
-<ol start="11">
-<li><p>public static String strip(String str, String stripChars)<br><br>去掉 str 两端的在 stripChars 中的字符。<br><br>如果 str 为 null 或等于”” ，则返回它本身；<br><br>如果 stripChars 为 null 或”” ，则返回 strip(String str) 。</p>
-</li>
-<li><p>public static String stripStart(String str, String stripChars)<br><br> 和11相似，去掉 str 前端的在 stripChars 中的字符。</p>
-</li>
-<li><p>public static String stripEnd(String str, String stripChars)<br><br>和11相似，去掉 str 末端的在 stripChars 中的字符。</p>
-</li>
-<li><p>public static String[] stripAll(String[] strs)<br><br>对字符串数组中的每个字符串进行 strip(String str) ，然后返回。<br><br>如果 strs 为 null 或 strs 长度为0，则返回 strs 本身</p>
-</li>
-<li><p>public static String[] stripAll(String[] strs, String stripChars)<br><br>对字符串数组中的每个字符串进行 strip(String str, String stripChars) ，然后返回。<br><br>如果 strs 为 null 或 strs 长度为0，则返回 strs 本身</p>
-</li>
-<li><p>public static boolean equals(String str1, String str2)<br><br>比较两个字符串是否相等，如果两个均为空则也认为相等。</p>
-</li>
-<li><p>public static boolean equalsIgnoreCase(String str1, String str2)<br><br>比较两个字符串是否相等，不区分大小写，如果两个均为空则也认为相等。</p>
-</li>
-<li><p>public static int indexOf(String str, char searchChar)<br><br>返回字符 searchChar 在字符串 str 中第一次出现的位置。<br><br>如果 searchChar 没有在 str 中出现则返回-1，<br><br>如果 str 为 null 或 “” ，则也返回-1</p>
-</li>
-<li><p>public static int indexOf(String str, char searchChar, int startPos)<br><br>返回字符 searchChar 从 startPos 开始在字符串 str 中第一次出现的位置。<br><br>如果从 startPos 开始 searchChar 没有在 str 中出现则返回-1，<br><br>如果 str 为 null 或 “” ，则也返回-1</p>
-</li>
-<li><p>public static int indexOf(String str, String searchStr)<br><br>返回字符串 searchStr 在字符串 str 中第一次出现的位置。<br><br>如果 str 为 null 或 searchStr 为 null 则返回-1，<br><br>如果 searchStr 为 “” ,且 str 为不为 null ，则返回0，<br><br>如果 searchStr 不在 str 中，则返回-1</p>
-</li>
-<li><p>public static int ordinalIndexOf(String str, String searchStr, int ordinal)<br><br>返回字符串 searchStr 在字符串 str 中第 ordinal 次出现的位置。<br><br>如果 str=null 或 searchStr=null 或 ordinal&lt;=0 则返回-1<br><br>举例(<em>代表任意字符串)：<br>  <br>StringUtils.ordinalIndexOf(null, </em>, <em>) = -1<br>  <br>StringUtils.ordinalIndexOf(</em>, null, <em>) = -1<br>  <br>StringUtils.ordinalIndexOf(“”, “”, </em>) = 0<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “a”, 1) = 0<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “a”, 2) = 1<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “b”, 1) = 2<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “b”, 2) = 5<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “ab”, 1) = 1<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “ab”, 2) = 4<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “bc”, 1) = -1<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “”, 1) = 0<br>  <br>StringUtils.ordinalIndexOf(“aabaabaa”, “”, 2) = 0</p>
-</li>
-<li><p>public static int indexOf(String str, String searchStr, int startPos)<br>返回字符串 searchStr 从 startPos 开始在字符串 str 中第一次出现的位置。<br>举例(<em>代表任意字符串)：<br>  <br>StringUtils.indexOf(null, </em>, <em>) = -1<br>  <br>StringUtils.indexOf(</em>, null, *) = -1<br>  <br>StringUtils.indexOf(“”, “”, 0) = 0<br>  <br>StringUtils.indexOf(“aabaabaa”, “a”, 0) = 0<br>  <br>StringUtils.indexOf(“aabaabaa”, “b”, 0) = 2<br>  <br>StringUtils.indexOf(“aabaabaa”, “ab”, 0) = 1<br>  <br>StringUtils.indexOf(“aabaabaa”, “b”, 3) = 5<br>  <br>StringUtils.indexOf(“aabaabaa”, “b”, 9) = -1<br>  <br>StringUtils.indexOf(“aabaabaa”, “b”, -1) = 2<br>  <br>StringUtils.indexOf(“aabaabaa”, “”, 2) = 2<br>  <br>StringUtils.indexOf(“abc”, “”, 9) = 3</p>
-</li>
-<li><p>public static int lastIndexOf(String str, char searchChar)<br>基本原理同18</p>
-</li>
-<li><p>public static int lastIndexOf(String str, char searchChar, int startPos)<br>基本原理同19</p>
-</li>
-<li><p>public static int lastIndexOf(String str, String searchStr)<br>基本原理同20</p>
-</li>
-<li><p>public static int lastIndexOf(String str, String searchStr, int startPos)<br>基本原理同22</p>
-</li>
-</ol>
+<p>1.public static boolean isEmpty(String str)<br>   <br>判断某字符串是否为空，为空的标准是 str==null 或 str.length()==0<br>   <br>下面是 StringUtils 判断是否为空的示例：<br><a id="more"></a><br>    <br>StringUtils.isEmpty(null) = true<br>    <br>StringUtils.isEmpty(“”) = true<br>    <br>StringUtils.isEmpty(“ “) = false //注意在 StringUtils 中空格作非空处理<br>    <br>StringUtils.isEmpty(“   “) = false<br>    <br>StringUtils.isEmpty(“bob”) = false<br>    <br>StringUtils.isEmpty(“ bob “) = false</p>
+<p>2.public static boolean isNotEmpty(String str)<br>   <br>判断某字符串是否非空，等于 !isEmpty(String str)<br>   <br>下面是示例：</p>
+<pre><code>&lt;br/&gt;StringUtils.isNotEmpty(null) = false
+&lt;br/&gt;StringUtils.isNotEmpty(&quot;&quot;) = false
+&lt;br/&gt;StringUtils.isNotEmpty(&quot; &quot;) = true
+&lt;br/&gt;StringUtils.isNotEmpty(&quot;         &quot;) = true
+&lt;br/&gt;StringUtils.isNotEmpty(&quot;bob&quot;) = true
+&lt;br/&gt;StringUtils.isNotEmpty(&quot; bob &quot;) = true
+</code></pre><p>3.public static boolean isBlank(String str)<br>   <br>判断某字符串是否为空或长度为0或由空白符(whitespace) 构成<br>   <br>下面是示例：<br>     <br>StringUtils.isBlank(null) = true<br>     <br>StringUtils.isBlank(“”) = true<br>     <br>StringUtils.isBlank(“ “) = true<br>     <br>StringUtils.isBlank(“        “) = true<br>     <br>StringUtils.isBlank(“\t \n \f \r”) = true   //对于制表符、换行符、换页符和回车符</p>
+<pre><code>&lt;br/&gt;StringUtils.isBlank()   //均识为空白符
+&lt;br/&gt;StringUtils.isBlank(&quot;\b&quot;) = false   //&quot;\b&quot;为单词边界符
+&lt;br/&gt;StringUtils.isBlank(&quot;bob&quot;) = false
+&lt;br/&gt;StringUtils.isBlank(&quot; bob &quot;) = false
+</code></pre><p>4.public static boolean isNotBlank(String str)<br>   <br>判断某字符串是否不为空且长度不为0且不由空白符(whitespace) 构成，等于 !isBlank(String str)<br>   <br>下面是示例：</p>
+<pre><code>&lt;br/&gt;StringUtils.isNotBlank(null) = false
+&lt;br/&gt;StringUtils.isNotBlank(&quot;&quot;) = false
+&lt;br/&gt;StringUtils.isNotBlank(&quot; &quot;) = false
+&lt;br/&gt;StringUtils.isNotBlank(&quot;         &quot;) = false
+&lt;br/&gt;StringUtils.isNotBlank(&quot;\t \n \f \r&quot;) = false
+&lt;br/&gt;StringUtils.isNotBlank(&quot;\b&quot;) = true
+&lt;br/&gt;StringUtils.isNotBlank(&quot;bob&quot;) = true
+&lt;br/&gt;StringUtils.isNotBlank(&quot; bob &quot;) = true
+</code></pre><p>5.public static String trim(String str)<br>   <br>去掉字符串两端的控制符(control characters, char &lt;= 32) , 如果输入为 null 则返回null<br>   <br>下面是示例：<br>      <br>StringUtils.trim(null) = null<br>      <br>StringUtils.trim(“”) = “”<br>      <br>StringUtils.trim(“ “) = “”<br>      <br>StringUtils.trim(“  \b \t \n \f \r    “) = “”<br>      <br>StringUtils.trim(“     \n\tss   \b”) = “ss”<br>      <br>StringUtils.trim(“ d   d dd     “) = “d   d dd”<br>      <br>StringUtils.trim(“dd     “) = “dd”<br>      <br>StringUtils.trim(“     dd       “) = “dd”</p>
+<p>6.public static String trimToNull(String str)<br>   <br>去掉字符串两端的控制符(control characters, char &lt;= 32) ,如果变为 null 或””，则返回 null<br>   <br>下面是示例：<br>      <br>StringUtils.trimToNull(null) = null<br>      <br>StringUtils.trimToNull(“”) = null<br>      <br>StringUtils.trimToNull(“ “) = null<br>      <br>StringUtils.trimToNull(“     \b \t \n \f \r    “) = null<br>      <br>StringUtils.trimToNull(“     \n\tss   \b”) = “ss”<br>      <br>StringUtils.trimToNull(“ d   d dd     “) = “d   d dd”<br>      <br>StringUtils.trimToNull(“dd     “) = “dd”<br>      <br>StringUtils.trimToNull(“     dd       “) = “dd”</p>
+<p>7.public static String trimToEmpty(String str)<br>   <br>去掉字符串两端的控制符(control characters, char &lt;= 32) ,如果变为 null 或 “” ，则返回 “”<br>   <br>下面是示例：<br>      <br>StringUtils.trimToEmpty(null) = “”<br>      <br>StringUtils.trimToEmpty(“”) = “”<br>      <br>StringUtils.trimToEmpty(“ “) = “”<br>      <br>StringUtils.trimToEmpty(“     \b \t \n \f \r    “) = “”<br>      <br>StringUtils.trimToEmpty(“     \n\tss   \b”) = “ss”<br>      <br>StringUtils.trimToEmpty(“ d   d dd     “) = “d   d dd”<br>      <br>StringUtils.trimToEmpty(“dd     “) = “dd”<br>      <br>StringUtils.trimToEmpty(“     dd       “) = “dd”</p>
+<p>8.public static String strip(String str)<br>   <br>去掉字符串两端的空白符(whitespace) ，如果输入为 null 则返回 null<br>   <br>下面是示例(注意和 trim() 的区别)：<br>      <br>StringUtils.strip(null) = null<br>      <br>StringUtils.strip(“”) = “”<br>      <br>StringUtils.strip(“ “) = “”<br>      <br>StringUtils.strip(“     \b \t \n \f \r    “) = “\b”<br>      <br>StringUtils.strip(“     \n\tss   \b”) = “ss   \b”<br>      <br>StringUtils.strip(“ d   d dd     “) = “d   d dd”<br>      <br>StringUtils.strip(“dd     “) = “dd”<br>      <br>StringUtils.strip(“     dd       “) = “dd”</p>
+<p>9.public static String stripToNull(String str)<br>   <br>去掉字符串两端的空白符(whitespace) ，如果变为 null 或””，则返回 null<br>   <br>下面是示例(注意和 trimToNull() 的区别)：<br>      <br>StringUtils.stripToNull(null) = null<br>      <br>StringUtils.stripToNull(“”) = null<br>      <br>StringUtils.stripToNull(“ “) = null<br>      <br>StringUtils.stripToNull(“     \b \t \n \f \r    “) = “\b”<br>      <br>StringUtils.stripToNull(“     \n\tss   \b”) = “ss   \b”<br>      <br>StringUtils.stripToNull(“ d   d dd     “) = “d   d dd”<br>      <br>StringUtils.stripToNull(“dd     “) = “dd”<br>      <br>StringUtils.stripToNull(“     dd       “) = “dd”</p>
+<p>10.public static String stripToEmpty(String str)<br>    <br>去掉字符串两端的空白符(whitespace) ，如果变为 null 或”” ，则返回””<br>    <br>下面是示例(注意和 trimToEmpty() 的区别)：<br>     <br>StringUtils.stripToNull(null) = “”<br>     <br>StringUtils.stripToNull(“”) = “”<br>     <br>StringUtils.stripToNull(“ “) = “”<br>     <br>StringUtils.stripToNull(“     \b \t \n \f \r    “) = “\b”<br>     <br>StringUtils.stripToNull(“     \n\tss   \b”) = “ss   \b”<br>     <br>StringUtils.stripToNull(“ d   d dd     “) = “d   d dd”<br>     <br>StringUtils.stripToNull(“dd     “) = “dd”<br>     <br>StringUtils.stripToNull(“     dd       “) = “dd”</p>
+<p>以下方法只介绍其功能，不再举例：<br>11.public static String strip(String str, String stripChars)<br>   <br>去掉 str 两端的在 stripChars 中的字符。<br>   <br>如果 str 为 null 或等于”” ，则返回它本身；<br>   <br>如果 stripChars 为 null 或”” ，则返回 strip(String str) 。</p>
+<p>12.public static String stripStart(String str, String stripChars)<br>   <br> 和11相似，去掉 str 前端的在 stripChars 中的字符。</p>
+<p>13.public static String stripEnd(String str, String stripChars)<br>    <br>和11相似，去掉 str 末端的在 stripChars 中的字符。</p>
+<p>14.public static String[] stripAll(String[] strs)<br>    <br>对字符串数组中的每个字符串进行 strip(String str) ，然后返回。<br>    <br>如果 strs 为 null 或 strs 长度为0，则返回 strs 本身</p>
+<p>15.public static String[] stripAll(String[] strs, String stripChars)<br>    <br>对字符串数组中的每个字符串进行 strip(String str, String stripChars) ，然后返回。<br>    <br>如果 strs 为 null 或 strs 长度为0，则返回 strs 本身</p>
+<p>16.public static boolean equals(String str1, String str2)<br>    <br>比较两个字符串是否相等，如果两个均为空则也认为相等。</p>
+<p>17.public static boolean equalsIgnoreCase(String str1, String str2)<br>    <br>比较两个字符串是否相等，不区分大小写，如果两个均为空则也认为相等。</p>
+<p>18.public static int indexOf(String str, char searchChar)<br>    <br>返回字符 searchChar 在字符串 str 中第一次出现的位置。<br>    <br>如果 searchChar 没有在 str 中出现则返回-1，<br>    <br>如果 str 为 null 或 “” ，则也返回-1</p>
+<p>19.public static int indexOf(String str, char searchChar, int startPos)<br>    <br>返回字符 searchChar 从 startPos 开始在字符串 str 中第一次出现的位置。<br>    <br>如果从 startPos 开始 searchChar 没有在 str 中出现则返回-1，<br>    <br>如果 str 为 null 或 “” ，则也返回-1</p>
+<p>20.public static int indexOf(String str, String searchStr)<br>    <br>返回字符串 searchStr 在字符串 str 中第一次出现的位置。<br>    <br>如果 str 为 null 或 searchStr 为 null 则返回-1，<br>    <br>如果 searchStr 为 “” ,且 str 为不为 null ，则返回0，<br>    <br>如果 searchStr 不在 str 中，则返回-1</p>
+<p>21.public static int ordinalIndexOf(String str, String searchStr, int ordinal)<br>    <br>返回字符串 searchStr 在字符串 str 中第 ordinal 次出现的位置。<br>    <br>如果 str=null 或 searchStr=null 或 ordinal&lt;=0 则返回-1<br>    <br>举例(<em>代表任意字符串)：<br>      <br>StringUtils.ordinalIndexOf(null, </em>, <em>) = -1<br>      <br>StringUtils.ordinalIndexOf(</em>, null, <em>) = -1<br>      <br>StringUtils.ordinalIndexOf(“”, “”, </em>) = 0<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “a”, 1) = 0<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “a”, 2) = 1<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “b”, 1) = 2<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “b”, 2) = 5<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “ab”, 1) = 1<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “ab”, 2) = 4<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “bc”, 1) = -1<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “”, 1) = 0<br>      <br>StringUtils.ordinalIndexOf(“aabaabaa”, “”, 2) = 0</p>
+<p>22.public static int indexOf(String str, String searchStr, int startPos)<br>    返回字符串 searchStr 从 startPos 开始在字符串 str 中第一次出现的位置。<br>    举例(<em>代表任意字符串)：<br>      <br>StringUtils.indexOf(null, </em>, <em>) = -1<br>      <br>StringUtils.indexOf(</em>, null, *) = -1<br>      <br>StringUtils.indexOf(“”, “”, 0) = 0<br>      <br>StringUtils.indexOf(“aabaabaa”, “a”, 0) = 0<br>      <br>StringUtils.indexOf(“aabaabaa”, “b”, 0) = 2<br>      <br>StringUtils.indexOf(“aabaabaa”, “ab”, 0) = 1<br>      <br>StringUtils.indexOf(“aabaabaa”, “b”, 3) = 5<br>      <br>StringUtils.indexOf(“aabaabaa”, “b”, 9) = -1<br>      <br>StringUtils.indexOf(“aabaabaa”, “b”, -1) = 2<br>      <br>StringUtils.indexOf(“aabaabaa”, “”, 2) = 2<br>      <br>StringUtils.indexOf(“abc”, “”, 9) = 3</p>
+<p>23.public static int lastIndexOf(String str, char searchChar)<br>    基本原理同18</p>
+<p>24.public static int lastIndexOf(String str, char searchChar, int startPos)<br>    基本原理同19</p>
+<p>25.public static int lastIndexOf(String str, String searchStr)<br>    基本原理同20</p>
+<p>26.public static int lastIndexOf(String str, String searchStr, int startPos)<br>    基本原理同22</p>
 <p>另附：</p>
 <p>String 的 split(String regex)   方法的用法<br>如果我们需要把某个字符串拆分为字符串数组，则通常用 split(String regex) 来实现。</p>
 <p>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   String str = <span class="string">"aa,bb,cc,dd"</span>;     </span><br><span class="line">   String[] strArray = str.split(<span class="string">","</span>);      </span><br><span class="line">   System.out.println(strArray.length);     </span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strArray.length; i++) &#123;     </span><br><span class="line">        System.out.println(strArray[i]);     </span><br><span class="line">   &#125;  </span><br><span class="line"></span><br><span class="line">    String str = <span class="string">"aa,bb,cc,dd"</span>;   </span><br><span class="line">    String[] strArray = str.split(<span class="string">","</span>);    </span><br><span class="line">    System.out.println(strArray.length);   </span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; strArray.length; i++) &#123;   </span><br><span class="line">           System.out.println(strArray[i]);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -537,11 +518,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,15 +530,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,6 +543,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

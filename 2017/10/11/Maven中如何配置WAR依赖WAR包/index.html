@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://cusn-cmh.github.io">
   <title>Maven中如何配置WAR依赖WAR包 | cusn-cmh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章来源:Maven中如何配置WAR依赖WAR包 项目背景：  war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的JavaScript,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class  开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推  每">
+  <meta name="description" content="文章来源:Maven中如何配置WAR依赖WAR包 项目背景： 1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的JavaScript,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class 2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推">
 <meta name="keywords" content="maven">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven中如何配置WAR依赖WAR包">
 <meta property="og:url" content="https://cusn-cmh.github.io/2017/10/11/Maven中如何配置WAR依赖WAR包/index.html">
 <meta property="og:site_name" content="cusn-cmh">
-<meta property="og:description" content="文章来源:Maven中如何配置WAR依赖WAR包 项目背景：  war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的JavaScript,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class  开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推  每">
+<meta property="og:description" content="文章来源:Maven中如何配置WAR依赖WAR包 项目背景： 1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的JavaScript,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class 2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-17T12:24:30.681Z">
+<meta property="og:updated_time" content="2018-09-10T14:41:01.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven中如何配置WAR依赖WAR包">
-<meta name="twitter:description" content="文章来源:Maven中如何配置WAR依赖WAR包 项目背景：  war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的JavaScript,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class  开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推  每">
+<meta name="twitter:description" content="文章来源:Maven中如何配置WAR依赖WAR包 项目背景： 1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的JavaScript,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class 2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推">
   
     <link rel="alternative" href="/atom.xml" title="cusn-cmh" type="application/atom+xml">
   
@@ -185,27 +185,15 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848/article/details/78199846" target="_blank" rel="noopener">文章来源:Maven中如何配置WAR依赖WAR包</a></p>
 <p><strong>项目背景：</strong></p>
-<ol>
-<li><p>war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
-</li>
-<li><p>开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
-</li>
-<li><p>每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
-</li>
-<li><p>最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class</p>
-</li>
-</ol>
-<p><strong>解决思路：</strong></p>
+<p>1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
+<p>2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
+<p>3.每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
+<p>4.最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class<br><a id="more"></a><br><strong>解决思路：</strong></p>
 <p>使用maven-warpath-plugin插件来解决WAR所依赖的WAR</p>
 <p><strong>解决方案：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>war<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>warpath<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-war-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1-beta-1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--默认会变成在target/war/work导致被打包进war文件,指定后为target/work--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">workDirectory</span>&gt;</span>$&#123;project.build.directory&#125;/work<span class="tag">&lt;/<span class="name">workDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">webappDirectory</span>&gt;</span>WebContent<span class="tag">&lt;/<span class="name">webappDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">useCache</span>&gt;</span>false<span class="tag">&lt;/<span class="name">useCache</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">addMavenDescriptor</span>&gt;</span>true<span class="tag">&lt;/<span class="name">addMavenDescriptor</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlays</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ebiz-common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- empty groupId/artifactId is detected as the current build --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--代表当前WAR项目，默认情况下当前WAR项目是先被拷贝的，如果要控制其顺序，则使用空的overlay --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- any other overlay will be applied after the current build since they have not been configured in the overlays</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">element --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlays</span>&gt;</span> <span class="tag">&lt;<span class="name">dependentWarExcludes</span>&gt;</span>/*/web.xml,**WEB-INF/lib//***,/sql-map-config.xml,/jdbc.properties,/META-INF//*<span class="tag">&lt;/<span class="name">dependentWarExcludes</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.appfuse.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>**maven-warpath-plugin**<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0-M1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">extensions</span>&gt;</span>true<span class="tag">&lt;/<span class="name">extensions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">goal</span>&gt;</span>add-classes<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span><span class="comment">&lt;!-- below WEB-INF/classes --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">warpathExcludes</span>&gt;</span>/*/*/logback-test.xml<span class="tag">&lt;/<span class="name">warpathExcludes</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>首先是使用了maven-warpath-plugin插件,处理所有<type>warpath</type>的artifact,这个插件可以将从依赖的WAR中传递的依赖都打包到当前的WAR中,没有这个插件时,当前WAR从所依赖的WAR artifact那所传递来的依赖在打包成WAR时都会被忽略.既然现在能将传递的依赖打包了,就不用copy依赖的war中的WEB-INF/lib//*,所以被加入到<dependentwarexcludes>中</dependentwarexcludes></p>
-</li>
-<li><p><workdirectory>的设置看我写的注释</workdirectory></p>
-</li>
-<li><p>webappDirectory的指定需要额外注意.首先,我使用了MAVEN默认的资源路径,也就是 src/main/webapp,而这里却告诉maven-war-plugin另一个路径”WebContent”,产生的结果就是,执行mvn package时,war-plugin和warpath-plugin会将当前war和所有依赖的war的web资源都拷贝到WebContent目录下.这样,WebContent目录包含的内容就是最终打包成WAR的内容了.</p>
-</li>
-</ol>
+<p>1.首先是使用了maven-warpath-plugin插件,处理所有<type>warpath</type>的artifact,这个插件可以将从依赖的WAR中传递的依赖都打包到当前的WAR中,没有这个插件时,当前WAR从所依赖的WAR artifact那所传递来的依赖在打包成WAR时都会被忽略.既然现在能将传递的依赖打包了,就不用copy依赖的war中的WEB-INF/lib//*,所以被加入到<dependentwarexcludes>中</dependentwarexcludes></p>
+<p>2.<workdirectory>的设置看我写的注释</workdirectory></p>
+<p>3.webappDirectory的指定需要额外注意.首先,我使用了MAVEN默认的资源路径,也就是 src/main/webapp,而这里却告诉maven-war-plugin另一个路径”WebContent”,产生的结果就是,执行mvn package时,war-plugin和warpath-plugin会将当前war和所有依赖的war的web资源都拷贝到WebContent目录下.这样,WebContent目录包含的内容就是最终打包成WAR的内容了.</p>
 <p>参考:<a href="http://blog.csdn.net/kobejayandy/article/details/8143930" target="_blank" rel="noopener">http://blog.csdn.net/kobejayandy/article/details/8143930</a></p>
 
       
@@ -487,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,15 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +500,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

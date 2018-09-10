@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:JAVA调用支付宝直充接口 (转载) JAVA调用支付宝直充接口JAVA调用支付宝的直充接口原理和银联接口一样，当商家和支付宝签好协议后就可以问支付宝的人要相关的代码了。我本地用的是支付宝UTF-8编码的代码，先把util里的东西达成一个alipay.jar文件。然后编写我们自己的调用和响应代码：1.封装支付宝需要的接口数据@Description(“会员中心资金帐户支付宝充值”)@Cr">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T12:01:53.188Z">
+<meta property="og:updated_time" content="2018-09-10T15:08:52.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA调用支付宝直充接口">
 <meta name="twitter:description" content="文章来源:JAVA调用支付宝直充接口 (转载) JAVA调用支付宝直充接口JAVA调用支付宝的直充接口原理和银联接口一样，当商家和支付宝签好协议后就可以问支付宝的人要相关的代码了。我本地用的是支付宝UTF-8编码的代码，先把util里的东西达成一个alipay.jar文件。然后编写我们自己的调用和响应代码：1.封装支付宝需要的接口数据@Description(“会员中心资金帐户支付宝充值”)@Cr">
@@ -185,7 +185,7 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848//article/details/49936381" target="_blank" rel="noopener">文章来源:JAVA调用支付宝直充接口</a></p>
 <p>(转载)</p>
-<h2 id="JAVA调用支付宝直充接口"><a href="#JAVA调用支付宝直充接口" class="headerlink" title="JAVA调用支付宝直充接口"></a>JAVA调用支付宝直充接口</h2><p>JAVA调用支付宝的直充接口原理和银联接口一样，当商家和支付宝签好协议后就可以问支付宝的人要相关的代码了。我本地用的是支付宝UTF-8编码的代码，先把util里的东西达成一个alipay.jar文件。然后编写我们自己的调用和响应代码：<br>1.封装支付宝需要的接口数据<br>@Description(“会员中心资金帐户支付宝充值”)<br>@CreatedInfo(creator = “hamano”, date = “2008-09-22”)<br>public ModelAndView fundsDepositByAliPay(HttpServletRequest request,<br>HttpServletResponse response) {<br>RemindPageUtil remindPageUtil = new RemindPageUtil();<br>Map&lt;String, Object&gt; paraMap = new HashMap&lt;String, Object&gt;();<br>String paygateway = “<a href="https://www.alipay.com/cooperate/gateway.do?&quot;" target="_blank" rel="noopener">https://www.alipay.com/cooperate/gateway.do?&quot;</a>; // ‘支付接口<br>String service = “create_direct_pay_by_user”;// 快速付款交易服务<br>String sign_type = “MD5”;<br>String out_trade_no = SnGenerator.generateUnionPaySn(); // 商户网站订单<br>String input_charset = “utf-8”;<br>String key = “”; // 支付宝安全校验码(账户内提取)<br>String partner= “”; // 支付宝合作伙伴id (账户内提取)<br>String body = “商品描述”; // 商品描述，推荐格式：商品名称（订单编号：订单编号）<br>String total_fee =”0.01”;// 订单总价<br>String payment_type = “1”;// 支付宝类型.1代表商品购买<br>String seller_email = “<a href="mailto:pay@365.com" target="_blank" rel="noopener">pay@365.com</a>“; // 卖家支付宝帐户<br>String subject = “商品名称”; // 商品名称<br>String show_url = “<a href="http://www/foolpid.net/product/show_product.jsp&quot;;//商品显示页" target="_blank" rel="noopener">http://www/foolpid.net/product/show_product.jsp&quot;;//商品显示页</a><br>String notify_url = “<a href="http://www/foolpid.net/accountController.do?method=alipayNotify&quot;" target="_blank" rel="noopener">http://www/foolpid.net/accountController.do?method=alipayNotify&quot;</a>; // 通知接收URL<br>String return_url = “<a href="http://www/foolpid.net/accountController.do?method=alipayReturn&quot;" target="_blank" rel="noopener">http://www/foolpid.net/accountController.do?method=alipayReturn&quot;</a>; // 支付完成后跳转返回的网址URL<br>String ItemUrl = Payment.CreateUrl(paygateway, service, sign_type,<br>out_trade_no, input_charset, partner, key, show_url, body,<br>total_fee, payment_type, seller_email, subject, notify_url,<br>return_url);<br>//支付宝接口用POST传输，所以我自己写了个将GET转为POST的方法，代码在下面的程序中给出<br>HttpClient http=new HttpClient(response);<br>http.setParameter(“body”,body);<br>http.setParameter(“notify_url”,notify_url);<br>http.setParameter(“out_trade_no”,out_trade_no);<br>http.setParameter(“partner”,partner);<br>http.setParameter(“payment_type”,payment_type);<br>http.setParameter(“return_url”,return_url);<br>http.setParameter(“seller_email”,seller_email);<br>http.setParameter(“service”,service);<br>http.setParameter(“show_url”,show_url);<br>http.setParameter(“sign”,ItemUrl);<br>http.setParameter(“sign_type”,sign_type);<br>http.setParameter(“subject”,subject);<br>http.setParameter(“total_fee”,total_fee);<br>try {<br>http.sendByPost(“<a href="https://www.alipay.com/cooperate/gateway.do?_input_charset=utf-8&quot;)" target="_blank" rel="noopener">https://www.alipay.com/cooperate/gateway.do?_input_charset=utf-8&quot;)</a>;<br>} catch (IOException e) {<br>}<br>return null;<br>}<br>2.根据notify_url的设置响应支付宝接口<br>public ModelAndView alipayNotify(HttpServletRequest request,<br>HttpServletResponse response) throws Exception {<br>RemindPageUtil remindPageUtil = new RemindPageUtil();<br>Map&lt;String, Object&gt; paraMap = new HashMap&lt;String, Object&gt;();<br>String privateKey = “”; // 支付宝安全校验码(账户内提取)<br>String partner= “”; // 支付宝合作伙伴id (账户内提取)<br>String alipayNotifyURL = “<a href="http://notify.alipay.com/trade/notify_query.do?&quot;" target="_blank" rel="noopener">http://notify.alipay.com/trade/notify_query.do?&quot;</a></p>
+<h2 id="JAVA调用支付宝直充接口"><a href="#JAVA调用支付宝直充接口" class="headerlink" title="JAVA调用支付宝直充接口"></a>JAVA调用支付宝直充接口</h2><p>JAVA调用支付宝的直充接口原理和银联接口一样，当商家和支付宝签好协议后就可以问支付宝的人要相关的代码了。我本地用的是支付宝UTF-8编码的代码，先把util里的东西达成一个alipay.jar文件。然后编写我们自己的调用和响应代码：<br>1.封装支付宝需要的接口数据<br>@Description(“会员中心资金帐户支付宝充值”)<br>@CreatedInfo(creator = “hamano”, date = “2008-09-22”)<a id="more"></a><br>public ModelAndView fundsDepositByAliPay(HttpServletRequest request,<br>HttpServletResponse response) {<br>RemindPageUtil remindPageUtil = new RemindPageUtil();<br>Map&lt;String, Object&gt; paraMap = new HashMap&lt;String, Object&gt;();<br>String paygateway = “<a href="https://www.alipay.com/cooperate/gateway.do?&quot;" target="_blank" rel="noopener">https://www.alipay.com/cooperate/gateway.do?&quot;</a>; // ‘支付接口<br>String service = “create_direct_pay_by_user”;// 快速付款交易服务<br>String sign_type = “MD5”;<br>String out_trade_no = SnGenerator.generateUnionPaySn(); // 商户网站订单<br>String input_charset = “utf-8”;<br>String key = “”; // 支付宝安全校验码(账户内提取)<br>String partner= “”; // 支付宝合作伙伴id (账户内提取)<br>String body = “商品描述”; // 商品描述，推荐格式：商品名称（订单编号：订单编号）<br>String total_fee =”0.01”;// 订单总价<br>String payment_type = “1”;// 支付宝类型.1代表商品购买<br>String seller_email = “<a href="mailto:pay@365.com" target="_blank" rel="noopener">pay@365.com</a>“; // 卖家支付宝帐户<br>String subject = “商品名称”; // 商品名称<br>String show_url = “<a href="http://www/foolpid.net/product/show_product.jsp&quot;;//商品显示页" target="_blank" rel="noopener">http://www/foolpid.net/product/show_product.jsp&quot;;//商品显示页</a><br>String notify_url = “<a href="http://www/foolpid.net/accountController.do?method=alipayNotify&quot;" target="_blank" rel="noopener">http://www/foolpid.net/accountController.do?method=alipayNotify&quot;</a>; // 通知接收URL<br>String return_url = “<a href="http://www/foolpid.net/accountController.do?method=alipayReturn&quot;" target="_blank" rel="noopener">http://www/foolpid.net/accountController.do?method=alipayReturn&quot;</a>; // 支付完成后跳转返回的网址URL<br>String ItemUrl = Payment.CreateUrl(paygateway, service, sign_type,<br>out_trade_no, input_charset, partner, key, show_url, body,<br>total_fee, payment_type, seller_email, subject, notify_url,<br>return_url);<br>//支付宝接口用POST传输，所以我自己写了个将GET转为POST的方法，代码在下面的程序中给出<br>HttpClient http=new HttpClient(response);<br>http.setParameter(“body”,body);<br>http.setParameter(“notify_url”,notify_url);<br>http.setParameter(“out_trade_no”,out_trade_no);<br>http.setParameter(“partner”,partner);<br>http.setParameter(“payment_type”,payment_type);<br>http.setParameter(“return_url”,return_url);<br>http.setParameter(“seller_email”,seller_email);<br>http.setParameter(“service”,service);<br>http.setParameter(“show_url”,show_url);<br>http.setParameter(“sign”,ItemUrl);<br>http.setParameter(“sign_type”,sign_type);<br>http.setParameter(“subject”,subject);<br>http.setParameter(“total_fee”,total_fee);<br>try {<br>http.sendByPost(“<a href="https://www.alipay.com/cooperate/gateway.do?_input_charset=utf-8&quot;)" target="_blank" rel="noopener">https://www.alipay.com/cooperate/gateway.do?_input_charset=utf-8&quot;)</a>;<br>} catch (IOException e) {<br>}<br>return null;<br>}<br>2.根据notify_url的设置响应支付宝接口<br>public ModelAndView alipayNotify(HttpServletRequest request,<br>HttpServletResponse response) throws Exception {<br>RemindPageUtil remindPageUtil = new RemindPageUtil();<br>Map&lt;String, Object&gt; paraMap = new HashMap&lt;String, Object&gt;();<br>String privateKey = “”; // 支付宝安全校验码(账户内提取)<br>String partner= “”; // 支付宝合作伙伴id (账户内提取)<br>String alipayNotifyURL = “<a href="http://notify.alipay.com/trade/notify_query.do?&quot;" target="_blank" rel="noopener">http://notify.alipay.com/trade/notify_query.do?&quot;</a></p>
 <ul>
 <li>“&amp;partner=”</li>
 <li>partner</li>
@@ -474,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,15 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +499,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

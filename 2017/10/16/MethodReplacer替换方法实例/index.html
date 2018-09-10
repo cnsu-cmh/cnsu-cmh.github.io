@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:MethodReplacer替换方法实例 原文：http://www.cnblogs.com/shizhongtao/p/3468713.html MethodReplacer比较简单，改文章简单明了，直接贴的别人博客，望原著谅解。 org.springframework.beans.factory.support.MethodReplacer这个接口作用是替换方法时候用的。就是执行时候">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-17T12:27:31.224Z">
+<meta property="og:updated_time" content="2018-09-10T14:39:48.058Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MethodReplacer替换方法实例">
 <meta name="twitter:description" content="文章来源:MethodReplacer替换方法实例 原文：http://www.cnblogs.com/shizhongtao/p/3468713.html MethodReplacer比较简单，改文章简单明了，直接贴的别人博客，望原著谅解。 org.springframework.beans.factory.support.MethodReplacer这个接口作用是替换方法时候用的。就是执行时候">
@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
 <p>MethodReplacer比较简单，改文章简单明了，直接贴的别人博客，望原著谅解。</p>
 <p>org.springframework.beans.factory.support.MethodReplacer这个接口作用是替换方法时候用的。就是执行时候用新建的逻辑替换已有的方法逻辑。具体使用实例如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcService</span></span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getTime</span><span class="params">()</span></span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd"</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(<span class="keyword">new</span> Date());</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>替代的类及方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.support.MethodReplacer; </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcServiceReplaceImpl</span> <span class="keyword">implements</span> <span class="title">MethodReplacer</span></span>&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> Object <span class="title">reimplement</span><span class="params">(Object arg0, Method arg1, Object[] arg2)</span></span></span><br><span class="line"><span class="function">             <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd HH:mm:ss.SS"</span>);</span><br><span class="line">         Calendar c=Calendar.getInstance();</span><br><span class="line">         c.add(Calendar.YEAR, <span class="number">2</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(c.getTime());</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>替代的类及方法：<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.support.MethodReplacer; </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcServiceReplaceImpl</span> <span class="keyword">implements</span> <span class="title">MethodReplacer</span></span>&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> Object <span class="title">reimplement</span><span class="params">(Object arg0, Method arg1, Object[] arg2)</span></span></span><br><span class="line"><span class="function">             <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd HH:mm:ss.SS"</span>);</span><br><span class="line">         Calendar c=Calendar.getInstance();</span><br><span class="line">         c.add(Calendar.YEAR, <span class="number">2</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(c.getTime());</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>配置文件：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"mvcService"</span> <span class="attr">class</span>=<span class="string">"com.bing.service.MvcService"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">replaced-method</span> <span class="attr">name</span>=<span class="string">"getTime"</span> <span class="attr">replacer</span>=<span class="string">"replacementComputeValue"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!-- &lt;arg-type&gt;String&lt;/arg-type&gt; --&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">replaced-method</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"replacementComputeValue"</span> <span class="attr">class</span>=<span class="string">"com.bing.service.MvcServiceReplaceImpl"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里的意思是用MvcServiceReplaceImpl中的方法替代类com.bing.service.MvcService中的getTime方法。当你运行时候返回的结果就不是上面的“yy-MM-dd”的时间格式而是”yy-MM-dd HH:mm:ss.SS”的时间格式</p>
@@ -476,11 +476,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,15 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,6 +501,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

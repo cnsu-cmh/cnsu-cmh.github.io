@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:oracle-强制停止job 版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/u011229848/article/details/80407738 1.查询出正在执行的job,1select * from dba_jobs_running; 2.停止该job1234declarebeginDBMS_JOB.BROKEN(27,true)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-02T13:06:40.929Z">
+<meta property="og:updated_time" content="2018-09-10T14:36:29.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oracle-强制停止job">
 <meta name="twitter:description" content="文章来源:oracle-强制停止job 版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/u011229848/article/details/80407738 1.查询出正在执行的job,1select * from dba_jobs_running; 2.停止该job1234declarebeginDBMS_JOB.BROKEN(27,true)">
@@ -187,6 +187,7 @@ var _hmt = _hmt || [];
 <p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/80407738" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/80407738</a></p>
 <p><strong>1.查询出正在执行的job,</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dba_jobs_running;</span><br></pre></td></tr></table></figure></p>
 <p><strong>2.停止该job</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">DBMS_JOB.BROKEN(<span class="number">27</span>,<span class="literal">true</span>); <span class="comment">--27为查出的job</span></span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p><strong>3.根据sid查询出session信息</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">SID</span>,<span class="built_in">SERIAL</span>/# <span class="keyword">from</span> V$<span class="keyword">Session</span> <span class="keyword">where</span> <span class="keyword">SID</span>=<span class="string">'9'</span>;</span><br></pre></td></tr></table></figure></p>
 <p><strong>4.kill session</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'9,43767'</span>;</span><br></pre></td></tr></table></figure></p>
 <p><strong>ora-00031:标记要终止的会话</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> spid, osuser, s.program <span class="keyword">from</span> v$process p, v$<span class="keyword">session</span> s <span class="keyword">where</span> p.addr=s.paddr <span class="keyword">and</span> s.sid = <span class="number">9</span>;</span><br></pre></td></tr></table></figure></p>
@@ -474,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,15 +487,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +500,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

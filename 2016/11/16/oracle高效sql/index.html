@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:oracle高效sql （1） 选择最有效率的表名顺序(只在基于规则的优化器中有效)：Oracle的解析器按照从右到左的顺序处理FROM子句中的表名，FROM子句中写在最后的表(基础表 driving table)将被最先处理，在FROM子句中包含多个表的情况下,你必须选择记录条数最少的表作为基础表。假如有3个以上的表连接查询, 那就需要选择交叉表(intersection table)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-02T13:23:49.953Z">
+<meta property="og:updated_time" content="2018-09-10T14:57:04.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="oracle高效sql">
 <meta name="twitter:description" content="文章来源:oracle高效sql （1） 选择最有效率的表名顺序(只在基于规则的优化器中有效)：Oracle的解析器按照从右到左的顺序处理FROM子句中的表名，FROM子句中写在最后的表(基础表 driving table)将被最先处理，在FROM子句中包含多个表的情况下,你必须选择记录条数最少的表作为基础表。假如有3个以上的表连接查询, 那就需要选择交叉表(intersection table)">
@@ -185,8 +185,7 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/53180987" target="_blank" rel="noopener">文章来源:oracle高效sql</a></p>
 <p>（1） 选择最有效率的表名顺序(只在基于规则的优化器中有效)：<br><br>Oracle的解析器按照从右到左的顺序处理FROM子句中的表名，FROM子句中写在最后的表(基础表 driving table)将被最先处理，在FROM子句中包含多个表的情况下,你必须选择记录条数最少的表作为基础表。假如有3个以上的表连接查询, 那就需要选择交叉表(intersection table)作为基础表, 交叉表是指那个被其他表所引用的表.</p>
-<p>（2） WHERE子句中的连接顺序．：<br><br>ORACLE采用自下而上的顺序解析WHERE子句,根据这个原理,表之间的连接必须写在其他WHERE条件之前, 那些可以过滤掉最大数量记录的条件必须写在WHERE子句的末尾.</p>
-<p>（3） SELECT子句中避免使用 ‘ /<em> ‘：<br><br>ORACLE在解析的过程中, 会将’/</em>‘ 依次转换成所有的列名, 这个工作是通过查询数据字典完成的, 这意味着将耗费更多的时间</p>
+<p>（2） WHERE子句中的连接顺序．：<br><br>ORACLE采用自下而上的顺序解析WHERE子句,根据这个原理,表之间的连接必须写在其他WHERE条件之前, 那些可以过滤掉最大数量记录的条件必须写在WHERE子句的末尾.<br><a id="more"></a><br>（3） SELECT子句中避免使用 ‘ /<em> ‘：<br><br>ORACLE在解析的过程中, 会将’/</em>‘ 依次转换成所有的列名, 这个工作是通过查询数据字典完成的, 这意味着将耗费更多的时间</p>
 <p>（4） 减少访问数据库的次数：<br><br>ORACLE在内部执行了许多工作: 解析SQL语句, 估算索引的利用率, 绑定变量 , 读数据块等；</p>
 <p>（5） 在SQL/<em>Plus , SQL/</em>Forms和Pro/*C中重新设置ARRAYSIZE参数, 可以增加每次数据库访问的检索数据量 ,建议值为200</p>
 <p>（6） 使用DECODE函数来减少处理时间：<br><br>使用DECODE函数可以避免重复扫描相同记录或重复连接相同的表.</p>
@@ -517,11 +516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -529,15 +528,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,6 +541,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

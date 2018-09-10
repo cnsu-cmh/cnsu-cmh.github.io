@@ -17,7 +17,7 @@
 <meta property="og:description" content="文章来源:Extjs4 ——布局和容器 extjs4.0布局及容器系统(Layouts and Containers)是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如何运用布局的基础。 extjs4.0布局和容器（Layouts and Containers）是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://cusn-cmh.github.io/2016/11/20/Extjs4%20——布局和容器/">
-<meta property="og:updated_time" content="2018-09-08T09:07:20.175Z">
+<meta property="og:updated_time" content="2018-09-10T14:49:38.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Extjs4 ——布局和容器">
 <meta name="twitter:description" content="文章来源:Extjs4 ——布局和容器 extjs4.0布局及容器系统(Layouts and Containers)是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如何运用布局的基础。 extjs4.0布局和容器（Layouts and Containers）是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如">
@@ -189,8 +189,7 @@ var _hmt = _hmt || [];
 <p>extjs4.0布局及容器系统(Layouts and Containers)是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如何运用布局的基础。</p>
 <p>extjs4.0布局和容器（Layouts and Containers）是Ext JS中最强大的部分之一。它负责控制你应用程序中每个组件的尺寸和定位。本文内容包括了如何运用布局的基础。</p>
 <p><strong>一、容器</strong></p>
-<p>一个Ext JS应用程序的图形用户界面(UI)是由许多组件（查看组件指南(<a href="http://dev.sencha.com/deploy/ext-4.0.7-gpl/docs/index.html#/guide/components" target="_blank" rel="noopener">Components Guide</a>)获取更多关于组件的信息）构成的。容器是一种可以容纳一些其他组件的特殊类型组件。</p>
-<p>典型的Ext JS应用程序是由一些嵌套的组件构成不同的层来组成的。如下：</p>
+<p>一个Ext JS应用程序的图形用户界面(UI)是由许多组件（查看组件指南(<a href="http://dev.sencha.com/deploy/ext-4.0.7-gpl/docs/index.html#/guide/components" target="_blank" rel="noopener">Components Guide</a>)获取更多关于组件的信息）构成的。容器是一种可以容纳一些其他组件的特殊类型组件。<br><a id="more"></a><br>典型的Ext JS应用程序是由一些嵌套的组件构成不同的层来组成的。如下：</p>
 <p><img src="/2016/11/20/Extjs4 ——布局和容器/" alt=""></p>
 <p>最通用的容器就是<a href="http://dev.sencha.com/deploy/ext-4.0.7-gpl/docs/index.html#!/api/Ext.panel.Panel" target="_blank" rel="noopener">Panel</a>。让我们看下如何创建一个容器以允许一个Panel包含其他的组件：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	Ext.create(<span class="string">'Ext.panel.Panel'</span>, &#123; </span><br><span class="line">	    renderTo: Ext.getBody(), </span><br><span class="line">	    width: <span class="number">400</span>, </span><br><span class="line">	    height: <span class="number">300</span>, </span><br><span class="line">	    title: <span class="string">'Container Panel'</span>, </span><br><span class="line">	    items: [ </span><br><span class="line">	        &#123; </span><br><span class="line">	            xtype: <span class="string">'panel'</span>, </span><br><span class="line">	            title: <span class="string">'Child Panel 1'</span>, </span><br><span class="line">	            height: <span class="number">100</span>, </span><br><span class="line">	            width: <span class="string">'75%'</span> </span><br><span class="line">	        &#125;, </span><br><span class="line">	        &#123; </span><br><span class="line">	            xtype: <span class="string">'panel'</span>, </span><br><span class="line">	            title: <span class="string">'Child Panel 2'</span>, </span><br><span class="line">	            height: <span class="number">100</span>, </span><br><span class="line">	            width: <span class="string">'75%'</span> </span><br><span class="line">	        &#125; </span><br><span class="line">	    ] </span><br><span class="line">	&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -477,11 +476,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,15 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -506,6 +501,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

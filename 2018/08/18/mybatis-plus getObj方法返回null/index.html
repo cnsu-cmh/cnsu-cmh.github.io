@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:mybatis-plus getObj方法返回null 在mybatis-plus低版本中自定义查询，selectObj(Condition.create().setSqlSelect(“columns…”))，低版本中1selectObj(Condition.create().setSqlSelect(&quot;max(sort)&quot;).isNull(&quot;parent_id&quot;))； 返回Objec">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-17T12:30:05.438Z">
+<meta property="og:updated_time" content="2018-09-10T14:30:05.397Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mybatis-plus getObj方法返回null">
 <meta name="twitter:description" content="文章来源:mybatis-plus getObj方法返回null 在mybatis-plus低版本中自定义查询，selectObj(Condition.create().setSqlSelect(“columns…”))，低版本中1selectObj(Condition.create().setSqlSelect(&quot;max(sort)&quot;).isNull(&quot;parent_id&quot;))； 返回Objec">
@@ -187,8 +187,7 @@ var _hmt = _hmt || [];
 <p>在mybatis-plus低版本中自定义查询，selectObj(Condition.create().setSqlSelect(“columns…”))，低版本中<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selectObj(Condition.create().setSqlSelect(<span class="string">"max(sort)"</span>).isNull(<span class="string">"parent_id"</span>))；</span><br></pre></td></tr></table></figure></p>
 <p>返回Object为查询结果max(sort)。可自己做类型转换。</p>
 <p>升级到高版本后放弃Condition拼接SQL,代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort)"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure></p>
-<p>此处返回的Object为空，认真一点会发现，返回对象应该是泛型对应的Menu对象，个人暂认为（猜测）是属性名对应不到实体，所以返回时处理了异常返回null（在下在这里偷懒了，没看源码全个人猜想，猜想错了望批评指正），我加上别名的时候发现跟我预想的一样。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort) as sort"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure>
+<p>此处返回的Object为空，认真一点会发现，返回对象应该是泛型对应的Menu对象，个人暂认为（猜测）是属性名对应不到实体，所以返回时处理了异常返回null（在下在这里偷懒了，没看源码全个人猜想，猜想错了望批评指正），我加上别名的时候发现跟我预想的一样。<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort) as sort"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure></p>
 <p>此时返回一个Menu对象，sort为我需要的结果。希望看到文章的你也能细心一点，注意返回对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QueryWrapper&lt;Menu&gt; wrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;(); </span><br><span class="line">Object o = getObj(wrapper.select(<span class="string">"max(sort) as sort"</span>).isNull(<span class="string">"parent_id"</span>));</span><br></pre></td></tr></table></figure></p>
 
       
@@ -478,11 +477,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,15 +489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,6 +502,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

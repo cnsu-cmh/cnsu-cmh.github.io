@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:IOC和spring基本配置 对于IoC的一些知识点，相信大家都知道他在spring框架中所占有的地位，应该可以算的上是核心之一吧，所以IOC是否理解清楚，决定了大家对Spring整个框架的理解Ioc的理解spring的两个核心概念：一个是控制反转IoC，也可以叫做依赖注入DI。还有一个是面向切面编程AOP。控制反转：当某个Java 对象需要（依赖）另一个java 对象时，不是自身直接创">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T11:37:35.350Z">
+<meta property="og:updated_time" content="2018-09-10T15:06:34.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IOC和spring基本配置">
 <meta name="twitter:description" content="文章来源:IOC和spring基本配置 对于IoC的一些知识点，相信大家都知道他在spring框架中所占有的地位，应该可以算的上是核心之一吧，所以IOC是否理解清楚，决定了大家对Spring整个框架的理解Ioc的理解spring的两个核心概念：一个是控制反转IoC，也可以叫做依赖注入DI。还有一个是面向切面编程AOP。控制反转：当某个Java 对象需要（依赖）另一个java 对象时，不是自身直接创">
@@ -184,7 +184,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://blog.csdn.net//u011229848//article/details/52951439" target="_blank" rel="noopener">文章来源:IOC和spring基本配置</a></p>
-<p>对于IoC的一些知识点，相信大家都知道他在<a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">spring</a>框架中所占有的地位，应该可以算的上是核心之一吧，所以IOC是否理解清楚，决定了大家对Spring整个框架的理解<br><br><font color="red">Ioc的理解</font><br><br>spring的两个核心概念：<font color="red">一个是控制反转IoC，也可以叫做依赖注入DI。还有一个是面向切面编程AOP。</font><br><br><font color="red">控制反转：</font>当某个<a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">Java</a> 对象需要（依赖）另一个java 对象时，不是自身直接创建依赖对象，而是由实现IoC的容器（如spring框架的IoC容器）来创建，并将它注入需要这个依赖对象的java对象中。<br><br><font color="red">spring的容器</font><br>spring管理的基本单元是Bean，在spring的应用中，所有的组件都是一个个的Bean，它可以是任何的java对象。spring负责创建这些Bean的实例。并管理生命周期。而spring框架是通过其内置的容器来完成Bean的管理的，Bean在spring的容器中生存着，使用时只需要通过它提供的一些方法从其中获取即可。spring的容器有两个接口：BeanFactory和ApplicationContext这两个接口的实例被陈为spring的上下文。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext ac = <span class="keyword">new</span> ClassFathXmlApplicationContext(<span class="string">"app/*.xml"</span>);</span><br><span class="line">AccountService accountService =(AccountService)ac.getBean(<span class="string">"accountServiceImpl"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>对于IoC的一些知识点，相信大家都知道他在<a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">spring</a>框架中所占有的地位，应该可以算的上是核心之一吧，所以IOC是否理解清楚，决定了大家对Spring整个框架的理解<br><br><font color="red">Ioc的理解</font><br><br>spring的两个核心概念：<font color="red">一个是控制反转IoC，也可以叫做依赖注入DI。还有一个是面向切面编程AOP。</font><br><br><font color="red">控制反转：</font>当某个<a href="http://lib.csdn.net/base/javaee" title="Java EE知识库" target="_blank" rel="noopener">Java</a> 对象需要（依赖）另一个java 对象时，不是自身直接创建依赖对象，而是由实现IoC的容器（如spring框架的IoC容器）来创建，并将它注入需要这个依赖对象的java对象中。<br><a id="more"></a><br><font color="red">spring的容器</font><br>spring管理的基本单元是Bean，在spring的应用中，所有的组件都是一个个的Bean，它可以是任何的java对象。spring负责创建这些Bean的实例。并管理生命周期。而spring框架是通过其内置的容器来完成Bean的管理的，Bean在spring的容器中生存着，使用时只需要通过它提供的一些方法从其中获取即可。spring的容器有两个接口：BeanFactory和ApplicationContext这两个接口的实例被陈为spring的上下文。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext ac = <span class="keyword">new</span> ClassFathXmlApplicationContext(<span class="string">"app/*.xml"</span>);</span><br><span class="line">AccountService accountService =(AccountService)ac.getBean(<span class="string">"accountServiceImpl"</span>);</span><br></pre></td></tr></table></figure></p>
 <font color="red">注：由于ApplicationContext是基于BeanFactory之上的，所以，一般ApplicationContext功能比较强大，建议使用<br></font>
 
 <p>ApplicationContext经常用到的三个实现：</p>
@@ -217,7 +217,7 @@ var _hmt = _hmt || [];
 <p>bean 定义中将autowire 设置为by name，而该bean 包含master 属性（同时提供setMaster(..)方法），Spring 就会查找名为master 的bean 定义，并用它来装配给master 属性。</p>
 <bean id="bean1" class="cn.csdn.service.Bean1" scope="singleton" autowire="byName"><br><br>备注：没有property 属性<br><br>3）<font color="#0099ff">byType</font>:如果容器中存在一个与指定属性类型相同的<br><br>bean，那么将与该属性自动装配。如果存在多个该类型的bean，那么<br><br>将会抛出异常，并指出不能使用byType 方式进行自动装配。若没有找到相匹配的bean，则什么事都不发生，属性也不会被设置。如果你不希望这样，那么可以通过设置dependency-check=”objects”让Spring 抛出异常。<br><br>备注：spring3.0 以上不抛异常。<br><br><bean id="bean1" class="cn.csdn.service.Bean1" scope="singleton" autowire="byType"><br><br>备注：没有property 属性<br><br>4）<font color="#0099ff">Constructor</font>:与byType 的方式类似，不同之处在于它应用<br><br>于构造器参数。如果在容器中没有找到与构造器参数类型一致的bean，那么将会抛出异常。<br><br>&lt;bean id=”bean1” class=”cn.csdn.service.Bean1”<br><br>scope=”singleton”autowire=”constructor”/&gt;<br><br>备注：没有property 属性<br><br>5）<font color="#0099ff">autodetect</font>:通过bean 类的自省机制（introspection）来决定是使用constructor 还是byType 方式进行自动装配。如果发现默认的<br><br>构造器，那么将使用byType 方式。<br><br><bean id="bean1" class="cn.csdn.service.Bean1" scope="singleton" autowire="autodetect"><br><br>5.<font color="#0099ff">scope</font>:指定该Bean的生存范围<br><br>scope用来声明IOC容器中的对象应该处的限定场景或者说该对象的存活空间，即在IOC容器在对象进入相应的scope之前，生成并装配这些对象，在该对象不再处于这些scope的限定之后，容器通常会销毁这些对象。<br><br>1）singleton类型的bean定义，在一个容器中只存在一个实例，所有对该类型bean的依赖都引用这一单一实例<br><br>2）scope为prototype的bean，容器在接受到该类型的对象的请求的时候，会每次都重新生成一 个新的对象给请求方，虽然这种类型的对象的实例化以及属性设置等工作都是由容器负责的，但是只要准备完毕，并且对象实例返回给请求方之后，容器就不在拥有 当前对象的引用，请求方需要自己负责当前对象后继生命周期的管理工作，包括该对象的销毁<br><br>3）<font color="#0099ff">request ，session和global session</font><br><br>这三个类型是spring2.0之后新增的，他们只适用于web程序，通常是和XmlWebApplicationContext共同使用<br><br><font color="#0099ff">request：</font><br><br><bean id="requestPrecessor" class="...RequestPrecessor" scope="request"><br><br>Spring容器，即XmlWebApplicationContext会为每个HTTP请求创建一个全新的RequestPrecessor对象，当请求结束后，，该对象的生命周期即告结束<br><br><font color="#0099ff">session</font><br><br><bean id="userPreferences" class="...UserPreferences" scope="session"><br><br>Spring容器会为每个独立的session创建属于自己的全新的UserPreferences实例，他比request scope的bean会存活更长的时间，其他的方面真是没什么区别。<br><br><font color="#0099ff">global session：</font><br><br><bean id="userPreferences" class="...UserPreferences" scope="globalsession"><br><br>global session只有应用在基于porlet的web应用程序中才有意义，他映射到porlet的global范围的session，如果普通的servlet的web 应用中使用了这个scope，容器会把它作为普通的session的scope对待。<br><font color="#0099ff"><br>6.init-method:指定该Bean的初始化方法。destroy-method:指定该Bean的销毁方法。这个就像servlet中init和destroy方法一样，只不过这里在配置文件配置的<br></font><br>7.abstract:指定该Bean 是否为抽象的。如果是抽象的，则<br><br>spring 不为它创建实例。<br><br>8.parent<br><br>如果两个Bean 的属性装配信息很相似，那么可以利用继<br><br>承来减少重复的配置工作。<br><br><!-- 装配Bean 的继承
 
-父类作为模板，不需要实例化，设置abstract=”true”--><br><br>` <bean id="”parent”" class="”cn.csdn.service.Parent”" abstract="”true”"><br><br><property name="”name”" value="”z_xiaofei168”/"><br><br><property name="”pass”" value="”z_xiaofei168”/"><br><br></property></property></bean>
+父类作为模板，不需要实例化，设置abstract=”true”--><br><br><bean id="”parent”" class="”cn.csdn.service.Parent”" abstract="”true”"><br><br><property name="”name”" value="”z_xiaofei168”/"><br><br><property name="”pass”" value="”z_xiaofei168”/"><br><br></property></property></bean>
 
 <!-- 装配Bean 的继承
 
@@ -226,13 +226,8 @@ var _hmt = _hmt || [];
 子类可以覆盖父类的属性装配，也可以新增自己的属性装配
 
 -->
-<p>` &lt;bean id=”child” class=”cn.csdn.service.Chlid”</p>
-<p>parent=”parent”&gt;</p>
-<property name="”pass”" value="”123123”/">
+<bean id="”child”" class="”cn.csdn.service.Chlid”parent=”parent”"><br><br><property name="”pass”" value="”123123”/"><br><br><property name="”age”" value="”22”/"><br><br></property></property></bean>
 
-<property name="”age”" value="”22”/">
-
-<p></p></property></property></bean><p></p>
 <font color="red">三：装配Bean的各种类型属性值</font>
 
 <p>1..简单类型属性值的装配<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"bean1"</span> <span class="attr">class</span>=<span class="string">"cn.csdn.domain.Bean1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"z_xiaofei168"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>22<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -284,7 +279,7 @@ var _hmt = _hmt || [];
 </ol>
 <p>4.Bean销毁阶段</p>
 <p><font color="red">注：xml依赖注入中的bean.xml例子：</font><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;  </span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span>  </span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>  </span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans  </span></span></span><br><span class="line"><span class="tag"><span class="string">           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"u"</span> <span class="attr">class</span>=<span class="string">"com.bjsxt.dao.impl.UserDAOImpl"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userService"</span> <span class="attr">class</span>=<span class="string">"com.bjsxt.service.UserService"</span>&gt;</span>  </span><br><span class="line">    <span class="comment">&lt;!--   &lt;property name="userDAO" ref="u" /&gt;  --&gt;</span>  </span><br><span class="line">     <span class="tag">&lt;<span class="name">constructor-arg</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"u"</span>/&gt;</span>  </span><br><span class="line">     <span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-</bean></bean></bean></bean></bean>
+</bean></bean></bean></bean></bean></bean>
       
 
       
@@ -568,11 +563,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,15 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +588,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

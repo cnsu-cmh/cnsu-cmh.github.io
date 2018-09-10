@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:Java 之 Annotation(注解)介绍 什么是 Annotation？ （注解 or 注释）Annotation, 准确的翻译应该是 – 注解。 和注释的作用完全不一样。 Annotation 是JDK5.0及以后版本引入的一个特性。 与类、接口、枚举是在同一个层次，可以成为Java 的一个类型。 语法是以@ 开头 简单来说， 注释是程序员对源代码的类，方法，属性等做的一些记忆或">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T11:53:37.485Z">
+<meta property="og:updated_time" content="2018-09-10T15:01:16.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 之 Annotation(注解)介绍">
 <meta name="twitter:description" content="文章来源:Java 之 Annotation(注解)介绍 什么是 Annotation？ （注解 or 注释）Annotation, 准确的翻译应该是 – 注解。 和注释的作用完全不一样。 Annotation 是JDK5.0及以后版本引入的一个特性。 与类、接口、枚举是在同一个层次，可以成为Java 的一个类型。 语法是以@ 开头 简单来说， 注释是程序员对源代码的类，方法，属性等做的一些记忆或">
@@ -189,8 +189,7 @@ var _hmt = _hmt || [];
 <p>语法是以@ 开头</p>
 <p>简单来说，</p>
 <p>注释是程序员对源代码的类，方法，属性等做的一些记忆或提示性描述(比如这个方法是做什么用的)，是给人来看的。</p>
-<p>注解则是Java 编译器可以理解的部分，是给编译器看的。</p>
-<p>举个简单的例子来看一下注解的使用和作用。</p>
+<p>注解则是Java 编译器可以理解的部分，是给编译器看的。<br><a id="more"></a><br>举个简单的例子来看一下注解的使用和作用。</p>
 <p>@Override 是比较常见的Java 内置注解，它的作用就是在编译代码的时候检查子类中定义的方法是否正确。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> annotation;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> <span class="keyword">extends</span> <span class="title">Animal</span></span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">(String food)</span> </span>&#123;    </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> 这里在子类Cat中 eat 方法被注解为覆写父类的方法， 但是却比父类方法多出一个参数。</p>
@@ -522,11 +521,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,15 +533,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,6 +546,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

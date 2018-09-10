@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:Oracle和plsql developer编码设置 在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。 一、查看和修改oracle数据库字符集 1select userenv(&apos;language&apos;) from dual; --查询结果： – SIMPLIFIED CHINESE_CHINA">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-02T13:12:42.145Z">
+<meta property="og:updated_time" content="2018-09-10T14:42:49.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle和plsql developer编码设置">
 <meta name="twitter:description" content="文章来源:Oracle和plsql developer编码设置 在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。 一、查看和修改oracle数据库字符集 1select userenv(&apos;language&apos;) from dual; --查询结果： – SIMPLIFIED CHINESE_CHINA">
@@ -187,8 +187,7 @@ var _hmt = _hmt || [];
 <p>在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。</p>
 <p>一、查看和修改oracle数据库字符集</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual; <span class="comment">--查询结果：</span></span><br></pre></td></tr></table></figure>
-<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中） </p>
-<p>sql&gt; conn / as sysdba; </p>
+<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中）<br><a id="more"></a><br>sql&gt; conn / as sysdba; </p>
 <p>sql&gt; shutdown immediate;<br> <br>database closed.<br> <br>database dismounted.<br> <br>oracle instance shut down. </p>
 <p>sql&gt; startup mount;<br><br>oracle instance started.<br><br>total system global area 135337420 bytes fixed size 452044 bytes variable size 109051904 bytes database buffers 25165824 bytes redo buffers 667648 bytes database mounted. </p>
 <p>sql&gt; alter system enable restricted session;<br><br>system altered. </p>
@@ -480,11 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -492,15 +491,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -509,6 +504,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

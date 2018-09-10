@@ -164,6 +164,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-IDEA激活" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/07/IDEA激活/">IDEA激活</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/07/IDEA激活/" class="archive-article-date">
+  	<time datetime="2018-08-07T03:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/81478241" target="_blank" rel="noopener">文章来源:IDEA激活</a></p>
+<h1 id="在激活Jetbrains旗下任意产品的时候选择激活服务器"><a href="#在激活Jetbrains旗下任意产品的时候选择激活服务器" class="headerlink" title="在激活Jetbrains旗下任意产品的时候选择激活服务器"></a>在激活<a href="https://www.jetbrains.com/products.html?fromMenu" target="_blank" rel="noopener">Jetbrains</a>旗下任意产品的时候选择激活服务器</h1><p>填入以下地址便可成功激活<br></p>
+        
+          <a class="article-more-a" href="/2018/08/07/IDEA激活/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">IDEA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/07/IDEA激活/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nodejs之NPM使用介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -191,95 +268,10 @@ var _hmt = _hmt || [];
 <ul>
 <li>允许用户从NPM服务器下载别人编写的第三方包到本地使用。</li>
 <li>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。</li>
-<li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li>
-</ul>
-<p>由于新版的nodejs已经集成了npm，所以之前npm也一并安装好了。同样可以通过输入 <strong>“npm -v”</strong>来测试是否成功安装。命令如下，出现版本提示表示安装成功:</p>
-<p><img src="/2018/08/02/nodejs之NPM使用介绍/20180802125924828.png" alt="image"></p>
-<p>如果你安装的是旧版本的 npm，可以很容易得通过 npm 命令来升级，windows命令如下：</p>
-<figure class="highlight plain"><figcaption><span>install npm -g```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 使用 npm 命令安装模块</span><br><span class="line"></span><br><span class="line">npm 安装 Node.js 模块语法格式如下：</span><br></pre></td></tr></table></figure>
-<p>npm install <module name=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">以下实例，我们使用 npm 命令安装常用的 Node.js web框架模块 **express**:</span><br></pre></td></tr></table></figure></module></p>
-<p>npm install express<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">安装好之后，express 包就放在了工程目录下的 node_modules 目录中，因此在代码中只需要通过 **require(&apos;express&apos;)** 的方式就好，无需指定第三方包路径。</span><br><span class="line">```javascript</span><br><span class="line">var express = require(&apos;express&apos;);</span><br></pre></td></tr></table></figure></p>
-<h2 id="全局安装与本地安装"><a href="#全局安装与本地安装" class="headerlink" title="全局安装与本地安装"></a>全局安装与本地安装</h2><p>npm 的包安装分为本地安装（local）、全局安装（global）两种，从敲的命令行来看，差别只是有没有-g而已，比如<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express /# 本地安装 </span><br><span class="line">npm install express -g /# 全局安装</span><br></pre></td></tr></table></figure></p>
-<p>如果出现以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm err! Error: connect ECONNREFUSED 127.0.0.1:8087</span><br></pre></td></tr></table></figure></p>
-<p>解决办法为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set proxy null</span><br></pre></td></tr></table></figure></p>
-<h3 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h3><ul>
-<li><ol>
-<li>将安装包放在 ./node_modules 下（运行 npm 命令时所在的目录），如果没有 node_modules 目录，会在当前执行 npm 命令的目录下生成 node_modules 目录。</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>可以通过 require() 来引入本地安装的包。</li>
-</ol>
-</li>
-</ul>
-<h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><ul>
-<li><ol>
-<li>将安装包放在 /usr/local 下或者你 node 的安装目录。</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>可以直接在命令行里使用。</li>
-</ol>
-</li>
-</ul>
-<p>如果你希望具备两者功能，则需要在两个地方安装它或使用 <strong>npm link</strong>。</p>
-<p>接下来我们使用全局方式安装 express<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/08/02/nodejs之NPM使用介绍/20180802130907516.png" alt="image"></p>
-<h3 id="查看安装信息"><a href="#查看安装信息" class="headerlink" title="查看安装信息"></a>查看安装信息</h3><p>你可以使用以下命令来查看所有全局安装的模块：<br>npm list -g</p>
-<h2 id="使用-package-json"><a href="#使用-package-json" class="headerlink" title="使用 package.json"></a>使用 package.json</h2><p>package.json 位于模块的目录下，用于定义包的属性。接下来让我们来看下 express 包的 package.json 文件，位于 node_modules/express/package.json 内容（不同版本的内容不太一样）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"_from"</span>: <span class="string">"express"</span>,</span><br><span class="line">  <span class="string">"_id"</span>: <span class="string">"express@4.16.3"</span>,</span><br><span class="line">  <span class="string">"_inBundle"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"_integrity"</span>: <span class="string">"sha1-avilAjUNsyRuzEvs9rWjTSL37VM="</span>,</span><br><span class="line">  <span class="string">"_location"</span>: <span class="string">"/express"</span>,</span><br><span class="line">  <span class="string">"_phantomChildren"</span>: &#123;&#125;,</span><br><span class="line">  <span class="string">"_requested"</span>: &#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"tag"</span>,</span><br><span class="line">    <span class="string">"registry"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"raw"</span>: <span class="string">"express"</span>,</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"express"</span>,</span><br><span class="line">    <span class="string">"escapedName"</span>: <span class="string">"express"</span>,</span><br><span class="line">    <span class="string">"rawSpec"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="string">"saveSpec"</span>: null,</span><br><span class="line">    <span class="string">"fetchSpec"</span>: <span class="string">"latest"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"_requiredBy"</span>: [</span><br><span class="line">    <span class="string">"#USER"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"_resolved"</span>: <span class="string">"https://registry.npmjs.org/express/-/express-4.16.3.tgz"</span>,</span><br><span class="line">  <span class="string">"_shasum"</span>: <span class="string">"6af8a502350db3246ecc4becf6b5a34d22f7ed53"</span>,</span><br><span class="line">  <span class="string">"_spec"</span>: <span class="string">"express"</span>,</span><br><span class="line">  <span class="string">"_where"</span>: <span class="string">"C:\\Users\\Administrator"</span>,</span><br><span class="line">  <span class="string">"author"</span>: &#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"TJ Holowaychuk"</span>,</span><br><span class="line">    <span class="string">"email"</span>: <span class="string">"tj@vision-media.ca"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"bugs"</span>: &#123;</span><br><span class="line">    <span class="string">"url"</span>: <span class="string">"https://github.com/expressjs/express/issues"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"bundleDependencies"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"contributors"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Aaron Heckmann"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"aaron.heckmann+github@gmail.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Ciaran Jessup"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"ciaranj@gmail.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Douglas Christopher Wilson"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"doug@somethingdoug.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Guillermo Rauch"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"rauchg@gmail.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Jonathan Ong"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"me@jongleberry.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Roman Shtylman"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"shtylman+expressjs@gmail.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">"name"</span>: <span class="string">"Young Jae Sim"</span>,</span><br><span class="line">      <span class="string">"email"</span>: <span class="string">"hanul@hanul.me"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"accepts"</span>: <span class="string">"~1.3.5"</span>,</span><br><span class="line">    <span class="string">"array-flatten"</span>: <span class="string">"1.1.1"</span>,</span><br><span class="line">    <span class="string">"body-parser"</span>: <span class="string">"1.18.2"</span>,</span><br><span class="line">    <span class="string">"content-disposition"</span>: <span class="string">"0.5.2"</span>,</span><br><span class="line">    <span class="string">"content-type"</span>: <span class="string">"~1.0.4"</span>,</span><br><span class="line">    <span class="string">"cookie"</span>: <span class="string">"0.3.1"</span>,</span><br><span class="line">    <span class="string">"cookie-signature"</span>: <span class="string">"1.0.6"</span>,</span><br><span class="line">    <span class="string">"debug"</span>: <span class="string">"2.6.9"</span>,</span><br><span class="line">    <span class="string">"depd"</span>: <span class="string">"~1.1.2"</span>,</span><br><span class="line">    <span class="string">"encodeurl"</span>: <span class="string">"~1.0.2"</span>,</span><br><span class="line">    <span class="string">"escape-html"</span>: <span class="string">"~1.0.3"</span>,</span><br><span class="line">    <span class="string">"etag"</span>: <span class="string">"~1.8.1"</span>,</span><br><span class="line">    <span class="string">"finalhandler"</span>: <span class="string">"1.1.1"</span>,</span><br><span class="line">    <span class="string">"fresh"</span>: <span class="string">"0.5.2"</span>,</span><br><span class="line">    <span class="string">"merge-descriptors"</span>: <span class="string">"1.0.1"</span>,</span><br><span class="line">    <span class="string">"methods"</span>: <span class="string">"~1.1.2"</span>,</span><br><span class="line">    <span class="string">"on-finished"</span>: <span class="string">"~2.3.0"</span>,</span><br><span class="line">    <span class="string">"parseurl"</span>: <span class="string">"~1.3.2"</span>,</span><br><span class="line">    <span class="string">"path-to-regexp"</span>: <span class="string">"0.1.7"</span>,</span><br><span class="line">    <span class="string">"proxy-addr"</span>: <span class="string">"~2.0.3"</span>,</span><br><span class="line">    <span class="string">"qs"</span>: <span class="string">"6.5.1"</span>,</span><br><span class="line">    <span class="string">"range-parser"</span>: <span class="string">"~1.2.0"</span>,</span><br><span class="line">    <span class="string">"safe-buffer"</span>: <span class="string">"5.1.1"</span>,</span><br><span class="line">    <span class="string">"send"</span>: <span class="string">"0.16.2"</span>,</span><br><span class="line">    <span class="string">"serve-static"</span>: <span class="string">"1.13.2"</span>,</span><br><span class="line">    <span class="string">"setprototypeof"</span>: <span class="string">"1.1.0"</span>,</span><br><span class="line">    <span class="string">"statuses"</span>: <span class="string">"~1.4.0"</span>,</span><br><span class="line">    <span class="string">"type-is"</span>: <span class="string">"~1.6.16"</span>,</span><br><span class="line">    <span class="string">"utils-merge"</span>: <span class="string">"1.0.1"</span>,</span><br><span class="line">    <span class="string">"vary"</span>: <span class="string">"~1.1.2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"deprecated"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"Fast, unopinionated, minimalist web framework"</span>,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"after"</span>: <span class="string">"0.8.2"</span>,</span><br><span class="line">    <span class="string">"connect-redis"</span>: <span class="string">"~2.4.1"</span>,</span><br><span class="line">    <span class="string">"cookie-parser"</span>: <span class="string">"~1.4.3"</span>,</span><br><span class="line">    <span class="string">"cookie-session"</span>: <span class="string">"1.3.2"</span>,</span><br><span class="line">    <span class="string">"ejs"</span>: <span class="string">"2.5.7"</span>,</span><br><span class="line">    <span class="string">"eslint"</span>: <span class="string">"2.13.1"</span>,</span><br><span class="line">    <span class="string">"express-session"</span>: <span class="string">"1.15.6"</span>,</span><br><span class="line">    <span class="string">"hbs"</span>: <span class="string">"4.0.1"</span>,</span><br><span class="line">    <span class="string">"istanbul"</span>: <span class="string">"0.4.5"</span>,</span><br><span class="line">    <span class="string">"marked"</span>: <span class="string">"0.3.17"</span>,</span><br><span class="line">    <span class="string">"method-override"</span>: <span class="string">"2.3.10"</span>,</span><br><span class="line">    <span class="string">"mocha"</span>: <span class="string">"3.5.3"</span>,</span><br><span class="line">    <span class="string">"morgan"</span>: <span class="string">"1.9.0"</span>,</span><br><span class="line">    <span class="string">"multiparty"</span>: <span class="string">"4.1.3"</span>,</span><br><span class="line">    <span class="string">"pbkdf2-password"</span>: <span class="string">"1.2.1"</span>,</span><br><span class="line">    <span class="string">"should"</span>: <span class="string">"13.2.1"</span>,</span><br><span class="line">    <span class="string">"supertest"</span>: <span class="string">"1.2.0"</span>,</span><br><span class="line">    <span class="string">"vhost"</span>: <span class="string">"~3.0.2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"engines"</span>: &#123;</span><br><span class="line">    <span class="string">"node"</span>: <span class="string">"&gt;= 0.10.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"files"</span>: [</span><br><span class="line">    <span class="string">"LICENSE"</span>,</span><br><span class="line">    <span class="string">"History.md"</span>,</span><br><span class="line">    <span class="string">"Readme.md"</span>,</span><br><span class="line">    <span class="string">"index.js"</span>,</span><br><span class="line">    <span class="string">"lib/"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"homepage"</span>: <span class="string">"http://expressjs.com/"</span>,</span><br><span class="line">  <span class="string">"keywords"</span>: [</span><br><span class="line">    <span class="string">"express"</span>,</span><br><span class="line">    <span class="string">"framework"</span>,</span><br><span class="line">    <span class="string">"sinatra"</span>,</span><br><span class="line">    <span class="string">"web"</span>,</span><br><span class="line">    <span class="string">"rest"</span>,</span><br><span class="line">    <span class="string">"restful"</span>,</span><br><span class="line">    <span class="string">"router"</span>,</span><br><span class="line">    <span class="string">"app"</span>,</span><br><span class="line">    <span class="string">"api"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"express"</span>,</span><br><span class="line">  <span class="string">"repository"</span>: &#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"git"</span>,</span><br><span class="line">    <span class="string">"url"</span>: <span class="string">"git+https://github.com/expressjs/express.git"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"lint"</span>: <span class="string">"eslint ."</span>,</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"mocha --require test/support/env --reporter spec --bail --check-leaks --no-exit test/ test/acceptance/"</span>,</span><br><span class="line">    <span class="string">"test-ci"</span>: <span class="string">"istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --require test/support/env --reporter spec --check-leaks --no-exit test/ test/acceptance/"</span>,</span><br><span class="line">    <span class="string">"test-cov"</span>: <span class="string">"istanbul cover node_modules/mocha/bin/_mocha -- --require test/support/env --reporter dot --check-leaks --no-exit test/ test/acceptance/"</span>,</span><br><span class="line">    <span class="string">"test-tap"</span>: <span class="string">"mocha --require test/support/env --reporter tap --check-leaks --no-exit test/ test/acceptance/"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"4.16.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Package-json-属性说明"><a href="#Package-json-属性说明" class="headerlink" title="Package.json 属性说明"></a>Package.json 属性说明</h3><ul>
-<li><strong>name</strong> - 包名。</li>
-<li><strong>version</strong> - 包的版本号。</li>
-<li><strong>description</strong> - 包的描述。</li>
-<li><strong>homepage</strong> - 包的官网 url 。</li>
-<li><strong>author</strong> - 包的作者姓名。</li>
-<li><strong>contributors</strong> - 包的其他贡献者姓名。</li>
-<li><strong>dependencies</strong> - 依赖包列表。如果依赖包没有安装，npm 会自动将依赖包安装在 node_module 目录下。</li>
-<li><strong>repository</strong> - 包代码存放的地方的类型，可以是 git 或 svn，git 可在 Github 上。</li>
-<li><strong>main</strong> - main 字段指定了程序的主入口文件，require(‘moduleName’) 就会加载这个文件。这个字段的默认值是模块根目录下面的 index.js。</li>
-<li><strong>keywords</strong> - 关键字</li>
-</ul>
-<h2 id="NPM-常用命令"><a href="#NPM-常用命令" class="headerlink" title="NPM 常用命令"></a>NPM 常用命令</h2><p>除了本章介绍的部分外，NPM还提供了很多功能，package.json里也有很多其它有用的字段。</p>
-<p>除了可以在<a href="https://npmjs.org/doc/" target="_blank" rel="noopener">npmjs.org/doc/</a>查看官方文档外，这里再介绍一些NPM常用命令。</p>
-<p>NPM提供了很多命令，例如install和publish，使用npm help可查看所有命令。</p>
-<ul>
-<li>NPM提供了很多命令，例如</li>
-</ul>
-<p>install<br>和</p>
-<p>publish<br>，使用</p>
-<p>npm help<br>可查看所有命令。</p>
-<ul>
-<li>使用</li>
-</ul>
-<p>npm help <command><br>可查看某条命令的详细帮助，例如</p>
-<p>npm help install<br>。</p>
-<ul>
-<li>在</li>
-</ul>
-<p>package.json<br>所在目录下使用</p>
-<p>npm install . -g<br>可先在本地安装当前命令行程序，可用于发布前的本地测试。</p>
-<ul>
-<li>使用</li>
-</ul>
-<p>npm update <package><br>可以把当前目录下</package></p>
-<p>node_modules<br>子目录里边的对应模块更新至最新版本。</p>
-<ul>
-<li>使用</li>
-</ul>
-<p>npm update <package> -g<br>可以把全局安装的对应命令行程序更新至最新版。</package></p>
-<ul>
-<li>使用</li>
-</ul>
-<p>npm cache clear<br>可以清空NPM本地缓存，用于对付使用相同版本号发布新版本代码的人。</p>
-<ul>
-<li>使用</li>
-</ul>
-<p>npm unpublish <package>@<version><br>可以撤销发布自己发布过的某个版本代码。</version></package></p>
-<h2 id="使用淘宝-NPM-镜像"><a href="#使用淘宝-NPM-镜像" class="headerlink" title="使用淘宝 NPM 镜像"></a>使用淘宝 NPM 镜像</h2><p>大家都知道国内直接使用 npm 的官方镜像是非常慢的，这里推荐使用淘宝 NPM 镜像。</p>
-<p>淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。</p>
-<p>你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p>
-<p>这样就可以使用 cnpm 命令来安装模块了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install [name]</span><br></pre></td></tr></table></figure></p>
-
+<li>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li></ul>
+        
+          <a class="article-more-a" href="/2018/08/02/nodejs之NPM使用介绍/#more">more >></a>
+        
       
 
       
@@ -355,22 +347,10 @@ var _hmt = _hmt || [];
         <p><a href="http://blog.csdn.net//u011229848/article/details/81354074" target="_blank" rel="noopener">文章来源:Node.js解压包安装与配置</a></p>
 <p>本文系转载：原文链接为：<a href="https://my.oschina.net/zhzx/blog/1014764" target="_blank" rel="noopener">https://my.oschina.net/zhzx/blog/1014764</a></p>
 <p>第一次接触node,希望能帮助到给我一样的小白</p>
-<p>进入nodejs官网下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>，我自己下载的压缩包</p>
-<p><img src="/2018/08/02/Node.js解压包安装与配置/20180802102513275.png" alt="image"></p>
-<p>下载后解压到电脑指定盘符，解压后文件夹目录为：</p>
-<p><img src="/2018/08/02/Node.js解压包安装与配置/2018080210281095.png" alt="image"></p>
-<p>在目录下创建两个文件夹node-global（npm全局安装位置 ）和node-cache（npm 缓存路径 ），</p>
-<p>将node.exe所在目录添加到path下</p>
-<p><img src="/2018/08/02/Node.js解压包安装与配置/20180802102906607.png" alt="image"></p>
-<p>运行命令行，配置并下载</p>
-<p>cmd 进入node所在目录</p>
-<p><img src="/2018/08/02/Node.js解压包安装与配置/20180802103253561.png" alt="image"></p>
-<p>npm config set prefix “node-global路径”<br>npm config set cache “node-cache路径”</p>
-<p>执行npm命令进行测试：npm install webpack -g<br>会发现node-global下node_modules中多了webpack 文件夹</p>
-<p><img src="/2018/08/02/Node.js解压包安装与配置/2018080210331936.png" alt="image"></p>
-<p><img src="/2018/08/02/Node.js解压包安装与配置/20180802103549515.png" alt="image"></p>
-<p>webpack是用来打包的module，通常我们会在命令行中执行，而webpack同样在node-global中做了映射，所以只需要将node-global加入path环境变量即可。</p>
-
+<p>进入nodejs官网下载<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>，我自己下载的压缩包<br></p>
+        
+          <a class="article-more-a" href="/2018/08/02/Node.js解压包安装与配置/#more">more >></a>
+        
       
 
       
@@ -445,21 +425,10 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848/article/details/81355902" target="_blank" rel="noopener">文章来源:Node.js 第一次</a></p>
 <p>创建一个js文件，输入以下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'use strict; </span></span><br><span class="line"><span class="string">console.log('</span>Hello, world.<span class="string">');</span></span><br></pre></td></tr></table></figure></p>
-<p>第一行总是写上</p>
-<p>‘use strict’;<br>是因为我们总是以严格模式运行JavaScript代码，避免各种潜在陷阱。</p>
-<p>然后，选择一个目录，例如</p>
-<p>E:\NodeWorkspace<br>，把文件保存为</p>
-<p>hello.js<br>，就可以打开命令行窗口，把当前目录切换到</p>
-<p>hello.js<br>所在目录，然后输入以下命令运行这个程序了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Administrator&gt;e:</span><br><span class="line">E:\&gt;cd E:\NodeWorkspace</span><br><span class="line">E:\NodeWorkspace&gt;node hello.js</span><br><span class="line"></span><br><span class="line">Hello, world.</span><br></pre></td></tr></table></figure></p>
-<p>下面开始第一个应用<br>创建 Node.js 应用</p>
-<h3 id="步骤一、引入-required-模块"><a href="#步骤一、引入-required-模块" class="headerlink" title="步骤一、引入 required 模块"></a>步骤一、引入 required 模块</h3><p>我们使用 <strong>require</strong> 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:<br>var http = require(“http”);</p>
-<h3 id="步骤二、创建服务器"><a href="#步骤二、创建服务器" class="headerlink" title="步骤二、创建服务器"></a>步骤二、创建服务器</h3><p>接下来我们使用 http.createServer() 方法创建服务器，并使用 listen 方法绑定 8086 端口。 函数通过 request, response 参数来接收和响应数据。</p>
-<p>实例如下，在你项目的根目录下创建一个叫 server.js 的文件，并写入以下代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送 HTTP 头部 </span></span><br><span class="line">    <span class="comment">// HTTP 状态值: 200 : OK</span></span><br><span class="line">    <span class="comment">// 内容类型: text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">    response.end(<span class="string">'Hello World!\n'</span>);</span><br><span class="line">&#125;).listen(<span class="number">8088</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 终端打印如下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8088/'</span>);</span><br></pre></td></tr></table></figure>
-<p>以上代码我们完成了一个可以工作的 HTTP 服务器。</p>
-<p>切换到server.js 所在目录，使用 <strong>node</strong> 命令执行以上的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node server.js </span><br><span class="line">Server running at http://127.0.0.1:8088/</span><br></pre></td></tr></table></figure></p>
-<p> 接下来，打开浏览器访问 <a href="http://127.0.0.1:8088/" target="_blank" rel="noopener">http://127.0.0.1:8088/</a><br>页面会显示返回的 “Hello World!”</p>
-
+<p>第一行总是写上<br><br>‘use strict’;<br>是因为我们总是以严格模式运行JavaScript代码，避免各种潜在陷阱。<br></p>
+        
+          <a class="article-more-a" href="/2018/08/02/Node.js 第一次/#more">more >></a>
+        
       
 
       
@@ -691,14 +660,9 @@ var _hmt = _hmt || [];
 <p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/80407738" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/80407738</a></p>
 <p><strong>1.查询出正在执行的job,</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dba_jobs_running;</span><br></pre></td></tr></table></figure></p>
 <p><strong>2.停止该job</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">declare</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">DBMS_JOB.BROKEN(<span class="number">27</span>,<span class="literal">true</span>); <span class="comment">--27为查出的job</span></span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>3.根据sid查询出session信息</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">SID</span>,<span class="built_in">SERIAL</span>/# <span class="keyword">from</span> V$<span class="keyword">Session</span> <span class="keyword">where</span> <span class="keyword">SID</span>=<span class="string">'9'</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>4.kill session</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">system</span> <span class="keyword">kill</span> <span class="keyword">session</span> <span class="string">'9,43767'</span>;</span><br></pre></td></tr></table></figure></p>
-<p><strong>ora-00031:标记要终止的会话</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> spid, osuser, s.program <span class="keyword">from</span> v$process p, v$<span class="keyword">session</span> s <span class="keyword">where</span> p.addr=s.paddr <span class="keyword">and</span> s.sid = <span class="number">9</span>;</span><br></pre></td></tr></table></figure></p>
-<p>命令行 orakill ORCL 9208; (ORCL：实例名 9208：刚查到的线程号)</p>
-<p>远程通过命令行开启局域网计算机的远程桌面服务(Description = RPC 服务器不可用 可能原因135 445端口未开启)</p>
-<p>Wmic /node:”[200.200.200.207]” /USER:”Administrator” PAT</p>
-<p>win32_terminalservicesetting WHERE (__Class!=””) CALL SetAllowTSConnections 1</p>
-
+        
+          <a class="article-more-a" href="/2018/05/22/oracle-强制停止job/#more">more >></a>
+        
       
 
       
@@ -922,8 +886,10 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848//article/details/78434914" target="_blank" rel="noopener">文章来源:java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）</a></p>
 <p>java开发中经常遇到对图片的处理，JDK中也提供了对应的工具类，不过处理起来很麻烦，Thumbnailator是一个优秀的图片处理的开源Java类库,处理效果远比Java API的好，从API提供现有的图像文件和图像对象的类中简化了处理过程，两三行代码就能够从现有图片生成处理后的图片，且允许微调图片的生成方式，同时保持了需要写入的最低限度的代码量。还支持对一个目录的所有图片进行批量处理操作，下边就和大家分享一下java中用Thumbnailator做图片各种处理的方法.</p>
-<p>jar自己网上下载一下，maven的话添加依赖即可<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- https://mvnrepository.com/artifact/net.coobird/thumbnailator --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>net.coobird<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>thumbnailator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.4.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.awt.image.BufferedImage;  </span><br><span class="line"><span class="keyword">import</span> java.io.File;  </span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;  </span><br><span class="line"><span class="keyword">import</span> java.io.IOException;  </span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> javax.imageio.ImageIO;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">import</span> net.coobird.thumbnailator.Thumbnails;  </span><br><span class="line"><span class="keyword">import</span> net.coobird.thumbnailator.geometry.Positions;  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThumbnailatorTest</span> </span>&#123;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> args </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        ThumbnailatorTest thumbnailatorTest = <span class="keyword">new</span> ThumbnailatorTest();  </span><br><span class="line">        thumbnailatorTest.test1();  </span><br><span class="line">        thumbnailatorTest.test2();  </span><br><span class="line">        thumbnailatorTest.test3();  </span><br><span class="line">        thumbnailatorTest.test4();  </span><br><span class="line">        thumbnailatorTest.test5();  </span><br><span class="line">        thumbnailatorTest.test6();  </span><br><span class="line">        thumbnailatorTest.test7();  </span><br><span class="line">        thumbnailatorTest.test8();  </span><br><span class="line">        thumbnailatorTest.test9();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 指定大小进行缩放 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/* </span></span><br><span class="line"><span class="comment">         * size(width,height) 若图片横比200小，高比300小，不变 </span></span><br><span class="line"><span class="comment">         * 若图片横比200小，高比300大，高缩小到300，图片比例不变 若图片横比200大，高比300小，横缩小到200，图片比例不变 </span></span><br><span class="line"><span class="comment">         * 若图片横比200大，高比300大，图片按比例缩小，横为200或高为300 </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">200</span>, <span class="number">300</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image_200x300.jpg"</span>);  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">2560</span>, <span class="number">2048</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image_2560x2048.jpg"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 按照比例进行缩放 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * scale(比例) </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).scale(<span class="number">0.25f</span>)  </span><br><span class="line">                .toFile(<span class="string">"C:/image_25%.jpg"</span>);  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).scale(<span class="number">1.10f</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image_110%.jpg"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 不按照比例，指定大小进行缩放 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * keepAspectRatio(false) 默认是按照比例缩放的 </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">120</span>, <span class="number">120</span>).keepAspectRatio(<span class="keyword">false</span>)  </span><br><span class="line">                .toFile(<span class="string">"C:/image_120x120.jpg"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 旋转 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * rotate(角度),正数：顺时针 负数：逆时针 </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).rotate(<span class="number">90</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image+90.jpg"</span>);  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).rotate(-<span class="number">90</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/iamge-90.jpg"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 水印 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * watermark(位置，水印图，透明度) </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).watermark(  </span><br><span class="line">                Positions.BOTTOM_RIGHT,  </span><br><span class="line">                ImageIO.read(<span class="keyword">new</span> File(<span class="string">"images/watermark.png"</span>)), <span class="number">0.5f</span>)  </span><br><span class="line">                .outputQuality(<span class="number">0.8f</span>).toFile(  </span><br><span class="line">                        <span class="string">"C:/image_watermark_bottom_right.jpg"</span>);  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).watermark(  </span><br><span class="line">                Positions.CENTER,  </span><br><span class="line">                ImageIO.read(<span class="keyword">new</span> File(<span class="string">"images/watermark.png"</span>)), <span class="number">0.5f</span>)  </span><br><span class="line">                .outputQuality(<span class="number">0.8f</span>).toFile(<span class="string">"C:/image_watermark_center.jpg"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 裁剪 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test6</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * 图片中心400*400的区域 </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).sourceRegion(Positions.CENTER, <span class="number">400</span>,  </span><br><span class="line">                <span class="number">400</span>).size(<span class="number">200</span>, <span class="number">200</span>).keepAspectRatio(<span class="keyword">false</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image_region_center.jpg"</span>);  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * 图片右下400*400的区域 </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).sourceRegion(Positions.BOTTOM_RIGHT,  </span><br><span class="line">                <span class="number">400</span>, <span class="number">400</span>).size(<span class="number">200</span>, <span class="number">200</span>).keepAspectRatio(<span class="keyword">false</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image_region_bootom_right.jpg"</span>);  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * 指定坐标 </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).sourceRegion(<span class="number">600</span>, <span class="number">500</span>, <span class="number">400</span>, <span class="number">400</span>).size(  </span><br><span class="line">                <span class="number">200</span>, <span class="number">200</span>).keepAspectRatio(<span class="keyword">false</span>).toFile(  </span><br><span class="line">                <span class="string">"C:/image_region_coord.jpg"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 转化图像格式 </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test7</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * outputFormat(图像格式) </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).outputFormat(<span class="string">"png"</span>)  </span><br><span class="line">                .toFile(<span class="string">"C:/image_1280x1024.png"</span>);  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).outputFormat(<span class="string">"gif"</span>)  </span><br><span class="line">                .toFile(<span class="string">"C:/image_1280x1024.gif"</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 输出到OutputStream </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test8</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * toOutputStream(流对象) </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        OutputStream os = <span class="keyword">new</span> FileOutputStream(  </span><br><span class="line">                <span class="string">"C:/image_1280x1024_OutputStream.png"</span>);  </span><br><span class="line">        Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>, <span class="number">1024</span>).toOutputStream(os);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span></span><br><span class="line"><span class="comment">     * 输出到BufferedImage </span></span><br><span class="line"><span class="comment">     *  </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException </span></span><br><span class="line"><span class="comment">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">test9</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;  </span><br><span class="line">        <span class="comment">/** </span></span><br><span class="line"><span class="comment">         * asBufferedImage() 返回BufferedImage </span></span><br><span class="line"><span class="comment">         */</span>  </span><br><span class="line">        BufferedImage thumbnail = Thumbnails.of(<span class="string">"images/test.jpg"</span>).size(<span class="number">1280</span>,  </span><br><span class="line">                <span class="number">1024</span>).asBufferedImage();  </span><br><span class="line">        ImageIO.write(thumbnail, <span class="string">"jpg"</span>, <span class="keyword">new</span> File(  </span><br><span class="line">                <span class="string">"C:/image_1280x1024_BufferedImage.jpg"</span>));  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>jar自己网上下载一下，maven的话添加依赖即可<br></p>
+        
+          <a class="article-more-a" href="/2017/11/03/java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）/#more">more >></a>
+        
       
 
       
@@ -947,81 +913,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/11/03/java中用Thumbnailator对图片各种处理的方法（可做到对原图片压缩仅改变大小）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-oracle数据库密码有效期设置为无限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/23/oracle数据库密码有效期设置为无限制/">oracle数据库密码有效期设置为无限制</a>
-    </h1>
-  
-
-        
-        <a href="/2017/10/23/oracle数据库密码有效期设置为无限制/" class="archive-article-date">
-  	<time datetime="2017-10-23T03:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/78316693" target="_blank" rel="noopener">文章来源:oracle数据库密码有效期设置为无限制</a></p>
-<p>今早数据共享的另一家单位打电话说查数据出错，一看是oracle密码过期,默认一般都是180天，修改为不限制。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> username,PROFILE <span class="keyword">FROM</span> dba_users;<span class="comment">--查看用户的proifle(一般是default)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="comment">/* FROM dba_profiles s WHERE s.profile='DEFAULT' AND resource_name='PASSWORD_LIFE_TIME';--密码有效期</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;--将密码有效期修改成“无限制”。</span></span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/23/oracle数据库密码有效期设置为无限制/">展开全文 >></a>
         </p>
       
 
@@ -1148,11 +1039,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1160,15 +1051,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1177,6 +1064,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

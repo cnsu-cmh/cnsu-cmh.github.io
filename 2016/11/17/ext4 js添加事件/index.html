@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:ext4 js添加事件（白鹤翔第一季） 原始的事件模型，也就是0级DOM事件模型。非常通俗的说，就是给HTML元素里加一个事件，这种方法有一个硬伤，就是不能同时对元素注册多个处理函数。W3C的专家也知道这样不好，那么2级DOM事件模型也就产生了，也就是所谓的标准事件模型。API如下定义：element.addEventListener(type,listener,useCapture);">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T07:12:34.197Z">
+<meta property="og:updated_time" content="2018-09-10T14:52:14.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ext4 js添加事件（白鹤翔第一季）">
 <meta name="twitter:description" content="文章来源:ext4 js添加事件（白鹤翔第一季） 原始的事件模型，也就是0级DOM事件模型。非常通俗的说，就是给HTML元素里加一个事件，这种方法有一个硬伤，就是不能同时对元素注册多个处理函数。W3C的专家也知道这样不好，那么2级DOM事件模型也就产生了，也就是所谓的标准事件模型。API如下定义：element.addEventListener(type,listener,useCapture);">
@@ -184,7 +184,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/53207918" target="_blank" rel="noopener">文章来源:ext4 js添加事件（白鹤翔第一季）</a></p>
-<p><br>原始的事件模型，也就是0级DOM事件模型。非常通俗的说，就是给HTML元素里加一个事件，这种方法有一个硬伤，就是不能同时对元素注册多个处理函数。<br><br>W3C的专家也知道这样不好，那么2级DOM事件模型也就产生了，也就是所谓的标准事件模型。API如下定义：<br><br>element.addEventListener(type,listener,useCapture);<br><br>element.removeEventListener(type,listener,useCapture);<br><br>W3C的专家把事件分成了3个阶段，也就是所谓的事件流：（1）捕获 （2）目标 （3）冒泡。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1: 在早些时候,是不存在事件这个概念的,开发者用javascript2个函数去模拟事件的机制(window.setTimeout/window.setInterval)</span></span><br><span class="line"><span class="comment">// 2: 由于很多原因 比如效率太低, 人们开始发明了 最原始的 0级dom事件模型 为元素添加一个事件  在事件上绑定一个处理函数  </span></span><br><span class="line"><span class="comment">//    注意：这种模型有一个致命的硬伤：就是不能为元素的事件 添加多个处理函数</span></span><br></pre></td></tr></table></figure></p>
+<p><br>原始的事件模型，也就是0级DOM事件模型。非常通俗的说，就是给HTML元素里加一个事件，这种方法有一个硬伤，就是不能同时对元素注册多个处理函数。<br><br>W3C的专家也知道这样不好，那么2级DOM事件模型也就产生了，也就是所谓的标准事件模型。API如下定义：<br><br>element.addEventListener(type,listener,useCapture);<br><br>element.removeEventListener(type,listener,useCapture);<br><br>W3C的专家把事件分成了3个阶段，也就是所谓的事件流：（1）捕获 （2）目标 （3）冒泡。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1: 在早些时候,是不存在事件这个概念的,开发者用javascript2个函数去模拟事件的机制(window.setTimeout/window.setInterval)</span></span><br><span class="line"><span class="comment">// 2: 由于很多原因 比如效率太低, 人们开始发明了 最原始的 0级dom事件模型 为元素添加一个事件  在事件上绑定一个处理函数  </span></span><br><span class="line"><span class="comment">//    注意：这种模型有一个致命的硬伤：就是不能为元素的事件 添加多个处理函数</span></span><br></pre></td></tr></table></figure></p>
 <p> window.onload = function(){<br>     var inp = document.createElement(‘input’);<br>     inp.id = ‘inp1’;<br>     inp.value = ‘点击’ ;<br>     inp.type = ‘button’ ;<br>     inp.onclick = function(){  //这里方法将被下面onclick事件覆盖<br>         alert(‘执行了..’);<br>     };<br>    inp.onclick = function(){<br>         //alert(this == window);<br>         alert(this == inp);<br>         alert(‘我也执行了..’);<br>     };<br>     document.body.appendChild(inp);<br> };</p>
 <p> function test1(){alert(this == window);};<br> function test2(){alert(22);};</p>
 <p>// 3: 在0级dom事件模型有了以后，才成立了 w3c，觉得0级事件模型 不好 退出了 2级事件模型  (标准dom事件模型)<br>//element.addEventListener(type,listener,useCapture);<br>//element.removeEventListener(type,listener,useCapture);<br> window.onload = function(){<br>     var inp = document.createElement(‘input’);<br>     inp.id = ‘inp1’;<br>     inp.value = ‘点击’ ;<br>     inp.type = ‘button’ ;<br>     // type :事件类型    listener :这个事件的绑定函数    useCapure(boolean):(事件传播：true=捕获 / false=冒泡)<br>     inp.addEventListener(‘click’ ,test1 , false );<br>     inp.removeEventListener(‘click’ ,test1 , false );<br>     inp.addEventListener(‘click’ ,test2 , false );<br>     document.body.appendChild(inp);<br>     //IE浏览器 678事件用：attachEvent();  detachEvent();  IE9/IE10已经支持w3c的标准了<br>     var inp = document.createElement(‘input’);<br>     inp.id = ‘inp1’;<br>     inp.value = ‘点击’ ;<br>     inp.type = ‘button’ ;<br>     inp.attachEvent(‘onclick’ ,test1);<br>     inp.detachEvent(‘onclick’ ,test1);<br>     inp.attachEvent(‘onclick’ ,test2);<br>     document.body.appendChild(inp);<br> };</p>
@@ -490,11 +490,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,15 +502,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,6 +515,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://cusn-cmh.github.io">
   <title>ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） | cusn-cmh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码： Ext.ObjectExt.NumberE">
+  <meta name="description" content="文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：">
 <meta name="keywords" content="ext">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）">
 <meta property="og:url" content="https://cusn-cmh.github.io/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/index.html">
 <meta property="og:site_name" content="cusn-cmh">
-<meta property="og:description" content="文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码： Ext.ObjectExt.NumberE">
+<meta property="og:description" content="文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T07:56:42.984Z">
+<meta property="og:updated_time" content="2018-09-10T15:02:23.216Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）">
-<meta name="twitter:description" content="文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码： Ext.ObjectExt.NumberE">
+<meta name="twitter:description" content="文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季） Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：">
   
     <link rel="alternative" href="/atom.xml" title="cusn-cmh" type="application/atom+xml">
   
@@ -184,8 +184,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/53048487" target="_blank" rel="noopener">文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）</a></p>
-<p>Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：</p>
-<p><br>Ext.Object<br><br>Ext.Number<br><br>Ext.String<br><br>Ext.Array<br><br>Ext.Function<br><br>Ext.Date<br><br>Ext.Error<br><br><br><br>下面我们就来看一下常用的扩展类里面的常用方法：<br><br><br><br>Ext.Object<br><br><br><br>1:chain 把当前传入的对象 当成新创建对象的原型<br><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">'bsjxt'</span>,</span><br><span class="line">	age:<span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> result = Ext.Object.chain(obj);</span><br><span class="line">alert(result.name); <span class="comment">//'bsjxt'</span></span><br><span class="line">alert(result.age); <span class="comment">//10</span></span><br><span class="line">alert(result.hasOwnProperty(<span class="string">'name'</span>)); <span class="comment">//false 说明是对象的原型，并不是他的属性</span></span><br></pre></td></tr></table></figure></p>
+<p>Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：<br><a id="more"></a><br><br>Ext.Object<br><br>Ext.Number<br><br>Ext.String<br><br>Ext.Array<br><br>Ext.Function<br><br>Ext.Date<br><br>Ext.Error<br><br><br><br>下面我们就来看一下常用的扩展类里面的常用方法：<br><br><br><br>Ext.Object<br><br><br><br>1:chain 把当前传入的对象 当成新创建对象的原型<br><br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">'bsjxt'</span>,</span><br><span class="line">	age:<span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> result = Ext.Object.chain(obj);</span><br><span class="line">alert(result.name); <span class="comment">//'bsjxt'</span></span><br><span class="line">alert(result.age); <span class="comment">//10</span></span><br><span class="line">alert(result.hasOwnProperty(<span class="string">'name'</span>)); <span class="comment">//false 说明是对象的原型，并不是他的属性</span></span><br></pre></td></tr></table></figure></p>
 <p><br>2:each 变量当前对象 然后毁掉函数中暴露出三个属性 key、value、self 如果回调函数返回false则停止迭代<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">'张三'</span> , </span><br><span class="line">	age:<span class="number">20</span> ,</span><br><span class="line">	sex:<span class="string">'男'</span></span><br><span class="line">&#125;;</span><br><span class="line">Ext.Object.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">key , value , self</span>)</span>&#123;</span><br><span class="line">	alert(key + <span class="string">' : '</span> + value); <span class="comment">//name.age,sex都alert</span></span><br><span class="line">&#125;);</span><br><span class="line">	</span><br><span class="line">Ext.Object.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">key , value , self</span>)</span>&#123;</span><br><span class="line">	alert(key + <span class="string">' : '</span> + value);<span class="comment">//只alert name</span></span><br><span class="line">	<span class="keyword">if</span>(age == <span class="number">20</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p><br>3:fromQueryString将字符串转换成对象 这里字符串格式一定是 $ = 拼接的<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"name=bjsxt&amp;age=10"</span>;</span><br><span class="line"><span class="keyword">var</span> obj = Ext.Object.fromQueryString(str);</span><br><span class="line"><span class="built_in">console</span>.info(Ext.encode(obj)); <span class="comment">// &#123;"name":"bjsxt","age":"10"&#125;</span></span><br></pre></td></tr></table></figure></p>
 <p>4 :toQueryString 将对象换成字符串转<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">'张三'</span> , </span><br><span class="line">	age:<span class="number">20</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> str = Ext.Object.toQueryString(obj);</span><br><span class="line"><span class="built_in">console</span>.info(str);</span><br></pre></td></tr></table></figure></p>
@@ -486,11 +485,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,15 +497,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,6 +510,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

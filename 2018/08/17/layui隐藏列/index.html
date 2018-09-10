@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="https://cusn-cmh.github.io">
   <title>layui隐藏列 | cusn-cmh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章来源:layui隐藏列 layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, style:’display:none;’},导致thead中th中ID仍然在， 我们要做的是表格头中ID也需要隐藏。 、 官网简单demo如下：1234567891011121314151617181920layui.use(&apos;table&apos;, function()&amp;#12">
+  <meta name="description" content="文章来源:layui隐藏列 layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, style:’display:none;’},导致thead中th中ID仍然在， 我们要做的是表格头中ID也需要隐藏。">
 <meta name="keywords" content="layui">
 <meta property="og:type" content="article">
 <meta property="og:title" content="layui隐藏列">
 <meta property="og:url" content="https://cusn-cmh.github.io/2018/08/17/layui隐藏列/index.html">
 <meta property="og:site_name" content="cusn-cmh">
-<meta property="og:description" content="文章来源:layui隐藏列 layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, style:’display:none;’},导致thead中th中ID仍然在， 我们要做的是表格头中ID也需要隐藏。 、 官网简单demo如下：1234567891011121314151617181920layui.use(&apos;table&apos;, function()&amp;#12">
+<meta property="og:description" content="文章来源:layui隐藏列 layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, style:’display:none;’},导致thead中th中ID仍然在， 我们要做的是表格头中ID也需要隐藏。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://cusn-cmh.github.io/2018/08/17/layui隐藏列/20180817180344707.png">
 <meta property="og:image" content="https://cusn-cmh.github.io/2018/08/17/layui隐藏列/20180817180803609.png">
-<meta property="og:updated_time" content="2018-08-17T12:15:43.871Z">
+<meta property="og:updated_time" content="2018-09-10T14:30:37.268Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="layui隐藏列">
-<meta name="twitter:description" content="文章来源:layui隐藏列 layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, style:’display:none;’},导致thead中th中ID仍然在， 我们要做的是表格头中ID也需要隐藏。 、 官网简单demo如下：1234567891011121314151617181920layui.use(&apos;table&apos;, function()&amp;#12">
+<meta name="twitter:description" content="文章来源:layui隐藏列 layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, style:’display:none;’},导致thead中th中ID仍然在， 我们要做的是表格头中ID也需要隐藏。">
 <meta name="twitter:image" content="https://cusn-cmh.github.io/2018/08/17/layui隐藏列/20180817180344707.png">
   
     <link rel="alternative" href="/atom.xml" title="cusn-cmh" type="application/atom+xml">
@@ -188,8 +188,7 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848//article/details/81781542" target="_blank" rel="noopener">文章来源:layui隐藏列</a></p>
 <p>layui数据表格中隐藏列方式，如果直接在 {field: ‘id’, title: ‘ID’, <font color="red">style:’display:none;’</font>},导致thead中th中ID仍然在，</p>
-<p><img src="/2018/08/17/layui隐藏列/20180817180344707.png" alt="image">我们要做的是表格头中ID也需要隐藏。</p>
-<p>、</p>
+<p><img src="/2018/08/17/layui隐藏列/20180817180344707.png" alt="image">我们要做的是表格头中ID也需要隐藏。<br><a id="more"></a></p>
 <p>官网简单demo如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">layui.use(<span class="string">'table'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> table = layui.table;</span><br><span class="line">  </span><br><span class="line">  table.render(&#123;</span><br><span class="line">    elem: <span class="string">'#test'</span></span><br><span class="line">    ,<span class="attr">url</span>:<span class="string">'/demo/table/user/'</span></span><br><span class="line">    ,<span class="attr">cellMinWidth</span>: <span class="number">80</span> <span class="comment">//全局定义常规单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">    ,<span class="attr">cols</span>: [[</span><br><span class="line">      &#123;<span class="attr">field</span>:<span class="string">'id'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'ID'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'username'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'用户名'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sex'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'性别'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'city'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'城市'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sign'</span>, <span class="attr">title</span>: <span class="string">'签名'</span>, <span class="attr">width</span>: <span class="string">'30%'</span>, <span class="attr">minWidth</span>: <span class="number">100</span>&#125; <span class="comment">//minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'experience'</span>, <span class="attr">title</span>: <span class="string">'积分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'score'</span>, <span class="attr">title</span>: <span class="string">'评分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'classify'</span>, <span class="attr">title</span>: <span class="string">'职业'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'wealth'</span>, <span class="attr">width</span>:<span class="number">137</span>, <span class="attr">title</span>: <span class="string">'财富'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]]</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>添加一行配置即可：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">done: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">    $(<span class="string">"[data-field='id']"</span>).css(<span class="string">'display'</span>,<span class="string">'none'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">layui.use(<span class="string">'table'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> table = layui.table;</span><br><span class="line">  </span><br><span class="line">  table.render(&#123;</span><br><span class="line">    elem: <span class="string">'#test'</span></span><br><span class="line">    ,<span class="attr">url</span>:<span class="string">'/demo/table/user/'</span></span><br><span class="line">    ,<span class="attr">cellMinWidth</span>: <span class="number">80</span> <span class="comment">//全局定义常规单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">    ,<span class="attr">cols</span>: [[</span><br><span class="line">      &#123;<span class="attr">field</span>:<span class="string">'id'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'ID'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'username'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'用户名'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sex'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'性别'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'city'</span>, <span class="attr">width</span>:<span class="number">80</span>, <span class="attr">title</span>: <span class="string">'城市'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'sign'</span>, <span class="attr">title</span>: <span class="string">'签名'</span>, <span class="attr">width</span>: <span class="string">'30%'</span>, <span class="attr">minWidth</span>: <span class="number">100</span>&#125; <span class="comment">//minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增</span></span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'experience'</span>, <span class="attr">title</span>: <span class="string">'积分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'score'</span>, <span class="attr">title</span>: <span class="string">'评分'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'classify'</span>, <span class="attr">title</span>: <span class="string">'职业'</span>&#125;</span><br><span class="line">      ,&#123;<span class="attr">field</span>:<span class="string">'wealth'</span>, <span class="attr">width</span>:<span class="number">137</span>, <span class="attr">title</span>: <span class="string">'财富'</span>, <span class="attr">sort</span>: <span class="literal">true</span>&#125;</span><br><span class="line">    ]]</span><br><span class="line">    ,<span class="attr">done</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">"[data-field='id']"</span>).css(<span class="string">'display'</span>,<span class="string">'none'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -475,11 +474,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,15 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,6 +499,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

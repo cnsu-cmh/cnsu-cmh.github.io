@@ -164,6 +164,81 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-oracle数据库密码有效期设置为无限制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/10/23/oracle数据库密码有效期设置为无限制/">oracle数据库密码有效期设置为无限制</a>
+    </h1>
+  
+
+        
+        <a href="/2017/10/23/oracle数据库密码有效期设置为无限制/" class="archive-article-date">
+  	<time datetime="2017-10-23T03:05:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/78316693" target="_blank" rel="noopener">文章来源:oracle数据库密码有效期设置为无限制</a></p>
+<p>今早数据共享的另一家单位打电话说查数据出错，一看是oracle密码过期,默认一般都是180天，修改为不限制。<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> username,PROFILE <span class="keyword">FROM</span> dba_users;<span class="comment">--查看用户的proifle(一般是default)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="comment">/* FROM dba_profiles s WHERE s.profile='DEFAULT' AND resource_name='PASSWORD_LIFE_TIME';--密码有效期</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">ALTER PROFILE DEFAULT LIMIT PASSWORD_LIFE_TIME UNLIMITED;--将密码有效期修改成“无限制”。</span></span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">oracle</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/10/23/oracle数据库密码有效期设置为无限制/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-oracle 解锁表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -263,13 +338,10 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/78252080" target="_blank" rel="noopener">文章来源:finally里误用return</a></p>
 <p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/78252080" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/78252080</a></p>
-<p>今天看到一句话，finally 语句块在 try 语句块中的 return 语句之前执行，过了两年突然对这句话感到有些困惑，以为是执行完try之后有finally就会最终再执行finally，没成想“finally 语句块在 try 语句块中的 return 语句之前执行”才是真理。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestFinallyReturn</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(testFinally());</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="meta">@SuppressWarnings</span>(<span class="string">"finally"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">testFinally</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"try"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		&#125; <span class="keyword">finally</span>&#123;</span><br><span class="line">			System.out.println(<span class="string">"finally"</span>);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>执行结果如下：</p>
-<p>try<br>finally<br>0</p>
-<p>由上可知，finally 语句块在 try 语句块中的 return 语句之前执行，一定要注意：</p>
-<p>只有资源需要释放的时候，才去使用finally，不要一股脑的扔到finally里面去处理，其他就扔给Java的垃圾回收机制处理吧，否则一不小心返回一个错误的结果就麻烦了。</p>
-
+<p>今天看到一句话，finally 语句块在 try 语句块中的 return 语句之前执行，过了两年突然对这句话感到有些困惑，以为是执行完try之后有finally就会最终再执行finally，没成想“finally 语句块在 try 语句块中的 return 语句之前执行”才是真理。<br></p>
+        
+          <a class="article-more-a" href="/2017/10/16/finally里误用return/#more">more >></a>
+        
       
 
       
@@ -347,11 +419,10 @@ var _hmt = _hmt || [];
 <p>MethodReplacer比较简单，改文章简单明了，直接贴的别人博客，望原著谅解。</p>
 <p>org.springframework.beans.factory.support.MethodReplacer这个接口作用是替换方法时候用的。就是执行时候用新建的逻辑替换已有的方法逻辑。具体使用实例如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcService</span></span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> String <span class="title">getTime</span><span class="params">()</span></span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd"</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(<span class="keyword">new</span> Date());</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<p>替代的类及方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Calendar;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.support.MethodReplacer; </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcServiceReplaceImpl</span> <span class="keyword">implements</span> <span class="title">MethodReplacer</span></span>&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> Object <span class="title">reimplement</span><span class="params">(Object arg0, Method arg1, Object[] arg2)</span></span></span><br><span class="line"><span class="function">             <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">         SimpleDateFormat formate=<span class="keyword">new</span> SimpleDateFormat(<span class="string">"yy-MM-dd HH:mm:ss.SS"</span>);</span><br><span class="line">         Calendar c=Calendar.getInstance();</span><br><span class="line">         c.add(Calendar.YEAR, <span class="number">2</span>);</span><br><span class="line">         <span class="keyword">return</span> formate.format(c.getTime());</span><br><span class="line">     &#125;</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<p>配置文件：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"mvcService"</span> <span class="attr">class</span>=<span class="string">"com.bing.service.MvcService"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">replaced-method</span> <span class="attr">name</span>=<span class="string">"getTime"</span> <span class="attr">replacer</span>=<span class="string">"replacementComputeValue"</span>&gt;</span></span><br><span class="line">         <span class="comment">&lt;!-- &lt;arg-type&gt;String&lt;/arg-type&gt; --&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">replaced-method</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"replacementComputeValue"</span> <span class="attr">class</span>=<span class="string">"com.bing.service.MvcServiceReplaceImpl"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这里的意思是用MvcServiceReplaceImpl中的方法替代类com.bing.service.MvcService中的getTime方法。当你运行时候返回的结果就不是上面的“yy-MM-dd”的时间格式而是”yy-MM-dd HH:mm:ss.SS”的时间格式</p>
-
+<p>替代的类及方法：<br></p>
+        
+          <a class="article-more-a" href="/2017/10/16/MethodReplacer替换方法实例/#more">more >></a>
+        
       
 
       
@@ -433,17 +504,10 @@ var _hmt = _hmt || [];
 <p>使用例：</p>
 <p>@OneToMany(mappedBy=”item”,cascade=CascadeType.ALL,fetch=FetchType.EAGER)</p>
 <p>@Fetch(value=FetchMode.SUBSELECT)</p>
-<p>两者比较：</p>
-<p>两者都是设定关联对象的加载策略。前者是JPA标准的通用加载策略注解属性，</p>
-<p>后者是Hibernate自有加载策略注解属性。</p>
-<p>FetchType可选值意义与区别如下：</p>
-<p>FetchType.LAZY: 懒加载，在访问关联对象的时候加载(即从数据库读入内存)</p>
-<p>FetchType.EAGER:立刻加载，在查询主对象的时候同时加载关联对象。</p>
-<p>FetchMode可选值意义与区别如下：</p>
-<p>@Fetch(FetchMode.JOIN)： 始终立刻加载，使用外连(outer join)查询的同时加载关联对象，忽略FetchType.LAZY设定。</p>
-<p>@Fetch(FetchMode.SELECT) ：默认懒加载(除非设定关联属性lazy=false)，当访问每一个关联对象时加载该对象，会累计产生N+1条sql语句</p>
-<p>@Fetch(FetchMode.SUBSELECT) 默认懒加载(除非设定关联属性lazy=false),在访问第一个关联对象时加载所有的关联对象。会累计产生两条sql语句。且FetchType设定有效。</p>
-
+<p>两者比较：<br></p>
+        
+          <a class="article-more-a" href="/2017/10/16/FetchType与FetchMode的区别/#more">more >></a>
+        
       
 
       
@@ -518,29 +582,13 @@ var _hmt = _hmt || [];
       
         <p><a href="http://blog.csdn.net//u011229848/article/details/78199846" target="_blank" rel="noopener">文章来源:Maven中如何配置WAR依赖WAR包</a></p>
 <p><strong>项目背景：</strong></p>
-<ol>
-<li><p>war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
-</li>
-<li><p>开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
-</li>
-<li><p>每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
-</li>
-<li><p>最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class</p>
-</li>
-</ol>
-<p><strong>解决思路：</strong></p>
-<p>使用maven-warpath-plugin插件来解决WAR所依赖的WAR</p>
-<p><strong>解决方案：</strong><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>war<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">type</span>&gt;</span>warpath<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-war-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1-beta-1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--默认会变成在target/war/work导致被打包进war文件,指定后为target/work--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">workDirectory</span>&gt;</span>$&#123;project.build.directory&#125;/work<span class="tag">&lt;/<span class="name">workDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">webappDirectory</span>&gt;</span>WebContent<span class="tag">&lt;/<span class="name">webappDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">useCache</span>&gt;</span>false<span class="tag">&lt;/<span class="name">useCache</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">archive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">addMavenDescriptor</span>&gt;</span>true<span class="tag">&lt;/<span class="name">addMavenDescriptor</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">archive</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlays</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.isoftstone.gads<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ebiz-common-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- empty groupId/artifactId is detected as the current build --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--代表当前WAR项目，默认情况下当前WAR项目是先被拷贝的，如果要控制其顺序，则使用空的overlay --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- any other overlay will be applied after the current build since they have not been configured in the overlays</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">element --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlay</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">overlays</span>&gt;</span> <span class="tag">&lt;<span class="name">dependentWarExcludes</span>&gt;</span>/*/web.xml,**WEB-INF/lib//***,/sql-map-config.xml,/jdbc.properties,/META-INF//*<span class="tag">&lt;/<span class="name">dependentWarExcludes</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.appfuse.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>**maven-warpath-plugin**<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>2.1.0-M1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">extensions</span>&gt;</span>true<span class="tag">&lt;/<span class="name">extensions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">goal</span>&gt;</span>add-classes<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span><span class="comment">&lt;!-- below WEB-INF/classes --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">warpathExcludes</span>&gt;</span>/*/*/logback-test.xml<span class="tag">&lt;/<span class="name">warpathExcludes</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<ol>
-<li><p>首先是使用了maven-warpath-plugin插件,处理所有<type>warpath</type>的artifact,这个插件可以将从依赖的WAR中传递的依赖都打包到当前的WAR中,没有这个插件时,当前WAR从所依赖的WAR artifact那所传递来的依赖在打包成WAR时都会被忽略.既然现在能将传递的依赖打包了,就不用copy依赖的war中的WEB-INF/lib//*,所以被加入到<dependentwarexcludes>中</dependentwarexcludes></p>
-</li>
-<li><p><workdirectory>的设置看我写的注释</workdirectory></p>
-</li>
-<li><p>webappDirectory的指定需要额外注意.首先,我使用了MAVEN默认的资源路径,也就是 src/main/webapp,而这里却告诉maven-war-plugin另一个路径”WebContent”,产生的结果就是,执行mvn package时,war-plugin和warpath-plugin会将当前war和所有依赖的war的web资源都拷贝到WebContent目录下.这样,WebContent目录包含的内容就是最终打包成WAR的内容了.</p>
-</li>
-</ol>
-<p>参考:<a href="http://blog.csdn.net/kobejayandy/article/details/8143930" target="_blank" rel="noopener">http://blog.csdn.net/kobejayandy/article/details/8143930</a></p>
-
+<p>1.war项目C和war项目B都依赖war项目A和JAR项目D. 项目A中保存了B和C项目通用的web资源,比如通用的<a href="http://lib.csdn.net/base/javascript" title="JavaScript知识库" target="_blank" rel="noopener">JavaScript</a>,CSS,jsp等. 项目D中保存了B和C项目中都依赖的一些class</p>
+<p>2.开发人员希望每次都只面对一个项目,即Team A 开发项目A, Team B开发项目B, Team C开发项目C，以此类推</p>
+<p>3.每个Team在开发自己项目时,都希望能直接进行调试,例如war项目A可以直接部署到TOMCAT上运行<a href="http://lib.csdn.net/base/softwaretest" title="软件测试知识库" target="_blank" rel="noopener">测试</a></p>
+<p>4.最后实际交付给客户的却只有2个项目: B和C 。也就是说,最后要打包B和C,而在B和C的war包中都要包含A中的web资源和D中的class<br></p>
+        
+          <a class="article-more-a" href="/2017/10/11/Maven中如何配置WAR依赖WAR包/#more">more >></a>
+        
       
 
       
@@ -614,8 +662,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/78087198" target="_blank" rel="noopener">文章来源:浅谈oracle中row_number() over()分析函数用法</a></p>
-<p><br>row_number()over(partition by col1 order by col2)表示根据col1分组，在分组内部根据col2排序，而此函数计算的值就表示每组内部排序后的顺序编号（组内连续的唯一的）。<br><br>与rownum的区别在于：使用rownum进行排序的时候是先对结果集加入伪劣rownum然后再进行排序，而此函数在包含排序从句后是先排序再计算行号码。<br><br>row_number()和rownum差不多，功能更强一点（可以在各个分组内从1开始排序）。<br><br>rank()是跳跃排序，有两个第二名时接下来就是第四名（同样是在各个分组内）<br><br>dense_rank()也是连续排序，有两个第二名时仍然跟着第三名。相比之下row_number是没有重复值的。<br><br>oracle 分析函数 row_number(),返回一个整数值(&gt;=1);<br><br>语法格式:<br><br>1.row_number() over (order by col_1[,col_2 …])<br><br>作用:按照col_1[,col_2 …]排序,返回排序后的结果集，<br><br>此用法有点像rownum,为每一行返回一个不相同的值：<br><br>select rownum,ename,job,<br><br>row_number() over (order by rownum) row_number<br><br>from emp;<br><br>ROWNUM ENAME JOB ROW_NUMBER<br><br>———- ———- ——— ———-<br><br>1 SMITH CLERK 1<br><br>2 ALLEN SALESMAN 2<br><br>3 WARD SALESMAN 3<br><br>4 JONES MANAGER 4<br><br>5 MARTIN SALESMAN 5<br><br>6 BLAKE MANAGER 6<br><br>7 CLARK MANAGER 7<br><br>8 SCOTT ANALYST 8<br><br>9 KING PRESIDENT 9<br><br>10 TURNER SALESMAN 10<br><br>11 ADAMS CLERK 11<br><br>12 JAMES CLERK 12<br><br>13 FORD ANALYST 13<br><br>14 MILLER CLERK 14<br><br>如果没有partition by子句, 结果集将是按照order by 指定的列进行排序；<br><br>with row_number_test as(<br><br>select 22 a,’twenty two’ b from dual union all<br><br>select 1,’one’ from dual union all<br><br>select 13,’thirteen’ from dual union all<br><br>select 5,’five’ from dual union all<br><br>select 4,’four’ from dual)<br><br>select a,b,<br><br>row_number() over (order by b)<br><br>from row_number_test<br><br>order by a;<br><br>正如我们所期待的,row_number()返回按照b列排序的结果,<br><br>然后再按照a进行排序,才得到下面的结果:<br><br>A B ROW_NUMBER()OVER(ORDERBYB)<br><br>– ———- ————————–<br><br>1 one 3<br><br>4 four 2<br><br>5 five 1<br><br>13 thirteen 4<br><br>22 twenty two 5<br><br>2.row_number() over (partition by col_n[,col_m …] order by col_1[,col_2 …])<br><br>作用:先按照col_n[,col_m …进行分组,<br><br>再在每个分组中按照col_1[,col_2 …]进行排序(升序),<br><br>最后返回排好序后的结果集:<br><br>with row_number_test as(<br><br>select 22 a,’twenty two’ b,’/<em>‘ c from dual union all<br><br>select 1,’one’,’+’ from dual union all<br><br>select 13,’thirteen’,’/</em>‘ from dual union all<br><br>select 5,’five’,’+’ from dual union all<br><br>select 4,’four’,’+’ from dual)<br><br>select a,b,<br><br>row_number() over (partition by c order by b) row_number<br><br>from row_number_test<br><br>order by a;<br><br>这个例子中，我们先按照c列分组，分为2组(‘/*’组,’+’组)，<br><br>再按照每个小组的b列进行排序(按字符串首字母的ascii码排),<br><br>最后按照a列排序,得到下面的结果集:<br><br>A B ROW_NUMBER<br><br>– ———- ———-<br><br>1 one 3<br><br>4 four 2<br><br>5 five 1<br><br>13 thirteen 1<br><br><br><br>22 twenty two<br><br><br><br>本篇文章来源于 Linux公社网站(<a href="http://www.linuxidc.com" target="_blank" rel="noopener">www.linuxidc.com</a>) 原文链接：<a href="http://www.linuxidc.com/Linux/2011-04/34251.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2011-04/34251.htm</a></p>
-
+<p><br>row_number()over(partition by col1 order by col2)表示根据col1分组，在分组内部根据col2排序，而此函数计算的值就表示每组内部排序后的顺序编号（组内连续的唯一的）。<br><br>与rownum的区别在于：使用rownum进行排序的时候是先对结果集加入伪劣rownum然后再进行排序，而此函数在包含排序从句后是先排序再计算行号码。<br><br>row_number()和rownum差不多，功能更强一点（可以在各个分组内从1开始排序）。</p>
+        
+          <a class="article-more-a" href="/2017/09/25/浅谈oracle中row_number() over()分析函数用法/#more">more >></a>
+        
       
 
       
@@ -692,20 +742,10 @@ var _hmt = _hmt || [];
 <p>在使用pl/sql developer时，查询出来中文字段显示乱码，因为数据库的编号格式和pl /sql developer的编码格式不统一造成的。</p>
 <p>一、查看和修改oracle数据库字符集</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> userenv(<span class="string">'language'</span>) <span class="keyword">from</span> dual; <span class="comment">--查询结果：</span></span><br></pre></td></tr></table></figure>
-<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中） </p>
-<p>sql&gt; conn / as sysdba; </p>
-<p>sql&gt; shutdown immediate;<br> <br>database closed.<br> <br>database dismounted.<br> <br>oracle instance shut down. </p>
-<p>sql&gt; startup mount;<br><br>oracle instance started.<br><br>total system global area 135337420 bytes fixed size 452044 bytes variable size 109051904 bytes database buffers 25165824 bytes redo buffers 667648 bytes database mounted. </p>
-<p>sql&gt; alter system enable restricted session;<br><br>system altered. </p>
-<p>sql&gt; alter system set job_queue_processes=0;<br><br>system altered. </p>
-<p> sql&gt; alter system set aq_tm_processes=0;<br><br>system altered. </p>
-<p>sql&gt; alter database open;<br> <br>database altered. </p>
-<p> sql&gt; alter database character set internal_use JA16SJIS; </p>
-<p> sql&gt; shutdown immediate;</p>
-<p> sql&gt; startup;</p>
-<h1 id="二、修改pl-sql-developer-的编码"><a href="#二、修改pl-sql-developer-的编码" class="headerlink" title="二、修改pl/sql developer 的编码"></a>二、修改pl/sql developer 的编码</h1><p>在windows中创 建一个名为“NLS_LANG”的系统环境变量，设置其值为“SIMPLIFIED CHINESE_CHINA.ZHS16GBK”，然后重新启动 pl/sql developer，这样检索出来的中文内容就不会是乱码了。如果想转换为UTF8字符集，可以赋予“NLS_LANG”为 “AMERICAN_AMERICA.UTF8”，然后重新启动 pl/sql developer。其它字符集设置同上</p>
-<p>文章转载于博客园 <a href="http://www.cnblogs.com/geekdc/p/5817306.html" target="_blank" rel="noopener">http://www.cnblogs.com/geekdc/p/5817306.html</a></p>
-
+<p>– SIMPLIFIED CHINESE_CHINA.AL32UTF8<br>–修改oracle数据库字符集：（在SQL Plus中）<br></p>
+        
+          <a class="article-more-a" href="/2017/09/20/Oracle和plsql developer编码设置/#more">more >></a>
+        
       
 
       
@@ -807,85 +847,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/09/04/oracle创建用户/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-birt使用JNDI配置数据源" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/02/birt使用JNDI配置数据源/">birt使用JNDI配置数据源</a>
-    </h1>
-  
-
-        
-        <a href="/2017/09/02/birt使用JNDI配置数据源/" class="archive-article-date">
-  	<time datetime="2017-09-02T09:34:42.743Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在使用birt做报表时，开发的时候用的一个数据源，测试的时候用到一个数据源，正式环境一个数据源，那每次都需要配置，然而birt提供了JNDI的方式即可解决配置数据源问题，<br>一旦项目运行后，首先回去找JNDI数据源，没有才连接配置的数据源，<br>JNDI配置三部曲：</p>
-<p>1.在创建报表创建数据源时，配置JNDI URL<br><img src="/2017/09/02/birt使用JNDI配置数据源/20170902001.png" alt="image"></p>
-<p>2.Tomcat下\conf\context.xml中配置</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">Context</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">Resource</span></span></span><br><span class="line"><span class="tag">      <span class="attr">auth</span>=<span class="string">"Container"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">name</span>=<span class="string">"jdbc/xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">"javax.sql.DataSource"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxIdle</span>=<span class="string">"5"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxWait</span>=<span class="string">"-1"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">driverClassName</span>=<span class="string">"oracle.jdbc.driver.OracleDriver"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">username</span>=<span class="string">"xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">password</span>=<span class="string">"xxx"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">url</span>=<span class="string">"jdbc:oracle:thin:@xxx.xxx.xxx.xxx:xxx:ORCL"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">maxActive</span>=<span class="string">"10"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Context</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>3.在项目/WEB-INF/web.xml增加代码<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resource-ref</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Database Source<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-ref-name</span>&gt;</span>jdbc/XXX<span class="tag">&lt;/<span class="name">res-ref-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-type</span>&gt;</span>javax.sql.DataSource<span class="tag">&lt;/<span class="name">res-type</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">res-auth</span>&gt;</span>Container<span class="tag">&lt;/<span class="name">res-auth</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resource-ref</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>配置就这么多</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">birt</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/02/birt使用JNDI配置数据源/">展开全文 >></a>
         </p>
       
 
@@ -1088,11 +1049,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1100,15 +1061,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1117,6 +1074,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

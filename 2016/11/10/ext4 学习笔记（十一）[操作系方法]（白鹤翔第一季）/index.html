@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="cusn-cmh">
 <meta property="og:description" content="文章来源:ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季） DOM操作系方法：appendTo：将当前元素追加到指定元素中appendChild：在当前元素中追加元素createChild：在元素中插入由DomHelper对象创建的元素extinertAfter：将元素插入到指定元素之后inertBefore：将元素插入到指定元素之前inertSibling：在当前元素前或后插入（或创建）">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T08:52:00.161Z">
+<meta property="og:updated_time" content="2018-09-10T15:00:46.306Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）">
 <meta name="twitter:description" content="文章来源:ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季） DOM操作系方法：appendTo：将当前元素追加到指定元素中appendChild：在当前元素中追加元素createChild：在元素中插入由DomHelper对象创建的元素extinertAfter：将元素插入到指定元素之后inertBefore：将元素插入到指定元素之前inertSibling：在当前元素前或后插入（或创建）">
@@ -184,9 +184,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/53114958" target="_blank" rel="noopener">文章来源:ext4 学习笔记（十一）[操作系方法]（白鹤翔第一季）</a></p>
-<p>DOM操作系方法：<br>appendTo：将当前元素追加到指定元素中<br>appendChild：在当前元素中追加元素<br>createChild：在元素中插入由DomHelper对象创建的元素ext<br>inertAfter：将元素插入到指定元素之后<br>inertBefore：将元素插入到指定元素之前<br>inertSibling：在当前元素前或后插入（或创建）元素（同层）。<br>insertHtml：在当前元素内插入HTML代码<br>remove：移除当前元素<br>replace：使用当前元素替换指定元素<br>replaceWith：使用创建的元素替换当前的元素</p>
-<p>wrap：创建一个元素，并将当前元素包裹起来。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作dom系的方法：</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//1:appendTo：将当前元素追加到指定元素中（这2个元素都必须存在document里）</span></span><br><span class="line">	sp.appendTo(Ext.get(<span class="string">'d2'</span>));</span><br><span class="line">	sp.appendTo(<span class="string">'d2'</span>);</span><br><span class="line">	<span class="comment">//2:appendChild：在当前元素中追加元素</span></span><br><span class="line">	sp.appendChild(<span class="string">'d2'</span>);</span><br><span class="line">	<span class="comment">//3:createChild：在元素中插入由DomHelper对象创建的元素</span></span><br><span class="line">	sp.createChild(&#123;</span><br><span class="line">		tag:<span class="string">'ol'</span> ,		<span class="comment">//orderlist  unorderlist</span></span><br><span class="line">		children:[</span><br><span class="line">			&#123;<span class="attr">tag</span>:<span class="string">'li'</span> ,<span class="attr">html</span>:<span class="string">'item1'</span>&#125;,</span><br><span class="line">			&#123;<span class="attr">tag</span>:<span class="string">'li'</span> ,<span class="attr">html</span>:<span class="string">'item2'</span>&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//4:inertAfter：将元素插入到指定元素之后</span></span><br><span class="line">	<span class="comment">//5:inertBefore：将元素插入到指定元素之前 </span></span><br><span class="line">	<span class="comment">//6:inertSibling：在当前元素前或后插入（或创建）元素（同层）。</span></span><br><span class="line">	<span class="comment">//7:insertHtml：在当前元素内插入HTML代码</span></span><br><span class="line">	<span class="comment">//8:replace：使用当前元素替换指定元素</span></span><br><span class="line">	<span class="comment">//9:replaceWith：使用创建的元素替换当前的元素	</span></span><br><span class="line">	<span class="comment">//10:remove：移除当前元素</span></span><br><span class="line">	</span><br><span class="line">	sp.remove();</span><br><span class="line">	<span class="comment">//11:wrap：创建一个元素，并将当前元素包裹起来。</span></span><br><span class="line">	sp.wrap(<span class="string">'&lt;h1&gt;&lt;/h1&gt;'</span>);</span><br></pre></td></tr></table></figure>
+<p>DOM操作系方法：<br>appendTo：将当前元素追加到指定元素中<br>appendChild：在当前元素中追加元素<br>createChild：在元素中插入由DomHelper对象创建的元素ext<br>inertAfter：将元素插入到指定元素之后<br>inertBefore：将元素插入到指定元素之前<br>inertSibling：在当前元素前或后插入（或创建）元素（同层）。<br>insertHtml：在当前元素内插入HTML代码<br>remove：移除当前元素<br>replace：使用当前元素替换指定元素<br>replaceWith：使用创建的元素替换当前的元素<br>wrap：创建一个元素，并将当前元素包裹起来。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作dom系的方法：</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//1:appendTo：将当前元素追加到指定元素中（这2个元素都必须存在document里）</span></span><br><span class="line">	sp.appendTo(Ext.get(<span class="string">'d2'</span>));</span><br><span class="line">	sp.appendTo(<span class="string">'d2'</span>);</span><br><span class="line">	<span class="comment">//2:appendChild：在当前元素中追加元素</span></span><br><span class="line">	sp.appendChild(<span class="string">'d2'</span>);</span><br><span class="line">	<span class="comment">//3:createChild：在元素中插入由DomHelper对象创建的元素</span></span><br><span class="line">	sp.createChild(&#123;</span><br><span class="line">		tag:<span class="string">'ol'</span> ,		<span class="comment">//orderlist  unorderlist</span></span><br><span class="line">		children:[</span><br><span class="line">			&#123;<span class="attr">tag</span>:<span class="string">'li'</span> ,<span class="attr">html</span>:<span class="string">'item1'</span>&#125;,</span><br><span class="line">			&#123;<span class="attr">tag</span>:<span class="string">'li'</span> ,<span class="attr">html</span>:<span class="string">'item2'</span>&#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//4:inertAfter：将元素插入到指定元素之后</span></span><br><span class="line">	<span class="comment">//5:inertBefore：将元素插入到指定元素之前 </span></span><br><span class="line">	<span class="comment">//6:inertSibling：在当前元素前或后插入（或创建）元素（同层）。</span></span><br><span class="line">	<span class="comment">//7:insertHtml：在当前元素内插入HTML代码</span></span><br><span class="line">	<span class="comment">//8:replace：使用当前元素替换指定元素</span></span><br><span class="line">	<span class="comment">//9:replaceWith：使用创建的元素替换当前的元素	</span></span><br><span class="line">	<span class="comment">//10:remove：移除当前元素</span></span><br><span class="line">	</span><br><span class="line">	sp.remove();</span><br><span class="line">	<span class="comment">//11:wrap：创建一个元素，并将当前元素包裹起来。</span></span><br><span class="line">	sp.wrap(<span class="string">'&lt;h1&gt;&lt;/h1&gt;'</span>);</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -466,11 +465,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,15 +477,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,6 +490,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">

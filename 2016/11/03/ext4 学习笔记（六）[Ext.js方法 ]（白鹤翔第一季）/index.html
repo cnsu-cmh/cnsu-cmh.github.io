@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://cusn-cmh.github.io">
   <title>ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） | cusn-cmh</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） Ext.js方法详解：Ext.apply&amp;amp;Ext.applyIfExt.extendtypeOfisEmpty、isIterable、isFunction、isArray…Iterate Ext.apply &amp;amp; Ext.applyIf 123456789   //Ext.apply就是为对象扩展属性或方法的v">
+  <meta name="description" content="文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） Ext.js方法详解：Ext.apply&amp;amp;Ext.applyIfExt.extendtypeOfisEmpty、isIterable、isFunction、isArray…IterateExt.apply &amp;amp; Ext.applyIf">
 <meta name="keywords" content="ext">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）">
 <meta property="og:url" content="https://cusn-cmh.github.io/2016/11/03/ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）/index.html">
 <meta property="og:site_name" content="cusn-cmh">
-<meta property="og:description" content="文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） Ext.js方法详解：Ext.apply&amp;amp;Ext.applyIfExt.extendtypeOfisEmpty、isIterable、isFunction、isArray…Iterate Ext.apply &amp;amp; Ext.applyIf 123456789   //Ext.apply就是为对象扩展属性或方法的v">
+<meta property="og:description" content="文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） Ext.js方法详解：Ext.apply&amp;amp;Ext.applyIfExt.extendtypeOfisEmpty、isIterable、isFunction、isArray…IterateExt.apply &amp;amp; Ext.applyIf">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-08T08:52:34.424Z">
+<meta property="og:updated_time" content="2018-09-10T15:02:45.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）">
-<meta name="twitter:description" content="文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） Ext.js方法详解：Ext.apply&amp;amp;Ext.applyIfExt.extendtypeOfisEmpty、isIterable、isFunction、isArray…Iterate Ext.apply &amp;amp; Ext.applyIf 123456789   //Ext.apply就是为对象扩展属性或方法的v">
+<meta name="twitter:description" content="文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季） Ext.js方法详解：Ext.apply&amp;amp;Ext.applyIfExt.extendtypeOfisEmpty、isIterable、isFunction、isArray…IterateExt.apply &amp;amp; Ext.applyIf">
   
     <link rel="alternative" href="/atom.xml" title="cusn-cmh" type="application/atom+xml">
   
@@ -184,9 +184,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://blog.csdn.net/u011229848/article/details/53027050" target="_blank" rel="noopener">文章来源:ext4 学习笔记（六）[Ext.js方法 ]（白鹤翔第一季）</a></p>
-<p>Ext.js方法详解：<br>Ext.apply&amp;Ext.applyIf<br>Ext.extend<br>typeOf<br>isEmpty、isIterable、isFunction、isArray…<br>Iterate</p>
-<p>Ext.apply &amp; Ext.applyIf</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//Ext.apply就是为对象扩展属性或方法的</span></span><br><span class="line"><span class="keyword">var</span> src = &#123;<span class="attr">name</span>:<span class="string">'张三'</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;;	<span class="comment">//源对象</span></span><br><span class="line"><span class="keyword">var</span> config = &#123;<span class="attr">name</span>:<span class="string">'李四'</span>,<span class="attr">sex</span>:<span class="string">'男'</span>&#125;;		<span class="comment">//配置对象</span></span><br><span class="line"><span class="comment">//Ext.apply(src , config);</span></span><br><span class="line">Ext.applyIf(src,config);		<span class="comment">//如果当前对象存在属性,我就不进行copy 如果不存在则copy</span></span><br><span class="line"><span class="comment">// name : '李四'  age : 20  sex:'男'</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> src)&#123;</span><br><span class="line">	<span class="built_in">console</span>.info(attr + <span class="string">" : "</span> + src[attr]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Ext.js方法详解：<br>Ext.apply&amp;Ext.applyIf<br>Ext.extend<br>typeOf<br>isEmpty、isIterable、isFunction、isArray…<br>Iterate<br>Ext.apply &amp; Ext.applyIf<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">//Ext.apply就是为对象扩展属性或方法的</span></span><br><span class="line"><span class="keyword">var</span> src = &#123;<span class="attr">name</span>:<span class="string">'张三'</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;;	<span class="comment">//源对象</span></span><br><span class="line"><span class="keyword">var</span> config = &#123;<span class="attr">name</span>:<span class="string">'李四'</span>,<span class="attr">sex</span>:<span class="string">'男'</span>&#125;;		<span class="comment">//配置对象</span></span><br><span class="line"><span class="comment">//Ext.apply(src , config);</span></span><br><span class="line">Ext.applyIf(src,config);		<span class="comment">//如果当前对象存在属性,我就不进行copy 如果不存在则copy</span></span><br><span class="line"><span class="comment">// name : '李四'  age : 20  sex:'男'</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> attr <span class="keyword">in</span> src)&#123;</span><br><span class="line">	<span class="built_in">console</span>.info(attr + <span class="string">" : "</span> + src[attr]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<!--more-->
 <p>上面代码Ext.apply（src,config）是将配置对象的属性赋给源对象，也就是src已经有的属性我给你赋值，没有的我给你扩展，则apply之后src ={name：’李四’，age：20，sex:’男’}</p>
 <p>Ext.applyIf(src,config)是说如果源对象已经有配置对象的属性，我就不管，如果没有我就扩展，也就是代码注释中说已经有的属性我不做复制，没有的就复制 applyIf之后src={name=’张三’,age=’20’,sex=’男’}</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Ext.typeOf 和原生的javascript typeof</span></span><br><span class="line">    	<span class="keyword">var</span> str = <span class="string">'111'</span>;</span><br><span class="line">    	<span class="keyword">var</span> num = <span class="number">20</span>;</span><br><span class="line">    	<span class="built_in">console</span>.info(Ext.typeOf(str));</span><br><span class="line">    	<span class="built_in">console</span>.info(Ext.typeOf(num));</span><br><span class="line">    	Ext.isArray();</span><br><span class="line">    	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">    	Ext.iterate(arr,<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    		<span class="built_in">console</span>.info(item);</span><br><span class="line">    	&#125;);</span><br></pre></td></tr></table></figure>
@@ -474,11 +473,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,15 +485,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +498,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
