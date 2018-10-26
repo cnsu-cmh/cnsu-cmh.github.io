@@ -164,6 +164,88 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Ext4 HBox的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/22/Ext4 HBox的使用/">Ext4 HBox的使用</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/22/Ext4 HBox的使用/" class="archive-article-date">
+  	<time datetime="2016-11-22T14:50:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>要使用HBox布局方式，首先的熟悉下一下几个主要属性：</p>
+<p>一、align：字符类型，指示组件在容器内的对齐方式。有如下几种属性。</p>
+<p>1、top（默认）：排列于容器顶端。</p>
+<p>2、middle：垂直居中排列于容器中。</p>
+<p>3、stretch：垂直排列且拉伸义填补容器高度</p>
+<p>4、stretchmax:垂直拉伸，并且组件以最高高度的组件为准。</p>
+<p>二、flex:数字类型，指示组件在容器中水平呈现方式，通俗的讲，就是指示组件在容器中的相对宽度。<br></p>
+        
+          <a class="article-more-a" href="/2016/11/22/Ext4 HBox的使用/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/22/Ext4 HBox的使用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Ext4 Windows 的创建" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -875,81 +957,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/19/ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）/">ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）</a>
-    </h1>
-  
-
-        
-        <a href="/2016/11/19/ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）/" class="archive-article-date">
-  	<time datetime="2016-11-19T14:14:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/53235480" target="_blank" rel="noopener">文章来源:ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）</a></p>
-<p>Ext.EventManager:把浏览器自带的事件做个封装 ，目的是屏蔽浏览器之间的差异问题<br>on添加事件监听 un移除事件监听</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">Ext.onReady(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//Ext.EventManager:把浏览器自带的事件做个封装 ，目的是屏蔽浏览器之间的差异问题</span></span><br><span class="line">	<span class="comment">// on添加事件监听   un移除事件监听</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> inp = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);	<span class="comment">//Ext.DomHelper.createDom</span></span><br><span class="line">	inp.type = <span class="string">'button'</span>;</span><br><span class="line">	inp.id = <span class="string">'inp1'</span>;</span><br><span class="line">	inp.value = <span class="string">'点击'</span>;</span><br><span class="line">	<span class="built_in">document</span>.body.appendChild(inp);</span><br><span class="line">	<span class="comment">//----------------------------------------</span></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">var</span> einp = Ext.get(<span class="string">'inp1'</span>);</span><br><span class="line"> 	Ext.EventManager.on(einp,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 		alert(<span class="string">'我执行了..'</span>);</span><br><span class="line"> 	&#125;);</span><br><span class="line"> 	Ext.EventManager.on(einp,<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 		alert(<span class="string">'我又执行了..'</span>);</span><br><span class="line"> 	&#125;);	</span><br><span class="line"> </span><br><span class="line"> 	Ext.EventManager.on(einp,&#123;</span><br><span class="line"> 		<span class="string">'click'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'单机!'</span>)&#125; , </span><br><span class="line"> 		<span class="string">'mouseout'</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">'移除!'</span>)&#125;</span><br><span class="line"> 	&#125;);</span><br><span class="line"> </span><br><span class="line"> 	<span class="comment">//不推荐 </span></span><br><span class="line"> 	Ext.EventManager.on(einp,&#123;</span><br><span class="line"> 		<span class="string">'click'</span>:&#123;</span><br><span class="line"> 			fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'执行1'</span>);</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125; , </span><br><span class="line"> 	    <span class="string">'mouseout'</span>:&#123;</span><br><span class="line"> 			fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> 				alert(<span class="string">'执行2'</span>);</span><br><span class="line"> 			&#125;</span><br><span class="line"> 		&#125;</span><br><span class="line"> 	&#125;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/11/19/ext4学习笔记(十九)[Ext.EventManager]（白鹤翔第一季）/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -1043,11 +1050,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">birt</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">birt</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1055,11 +1062,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1095,19 +1102,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">WEB架构师成长之路</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">jstl</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">layui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jstl</a>
               </li>
              
               <li class="article-tag-list-item">

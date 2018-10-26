@@ -164,6 +164,83 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/">ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）</a>
+    </h1>
+  
+
+        
+        <a href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/" class="archive-article-date">
+  	<time datetime="2016-11-05T15:46:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-11-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://blog.csdn.net/u011229848/article/details/53048487" target="_blank" rel="noopener">文章来源:ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）</a></p>
+<p>Ext对于原生的javascript对象进行了一系列的扩展，我们把他们掌握好，更能深刻的体会Ext的架构，从而对我们的web开发更好的服务，源码位置，我们可以从开发包的extjs-4.1.1\src\core\src\lang\这个位置找到这几个扩展的js源码：<br></p>
+        
+          <a class="article-more-a" href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ext</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/11/05/ext4 学习笔记（七）[ExtJS扩展原生Javascript]（白鹤翔第一季）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-spring aop 拦截器 MethodInterceptor 配置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -883,89 +960,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-Spring技术内幕——IoC容器的实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/31/Spring技术内幕——IoC容器的实现/">Spring技术内幕——IoC容器的实现</a>
-    </h1>
-  
-
-        
-        <a href="/2016/10/31/Spring技术内幕——IoC容器的实现/" class="archive-article-date">
-  	<time datetime="2016-10-31T10:08:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-10-31</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://blog.csdn.net/u011229848/article/details/52983669" target="_blank" rel="noopener">文章来源:Spring技术内幕——IoC容器的实现</a></p>
-<p>版权声明：本文为博主原创文章，未经博主允许不得转载。 <a href="https://blog.csdn.net/u011229848/article/details/52983669" target="_blank" rel="noopener">https://blog.csdn.net/u011229848/article/details/52983669</a></p>
-<p>对Spring IOC的理解离不开对依赖反转模式的理解，我们知道，关于如何反转对依赖的控制，把控制权从具体业务对象手中转交到平台或者框架中，是解决面向对象系统设计复杂性和提高面向对象系统可测试性的一个有效的解决方案。这个问题触发了IoC设计模式的发展，是IoC容器要解决的核心问题。同时，也是产品化的IoC容器出现的推动力。而我觉得Spring的IoC容器，就是一个开源的实现依赖反转模式的产品。</p>
-<p>那具体什么是IoC容器呢？它在Spring框架中到底长什么样？说了这么多，其实对IoC容器的使用者来说，我们常常接触到的BeanFactory和ApplicationContext都可以看成是容器的具体表现形式。这些就是IoC容器，或者说在Spring中提IoC容器，从实现来说，指的是一个容器系列。这也就是说，我们通常所说的IoC容器，如果深入到Spring的实现去看，会发现IoC容器实际上代表着一系列功能各异的容器产品。只是容器的功能有大有小，有各自的特点。打个比方来说，就像是百货商店里出售的商品，我们举水桶为例子，在商店中出售的水桶有大有小；制作材料也各不相同，有金属的，有塑料的等等，总之是各式各样，但只要能装水，具备水桶的基本特性，那就可以作为水桶来出售来让用户使用。这在Spring中也是一样，它有各式各样的IoC容器的实现供用户选择和使用；使用什么样的容器完全取决于用户的需要，但在使用之前如果能够了解容器的基本情况，那会对容器的使用是非常有帮助的；就像我们在购买商品时进行的对商品的考察和挑选那样。<br>我们从最基本的XmlBeanFactory看起，它是容器系列的最底层实现，这个容器的实现与我们在Spring应用中用到的那些上下文相比，有一个非常明显的特点，它只提供了最基本的IoC容器的功能。从它的名字中可以看出，这个IoC容器可以读取以XML形式定义的BeanDefinition。理解这一点有助于我们理解ApplicationContext与基本的BeanFactory之间的区别和联系。我们可以认为直接的BeanFactory实现是IoC容器的基本形式，而各种ApplicationContext的实现是IoC容器的高级表现形式。<br></p>
-        
-          <a class="article-more-a" href="/2016/10/31/Spring技术内幕——IoC容器的实现/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/10/31/Spring技术内幕——IoC容器的实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
@@ -1059,11 +1053,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ext</a>
+                <a href="javascript:void(0)" class="js-tag color5">birt</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">birt</a>
+                <a href="javascript:void(0)" class="js-tag color4">ext</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,11 +1065,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">IDEA</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1111,19 +1105,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">WEB架构师成长之路</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">jstl</a>
+                <a href="javascript:void(0)" class="js-tag color1">springboot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">layui</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">jstl</a>
               </li>
              
               <li class="article-tag-list-item">
